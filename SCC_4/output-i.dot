@@ -1,0 +1,11 @@
+digraph cflow {
+    node [shape="box"]
+    main [label="int main ()
+main.c:6"]
+    main -> printf
+    main -> funcB
+    main -> funcC
+    printf [label="printf()"]
+    funcB [label="funcB()"]
+    funcC [label="funcC()"]
+}

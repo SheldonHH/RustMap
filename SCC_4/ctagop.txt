@@ -1,0 +1,630 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/root/crown-rust/SCC_4/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+FILE	dp1.i	/^typedef struct _IO_FILE FILE;$/;"	t	language:C	typeref:struct:_IO_FILE	file:
+FILE	dp2.i	/^typedef struct _IO_FILE FILE;$/;"	t	language:C	typeref:struct:_IO_FILE	file:
+FILE	dp3.i	/^typedef struct _IO_FILE FILE;$/;"	t	language:C	typeref:struct:_IO_FILE	file:
+FILE	dp4.i	/^typedef struct _IO_FILE FILE;$/;"	t	language:C	typeref:struct:_IO_FILE	file:
+FILE	main.i	/^typedef struct _IO_FILE FILE;$/;"	t	language:C	typeref:struct:_IO_FILE	file:
+_G_fpos64_t	dp1.i	/^typedef struct _G_fpos64_t$/;"	s	language:C	file:
+_G_fpos64_t	dp2.i	/^typedef struct _G_fpos64_t$/;"	s	language:C	file:
+_G_fpos64_t	dp3.i	/^typedef struct _G_fpos64_t$/;"	s	language:C	file:
+_G_fpos64_t	dp4.i	/^typedef struct _G_fpos64_t$/;"	s	language:C	file:
+_G_fpos64_t	main.i	/^typedef struct _G_fpos64_t$/;"	s	language:C	file:
+_G_fpos_t	dp1.i	/^typedef struct _G_fpos_t$/;"	s	language:C	file:
+_G_fpos_t	dp2.i	/^typedef struct _G_fpos_t$/;"	s	language:C	file:
+_G_fpos_t	dp3.i	/^typedef struct _G_fpos_t$/;"	s	language:C	file:
+_G_fpos_t	dp4.i	/^typedef struct _G_fpos_t$/;"	s	language:C	file:
+_G_fpos_t	main.i	/^typedef struct _G_fpos_t$/;"	s	language:C	file:
+_IO_FILE	dp1.i	/^struct _IO_FILE$/;"	s	language:C	file:
+_IO_FILE	dp2.i	/^struct _IO_FILE$/;"	s	language:C	file:
+_IO_FILE	dp3.i	/^struct _IO_FILE$/;"	s	language:C	file:
+_IO_FILE	dp4.i	/^struct _IO_FILE$/;"	s	language:C	file:
+_IO_FILE	main.i	/^struct _IO_FILE$/;"	s	language:C	file:
+_IO_backup_base	dp1.i	/^  char *_IO_backup_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_backup_base	dp2.i	/^  char *_IO_backup_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_backup_base	dp3.i	/^  char *_IO_backup_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_backup_base	dp4.i	/^  char *_IO_backup_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_backup_base	main.i	/^  char *_IO_backup_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_buf_base	dp1.i	/^  char *_IO_buf_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_buf_base	dp2.i	/^  char *_IO_buf_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_buf_base	dp3.i	/^  char *_IO_buf_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_buf_base	dp4.i	/^  char *_IO_buf_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_buf_base	main.i	/^  char *_IO_buf_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_buf_end	dp1.i	/^  char *_IO_buf_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_buf_end	dp2.i	/^  char *_IO_buf_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_buf_end	dp3.i	/^  char *_IO_buf_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_buf_end	dp4.i	/^  char *_IO_buf_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_buf_end	main.i	/^  char *_IO_buf_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_lock_t	dp1.i	/^typedef void _IO_lock_t;$/;"	t	language:C	typeref:typename:void	file:
+_IO_lock_t	dp2.i	/^typedef void _IO_lock_t;$/;"	t	language:C	typeref:typename:void	file:
+_IO_lock_t	dp3.i	/^typedef void _IO_lock_t;$/;"	t	language:C	typeref:typename:void	file:
+_IO_lock_t	dp4.i	/^typedef void _IO_lock_t;$/;"	t	language:C	typeref:typename:void	file:
+_IO_lock_t	main.i	/^typedef void _IO_lock_t;$/;"	t	language:C	typeref:typename:void	file:
+_IO_read_base	dp1.i	/^  char *_IO_read_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_read_base	dp2.i	/^  char *_IO_read_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_read_base	dp3.i	/^  char *_IO_read_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_read_base	dp4.i	/^  char *_IO_read_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_read_base	main.i	/^  char *_IO_read_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_read_end	dp1.i	/^  char *_IO_read_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_read_end	dp2.i	/^  char *_IO_read_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_read_end	dp3.i	/^  char *_IO_read_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_read_end	dp4.i	/^  char *_IO_read_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_read_end	main.i	/^  char *_IO_read_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_read_ptr	dp1.i	/^  char *_IO_read_ptr;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_read_ptr	dp2.i	/^  char *_IO_read_ptr;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_read_ptr	dp3.i	/^  char *_IO_read_ptr;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_read_ptr	dp4.i	/^  char *_IO_read_ptr;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_read_ptr	main.i	/^  char *_IO_read_ptr;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_save_base	dp1.i	/^  char *_IO_save_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_save_base	dp2.i	/^  char *_IO_save_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_save_base	dp3.i	/^  char *_IO_save_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_save_base	dp4.i	/^  char *_IO_save_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_save_base	main.i	/^  char *_IO_save_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_save_end	dp1.i	/^  char *_IO_save_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_save_end	dp2.i	/^  char *_IO_save_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_save_end	dp3.i	/^  char *_IO_save_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_save_end	dp4.i	/^  char *_IO_save_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_save_end	main.i	/^  char *_IO_save_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_base	dp1.i	/^  char *_IO_write_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_base	dp2.i	/^  char *_IO_write_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_base	dp3.i	/^  char *_IO_write_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_base	dp4.i	/^  char *_IO_write_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_base	main.i	/^  char *_IO_write_base;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_end	dp1.i	/^  char *_IO_write_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_end	dp2.i	/^  char *_IO_write_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_end	dp3.i	/^  char *_IO_write_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_end	dp4.i	/^  char *_IO_write_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_end	main.i	/^  char *_IO_write_end;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_ptr	dp1.i	/^  char *_IO_write_ptr;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_ptr	dp2.i	/^  char *_IO_write_ptr;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_ptr	dp3.i	/^  char *_IO_write_ptr;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_ptr	dp4.i	/^  char *_IO_write_ptr;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+_IO_write_ptr	main.i	/^  char *_IO_write_ptr;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char *	file:
+__FILE	dp1.i	/^typedef struct _IO_FILE __FILE;$/;"	t	language:C	typeref:struct:_IO_FILE	file:
+__FILE	dp2.i	/^typedef struct _IO_FILE __FILE;$/;"	t	language:C	typeref:struct:_IO_FILE	file:
+__FILE	dp3.i	/^typedef struct _IO_FILE __FILE;$/;"	t	language:C	typeref:struct:_IO_FILE	file:
+__FILE	dp4.i	/^typedef struct _IO_FILE __FILE;$/;"	t	language:C	typeref:struct:_IO_FILE	file:
+__FILE	main.i	/^typedef struct _IO_FILE __FILE;$/;"	t	language:C	typeref:struct:_IO_FILE	file:
+__anon0d3808410108	main.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	s	language:C	file:
+__anon0d3808410208	main.i	/^{$/;"	s	language:C	file:
+__anon0d380841030a	main.i	/^  {$/;"	u	language:C	struct:__anon0d3808410208	file:
+__anon0f4ed3c10108	dp1.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	s	language:C	file:
+__anon0f4ed3c10208	dp1.i	/^{$/;"	s	language:C	file:
+__anon0f4ed3c1030a	dp1.i	/^  {$/;"	u	language:C	struct:__anon0f4ed3c10208	file:
+__anon0f4ed8020108	dp2.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	s	language:C	file:
+__anon0f4ed8020208	dp2.i	/^{$/;"	s	language:C	file:
+__anon0f4ed802030a	dp2.i	/^  {$/;"	u	language:C	struct:__anon0f4ed8020208	file:
+__anon0f4edc430108	dp3.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	s	language:C	file:
+__anon0f4edc430208	dp3.i	/^{$/;"	s	language:C	file:
+__anon0f4edc43030a	dp3.i	/^  {$/;"	u	language:C	struct:__anon0f4edc430208	file:
+__anon0f4ee0840108	dp4.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	s	language:C	file:
+__anon0f4ee0840208	dp4.i	/^{$/;"	s	language:C	file:
+__anon0f4ee084030a	dp4.i	/^  {$/;"	u	language:C	struct:__anon0f4ee0840208	file:
+__blkcnt64_t	dp1.i	/^typedef long int __blkcnt64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__blkcnt64_t	dp2.i	/^typedef long int __blkcnt64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__blkcnt64_t	dp3.i	/^typedef long int __blkcnt64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__blkcnt64_t	dp4.i	/^typedef long int __blkcnt64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__blkcnt64_t	main.i	/^typedef long int __blkcnt64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__blkcnt_t	dp1.i	/^typedef long int __blkcnt_t;$/;"	t	language:C	typeref:typename:long int	file:
+__blkcnt_t	dp2.i	/^typedef long int __blkcnt_t;$/;"	t	language:C	typeref:typename:long int	file:
+__blkcnt_t	dp3.i	/^typedef long int __blkcnt_t;$/;"	t	language:C	typeref:typename:long int	file:
+__blkcnt_t	dp4.i	/^typedef long int __blkcnt_t;$/;"	t	language:C	typeref:typename:long int	file:
+__blkcnt_t	main.i	/^typedef long int __blkcnt_t;$/;"	t	language:C	typeref:typename:long int	file:
+__blksize_t	dp1.i	/^typedef long int __blksize_t;$/;"	t	language:C	typeref:typename:long int	file:
+__blksize_t	dp2.i	/^typedef long int __blksize_t;$/;"	t	language:C	typeref:typename:long int	file:
+__blksize_t	dp3.i	/^typedef long int __blksize_t;$/;"	t	language:C	typeref:typename:long int	file:
+__blksize_t	dp4.i	/^typedef long int __blksize_t;$/;"	t	language:C	typeref:typename:long int	file:
+__blksize_t	main.i	/^typedef long int __blksize_t;$/;"	t	language:C	typeref:typename:long int	file:
+__caddr_t	dp1.i	/^typedef char *__caddr_t;$/;"	t	language:C	typeref:typename:char *	file:
+__caddr_t	dp2.i	/^typedef char *__caddr_t;$/;"	t	language:C	typeref:typename:char *	file:
+__caddr_t	dp3.i	/^typedef char *__caddr_t;$/;"	t	language:C	typeref:typename:char *	file:
+__caddr_t	dp4.i	/^typedef char *__caddr_t;$/;"	t	language:C	typeref:typename:char *	file:
+__caddr_t	main.i	/^typedef char *__caddr_t;$/;"	t	language:C	typeref:typename:char *	file:
+__clock_t	dp1.i	/^typedef long int __clock_t;$/;"	t	language:C	typeref:typename:long int	file:
+__clock_t	dp2.i	/^typedef long int __clock_t;$/;"	t	language:C	typeref:typename:long int	file:
+__clock_t	dp3.i	/^typedef long int __clock_t;$/;"	t	language:C	typeref:typename:long int	file:
+__clock_t	dp4.i	/^typedef long int __clock_t;$/;"	t	language:C	typeref:typename:long int	file:
+__clock_t	main.i	/^typedef long int __clock_t;$/;"	t	language:C	typeref:typename:long int	file:
+__clockid_t	dp1.i	/^typedef int __clockid_t;$/;"	t	language:C	typeref:typename:int	file:
+__clockid_t	dp2.i	/^typedef int __clockid_t;$/;"	t	language:C	typeref:typename:int	file:
+__clockid_t	dp3.i	/^typedef int __clockid_t;$/;"	t	language:C	typeref:typename:int	file:
+__clockid_t	dp4.i	/^typedef int __clockid_t;$/;"	t	language:C	typeref:typename:int	file:
+__clockid_t	main.i	/^typedef int __clockid_t;$/;"	t	language:C	typeref:typename:int	file:
+__count	dp1.i	/^  int __count;$/;"	m	language:C	struct:__anon0f4ed3c10208	typeref:typename:int	file:
+__count	dp2.i	/^  int __count;$/;"	m	language:C	struct:__anon0f4ed8020208	typeref:typename:int	file:
+__count	dp3.i	/^  int __count;$/;"	m	language:C	struct:__anon0f4edc430208	typeref:typename:int	file:
+__count	dp4.i	/^  int __count;$/;"	m	language:C	struct:__anon0f4ee0840208	typeref:typename:int	file:
+__count	main.i	/^  int __count;$/;"	m	language:C	struct:__anon0d3808410208	typeref:typename:int	file:
+__daddr_t	dp1.i	/^typedef int __daddr_t;$/;"	t	language:C	typeref:typename:int	file:
+__daddr_t	dp2.i	/^typedef int __daddr_t;$/;"	t	language:C	typeref:typename:int	file:
+__daddr_t	dp3.i	/^typedef int __daddr_t;$/;"	t	language:C	typeref:typename:int	file:
+__daddr_t	dp4.i	/^typedef int __daddr_t;$/;"	t	language:C	typeref:typename:int	file:
+__daddr_t	main.i	/^typedef int __daddr_t;$/;"	t	language:C	typeref:typename:int	file:
+__dev_t	dp1.i	/^typedef unsigned long int __dev_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__dev_t	dp2.i	/^typedef unsigned long int __dev_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__dev_t	dp3.i	/^typedef unsigned long int __dev_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__dev_t	dp4.i	/^typedef unsigned long int __dev_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__dev_t	main.i	/^typedef unsigned long int __dev_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fpos64_t	dp1.i	/^} __fpos64_t;$/;"	t	language:C	typeref:struct:_G_fpos64_t	file:
+__fpos64_t	dp2.i	/^} __fpos64_t;$/;"	t	language:C	typeref:struct:_G_fpos64_t	file:
+__fpos64_t	dp3.i	/^} __fpos64_t;$/;"	t	language:C	typeref:struct:_G_fpos64_t	file:
+__fpos64_t	dp4.i	/^} __fpos64_t;$/;"	t	language:C	typeref:struct:_G_fpos64_t	file:
+__fpos64_t	main.i	/^} __fpos64_t;$/;"	t	language:C	typeref:struct:_G_fpos64_t	file:
+__fpos_t	dp1.i	/^} __fpos_t;$/;"	t	language:C	typeref:struct:_G_fpos_t	file:
+__fpos_t	dp2.i	/^} __fpos_t;$/;"	t	language:C	typeref:struct:_G_fpos_t	file:
+__fpos_t	dp3.i	/^} __fpos_t;$/;"	t	language:C	typeref:struct:_G_fpos_t	file:
+__fpos_t	dp4.i	/^} __fpos_t;$/;"	t	language:C	typeref:struct:_G_fpos_t	file:
+__fpos_t	main.i	/^} __fpos_t;$/;"	t	language:C	typeref:struct:_G_fpos_t	file:
+__fsblkcnt64_t	dp1.i	/^typedef unsigned long int __fsblkcnt64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsblkcnt64_t	dp2.i	/^typedef unsigned long int __fsblkcnt64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsblkcnt64_t	dp3.i	/^typedef unsigned long int __fsblkcnt64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsblkcnt64_t	dp4.i	/^typedef unsigned long int __fsblkcnt64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsblkcnt64_t	main.i	/^typedef unsigned long int __fsblkcnt64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsblkcnt_t	dp1.i	/^typedef unsigned long int __fsblkcnt_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsblkcnt_t	dp2.i	/^typedef unsigned long int __fsblkcnt_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsblkcnt_t	dp3.i	/^typedef unsigned long int __fsblkcnt_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsblkcnt_t	dp4.i	/^typedef unsigned long int __fsblkcnt_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsblkcnt_t	main.i	/^typedef unsigned long int __fsblkcnt_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsfilcnt64_t	dp1.i	/^typedef unsigned long int __fsfilcnt64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsfilcnt64_t	dp2.i	/^typedef unsigned long int __fsfilcnt64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsfilcnt64_t	dp3.i	/^typedef unsigned long int __fsfilcnt64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsfilcnt64_t	dp4.i	/^typedef unsigned long int __fsfilcnt64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsfilcnt64_t	main.i	/^typedef unsigned long int __fsfilcnt64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsfilcnt_t	dp1.i	/^typedef unsigned long int __fsfilcnt_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsfilcnt_t	dp2.i	/^typedef unsigned long int __fsfilcnt_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsfilcnt_t	dp3.i	/^typedef unsigned long int __fsfilcnt_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsfilcnt_t	dp4.i	/^typedef unsigned long int __fsfilcnt_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsfilcnt_t	main.i	/^typedef unsigned long int __fsfilcnt_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__fsid_t	dp1.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	t	language:C	typeref:struct:__anon0f4ed3c10108	file:
+__fsid_t	dp2.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	t	language:C	typeref:struct:__anon0f4ed8020108	file:
+__fsid_t	dp3.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	t	language:C	typeref:struct:__anon0f4edc430108	file:
+__fsid_t	dp4.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	t	language:C	typeref:struct:__anon0f4ee0840108	file:
+__fsid_t	main.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	t	language:C	typeref:struct:__anon0d3808410108	file:
+__fsword_t	dp1.i	/^typedef long int __fsword_t;$/;"	t	language:C	typeref:typename:long int	file:
+__fsword_t	dp2.i	/^typedef long int __fsword_t;$/;"	t	language:C	typeref:typename:long int	file:
+__fsword_t	dp3.i	/^typedef long int __fsword_t;$/;"	t	language:C	typeref:typename:long int	file:
+__fsword_t	dp4.i	/^typedef long int __fsword_t;$/;"	t	language:C	typeref:typename:long int	file:
+__fsword_t	main.i	/^typedef long int __fsword_t;$/;"	t	language:C	typeref:typename:long int	file:
+__gid_t	dp1.i	/^typedef unsigned int __gid_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__gid_t	dp2.i	/^typedef unsigned int __gid_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__gid_t	dp3.i	/^typedef unsigned int __gid_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__gid_t	dp4.i	/^typedef unsigned int __gid_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__gid_t	main.i	/^typedef unsigned int __gid_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__gnuc_va_list	dp1.i	/^typedef __builtin_va_list __gnuc_va_list;$/;"	t	language:C	typeref:typename:__builtin_va_list	file:
+__gnuc_va_list	dp2.i	/^typedef __builtin_va_list __gnuc_va_list;$/;"	t	language:C	typeref:typename:__builtin_va_list	file:
+__gnuc_va_list	dp3.i	/^typedef __builtin_va_list __gnuc_va_list;$/;"	t	language:C	typeref:typename:__builtin_va_list	file:
+__gnuc_va_list	dp4.i	/^typedef __builtin_va_list __gnuc_va_list;$/;"	t	language:C	typeref:typename:__builtin_va_list	file:
+__gnuc_va_list	main.i	/^typedef __builtin_va_list __gnuc_va_list;$/;"	t	language:C	typeref:typename:__builtin_va_list	file:
+__id_t	dp1.i	/^typedef unsigned int __id_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__id_t	dp2.i	/^typedef unsigned int __id_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__id_t	dp3.i	/^typedef unsigned int __id_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__id_t	dp4.i	/^typedef unsigned int __id_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__id_t	main.i	/^typedef unsigned int __id_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__ino64_t	dp1.i	/^typedef unsigned long int __ino64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__ino64_t	dp2.i	/^typedef unsigned long int __ino64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__ino64_t	dp3.i	/^typedef unsigned long int __ino64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__ino64_t	dp4.i	/^typedef unsigned long int __ino64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__ino64_t	main.i	/^typedef unsigned long int __ino64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__ino_t	dp1.i	/^typedef unsigned long int __ino_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__ino_t	dp2.i	/^typedef unsigned long int __ino_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__ino_t	dp3.i	/^typedef unsigned long int __ino_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__ino_t	dp4.i	/^typedef unsigned long int __ino_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__ino_t	main.i	/^typedef unsigned long int __ino_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__int16_t	dp1.i	/^typedef signed short int __int16_t;$/;"	t	language:C	typeref:typename:signed short int	file:
+__int16_t	dp2.i	/^typedef signed short int __int16_t;$/;"	t	language:C	typeref:typename:signed short int	file:
+__int16_t	dp3.i	/^typedef signed short int __int16_t;$/;"	t	language:C	typeref:typename:signed short int	file:
+__int16_t	dp4.i	/^typedef signed short int __int16_t;$/;"	t	language:C	typeref:typename:signed short int	file:
+__int16_t	main.i	/^typedef signed short int __int16_t;$/;"	t	language:C	typeref:typename:signed short int	file:
+__int32_t	dp1.i	/^typedef signed int __int32_t;$/;"	t	language:C	typeref:typename:signed int	file:
+__int32_t	dp2.i	/^typedef signed int __int32_t;$/;"	t	language:C	typeref:typename:signed int	file:
+__int32_t	dp3.i	/^typedef signed int __int32_t;$/;"	t	language:C	typeref:typename:signed int	file:
+__int32_t	dp4.i	/^typedef signed int __int32_t;$/;"	t	language:C	typeref:typename:signed int	file:
+__int32_t	main.i	/^typedef signed int __int32_t;$/;"	t	language:C	typeref:typename:signed int	file:
+__int64_t	dp1.i	/^typedef signed long int __int64_t;$/;"	t	language:C	typeref:typename:signed long int	file:
+__int64_t	dp2.i	/^typedef signed long int __int64_t;$/;"	t	language:C	typeref:typename:signed long int	file:
+__int64_t	dp3.i	/^typedef signed long int __int64_t;$/;"	t	language:C	typeref:typename:signed long int	file:
+__int64_t	dp4.i	/^typedef signed long int __int64_t;$/;"	t	language:C	typeref:typename:signed long int	file:
+__int64_t	main.i	/^typedef signed long int __int64_t;$/;"	t	language:C	typeref:typename:signed long int	file:
+__int8_t	dp1.i	/^typedef signed char __int8_t;$/;"	t	language:C	typeref:typename:signed char	file:
+__int8_t	dp2.i	/^typedef signed char __int8_t;$/;"	t	language:C	typeref:typename:signed char	file:
+__int8_t	dp3.i	/^typedef signed char __int8_t;$/;"	t	language:C	typeref:typename:signed char	file:
+__int8_t	dp4.i	/^typedef signed char __int8_t;$/;"	t	language:C	typeref:typename:signed char	file:
+__int8_t	main.i	/^typedef signed char __int8_t;$/;"	t	language:C	typeref:typename:signed char	file:
+__int_least16_t	dp1.i	/^typedef __int16_t __int_least16_t;$/;"	t	language:C	typeref:typename:__int16_t	file:
+__int_least16_t	dp2.i	/^typedef __int16_t __int_least16_t;$/;"	t	language:C	typeref:typename:__int16_t	file:
+__int_least16_t	dp3.i	/^typedef __int16_t __int_least16_t;$/;"	t	language:C	typeref:typename:__int16_t	file:
+__int_least16_t	dp4.i	/^typedef __int16_t __int_least16_t;$/;"	t	language:C	typeref:typename:__int16_t	file:
+__int_least16_t	main.i	/^typedef __int16_t __int_least16_t;$/;"	t	language:C	typeref:typename:__int16_t	file:
+__int_least32_t	dp1.i	/^typedef __int32_t __int_least32_t;$/;"	t	language:C	typeref:typename:__int32_t	file:
+__int_least32_t	dp2.i	/^typedef __int32_t __int_least32_t;$/;"	t	language:C	typeref:typename:__int32_t	file:
+__int_least32_t	dp3.i	/^typedef __int32_t __int_least32_t;$/;"	t	language:C	typeref:typename:__int32_t	file:
+__int_least32_t	dp4.i	/^typedef __int32_t __int_least32_t;$/;"	t	language:C	typeref:typename:__int32_t	file:
+__int_least32_t	main.i	/^typedef __int32_t __int_least32_t;$/;"	t	language:C	typeref:typename:__int32_t	file:
+__int_least64_t	dp1.i	/^typedef __int64_t __int_least64_t;$/;"	t	language:C	typeref:typename:__int64_t	file:
+__int_least64_t	dp2.i	/^typedef __int64_t __int_least64_t;$/;"	t	language:C	typeref:typename:__int64_t	file:
+__int_least64_t	dp3.i	/^typedef __int64_t __int_least64_t;$/;"	t	language:C	typeref:typename:__int64_t	file:
+__int_least64_t	dp4.i	/^typedef __int64_t __int_least64_t;$/;"	t	language:C	typeref:typename:__int64_t	file:
+__int_least64_t	main.i	/^typedef __int64_t __int_least64_t;$/;"	t	language:C	typeref:typename:__int64_t	file:
+__int_least8_t	dp1.i	/^typedef __int8_t __int_least8_t;$/;"	t	language:C	typeref:typename:__int8_t	file:
+__int_least8_t	dp2.i	/^typedef __int8_t __int_least8_t;$/;"	t	language:C	typeref:typename:__int8_t	file:
+__int_least8_t	dp3.i	/^typedef __int8_t __int_least8_t;$/;"	t	language:C	typeref:typename:__int8_t	file:
+__int_least8_t	dp4.i	/^typedef __int8_t __int_least8_t;$/;"	t	language:C	typeref:typename:__int8_t	file:
+__int_least8_t	main.i	/^typedef __int8_t __int_least8_t;$/;"	t	language:C	typeref:typename:__int8_t	file:
+__intmax_t	dp1.i	/^typedef long int __intmax_t;$/;"	t	language:C	typeref:typename:long int	file:
+__intmax_t	dp2.i	/^typedef long int __intmax_t;$/;"	t	language:C	typeref:typename:long int	file:
+__intmax_t	dp3.i	/^typedef long int __intmax_t;$/;"	t	language:C	typeref:typename:long int	file:
+__intmax_t	dp4.i	/^typedef long int __intmax_t;$/;"	t	language:C	typeref:typename:long int	file:
+__intmax_t	main.i	/^typedef long int __intmax_t;$/;"	t	language:C	typeref:typename:long int	file:
+__intptr_t	dp1.i	/^typedef long int __intptr_t;$/;"	t	language:C	typeref:typename:long int	file:
+__intptr_t	dp2.i	/^typedef long int __intptr_t;$/;"	t	language:C	typeref:typename:long int	file:
+__intptr_t	dp3.i	/^typedef long int __intptr_t;$/;"	t	language:C	typeref:typename:long int	file:
+__intptr_t	dp4.i	/^typedef long int __intptr_t;$/;"	t	language:C	typeref:typename:long int	file:
+__intptr_t	main.i	/^typedef long int __intptr_t;$/;"	t	language:C	typeref:typename:long int	file:
+__key_t	dp1.i	/^typedef int __key_t;$/;"	t	language:C	typeref:typename:int	file:
+__key_t	dp2.i	/^typedef int __key_t;$/;"	t	language:C	typeref:typename:int	file:
+__key_t	dp3.i	/^typedef int __key_t;$/;"	t	language:C	typeref:typename:int	file:
+__key_t	dp4.i	/^typedef int __key_t;$/;"	t	language:C	typeref:typename:int	file:
+__key_t	main.i	/^typedef int __key_t;$/;"	t	language:C	typeref:typename:int	file:
+__loff_t	dp1.i	/^typedef __off64_t __loff_t;$/;"	t	language:C	typeref:typename:__off64_t	file:
+__loff_t	dp2.i	/^typedef __off64_t __loff_t;$/;"	t	language:C	typeref:typename:__off64_t	file:
+__loff_t	dp3.i	/^typedef __off64_t __loff_t;$/;"	t	language:C	typeref:typename:__off64_t	file:
+__loff_t	dp4.i	/^typedef __off64_t __loff_t;$/;"	t	language:C	typeref:typename:__off64_t	file:
+__loff_t	main.i	/^typedef __off64_t __loff_t;$/;"	t	language:C	typeref:typename:__off64_t	file:
+__mbstate_t	dp1.i	/^} __mbstate_t;$/;"	t	language:C	typeref:struct:__anon0f4ed3c10208	file:
+__mbstate_t	dp2.i	/^} __mbstate_t;$/;"	t	language:C	typeref:struct:__anon0f4ed8020208	file:
+__mbstate_t	dp3.i	/^} __mbstate_t;$/;"	t	language:C	typeref:struct:__anon0f4edc430208	file:
+__mbstate_t	dp4.i	/^} __mbstate_t;$/;"	t	language:C	typeref:struct:__anon0f4ee0840208	file:
+__mbstate_t	main.i	/^} __mbstate_t;$/;"	t	language:C	typeref:struct:__anon0d3808410208	file:
+__mode_t	dp1.i	/^typedef unsigned int __mode_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__mode_t	dp2.i	/^typedef unsigned int __mode_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__mode_t	dp3.i	/^typedef unsigned int __mode_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__mode_t	dp4.i	/^typedef unsigned int __mode_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__mode_t	main.i	/^typedef unsigned int __mode_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__nlink_t	dp1.i	/^typedef unsigned long int __nlink_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__nlink_t	dp2.i	/^typedef unsigned long int __nlink_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__nlink_t	dp3.i	/^typedef unsigned long int __nlink_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__nlink_t	dp4.i	/^typedef unsigned long int __nlink_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__nlink_t	main.i	/^typedef unsigned long int __nlink_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__off64_t	dp1.i	/^typedef long int __off64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__off64_t	dp2.i	/^typedef long int __off64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__off64_t	dp3.i	/^typedef long int __off64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__off64_t	dp4.i	/^typedef long int __off64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__off64_t	main.i	/^typedef long int __off64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__off_t	dp1.i	/^typedef long int __off_t;$/;"	t	language:C	typeref:typename:long int	file:
+__off_t	dp2.i	/^typedef long int __off_t;$/;"	t	language:C	typeref:typename:long int	file:
+__off_t	dp3.i	/^typedef long int __off_t;$/;"	t	language:C	typeref:typename:long int	file:
+__off_t	dp4.i	/^typedef long int __off_t;$/;"	t	language:C	typeref:typename:long int	file:
+__off_t	main.i	/^typedef long int __off_t;$/;"	t	language:C	typeref:typename:long int	file:
+__pad5	dp1.i	/^  size_t __pad5;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:size_t	file:
+__pad5	dp2.i	/^  size_t __pad5;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:size_t	file:
+__pad5	dp3.i	/^  size_t __pad5;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:size_t	file:
+__pad5	dp4.i	/^  size_t __pad5;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:size_t	file:
+__pad5	main.i	/^  size_t __pad5;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:size_t	file:
+__pid_t	dp1.i	/^typedef int __pid_t;$/;"	t	language:C	typeref:typename:int	file:
+__pid_t	dp2.i	/^typedef int __pid_t;$/;"	t	language:C	typeref:typename:int	file:
+__pid_t	dp3.i	/^typedef int __pid_t;$/;"	t	language:C	typeref:typename:int	file:
+__pid_t	dp4.i	/^typedef int __pid_t;$/;"	t	language:C	typeref:typename:int	file:
+__pid_t	main.i	/^typedef int __pid_t;$/;"	t	language:C	typeref:typename:int	file:
+__pos	dp1.i	/^  __off64_t __pos;$/;"	m	language:C	struct:_G_fpos64_t	typeref:typename:__off64_t	file:
+__pos	dp1.i	/^  __off_t __pos;$/;"	m	language:C	struct:_G_fpos_t	typeref:typename:__off_t	file:
+__pos	dp2.i	/^  __off64_t __pos;$/;"	m	language:C	struct:_G_fpos64_t	typeref:typename:__off64_t	file:
+__pos	dp2.i	/^  __off_t __pos;$/;"	m	language:C	struct:_G_fpos_t	typeref:typename:__off_t	file:
+__pos	dp3.i	/^  __off64_t __pos;$/;"	m	language:C	struct:_G_fpos64_t	typeref:typename:__off64_t	file:
+__pos	dp3.i	/^  __off_t __pos;$/;"	m	language:C	struct:_G_fpos_t	typeref:typename:__off_t	file:
+__pos	dp4.i	/^  __off64_t __pos;$/;"	m	language:C	struct:_G_fpos64_t	typeref:typename:__off64_t	file:
+__pos	dp4.i	/^  __off_t __pos;$/;"	m	language:C	struct:_G_fpos_t	typeref:typename:__off_t	file:
+__pos	main.i	/^  __off64_t __pos;$/;"	m	language:C	struct:_G_fpos64_t	typeref:typename:__off64_t	file:
+__pos	main.i	/^  __off_t __pos;$/;"	m	language:C	struct:_G_fpos_t	typeref:typename:__off_t	file:
+__quad_t	dp1.i	/^typedef long int __quad_t;$/;"	t	language:C	typeref:typename:long int	file:
+__quad_t	dp2.i	/^typedef long int __quad_t;$/;"	t	language:C	typeref:typename:long int	file:
+__quad_t	dp3.i	/^typedef long int __quad_t;$/;"	t	language:C	typeref:typename:long int	file:
+__quad_t	dp4.i	/^typedef long int __quad_t;$/;"	t	language:C	typeref:typename:long int	file:
+__quad_t	main.i	/^typedef long int __quad_t;$/;"	t	language:C	typeref:typename:long int	file:
+__rlim64_t	dp1.i	/^typedef unsigned long int __rlim64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__rlim64_t	dp2.i	/^typedef unsigned long int __rlim64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__rlim64_t	dp3.i	/^typedef unsigned long int __rlim64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__rlim64_t	dp4.i	/^typedef unsigned long int __rlim64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__rlim64_t	main.i	/^typedef unsigned long int __rlim64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__rlim_t	dp1.i	/^typedef unsigned long int __rlim_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__rlim_t	dp2.i	/^typedef unsigned long int __rlim_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__rlim_t	dp3.i	/^typedef unsigned long int __rlim_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__rlim_t	dp4.i	/^typedef unsigned long int __rlim_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__rlim_t	main.i	/^typedef unsigned long int __rlim_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__sig_atomic_t	dp1.i	/^typedef int __sig_atomic_t;$/;"	t	language:C	typeref:typename:int	file:
+__sig_atomic_t	dp2.i	/^typedef int __sig_atomic_t;$/;"	t	language:C	typeref:typename:int	file:
+__sig_atomic_t	dp3.i	/^typedef int __sig_atomic_t;$/;"	t	language:C	typeref:typename:int	file:
+__sig_atomic_t	dp4.i	/^typedef int __sig_atomic_t;$/;"	t	language:C	typeref:typename:int	file:
+__sig_atomic_t	main.i	/^typedef int __sig_atomic_t;$/;"	t	language:C	typeref:typename:int	file:
+__socklen_t	dp1.i	/^typedef unsigned int __socklen_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__socklen_t	dp2.i	/^typedef unsigned int __socklen_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__socklen_t	dp3.i	/^typedef unsigned int __socklen_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__socklen_t	dp4.i	/^typedef unsigned int __socklen_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__socklen_t	main.i	/^typedef unsigned int __socklen_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__ssize_t	dp1.i	/^typedef long int __ssize_t;$/;"	t	language:C	typeref:typename:long int	file:
+__ssize_t	dp2.i	/^typedef long int __ssize_t;$/;"	t	language:C	typeref:typename:long int	file:
+__ssize_t	dp3.i	/^typedef long int __ssize_t;$/;"	t	language:C	typeref:typename:long int	file:
+__ssize_t	dp4.i	/^typedef long int __ssize_t;$/;"	t	language:C	typeref:typename:long int	file:
+__ssize_t	main.i	/^typedef long int __ssize_t;$/;"	t	language:C	typeref:typename:long int	file:
+__state	dp1.i	/^  __mbstate_t __state;$/;"	m	language:C	struct:_G_fpos64_t	typeref:typename:__mbstate_t	file:
+__state	dp1.i	/^  __mbstate_t __state;$/;"	m	language:C	struct:_G_fpos_t	typeref:typename:__mbstate_t	file:
+__state	dp2.i	/^  __mbstate_t __state;$/;"	m	language:C	struct:_G_fpos64_t	typeref:typename:__mbstate_t	file:
+__state	dp2.i	/^  __mbstate_t __state;$/;"	m	language:C	struct:_G_fpos_t	typeref:typename:__mbstate_t	file:
+__state	dp3.i	/^  __mbstate_t __state;$/;"	m	language:C	struct:_G_fpos64_t	typeref:typename:__mbstate_t	file:
+__state	dp3.i	/^  __mbstate_t __state;$/;"	m	language:C	struct:_G_fpos_t	typeref:typename:__mbstate_t	file:
+__state	dp4.i	/^  __mbstate_t __state;$/;"	m	language:C	struct:_G_fpos64_t	typeref:typename:__mbstate_t	file:
+__state	dp4.i	/^  __mbstate_t __state;$/;"	m	language:C	struct:_G_fpos_t	typeref:typename:__mbstate_t	file:
+__state	main.i	/^  __mbstate_t __state;$/;"	m	language:C	struct:_G_fpos64_t	typeref:typename:__mbstate_t	file:
+__state	main.i	/^  __mbstate_t __state;$/;"	m	language:C	struct:_G_fpos_t	typeref:typename:__mbstate_t	file:
+__suseconds64_t	dp1.i	/^typedef long int __suseconds64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__suseconds64_t	dp2.i	/^typedef long int __suseconds64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__suseconds64_t	dp3.i	/^typedef long int __suseconds64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__suseconds64_t	dp4.i	/^typedef long int __suseconds64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__suseconds64_t	main.i	/^typedef long int __suseconds64_t;$/;"	t	language:C	typeref:typename:long int	file:
+__suseconds_t	dp1.i	/^typedef long int __suseconds_t;$/;"	t	language:C	typeref:typename:long int	file:
+__suseconds_t	dp2.i	/^typedef long int __suseconds_t;$/;"	t	language:C	typeref:typename:long int	file:
+__suseconds_t	dp3.i	/^typedef long int __suseconds_t;$/;"	t	language:C	typeref:typename:long int	file:
+__suseconds_t	dp4.i	/^typedef long int __suseconds_t;$/;"	t	language:C	typeref:typename:long int	file:
+__suseconds_t	main.i	/^typedef long int __suseconds_t;$/;"	t	language:C	typeref:typename:long int	file:
+__syscall_slong_t	dp1.i	/^typedef long int __syscall_slong_t;$/;"	t	language:C	typeref:typename:long int	file:
+__syscall_slong_t	dp2.i	/^typedef long int __syscall_slong_t;$/;"	t	language:C	typeref:typename:long int	file:
+__syscall_slong_t	dp3.i	/^typedef long int __syscall_slong_t;$/;"	t	language:C	typeref:typename:long int	file:
+__syscall_slong_t	dp4.i	/^typedef long int __syscall_slong_t;$/;"	t	language:C	typeref:typename:long int	file:
+__syscall_slong_t	main.i	/^typedef long int __syscall_slong_t;$/;"	t	language:C	typeref:typename:long int	file:
+__syscall_ulong_t	dp1.i	/^typedef unsigned long int __syscall_ulong_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__syscall_ulong_t	dp2.i	/^typedef unsigned long int __syscall_ulong_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__syscall_ulong_t	dp3.i	/^typedef unsigned long int __syscall_ulong_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__syscall_ulong_t	dp4.i	/^typedef unsigned long int __syscall_ulong_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__syscall_ulong_t	main.i	/^typedef unsigned long int __syscall_ulong_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__time_t	dp1.i	/^typedef long int __time_t;$/;"	t	language:C	typeref:typename:long int	file:
+__time_t	dp2.i	/^typedef long int __time_t;$/;"	t	language:C	typeref:typename:long int	file:
+__time_t	dp3.i	/^typedef long int __time_t;$/;"	t	language:C	typeref:typename:long int	file:
+__time_t	dp4.i	/^typedef long int __time_t;$/;"	t	language:C	typeref:typename:long int	file:
+__time_t	main.i	/^typedef long int __time_t;$/;"	t	language:C	typeref:typename:long int	file:
+__timer_t	dp1.i	/^typedef void * __timer_t;$/;"	t	language:C	typeref:typename:void *	file:
+__timer_t	dp2.i	/^typedef void * __timer_t;$/;"	t	language:C	typeref:typename:void *	file:
+__timer_t	dp3.i	/^typedef void * __timer_t;$/;"	t	language:C	typeref:typename:void *	file:
+__timer_t	dp4.i	/^typedef void * __timer_t;$/;"	t	language:C	typeref:typename:void *	file:
+__timer_t	main.i	/^typedef void * __timer_t;$/;"	t	language:C	typeref:typename:void *	file:
+__u_char	dp1.i	/^typedef unsigned char __u_char;$/;"	t	language:C	typeref:typename:unsigned char	file:
+__u_char	dp2.i	/^typedef unsigned char __u_char;$/;"	t	language:C	typeref:typename:unsigned char	file:
+__u_char	dp3.i	/^typedef unsigned char __u_char;$/;"	t	language:C	typeref:typename:unsigned char	file:
+__u_char	dp4.i	/^typedef unsigned char __u_char;$/;"	t	language:C	typeref:typename:unsigned char	file:
+__u_char	main.i	/^typedef unsigned char __u_char;$/;"	t	language:C	typeref:typename:unsigned char	file:
+__u_int	dp1.i	/^typedef unsigned int __u_int;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__u_int	dp2.i	/^typedef unsigned int __u_int;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__u_int	dp3.i	/^typedef unsigned int __u_int;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__u_int	dp4.i	/^typedef unsigned int __u_int;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__u_int	main.i	/^typedef unsigned int __u_int;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__u_long	dp1.i	/^typedef unsigned long int __u_long;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__u_long	dp2.i	/^typedef unsigned long int __u_long;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__u_long	dp3.i	/^typedef unsigned long int __u_long;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__u_long	dp4.i	/^typedef unsigned long int __u_long;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__u_long	main.i	/^typedef unsigned long int __u_long;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__u_quad_t	dp1.i	/^typedef unsigned long int __u_quad_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__u_quad_t	dp2.i	/^typedef unsigned long int __u_quad_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__u_quad_t	dp3.i	/^typedef unsigned long int __u_quad_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__u_quad_t	dp4.i	/^typedef unsigned long int __u_quad_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__u_quad_t	main.i	/^typedef unsigned long int __u_quad_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__u_short	dp1.i	/^typedef unsigned short int __u_short;$/;"	t	language:C	typeref:typename:unsigned short int	file:
+__u_short	dp2.i	/^typedef unsigned short int __u_short;$/;"	t	language:C	typeref:typename:unsigned short int	file:
+__u_short	dp3.i	/^typedef unsigned short int __u_short;$/;"	t	language:C	typeref:typename:unsigned short int	file:
+__u_short	dp4.i	/^typedef unsigned short int __u_short;$/;"	t	language:C	typeref:typename:unsigned short int	file:
+__u_short	main.i	/^typedef unsigned short int __u_short;$/;"	t	language:C	typeref:typename:unsigned short int	file:
+__uid_t	dp1.i	/^typedef unsigned int __uid_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__uid_t	dp2.i	/^typedef unsigned int __uid_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__uid_t	dp3.i	/^typedef unsigned int __uid_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__uid_t	dp4.i	/^typedef unsigned int __uid_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__uid_t	main.i	/^typedef unsigned int __uid_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__uint16_t	dp1.i	/^typedef unsigned short int __uint16_t;$/;"	t	language:C	typeref:typename:unsigned short int	file:
+__uint16_t	dp2.i	/^typedef unsigned short int __uint16_t;$/;"	t	language:C	typeref:typename:unsigned short int	file:
+__uint16_t	dp3.i	/^typedef unsigned short int __uint16_t;$/;"	t	language:C	typeref:typename:unsigned short int	file:
+__uint16_t	dp4.i	/^typedef unsigned short int __uint16_t;$/;"	t	language:C	typeref:typename:unsigned short int	file:
+__uint16_t	main.i	/^typedef unsigned short int __uint16_t;$/;"	t	language:C	typeref:typename:unsigned short int	file:
+__uint32_t	dp1.i	/^typedef unsigned int __uint32_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__uint32_t	dp2.i	/^typedef unsigned int __uint32_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__uint32_t	dp3.i	/^typedef unsigned int __uint32_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__uint32_t	dp4.i	/^typedef unsigned int __uint32_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__uint32_t	main.i	/^typedef unsigned int __uint32_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__uint64_t	dp1.i	/^typedef unsigned long int __uint64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__uint64_t	dp2.i	/^typedef unsigned long int __uint64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__uint64_t	dp3.i	/^typedef unsigned long int __uint64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__uint64_t	dp4.i	/^typedef unsigned long int __uint64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__uint64_t	main.i	/^typedef unsigned long int __uint64_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__uint8_t	dp1.i	/^typedef unsigned char __uint8_t;$/;"	t	language:C	typeref:typename:unsigned char	file:
+__uint8_t	dp2.i	/^typedef unsigned char __uint8_t;$/;"	t	language:C	typeref:typename:unsigned char	file:
+__uint8_t	dp3.i	/^typedef unsigned char __uint8_t;$/;"	t	language:C	typeref:typename:unsigned char	file:
+__uint8_t	dp4.i	/^typedef unsigned char __uint8_t;$/;"	t	language:C	typeref:typename:unsigned char	file:
+__uint8_t	main.i	/^typedef unsigned char __uint8_t;$/;"	t	language:C	typeref:typename:unsigned char	file:
+__uint_least16_t	dp1.i	/^typedef __uint16_t __uint_least16_t;$/;"	t	language:C	typeref:typename:__uint16_t	file:
+__uint_least16_t	dp2.i	/^typedef __uint16_t __uint_least16_t;$/;"	t	language:C	typeref:typename:__uint16_t	file:
+__uint_least16_t	dp3.i	/^typedef __uint16_t __uint_least16_t;$/;"	t	language:C	typeref:typename:__uint16_t	file:
+__uint_least16_t	dp4.i	/^typedef __uint16_t __uint_least16_t;$/;"	t	language:C	typeref:typename:__uint16_t	file:
+__uint_least16_t	main.i	/^typedef __uint16_t __uint_least16_t;$/;"	t	language:C	typeref:typename:__uint16_t	file:
+__uint_least32_t	dp1.i	/^typedef __uint32_t __uint_least32_t;$/;"	t	language:C	typeref:typename:__uint32_t	file:
+__uint_least32_t	dp2.i	/^typedef __uint32_t __uint_least32_t;$/;"	t	language:C	typeref:typename:__uint32_t	file:
+__uint_least32_t	dp3.i	/^typedef __uint32_t __uint_least32_t;$/;"	t	language:C	typeref:typename:__uint32_t	file:
+__uint_least32_t	dp4.i	/^typedef __uint32_t __uint_least32_t;$/;"	t	language:C	typeref:typename:__uint32_t	file:
+__uint_least32_t	main.i	/^typedef __uint32_t __uint_least32_t;$/;"	t	language:C	typeref:typename:__uint32_t	file:
+__uint_least64_t	dp1.i	/^typedef __uint64_t __uint_least64_t;$/;"	t	language:C	typeref:typename:__uint64_t	file:
+__uint_least64_t	dp2.i	/^typedef __uint64_t __uint_least64_t;$/;"	t	language:C	typeref:typename:__uint64_t	file:
+__uint_least64_t	dp3.i	/^typedef __uint64_t __uint_least64_t;$/;"	t	language:C	typeref:typename:__uint64_t	file:
+__uint_least64_t	dp4.i	/^typedef __uint64_t __uint_least64_t;$/;"	t	language:C	typeref:typename:__uint64_t	file:
+__uint_least64_t	main.i	/^typedef __uint64_t __uint_least64_t;$/;"	t	language:C	typeref:typename:__uint64_t	file:
+__uint_least8_t	dp1.i	/^typedef __uint8_t __uint_least8_t;$/;"	t	language:C	typeref:typename:__uint8_t	file:
+__uint_least8_t	dp2.i	/^typedef __uint8_t __uint_least8_t;$/;"	t	language:C	typeref:typename:__uint8_t	file:
+__uint_least8_t	dp3.i	/^typedef __uint8_t __uint_least8_t;$/;"	t	language:C	typeref:typename:__uint8_t	file:
+__uint_least8_t	dp4.i	/^typedef __uint8_t __uint_least8_t;$/;"	t	language:C	typeref:typename:__uint8_t	file:
+__uint_least8_t	main.i	/^typedef __uint8_t __uint_least8_t;$/;"	t	language:C	typeref:typename:__uint8_t	file:
+__uintmax_t	dp1.i	/^typedef unsigned long int __uintmax_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__uintmax_t	dp2.i	/^typedef unsigned long int __uintmax_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__uintmax_t	dp3.i	/^typedef unsigned long int __uintmax_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__uintmax_t	dp4.i	/^typedef unsigned long int __uintmax_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__uintmax_t	main.i	/^typedef unsigned long int __uintmax_t;$/;"	t	language:C	typeref:typename:unsigned long int	file:
+__useconds_t	dp1.i	/^typedef unsigned int __useconds_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__useconds_t	dp2.i	/^typedef unsigned int __useconds_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__useconds_t	dp3.i	/^typedef unsigned int __useconds_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__useconds_t	dp4.i	/^typedef unsigned int __useconds_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__useconds_t	main.i	/^typedef unsigned int __useconds_t;$/;"	t	language:C	typeref:typename:unsigned int	file:
+__val	dp1.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	m	language:C	struct:__anon0f4ed3c10108	typeref:typename:int[2]	file:
+__val	dp2.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	m	language:C	struct:__anon0f4ed8020108	typeref:typename:int[2]	file:
+__val	dp3.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	m	language:C	struct:__anon0f4edc430108	typeref:typename:int[2]	file:
+__val	dp4.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	m	language:C	struct:__anon0f4ee0840108	typeref:typename:int[2]	file:
+__val	main.i	/^typedef struct { int __val[2]; } __fsid_t;$/;"	m	language:C	struct:__anon0d3808410108	typeref:typename:int[2]	file:
+__value	dp1.i	/^  } __value;$/;"	m	language:C	struct:__anon0f4ed3c10208	typeref:union:__anon0f4ed3c10208::__anon0f4ed3c1030a	file:
+__value	dp2.i	/^  } __value;$/;"	m	language:C	struct:__anon0f4ed8020208	typeref:union:__anon0f4ed8020208::__anon0f4ed802030a	file:
+__value	dp3.i	/^  } __value;$/;"	m	language:C	struct:__anon0f4edc430208	typeref:union:__anon0f4edc430208::__anon0f4edc43030a	file:
+__value	dp4.i	/^  } __value;$/;"	m	language:C	struct:__anon0f4ee0840208	typeref:union:__anon0f4ee0840208::__anon0f4ee084030a	file:
+__value	main.i	/^  } __value;$/;"	m	language:C	struct:__anon0d3808410208	typeref:union:__anon0d3808410208::__anon0d380841030a	file:
+__wch	dp1.i	/^    unsigned int __wch;$/;"	m	language:C	union:__anon0f4ed3c10208::__anon0f4ed3c1030a	typeref:typename:unsigned int	file:
+__wch	dp2.i	/^    unsigned int __wch;$/;"	m	language:C	union:__anon0f4ed8020208::__anon0f4ed802030a	typeref:typename:unsigned int	file:
+__wch	dp3.i	/^    unsigned int __wch;$/;"	m	language:C	union:__anon0f4edc430208::__anon0f4edc43030a	typeref:typename:unsigned int	file:
+__wch	dp4.i	/^    unsigned int __wch;$/;"	m	language:C	union:__anon0f4ee0840208::__anon0f4ee084030a	typeref:typename:unsigned int	file:
+__wch	main.i	/^    unsigned int __wch;$/;"	m	language:C	union:__anon0d3808410208::__anon0d380841030a	typeref:typename:unsigned int	file:
+__wchb	dp1.i	/^    char __wchb[4];$/;"	m	language:C	union:__anon0f4ed3c10208::__anon0f4ed3c1030a	typeref:typename:char[4]	file:
+__wchb	dp2.i	/^    char __wchb[4];$/;"	m	language:C	union:__anon0f4ed8020208::__anon0f4ed802030a	typeref:typename:char[4]	file:
+__wchb	dp3.i	/^    char __wchb[4];$/;"	m	language:C	union:__anon0f4edc430208::__anon0f4edc43030a	typeref:typename:char[4]	file:
+__wchb	dp4.i	/^    char __wchb[4];$/;"	m	language:C	union:__anon0f4ee0840208::__anon0f4ee084030a	typeref:typename:char[4]	file:
+__wchb	main.i	/^    char __wchb[4];$/;"	m	language:C	union:__anon0d3808410208::__anon0d380841030a	typeref:typename:char[4]	file:
+_chain	dp1.i	/^  struct _IO_FILE *_chain;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_FILE *	file:
+_chain	dp2.i	/^  struct _IO_FILE *_chain;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_FILE *	file:
+_chain	dp3.i	/^  struct _IO_FILE *_chain;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_FILE *	file:
+_chain	dp4.i	/^  struct _IO_FILE *_chain;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_FILE *	file:
+_chain	main.i	/^  struct _IO_FILE *_chain;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_FILE *	file:
+_codecvt	dp1.i	/^  struct _IO_codecvt *_codecvt;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_codecvt *	file:
+_codecvt	dp2.i	/^  struct _IO_codecvt *_codecvt;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_codecvt *	file:
+_codecvt	dp3.i	/^  struct _IO_codecvt *_codecvt;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_codecvt *	file:
+_codecvt	dp4.i	/^  struct _IO_codecvt *_codecvt;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_codecvt *	file:
+_codecvt	main.i	/^  struct _IO_codecvt *_codecvt;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_codecvt *	file:
+_cur_column	dp1.i	/^  unsigned short _cur_column;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:unsigned short	file:
+_cur_column	dp2.i	/^  unsigned short _cur_column;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:unsigned short	file:
+_cur_column	dp3.i	/^  unsigned short _cur_column;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:unsigned short	file:
+_cur_column	dp4.i	/^  unsigned short _cur_column;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:unsigned short	file:
+_cur_column	main.i	/^  unsigned short _cur_column;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:unsigned short	file:
+_fileno	dp1.i	/^  int _fileno;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_fileno	dp2.i	/^  int _fileno;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_fileno	dp3.i	/^  int _fileno;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_fileno	dp4.i	/^  int _fileno;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_fileno	main.i	/^  int _fileno;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_flags	dp1.i	/^  int _flags;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_flags	dp2.i	/^  int _flags;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_flags	dp3.i	/^  int _flags;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_flags	dp4.i	/^  int _flags;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_flags	main.i	/^  int _flags;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_flags2	dp1.i	/^  int _flags2;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_flags2	dp2.i	/^  int _flags2;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_flags2	dp3.i	/^  int _flags2;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_flags2	dp4.i	/^  int _flags2;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_flags2	main.i	/^  int _flags2;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_freeres_buf	dp1.i	/^  void *_freeres_buf;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:void *	file:
+_freeres_buf	dp2.i	/^  void *_freeres_buf;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:void *	file:
+_freeres_buf	dp3.i	/^  void *_freeres_buf;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:void *	file:
+_freeres_buf	dp4.i	/^  void *_freeres_buf;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:void *	file:
+_freeres_buf	main.i	/^  void *_freeres_buf;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:void *	file:
+_freeres_list	dp1.i	/^  struct _IO_FILE *_freeres_list;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_FILE *	file:
+_freeres_list	dp2.i	/^  struct _IO_FILE *_freeres_list;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_FILE *	file:
+_freeres_list	dp3.i	/^  struct _IO_FILE *_freeres_list;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_FILE *	file:
+_freeres_list	dp4.i	/^  struct _IO_FILE *_freeres_list;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_FILE *	file:
+_freeres_list	main.i	/^  struct _IO_FILE *_freeres_list;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_FILE *	file:
+_lock	dp1.i	/^  _IO_lock_t *_lock;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:_IO_lock_t *	file:
+_lock	dp2.i	/^  _IO_lock_t *_lock;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:_IO_lock_t *	file:
+_lock	dp3.i	/^  _IO_lock_t *_lock;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:_IO_lock_t *	file:
+_lock	dp4.i	/^  _IO_lock_t *_lock;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:_IO_lock_t *	file:
+_lock	main.i	/^  _IO_lock_t *_lock;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:_IO_lock_t *	file:
+_markers	dp1.i	/^  struct _IO_marker *_markers;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_marker *	file:
+_markers	dp2.i	/^  struct _IO_marker *_markers;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_marker *	file:
+_markers	dp3.i	/^  struct _IO_marker *_markers;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_marker *	file:
+_markers	dp4.i	/^  struct _IO_marker *_markers;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_marker *	file:
+_markers	main.i	/^  struct _IO_marker *_markers;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_marker *	file:
+_mode	dp1.i	/^  int _mode;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_mode	dp2.i	/^  int _mode;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_mode	dp3.i	/^  int _mode;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_mode	dp4.i	/^  int _mode;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_mode	main.i	/^  int _mode;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:int	file:
+_offset	dp1.i	/^  __off64_t _offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:__off64_t	file:
+_offset	dp2.i	/^  __off64_t _offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:__off64_t	file:
+_offset	dp3.i	/^  __off64_t _offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:__off64_t	file:
+_offset	dp4.i	/^  __off64_t _offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:__off64_t	file:
+_offset	main.i	/^  __off64_t _offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:__off64_t	file:
+_old_offset	dp1.i	/^  __off_t _old_offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:__off_t	file:
+_old_offset	dp2.i	/^  __off_t _old_offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:__off_t	file:
+_old_offset	dp3.i	/^  __off_t _old_offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:__off_t	file:
+_old_offset	dp4.i	/^  __off_t _old_offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:__off_t	file:
+_old_offset	main.i	/^  __off_t _old_offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:__off_t	file:
+_shortbuf	dp1.i	/^  char _shortbuf[1];$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char[1]	file:
+_shortbuf	dp2.i	/^  char _shortbuf[1];$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char[1]	file:
+_shortbuf	dp3.i	/^  char _shortbuf[1];$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char[1]	file:
+_shortbuf	dp4.i	/^  char _shortbuf[1];$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char[1]	file:
+_shortbuf	main.i	/^  char _shortbuf[1];$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char[1]	file:
+_unused2	dp1.i	/^  char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char[]	file:
+_unused2	dp2.i	/^  char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char[]	file:
+_unused2	dp3.i	/^  char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char[]	file:
+_unused2	dp4.i	/^  char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char[]	file:
+_unused2	main.i	/^  char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];$/;"	m	language:C	struct:_IO_FILE	typeref:typename:char[]	file:
+_vtable_offset	dp1.i	/^  signed char _vtable_offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:signed char	file:
+_vtable_offset	dp2.i	/^  signed char _vtable_offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:signed char	file:
+_vtable_offset	dp3.i	/^  signed char _vtable_offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:signed char	file:
+_vtable_offset	dp4.i	/^  signed char _vtable_offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:signed char	file:
+_vtable_offset	main.i	/^  signed char _vtable_offset;$/;"	m	language:C	struct:_IO_FILE	typeref:typename:signed char	file:
+_wide_data	dp1.i	/^  struct _IO_wide_data *_wide_data;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_wide_data *	file:
+_wide_data	dp2.i	/^  struct _IO_wide_data *_wide_data;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_wide_data *	file:
+_wide_data	dp3.i	/^  struct _IO_wide_data *_wide_data;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_wide_data *	file:
+_wide_data	dp4.i	/^  struct _IO_wide_data *_wide_data;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_wide_data *	file:
+_wide_data	main.i	/^  struct _IO_wide_data *_wide_data;$/;"	m	language:C	struct:_IO_FILE	typeref:struct:_IO_wide_data *	file:
+fpos_t	dp1.i	/^typedef __fpos_t fpos_t;$/;"	t	language:C	typeref:typename:__fpos_t	file:
+fpos_t	dp2.i	/^typedef __fpos_t fpos_t;$/;"	t	language:C	typeref:typename:__fpos_t	file:
+fpos_t	dp3.i	/^typedef __fpos_t fpos_t;$/;"	t	language:C	typeref:typename:__fpos_t	file:
+fpos_t	dp4.i	/^typedef __fpos_t fpos_t;$/;"	t	language:C	typeref:typename:__fpos_t	file:
+fpos_t	main.i	/^typedef __fpos_t fpos_t;$/;"	t	language:C	typeref:typename:__fpos_t	file:
+funcA	dp2.i	/^void funcA(int n) {$/;"	f	language:C	typeref:typename:void
+funcB	dp1.i	/^void funcB(int n) {$/;"	f	language:C	typeref:typename:void
+funcC	dp4.i	/^int funcC(int n) {$/;"	f	language:C	typeref:typename:int
+funcD	dp3.i	/^int funcD(int n) {$/;"	f	language:C	typeref:typename:int
+happy	dp3.i	/^int happy(int n){$/;"	f	language:C	typeref:typename:int
+main	main.i	/^int main() {$/;"	f	language:C	typeref:typename:int
+off_t	dp1.i	/^typedef __off_t off_t;$/;"	t	language:C	typeref:typename:__off_t	file:
+off_t	dp2.i	/^typedef __off_t off_t;$/;"	t	language:C	typeref:typename:__off_t	file:
+off_t	dp3.i	/^typedef __off_t off_t;$/;"	t	language:C	typeref:typename:__off_t	file:
+off_t	dp4.i	/^typedef __off_t off_t;$/;"	t	language:C	typeref:typename:__off_t	file:
+off_t	main.i	/^typedef __off_t off_t;$/;"	t	language:C	typeref:typename:__off_t	file:
+size_t	dp1.i	/^typedef long unsigned int size_t;$/;"	t	language:C	typeref:typename:long unsigned int	file:
+size_t	dp2.i	/^typedef long unsigned int size_t;$/;"	t	language:C	typeref:typename:long unsigned int	file:
+size_t	dp3.i	/^typedef long unsigned int size_t;$/;"	t	language:C	typeref:typename:long unsigned int	file:
+size_t	dp4.i	/^typedef long unsigned int size_t;$/;"	t	language:C	typeref:typename:long unsigned int	file:
+size_t	main.i	/^typedef long unsigned int size_t;$/;"	t	language:C	typeref:typename:long unsigned int	file:
+ssize_t	dp1.i	/^typedef __ssize_t ssize_t;$/;"	t	language:C	typeref:typename:__ssize_t	file:
+ssize_t	dp2.i	/^typedef __ssize_t ssize_t;$/;"	t	language:C	typeref:typename:__ssize_t	file:
+ssize_t	dp3.i	/^typedef __ssize_t ssize_t;$/;"	t	language:C	typeref:typename:__ssize_t	file:
+ssize_t	dp4.i	/^typedef __ssize_t ssize_t;$/;"	t	language:C	typeref:typename:__ssize_t	file:
+ssize_t	main.i	/^typedef __ssize_t ssize_t;$/;"	t	language:C	typeref:typename:__ssize_t	file:
+stderr	dp1.i	/^extern FILE *stderr;$/;"	x	language:C	typeref:typename:FILE *
+stderr	dp2.i	/^extern FILE *stderr;$/;"	x	language:C	typeref:typename:FILE *
+stderr	dp3.i	/^extern FILE *stderr;$/;"	x	language:C	typeref:typename:FILE *
+stderr	dp4.i	/^extern FILE *stderr;$/;"	x	language:C	typeref:typename:FILE *
+stderr	main.i	/^extern FILE *stderr;$/;"	x	language:C	typeref:typename:FILE *
+stdin	dp1.i	/^extern FILE *stdin;$/;"	x	language:C	typeref:typename:FILE *
+stdin	dp2.i	/^extern FILE *stdin;$/;"	x	language:C	typeref:typename:FILE *
+stdin	dp3.i	/^extern FILE *stdin;$/;"	x	language:C	typeref:typename:FILE *
+stdin	dp4.i	/^extern FILE *stdin;$/;"	x	language:C	typeref:typename:FILE *
+stdin	main.i	/^extern FILE *stdin;$/;"	x	language:C	typeref:typename:FILE *
+stdout	dp1.i	/^extern FILE *stdout;$/;"	x	language:C	typeref:typename:FILE *
+stdout	dp2.i	/^extern FILE *stdout;$/;"	x	language:C	typeref:typename:FILE *
+stdout	dp3.i	/^extern FILE *stdout;$/;"	x	language:C	typeref:typename:FILE *
+stdout	dp4.i	/^extern FILE *stdout;$/;"	x	language:C	typeref:typename:FILE *
+stdout	main.i	/^extern FILE *stdout;$/;"	x	language:C	typeref:typename:FILE *
+v1	dp1.i	/^int v1 = 20;$/;"	v	language:C	typeref:typename:int
+v2	dp1.i	/^static int v2 = 30;$/;"	v	language:C	typeref:typename:int	file:
+v3	dp1.i	/^extern int v3;$/;"	x	language:C	typeref:typename:int
+va_list	dp1.i	/^typedef __gnuc_va_list va_list;$/;"	t	language:C	typeref:typename:__gnuc_va_list	file:
+va_list	dp2.i	/^typedef __gnuc_va_list va_list;$/;"	t	language:C	typeref:typename:__gnuc_va_list	file:
+va_list	dp3.i	/^typedef __gnuc_va_list va_list;$/;"	t	language:C	typeref:typename:__gnuc_va_list	file:
+va_list	dp4.i	/^typedef __gnuc_va_list va_list;$/;"	t	language:C	typeref:typename:__gnuc_va_list	file:
+va_list	main.i	/^typedef __gnuc_va_list va_list;$/;"	t	language:C	typeref:typename:__gnuc_va_list	file:

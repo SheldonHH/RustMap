@@ -1,0 +1,25 @@
+digraph cflow {
+    node [shape="box"]
+    main [label="int main ()
+main.c:6"]
+    main -> printf
+    main -> funcB
+    main -> funcC
+    printf [label="printf()"]
+    funcB [label="void funcB (int n)
+dp1.c:5"]
+    funcB -> printf
+    funcB -> funcA
+    funcA [label="void funcA (int n)
+dp2.c:5"]
+    funcA -> printf
+    funcA -> funcB
+    funcC [label="int funcC (int n)
+dp4.c:5"]
+    funcC -> printf
+    funcC -> funcD
+    funcD [label="int funcD (int n)
+dp3.c:5"]
+    funcD -> printf
+    funcD -> funcC
+}

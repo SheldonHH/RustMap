@@ -1,0 +1,18 @@
+digraph {
+	graph [nodesep=0.5 rankdir=LR ranksep=5]
+	"funcB()" -> "printf()" [color=black style=solid]
+	"funcB()" -> "void funcA(intn)" [color=black style=solid]
+	"funcD()" -> "printf()" [color=black style=solid]
+	"funcD()" -> "funcC()" [color=black style=solid]
+	"happy()" -> "printf()" [color=black style=solid]
+	"funcC()" -> "printf()" [color=black style=solid]
+	"funcC()" -> "funcD()" [color=black style=solid]
+	"void funcA(intn)" -> "printf()" [color=black style=solid]
+	"void funcA(intn)" -> "happy()" [color=black style=solid]
+	"void funcA(intn)" -> "funcB()" [color=black style=solid]
+	"int main()" -> "printf()" [color=black style=solid]
+	"int main()" -> "funcB()" [color=black style=solid]
+	"int main()" -> "funcC()" [color=black style=solid]
+	v1 [color=lightblue2 fontcolor=black shape=box style=filled]
+	"v2-dp1.i" [color=lightblue2 fontcolor=black shape=box style=filled]
+}

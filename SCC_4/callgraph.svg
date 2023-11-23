@@ -1,0 +1,29 @@
+digraph G {
+rankdir="LR";
+    main [label="int main ()
+main.i:628"]
+    main -> printf
+    main -> funcB
+    main -> funcC
+    printf [label="printf()"]
+    funcB [label="void funcB (int n)
+dp1.i:629"]
+    funcB -> printf
+    funcB -> funcA
+    funcA [label="void funcA (int n)
+dp2.i:627"]
+    funcA -> printf
+    funcA -> config
+    funcA -> funcB
+    config [label="int config (int n)
+dp3.i:636"]
+    config -> printf
+    funcC [label="int funcC (int n)
+dp4.i:627"]
+    funcC -> printf
+    funcC -> funcD
+    funcD [label="int funcD (int n)
+dp3.i:627"]
+    funcD -> printf
+    funcD -> funcC
+}

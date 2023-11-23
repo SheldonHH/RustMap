@@ -1,0 +1,24 @@
+[package]
+name = "SCC_4_rs_gpt"
+version = "0.1.0"
+edition = "2021"
+default-run = "SCC_4_rs_gpt"
+default-run = "SCC_4_rs_gpt"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[lib]
+name = "SCC_4_rs_gpt"
+
+[[bin]]
+name = "SCC_4_rs_gpt"
+path = "src/bin/main.rs"
+
+[lib]
+name = "SCC_4_rs_gpt"
+
+[[bin]]
+name = "SCC_4_rs_gpt"
+path = "src/bin/main.rs"

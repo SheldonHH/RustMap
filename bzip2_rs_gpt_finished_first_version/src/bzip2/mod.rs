@@ -1,0 +1,47 @@
+pub mod scc_87_fileExists;
+pub mod scc_116_hasSuffix_107_mapSuffix; // scc_117_mapSuffix
+pub mod scc_108_testStream;
+pub mod scc_104_mySignalCatcher;
+pub mod scc_80_root_43_showFileNames;
+pub mod scc_99_outOfMemory_scc_100_myMalloc; // 100， 102， 103
+pub mod scc_98_panic;
+// pub mod scc_100_myMalloc;
+// pub mod scc_96_applySavedFileAttrToOutputFile;
+// pub mod scc_52_root_34_uInt64_from_UInt32s;
+pub mod scc_107_configError;
+pub mod scc_121_main;
+// pub mod scc_117_mapSuffix;
+// pub mod scc_97_saveInputFileMetaInfo;
+// pub mod scc_103_addFlagsFromEnvVar;
+pub mod scc_19_root_12_uInt64_isZero;
+pub mod scc_50_mySignalCatcher;
+pub mod scc_52_mySIGSEGVorSIGBUScatcher;
+pub mod scc_58_root_39_countHardLinks;
+pub mod scc_92_compressedStreamEOF;
+pub mod scc_21_uInt64_toAscii;
+pub mod scc_26_root_17_fileExists;
+pub mod scc_105_copyFileName;
+pub mod scc_59_root_40_notAStandardFile;
+pub mod scc_109_uncompressStream;
+pub mod scc_57_root_38_pad;
+pub mod scc_110_compressStream;
+pub mod scc_78_usage;
+pub mod scc_118_uncompress;
+// pub mod scc_102_snocString;
+pub mod scc_60_root_41_containsDubiousChars;
+pub mod scc_113_root_54_redundant;
+pub mod scc_91_cleanUpAndFail;
+pub mod scc_95_applySavedTimeInfoToOutputFile_96_applySavedFileAttrToOutputFile_97_saveInputFileMetaInfo;
+pub mod scc_93_crcError_ioError;
+pub mod scc_56_fopen_output_safely;
+pub mod scc_90_root_52_setExit;
+pub mod scc_111_testf;
+pub mod scc_106_mySIGSEGVorSIGBUScatcher;
+pub mod scc_79_license;
+// pub mod scc_94_ioError;
+// pub mod scc_18_root_11_utime;
+pub mod scc_20_root_13_uInt64_qrm10;
+pub mod scc_9_root_4_cadvise;
+pub mod scc_51_root_33_uInt64_to_double_scc_52; // scc_52_root_34_uInt64_from_UInt32s
+pub mod scc_101_mkCell_102_snoc_string_103_add_flags_from_env_var;
+pub mod scc_119_compress;

@@ -1,0 +1,6 @@
+Community_1:
+  v1 🌍global_variable
+
+Community_2:
+  v2-dp1.i 🔒static_variable
+

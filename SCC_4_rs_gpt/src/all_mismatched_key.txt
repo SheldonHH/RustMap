@@ -1,0 +1,5 @@
+void funcA (int n)/root/crown-rust/SCC_4/dp2.i:627
+int funcD (int n)/root/crown-rust/SCC_4/dp3.i:627
+int main ()/root/crown-rust/SCC_4/main.i:628
+int happy (int n)/root/crown-rust/SCC_4/dp3.i:636
+4

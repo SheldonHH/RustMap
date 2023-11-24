@@ -1,1 +1,0 @@
-pub static mut BYTES_OUT: u64 = 0;

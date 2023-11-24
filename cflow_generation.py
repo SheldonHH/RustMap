@@ -43,8 +43,8 @@ if __name__ == '__main__':
     dot_graph = graphviz.Source(dot_content)
 
     # 修改输出路径以将其放在用户提供的文件夹下
-    callgraph_svg_path = os.path.join(folder_path, "callgraph.svg")
-    callgraph_dot_path = os.path.join(folder_path, "callgraph.dot")
+    callgraph_svg_path = os.path.join(folder_path, "callgraph")
+    callgraph_dot_path = os.path.join(folder_path, "callgraph")
 
     dot_graph.render(filename=callgraph_svg_path, format="svg", view=False)
     dot_graph.render(filename=callgraph_dot_path, format="dot", view=False)

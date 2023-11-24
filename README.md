@@ -28,13 +28,22 @@ Firstly project bzip2 contains two executable binary files:
 bzip2: This is the main program used for compressing files using a block-sorting file compressor. It also includes related commands like bunzip2, which is used for decompression, and bzcat, which decompresses files to stdout​​​​.
 bzip2recover: This utility is specifically designed for recovering data from damaged bzip2 files. It works by searching for blocks in .bz2 files and writing each block out into its own .bz2 file. This allows users to test the integrity of these blocks and decompress those which are undamaged​​.
 
-We will only show executable binary bzip2 in the aritfact
+We will only sh
+ow executable binary bzip2 in the aritfact
 
-## which
+```bash
+cargo build --release
+```
 
+## which  
+```bash
 
-## rosetta
+```
 
+## rosetta   
+```bash
+
+```
 
 
 

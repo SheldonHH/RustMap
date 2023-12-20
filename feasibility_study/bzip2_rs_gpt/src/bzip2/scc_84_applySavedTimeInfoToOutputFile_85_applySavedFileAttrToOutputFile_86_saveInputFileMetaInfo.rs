@@ -3,7 +3,6 @@ use std::sync::Mutex;
 use libc::{utime, utimbuf, fchmod, fchown};
 use crate::bzip2::scc_82_crcError_83_ioError::*;
 use lazy_static::lazy_static;
-// 引入特定于Linux的MetadataExt trait
 use std::os::linux::fs::MetadataExt;
 
 lazy_static! {

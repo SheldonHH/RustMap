@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {}
 extern "C" fn gcd_ui(mut x: u64, mut y: u64) -> u64 {
     let mut t: u64 = 0;

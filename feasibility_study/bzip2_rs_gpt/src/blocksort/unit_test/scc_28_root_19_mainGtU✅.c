@@ -1,7 +1,5 @@
 
 #include "../typedef.h"
-// 目的是比较block数组中两个位置（i1和i2）的子序列。这个比较是在BWT（Burrows-Wheeler transform）数据压缩算法中使用的，主要用于排序前缀。
-// 函数的具体行为是逐个比较两个子序列的字符，直到找到一个不相等的字符或达到预算限制为止。
 static
 __inline__
 Bool mainGtU ( UInt32 i1,  // 第一个索引
@@ -47,11 +45,8 @@ Bool mainGtU ( UInt32 i1,  // 第一个索引
 
 #include <CUnit/Basic.h>
 
-// 声明函数
-// static __inline__ Bool mainGtU ( UInt32, UInt32, UChar*, UInt16*, UInt32, Int32* );
 
 #include <assert.h>
-// ... 其他必要的头文件 ...
 #include <CUnit/CUnit.h>
 
 void test_mainGtU_from_file() {
@@ -140,51 +135,10 @@ void test_mainGtU_from_file() {
 
 
 
-// int main() {
-//     CU_initialize_registry();
-//     CU_add_suite("mainGtU_test", NULL, NULL);
-//     CU_add_test(CU_get_suite("mainGtU_test"), "test_mainGtU", test_mainGtU_from_file);
-//     CU_basic_run_tests();
-//     CU_cleanup_registry();
-//     return CU_get_error();
-// }
 
-// void test_mainGtU(void) {
-//     UInt32 nblock = 98170;
-//     UChar block[nblock + 20];  
-//     UInt16 quadrant[nblock + 20];
-//     Int32 budget = 883445;
     
-//     // 使用循环来初始化block和quadrant数组
-//     for (UInt32 i = 0; i < nblock + 20; i++) {
-//         block[i] = 0;
-//         quadrant[i] = 0;
-//     }
 
-//     // 基于你给的例子：
-//     assert(mainGtU(90047, 91194, block, quadrant, nblock, &budget) == FALSE);
-//        if(budget != 871172) {
-//         printf("Expected budget: 871172, but got: %d\n", budget);
-//     }
-//     assert(budget == 871172);  // 根据函数的逻辑，budget值应该递减1
 
-//     // 根据新提供的情况添加的测试用例：
-//     Int32 budget2 = 883290;
-//     assert(mainGtU(53306, 38287, block, quadrant, nblock, &budget2) == FALSE);
-//     if(budget2 != 871017) {
-//         printf("Expected budget: 883290, but got: %d\n", budget2);
-//     }
-//     assert(budget2 == 871017);  // 根据给定的输出，budget值应该保持不变
     
-//     // 在此处，你可以添加更多的断言来测试其他情况
-// }
 
 
-// // int main() {
-// //     CU_initialize_registry();
-// //     CU_add_suite("mainGtU_test", NULL, NULL);
-// //     CU_add_test(CU_get_suite("mainGtU_test"), "test_mainGtU", test_mainGtU);
-// //     CU_basic_run_tests();
-// //     CU_cleanup_registry();
-// //     return CU_get_error();
-// // }

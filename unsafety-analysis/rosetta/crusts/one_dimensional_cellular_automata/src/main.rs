@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {
     fn printf(_: *const i8, _: ...) -> i32;
     fn strcpy(_: *mut i8, _: *const i8) -> *mut i8;

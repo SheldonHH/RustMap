@@ -3,7 +3,6 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::fs::OpenOptions;
 
-// 这个函数`myfeof`用于检查一个文件流`f`是否已经读到了文件的结尾。
 pub fn myfeof(f: &mut File) -> bool {
     let mut buf = [0u8; 1]; // 用于读取的缓冲区
     match f.read(&mut buf) {

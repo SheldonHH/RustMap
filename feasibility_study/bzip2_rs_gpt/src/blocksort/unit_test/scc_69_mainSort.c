@@ -1,7 +1,5 @@
 #include "../typedef.h"
 #include "./scc_68_mainQSort3.c"
-// 这个函数是一个压缩算法中的一部分，特别是bzip2算法。主要用于进行Burrows-Wheeler transform (BWT)的前期排序，这是bzip2压缩算法中的一个关键步骤。
-// 主排序函数，用于BWT转换中的前期排序
 static
 void mainSort ( UInt32* ptr,          // 指针数组
                 UChar* block,         // 块数据
@@ -297,7 +295,3 @@ void testMainSort() {
     free(ftab);
 }
 
-// int main() {
-//     testMainSort();
-//     return 0;
-// }

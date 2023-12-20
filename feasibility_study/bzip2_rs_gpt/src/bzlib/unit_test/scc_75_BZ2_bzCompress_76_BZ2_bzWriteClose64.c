@@ -5,7 +5,6 @@
 #include "./scc_74_handle_compress.c"
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
-// BZ2_bzCompress函数压缩输入数据。
 int BZ2_bzCompress(bz_stream *strm, int action) {
    Bool progress;            // 标记函数是否成功执行
    EState* s;
@@ -61,13 +60,11 @@ int BZ2_bzCompress(bz_stream *strm, int action) {
    return 0;
 }
 
-// 关闭BZIP2文件，但仅提供32位的输入/输出字节计数器
 void BZ2_bzWriteClose(int* bzerror, BZFILE* b, int abandon, unsigned int* nbytes_in, unsigned int* nbytes_out) {
     // 使用64位版本的接口，但为64位的计数器传递null指针
     BZ2_bzWriteClose64(bzerror, b, abandon, nbytes_in, NULL, nbytes_out, NULL);
 }
 
-// 关闭BZIP2文件，并提供64位的输入/输出字节计数器
 void BZ2_bzWriteClose64(
    int* bzerror, BZFILE* b, int abandon,
    unsigned int* nbytes_in_lo32, unsigned int* nbytes_in_hi32,

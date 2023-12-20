@@ -1,5 +1,3 @@
-// use crate::compress::scc_32_root_22_bsFinishWrite::*;
-// use crate::decompress::scc_63_BZ2_decompress::*;
 #include "../typedef.h"
 #include "./scc_69_mainSort.c"
 #include "../bzlib/scc_62_BZ2_bz__AssertH__fail.c"
@@ -117,9 +115,7 @@ void fallbackQSort3 ( UInt32* fmap,
 #include <stdio.h>
 #include <CUnit/Basic.h>
 
-// 之前的代码和fallbackQSort3函数...
 
-// 定义一个测试函数
 void test_fallbackQSort3() {
    UInt32 fmap[] = {4, 3, 2, 10, 12, 1, 5, 6};
    UInt32 eclass[] = {4, 3, 2, 10, 12, 1, 5, 6};

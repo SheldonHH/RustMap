@@ -1,6 +1,5 @@
 #include <stdio.h>
  
-// returns x where (a * x) % b == 1
 int mul_inv(int a, int b)
 {
 	int b0 = b, t, q;

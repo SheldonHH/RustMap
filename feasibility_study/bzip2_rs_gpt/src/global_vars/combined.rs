@@ -1,7 +1,5 @@
-//c1.rs
 
 
-// 之前的 DState 定义和 impl 块 ...
 pub type Int32 = i32;
 pub type UInt32 = u32;
 pub type UInt16 = u16;
@@ -116,7 +114,6 @@ fn default() -> Self {
 
 
 
-// 定义UInt64结构体
 #[derive(Copy, Clone)]
 pub struct UInt64 {
     pub b: [u8; 8],  // UChar在C中通常是u8在Rust中
@@ -209,7 +206,6 @@ pub struct bz_stream {
 }
 
    
-// 用结构体定义 DState
 
 pub struct DState {
     pub  strm: *mut bz_stream,   // 引用关联的 bz_stream // Reference to associated bz_stream
@@ -363,7 +359,6 @@ pub struct DState {
 
 
 
-// c2.rs
 
 use std::io::Cursor;
 pub type Char = u8;
@@ -395,14 +390,10 @@ impl Default for BitStream {
 }
 
 
-//c3.rs
 
 
 
 
-//c6.rs
-// 在Rust中，静态变量是在整个程序执行期间都存在的，和C中的静态数组类似
-// Int32 在C中可能是一个typedef，在Rust中我们通常使用i32来表示32位整数
 pub static INCS: [i32; 14] = [1, 4, 13, 40, 121, 364, 1093, 3280,
                           9841, 29524, 88573, 265720,
                           797161, 2391484];

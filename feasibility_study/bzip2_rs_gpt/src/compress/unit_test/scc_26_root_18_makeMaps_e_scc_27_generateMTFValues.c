@@ -1,7 +1,5 @@
-// use crate::global_vars::bzip2_c1::{EState};
 
 
-// makeMaps_e ( EState* s )
 #include "../typedef.h"
 
 
@@ -40,8 +38,6 @@ void test_makeMaps_e(void) {
     }
 }
 
-// 这个函数是bzip2压缩程序的一部分，负责生成Move-to-Front（MTF）变换值。
-// MTF变换是一种数据变换算法，在数据压缩中常用来提高熵编码的效率。
 static void generateMTFValues ( EState* s ) {
    UChar yy[256]; // 用于维护MTF变换中的字符列表
    Int32 i, j; // 循环变量

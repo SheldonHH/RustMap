@@ -33,50 +33,16 @@ pub fn BZ2_bzCompressEnd(strm: &mut Option<bz_stream>) -> i32 {
 }
 
 
-// pub fn BZ2_bzCompressEnd(strm: &mut Option<bz_stream>) -> i32 {
-//     let stream_ref = match strm.as_mut() {
-//         Some(s) => s,
-//         None => return -2,
-//     };
 
-//     let s: *mut EState = stream_ref.state as *mut _ as *mut EState;
 
-//     if s.is_null() {
-//         return -2;
-//     }
 
-//     if s.is_null() {
-//         return -2;
-//     }
 
-//     unsafe {
-//         if let Some(ptr) = (*s).arr1 {
-//             if !ptr.is_null() {
-//                 stream_ref.bzfree.unwrap()(stream_ref.opaque, ptr as *mut _);
-//             }
-//         }
 
-//         if let Some(ptr) = (*s).arr2 {
-//             if !ptr.is_null() {
-//                 stream_ref.bzfree.unwrap()(stream_ref.opaque, ptr as *mut _);
-//             }
-//         }
 
-//         if let Some(ptr) = (*s).ftab {
-//             if !ptr.is_null() {
-//                 stream_ref.bzfree.unwrap()(stream_ref.opaque, ptr as *mut _);
-//             }
-//         }
 
-//         stream_ref.bzfree.unwrap()(stream_ref.opaque, s as *mut _);
-//     }
 
-//     stream_ref.state = ptr::null_mut();
 
-//     0
-// }
 
-// ... 其他代码不变 ...
 
 #[cfg(test)]
 mod tests {

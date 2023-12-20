@@ -20,7 +20,6 @@ const char** longest_path;
 size_t longest_path_len;
  
  
-/// tally statistics
 void search(size_t curr_len) {
     if (curr_len == longest_path_refs_len) {
         n_solutions++;

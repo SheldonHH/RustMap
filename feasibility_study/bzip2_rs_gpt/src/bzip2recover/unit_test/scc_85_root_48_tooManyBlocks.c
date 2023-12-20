@@ -1,6 +1,4 @@
-// use crate::global_vars::bzip2_c2::{inFileName, progName};
 #include "../typedef.h"
-// 当文件包含的块数超出了最大可处理的块数时，调用此函数输出错误信息并退出程序。
 static void tooManyBlocks ( Int32 max_handled_blocks )
 {
    // 输出错误信息，指出文件包含的块数超出了可处理的最大值
@@ -17,7 +15,6 @@ static void tooManyBlocks ( Int32 max_handled_blocks )
 }
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
-// Mock函数，用于代替exit(1)，以便我们可以继续运行测试
 void mock_exit(int status) {
    // 在这里可以检查退出状态等...
 }

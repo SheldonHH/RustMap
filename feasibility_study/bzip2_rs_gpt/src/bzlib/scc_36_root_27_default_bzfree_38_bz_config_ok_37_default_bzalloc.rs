@@ -1,7 +1,5 @@
 
-// default_bzfree ( void* opaque, void* addr )
 
-// 检查配置是否正确
 pub fn bz_config_ok() -> bool {
     // 检查数据类型大小
     std::mem::size_of::<i32>() == 4 && // 检查i32类型大小是否为4字节
@@ -9,7 +7,6 @@ pub fn bz_config_ok() -> bool {
     std::mem::size_of::<u8>() == 1     // 检查u8类型大小是否为1字节
 }
 
-// 根据指定的项目数量和项目大小分配内存
 pub fn default_bzalloc(_opaque: *mut std::ffi::c_void, items: i32, size: i32) -> *mut std::ffi::c_void {
     // 计算总大小
     let total_size = items.checked_mul(size).expect("Overflow during memory allocation size calculation");
@@ -20,7 +17,6 @@ pub fn default_bzalloc(_opaque: *mut std::ffi::c_void, items: i32, size: i32) ->
     }
 }
 
-// 释放内存
 pub fn default_bzfree(_opaque: *mut std::ffi::c_void, addr: *mut std::ffi::c_void) {
     if !addr.is_null() {
         // 获取内存布局

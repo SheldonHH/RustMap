@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {
     fn sqrt(_: f64) -> f64;
     fn fabs(_: f64) -> f64;

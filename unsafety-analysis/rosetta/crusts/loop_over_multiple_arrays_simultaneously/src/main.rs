@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {}
 #[no_mangle]
 pub static mut a1: [i8; 3] = ['a' as i8, 'b' as i8, 'c' as i8];

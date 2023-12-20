@@ -1,6 +1,5 @@
 use crate::global_vars::bzip2_c2::{IN_FILE_NAME, PROG_NAME};
 
-// 当文件包含的块数超出了最大可处理的块数时，调用此函数输出错误信息并退出程序。
 fn too_many_blocks(max_handled_blocks: i32) {
     eprintln!("{}: `{}' appears to contain more than {} blocks",
               unsafe { std::str::from_utf8(&PROG_NAME).unwrap_or_default() },
@@ -16,7 +15,6 @@ fn too_many_blocks(max_handled_blocks: i32) {
 }
 
 
-// Mock函数，用于代替exit(1)，以便我们可以继续运行测试
 fn mock_exit(_status: i32) {
     // 在这里可以检查退出状态等...
 }

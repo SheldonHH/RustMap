@@ -314,94 +314,25 @@ int main(void) {
     return CU_get_error();
 }
 
-// void test_case_1(void) {
-//     srcMode = 1;
-
-//     // 重定向标准输入到一个测试文件
-//     freopen("test_input.txt", "r", stdin);
-
-//     // 重定向标准输出到一个临时文件
-//     freopen("tmp_output.txt", "w", stdout);
-
-//     // 调用compress函数
-//     compress(NULL);  // 因为在srcMode为1时，name应该为NULL
-
-//     // 重新开启stdout用于CUnit输出
-//     freopen("/dev/tty", "w", stdout);
-
-//     // 验证标准输出的内容是否为预期的压缩数据
-//     FILE *output = fopen("tmp_output.txt", "r");
-//     char firstByte;
-//     fread(&firstByte, 1, 1, output);
-//     char expectedFirstByte = 'A';  // 这只是一个示例值，您需要替换为实际的期望值
-//     CU_ASSERT_EQUAL(firstByte, expectedFirstByte);
-//     fclose(output);
-// }
 
 
-// void test_case_2(void) {
-//     srcMode = 2;
 
-//     // 为name变量提供一个文件名
-//     char name[] = "test_input.txt";
 
-//     // 重定向标准输出到一个临时文件
-//     freopen("tmp_output.txt", "w", stdout);
 
-//     // 调用compress函数
-//     compress(name);
 
-//     // 重新开启stdout用于CUnit输出
-//     freopen("/dev/tty", "w", stdout);
 
-//     // 验证标准输出的内容是否为预期的压缩数据
-//     FILE *output = fopen("tmp_output.txt", "r");
-//     char firstByte;
-//     fread(&firstByte, 1, 1, output);
-//     char expectedFirstByte = 'A';  // 这只是一个示例值，您需要替换为实际的期望值
-//     CU_ASSERT_EQUAL(firstByte, expectedFirstByte);
-//     fclose(output);
-// }
 
-// int init_suite(void) {
-//    // 初始化代码
-//    return 0;
-// }
 
-// int clean_suite(void) {
-//    // 清理代码
-//    return 0;
-// }
 
-// int main() {
-//    CU_pSuite pSuite = NULL;
 
-//    // 初始化CUnit测试库
-//    if (CUE_SUCCESS != CU_initialize_registry())
-//       return CU_get_error();
 
-//    // 添加测试套件
-//    pSuite = CU_add_suite("compress_suite", init_suite, clean_suite);
-//    if (NULL == pSuite) {
-//       CU_cleanup_registry();
-//       return CU_get_error();
-//    }
 
-//    // 添加测试用例到套件
-//    if (NULL == CU_add_test(pSuite, "test_case_1", test_case_1) ||
-//        NULL == CU_add_test(pSuite, "test_case_2", test_case_2) 
-//        // ...添加其他测试用例
-//       ) {
-//       CU_cleanup_registry();
-//       return CU_get_error();
-//    }
 
-//    // 运行所有测试
-//    CU_basic_set_mode(CU_BRM_VERBOSE);
-//    CU_basic_run_tests();
-//    CU_cleanup_registry();
-//    return CU_get_error();
-// }
+
+
+
+
+
 
 /*
 对于CUnit的测试，你可能需要以下测试用例：

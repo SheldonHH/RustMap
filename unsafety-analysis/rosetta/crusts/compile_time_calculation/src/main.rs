@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {}
 #[no_mangle]
 pub static mut val: i32 = 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10;

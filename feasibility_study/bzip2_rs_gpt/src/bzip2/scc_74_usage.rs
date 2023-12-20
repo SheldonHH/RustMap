@@ -1,5 +1,4 @@
 use crate::bzlib::scc_42_root_57_BZ2_bzlibVersion::*;
-// usage ( Char *fullProgName )
 pub fn usage(full_prog_name: &str) {
     eprintln!(
         "bzip2, a block-sorting file compressor.  Version {}.\n",

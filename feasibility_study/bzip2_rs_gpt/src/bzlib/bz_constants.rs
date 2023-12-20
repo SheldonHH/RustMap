@@ -1,4 +1,3 @@
-// bz_constants.rs
 pub const BZ_M_IDLE: i32 = 1;
 pub const BZ_M_RUNNING: i32 = 2;
 pub const BZ_M_FLUSHING: i32 = 3;

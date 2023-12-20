@@ -1,6 +1,5 @@
 #include "../typedef.h"
 #include "./scc_91_cleanUpAndFail.c"
-// 信号捕获函数，当接收到指定信号（如Control-C）时调用。
 static
 void mySignalCatcher ( IntNative n )
 {
@@ -16,7 +15,6 @@ void mySignalCatcher ( IntNative n )
 #include <CUnit/Basic.h>
 #include <signal.h>
 
-// Mock版本的cleanUpAndFail
 void cleanUpAndFail(int n) {
    // 在这里，我们可以只记录调用，不执行任何操作
    // 或者执行所需的清理/失败行为

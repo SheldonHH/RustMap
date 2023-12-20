@@ -1,7 +1,5 @@
 #include "../typedef.h"
 #include "./scc_90_root_52_setExit.c"
-// 定义configError函数
-// 用于处理配置错误
 static
 void configError ( void )
 {
@@ -22,7 +20,6 @@ void configError ( void )
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
-// 假设您已经包含了必要的头文件和定义
 
 void test_configError_behavior(void) {
     // 由于configError函数会导致程序退出，所以在实际测试中应避免直接调用它。
@@ -31,16 +28,7 @@ void test_configError_behavior(void) {
     CU_FAIL("This test is just a placeholder and shouldn't be executed directly.");
 }
 
-// int main() {
-//     CU_initialize_registry();
 
-//     CU_pSuite suite = CU_add_suite("ConfigErrorTests", NULL, NULL);
 
-//     CU_add_test(suite, "test_configError_behavior", test_configError_behavior);
 
-//     CU_basic_set_mode(CU_BRM_VERBOSE);
-//     CU_basic_run_tests();
 
-//     CU_cleanup_registry();
-//     return 0;
-// }

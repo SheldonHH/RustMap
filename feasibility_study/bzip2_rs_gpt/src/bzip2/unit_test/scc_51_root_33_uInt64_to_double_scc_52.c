@@ -1,4 +1,3 @@
-// use crate::global_vars::bzip2_c1::{UInt64};
 
 #include "../typedef.h"
 static
@@ -15,7 +14,6 @@ double uInt64_to_double ( UInt64* n )
 }
 
 
-// 将两个32位无符号整数合并成一个64位无符号整数
 static void uInt64_from_UInt32s ( UInt64* n, UInt32 lo32, UInt32 hi32 )
 {
    // 从高到低提取hi32的每个字节，并存放在UInt64的高4字节中
@@ -36,7 +34,6 @@ static void uInt64_from_UInt32s ( UInt64* n, UInt32 lo32, UInt32 hi32 )
 #include <stdio.h>
 
 
-// 测试函数
 static void test_uInt64_to_double(void) {
    UInt64 number;
    // 测试用例1：全部字节都为0
@@ -54,7 +51,6 @@ static void test_uInt64_to_double(void) {
 
    // ... 您可以添加更多测试用例 ...
 }
-// 测试函数
 static void test_uInt64_from_UInt32s(void) {
    UInt64 number;
    // 测试用例1

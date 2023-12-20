@@ -19,7 +19,6 @@ fn build_str_from_raw_ptr(raw_ptr: *mut u8) -> String {
     }
 }
 
-//use c2rust_out::*;
 extern "C" {}
 #[no_mangle]
 pub extern "C" fn check_isbn13(mut isbn: *const i8) -> i32 {

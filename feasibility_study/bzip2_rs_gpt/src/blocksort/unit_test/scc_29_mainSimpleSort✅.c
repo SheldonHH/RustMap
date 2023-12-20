@@ -1,9 +1,6 @@
-// use crate::blocksort::scc_30_root_20_mmed3::*;
-// use crate::global_vars::bzip2_c6::{incs-blocksort.i};
 #include <stdio.h>
 #include "../typedef.h"
 #include "./scc_28_root_19_mainGtU✅.c"
-// 预定义的希尔排序增量序列
 static Int32 incs[14] = { 1, 4, 13, 40, 121, 364, 1093, 3280,
                    9841, 29524, 88573, 265720,
                    797161, 2391484 };
@@ -168,22 +165,7 @@ void test_mainSimpleSort() {
 }
 
 
-// 🌟 Before mainSimpleSort:
-// 🌼 59890, ptr[lo]: 19782
-// 🌻 59891, ptr[hi]: 19913
 
 
-// 🌙 After mainSimpleSort:
-// 🌷 59890, ptr[lo]: 19913
-// 🌹 59891, ptr[hi]: 19782
-// 🍀 budget: 883530
 
 
-// int main() {
-//     CU_initialize_registry();
-//     CU_add_suite("mainSimpleSort", NULL, NULL);
-//     CU_add_test(CU_get_suite("mainSimpleSort"), "test_mainSimpleSort", test_mainSimpleSort);
-//     CU_basic_run_tests();
-//     CU_cleanup_registry();
-//     return CU_get_error();
-// }

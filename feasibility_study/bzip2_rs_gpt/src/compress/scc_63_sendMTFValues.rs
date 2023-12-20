@@ -1,13 +1,8 @@
-// use crate::compress::scc_67_sendMTFValues::*;
-// use crate::compress::scc_26_root_18_makeMaps_e::*;
-// use crate::compress::scc_36_root_24_BZ2_bsInitWrite::*;
-// use crate::decompress::scc_63_BZ2_decompress::*;
 use crate::global_vars::bzip2_c1::{EState};
 use crate::huffman::scc_62_BZ2_hbMakeCodeLengths::*;
 use crate::huffman::scc_17_root_14_BZ2_hbAssignCodes::*;
 use crate::compress::scc_20_root_25_bsW::*;
 
-// sendMTFValues ( EState* s )
 pub fn sendMTFValues(s: &mut EState) {
     let mut v: i32;
     let mut t: i32;
@@ -339,7 +334,6 @@ pub fn sendMTFValues(s: &mut EState) {
     gs = 0;
     // 处理MTF序列
     
-// Infinite loop for processing MTF sequence
 while true {
     // Exit loop if gs exceeds n_mtf
     if gs >= s.nMTF {

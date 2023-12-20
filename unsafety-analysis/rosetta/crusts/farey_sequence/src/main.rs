@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {
     fn realloc(_: *mut libc::c_void, _: u64) -> *mut libc::c_void;
     fn memset(_: *mut libc::c_void, _: i32, _: u64) -> *mut libc::c_void;

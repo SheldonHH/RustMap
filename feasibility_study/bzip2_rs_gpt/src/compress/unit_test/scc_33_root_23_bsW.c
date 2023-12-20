@@ -1,4 +1,3 @@
-// use crate::global_vars::bzip2_c1::{EState};
 
 
 #include "../typedef.h"
@@ -27,7 +26,6 @@ static __inline__ void bsW ( EState* s, Int32 n, UInt32 v ) {
 #include <CUnit/Basic.h>
 #include <stdio.h>
 
-// 假设你已经定义了上述的EState结构体和bsW函数...
 
 void test_bsW(void) {
    EState state;

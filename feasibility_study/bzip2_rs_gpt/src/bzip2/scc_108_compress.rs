@@ -193,23 +193,4 @@ mod tests {
     // 更多测试用例...
 }
 
-// #[derive(PartialEq)]
-// pub enum SrcMode {
-//     SM_I2O = 1,
-//     SM_F2O = 2,
-//     SM_F2F = 3,
-// }
 
-// impl From<i32> for SrcMode {
-//     fn from(mode: i32) -> Self {
-//         match mode {
-//             1 => SrcMode::SM_I2O,
-//             2 => SrcMode::SM_F2O,
-//             3 => SrcMode::SM_F2F,
-//             _ => panic!("Invalid source mode"),
-//         }
-//     }
-// }
-// fn io_error() -> io::Result<()> {
-//     Err(io::Error::new(ErrorKind::Other, "IO error occurred"))
-// }

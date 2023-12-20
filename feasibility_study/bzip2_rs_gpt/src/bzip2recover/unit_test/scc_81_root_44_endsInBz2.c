@@ -1,4 +1,3 @@
-// endsInBz2 ( Char* name )
 #include "../typedef.h"
 /* 检查字符串（可能是文件名）是否以“.bz2”结尾 */
 static Bool endsInBz2 ( Char* name )

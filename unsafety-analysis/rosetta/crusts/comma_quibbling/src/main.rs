@@ -19,7 +19,6 @@ fn build_str_from_raw_ptr(raw_ptr: *mut u8) -> String {
     }
 }
 
-//use c2rust_out::*;
 extern "C" {
     fn perror(__s: *const i8);
     fn strcpy(_: *mut i8, _: *const i8) -> *mut i8;

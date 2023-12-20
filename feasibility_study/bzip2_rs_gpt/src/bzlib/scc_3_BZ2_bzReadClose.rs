@@ -1,19 +1,11 @@
-// use crate::huffman::scc_12_root_6_BZ2_hbCreateDecodeTables::*;
-// use crate::global_vars::bzip2_c1::{bzFile};
 use crate::bzlib::scc_2_root_2_BZ2_bzDecompressEnd::*;
 
 
-// BZ2_bzReadClose (
-//       int* bzerror,
-//       BZFILE* b
-//    )
 
-// BZ2_bzReadClose ( int *bzerror, BZFILE *b )
 
 extern crate libc; // For using FILE and related C functions
 use std::ptr;
 
-// You provided most of the type definitions, so I won't reiterate them here. 
 
 pub struct bzFile {
  pub   handle: *mut libc::FILE,

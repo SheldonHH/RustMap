@@ -1,4 +1,3 @@
-// 引入必要的模块
 use crate::blocksort::scc_29_mainSimpleSort::*;
 use crate::blocksort::scc_30_root_20_mmed3::*;
 use crate::bzlib::scc_62_BZ2_bz__AssertH__fail::*;
@@ -6,7 +5,6 @@ use std::fs::File;
 use std::io::{BufReader, BufRead, Result, Error, ErrorKind};
 use std::num::ParseIntError;
 
-// 注意：对于mmed3和BZ2_bz__AssertH__fail函数，我们需要更多信息
 fn read_dat_file(path: &str) -> Result<(Vec<u32>, Vec<u8>, Vec<u16>, u32, u32, u32, u32, Option<u32>)> {
     let file = File::open(path)?;
     let reader = BufReader::new(file);
@@ -52,7 +50,6 @@ fn read_dat_file(path: &str) -> Result<(Vec<u32>, Vec<u8>, Vec<u16>, u32, u32, u
 
 
 
-// 事前声明这些类型以提供清晰性
 type Int32 = i32; // 为了清晰起见，明确这是i32
 type UInt32 = u32; // 同上，这是u32
 type UChar = u8; // 这是u8
@@ -194,7 +191,6 @@ pub fn main_q_sort3(
 
 
 
-// 测试函数
 #[cfg(test)]
 mod tests {
     use super::*;

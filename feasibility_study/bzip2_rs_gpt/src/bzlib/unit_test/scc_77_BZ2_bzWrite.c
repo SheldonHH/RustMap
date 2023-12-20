@@ -1,5 +1,4 @@
 #include "./scc_75_BZ2_bzCompress.c"
-// 将 buf 指向的数据，写入到 BZIP2 压缩文件中
 void BZ2_bzWrite(int* bzerror, BZFILE* b, void* buf, int len) {
     Int32 n, n2, ret;
     bzFile* bzf = (bzFile*)b;

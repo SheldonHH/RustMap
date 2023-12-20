@@ -39,48 +39,23 @@ int BZ2_bzCompressEnd ( bz_stream *strm )
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
-// 初始化函数
 int init_suite1(void) {
    // 进行任何需要的初始化操作
    return 0;
 }
 
-// 清理函数
 int clean_suite1(void) {
    // 进行任何需要的清理操作
    return 0;
 }
 
-// 测试函数
 void testBZ2_bzCompressEnd_null_stream(void) {
    bz_stream* stream = NULL;
    int result = BZ2_bzCompressEnd(stream);
    CU_ASSERT_EQUAL(result, -2);
 }
 
-// int main() {
-//    // 初始化CUnit测试注册系统
-//    CU_pSuite pSuite = NULL;
 
-//    if (CUE_SUCCESS != CU_initialize_registry())
-//       return CU_get_error();
 
-//    // 添加测试套件
-//    pSuite = CU_add_suite("Suite_1", init_suite1, clean_suite1);
-//    if (NULL == pSuite) {
-//       CU_cleanup_registry();
-//       return CU_get_error();
-//    }
 
-//    // 添加测试到测试套件
-//    if ((NULL == CU_add_test(pSuite, "test of BZ2_bzCompressEnd with null stream", testBZ2_bzCompressEnd_null_stream))) {
-//       CU_cleanup_registry();
-//       return CU_get_error();
-//    }
 
-//    // 运行所有测试
-//    CU_basic_set_mode(CU_BRM_VERBOSE);
-//    CU_basic_run_tests();
-//    CU_cleanup_registry();
-//    return CU_get_error();
-// }

@@ -1,7 +1,6 @@
 #include "../typedef.h"
 #include "./scc_40_root_27_isempty_RL.c"
 #include "./scc_38_copy_input_until_stop.c"
-// 定义一个函数handle_compress，用于处理压缩任务
 static
 Bool handle_compress(bz_stream* strm) {
    Bool progress_in = ((Bool)0);    // 标记是否在输入上取得了进展
@@ -58,17 +57,14 @@ Bool handle_compress(bz_stream* strm) {
 #include "CUnit/Basic.h"
 #include "../typedef.h"
 
-// 初始化函数
 int init_suite(void) {
    return 0;
 }
 
-// 清除函数
 int clean_suite(void) {
    return 0;
 }
 
-// 测试handle_compress函数
 void test_handle_compress(void) {
    bz_stream strm = bz_stream_default();
    
@@ -76,29 +72,7 @@ void test_handle_compress(void) {
    CU_ASSERT_TRUE(result); // 根据你的期望调整这里的断言
 }
 
-// int main() {
-//    CU_pSuite pSuite = NULL;
 
-//    // 初始化CUnit库
-//    if (CUE_SUCCESS != CU_initialize_registry())
-//       return CU_get_error();
 
-//    // 添加测试套件
-//    pSuite = CU_add_suite("handle_compress_test_suite", init_suite, clean_suite);
-//    if (NULL == pSuite) {
-//       CU_cleanup_registry();
-//       return CU_get_error();
-//    }
 
-//    // 添加测试案例
-//    if ((NULL == CU_add_test(pSuite, "test_handle_compress", test_handle_compress))) {
-//       CU_cleanup_registry();
-//       return CU_get_error();
-//    }
 
-//    // 运行所有测试套件
-//    CU_basic_set_mode(CU_BRM_VERBOSE);
-//    CU_basic_run_tests();
-//    CU_cleanup_registry();
-//    return CU_get_error();
-// }

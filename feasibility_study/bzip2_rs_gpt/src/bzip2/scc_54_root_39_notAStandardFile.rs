@@ -1,4 +1,3 @@
-// use crate::global_vars::bzip2_c5::{stat};
 
 
 use std::fs;
@@ -12,7 +11,6 @@ use std::os::unix::fs::MetadataExt;
 6. 使用Bool类型的数字代表true和false，而不是直接使用true和false。
 */
 
-// 定义类型
 type Char = char;
 type Bool = u8;
 type UChar = u8;
@@ -36,8 +34,6 @@ pub fn not_a_standard_file(name: &str) -> Bool {
     }
 }
 
-// 注意：在Rust中，使用std::fs::metadata而不是lstat获取文件元数据。
-// metadata方法对大多数用途都是lstat的一个良好的替代方案。
 use std::fs::File;
 
 #[cfg(test)]

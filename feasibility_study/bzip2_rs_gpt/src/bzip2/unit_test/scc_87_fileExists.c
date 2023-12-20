@@ -1,6 +1,5 @@
 #include "../typedef.h"
 #include <stdio.h>
-// 检查给定文件名的文件是否存在
 static
 Bool fileExists ( char* name )
 {
@@ -17,7 +16,6 @@ Bool fileExists ( char* name )
    return exists;
 }
 
-// CUnit测试
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
@@ -29,15 +27,6 @@ void test_fileExists(void) {
     CU_ASSERT_FALSE(fileExists("nonexistent.txt"));
 }
 
-// int main(void) {
-//     CU_initialize_registry();
     
-//     CU_pSuite suite1 = CU_add_suite("FileExistTests", 0, 0);
-//     CU_add_test(suite1, "test_fileExists", test_fileExists);
     
-//     CU_basic_set_mode(CU_BRM_VERBOSE);
-//     CU_basic_run_tests();
-//     CU_cleanup_registry();
     
-//     return 0;
-// }

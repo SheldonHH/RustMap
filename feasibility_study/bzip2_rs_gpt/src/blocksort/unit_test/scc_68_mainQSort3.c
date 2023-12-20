@@ -5,25 +5,10 @@
 #include "../blocksort/scc_29_mainSimpleSort✅.c"
 #include "../blocksort/scc_30_root_20_mmed3.c"
 #include "../bzlib/scc_62_BZ2_bz__AssertH__fail.c"
-// ptr: 这是一个需要排序的索引数组。数组的元素代表的是数据块的位置。
-// block: 这是实际的数据块，它包含要排序的数据。
-// quadrant: 这可能是一个辅助数组，用于优化排序。
-// nblock: 数据块的大小。
-// lo 和 hi: 这是ptr数组中我们要排序的部分的开始和结束索引。
-// d: 这可能是一个偏移，用于在数据块中比较数据。
-// budget: 这是一个指针，指向一个整数，可能用于限制或跟踪排序操作的次数。
 
 
-// 改变了什么:
-// 从你给出的打印输出中，我们可以观察到：
 
-// ptr的特定位置（如ptr[lo]和ptr[hi]）在函数调用后可能会改变，这意味着ptr数组在这些位置上的元素已经被排序。
-// budget有时会改变，这可能意味着在排序过程中，budget被用作计数或跟踪。
-// 以给出的打印输出为例：
 
-// 第一个mainSimpleSort调用，ptr[lo]从177730变为179245，而budget从1799620降低到1799616。
-// 第二和第三个mainSimpleSort调用中，ptr[lo]和ptr[hi]并没有改变，而budget也没有改变。
-// 这意味着在第一个mainSimpleSort调用中，排序确实发生了，并且某些操作消耗了budget。但在接下来的两次调用中，没有发生排序，这可能是因为数据已经是排序状态或者其他条件阻止了排序。
 static
 void mainQSort3 ( UInt32* ptr,
                   UChar* block,
@@ -125,8 +110,6 @@ void mainQSort3 ( UInt32* ptr,
    }
 }
 
-// Test function for mainQSort3
-// 2. CUnit test function
 void test_mainQSort3_fromFile(int counter) {
     char filename[50];
     sprintf(filename, "params_mainQSort3_%d.dat", counter);
@@ -182,28 +165,7 @@ void test_mainQSort3_fromFile(int counter) {
     free(quadrant);
 }
 
-// int main() {
-//     // Initialize CUnit test registry
-//     if (CUE_SUCCESS != CU_initialize_registry())
-//         return CU_get_error();
 
-//     // Add a suite to the registry
-//     CU_pSuite suite = CU_add_suite("MainQSort3_Test", NULL, NULL);
-//     if (NULL == suite) {
-//         CU_cleanup_registry();
-//         return CU_get_error();
-//     }
 
-//     // Add the test to the suite
-//     if (NULL == CU_add_test(suite, "test of mainQSort3()", test_mainQSort3)) {
-//         CU_cleanup_registry();
-//         return CU_get_error();
-//     }
 
-//     // Run all tests in the suite
-//     CU_basic_set_mode(CU_BRM_VERBOSE);
-//     CU_basic_run_tests();
 
-//     CU_cleanup_registry();
-//     return CU_get_error();
-// }

@@ -19,7 +19,6 @@ fn build_str_from_raw_ptr(raw_ptr: *mut u8) -> String {
     }
 }
 
-//use c2rust_out::*;
 extern "C" {
     fn strncpy(_: *mut i8, _: *const i8, _: u64) -> *mut i8;
     fn strlen(_: *const i8) -> u64;

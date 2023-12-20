@@ -1,15 +1,11 @@
-// use crate::bzlib::scc_11_BZ2_bzReadClose::*;
 use crate::bzlib::scc_7_unRLE_obuf_to_output_SMALL::*;
 use crate::bzlib::scc_8_root_6_unRLE_obuf_to_output_FAST::*;
 use crate::global_vars::bzip2_c1::*;
 
-// use crate::global_vars::bzip2_c1::{verbosity, DState, bz_stream};
 use std::io::{Error, Read, Write};
 use std::ptr;
 use std::slice;
 
-// 假设 unRLE_obuf_to_output_SMALL 和 unRLE_obuf_to_output_FAST 函数
-// 已经被正确地翻译和实现为 Rust 函数。
 pub fn BZ2_bzDecompress(strm: *mut bz_stream_DState) -> i32 {
     // unsafe {
     //     if strm.is_null() { return -2; }

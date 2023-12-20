@@ -1,15 +1,5 @@
 
-// BZ2_hbCreateDecodeTables ( Int32*, Int32*, Int32*, UChar*,
-//                            Int32, Int32, Int32 )
 
-// BZ2_hbCreateDecodeTables ( Int32 *limit,
-//                                 Int32 *base,
-//                                 Int32 *perm,
-//                                 UChar *length,
-//                                 Int32 minLen,
-//                                 Int32 maxLen,
-//                                 Int32 alphaSize )
-// decoder.rs
 typedef unsigned char UChar;
 typedef int Int32;
 #include <stdio.h>
@@ -26,10 +16,6 @@ void BZ2_hbCreateDecodeTables ( Int32 *limit,
    Int32 pp, i, j, vec;
 
    pp = 0;
-//    初始化perm数组：这个数组代表了一个排列或者说一个顺序。
-// 对于每一个length数组中的长度i（从minLen到maxLen），检查每一个alphaSize内的值j。
-// 如果length[j]与当前的i相匹配，那么perm数组的下一个位置就设置为j。
-// 这意味着perm数组会根据length数组中的符号长度被填充
    for (i = minLen; i <= maxLen; i++)
       for (j = 0; j < alphaSize; j++)
          if (length[j] == i) { perm[pp] = j; pp++; };

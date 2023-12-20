@@ -1,11 +1,9 @@
-// use crate::global_vars::bzip2_c4::{inFileName, progName};
 type Char = u8;
 pub static mut IN_FILE_NAME: [Char; 2000] = [0; 2000];
 pub static mut OUT_FILE_NAME: [Char; 2000] = [0; 2000];
 pub static mut PROG_NAME: [Char; 2000] = [0; 2000];
 
 
-// writeError ( void )
 
 pub fn write_error() {
     unsafe {

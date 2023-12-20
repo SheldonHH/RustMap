@@ -84,4 +84,3 @@ fn handle_err(bzerr: i32) -> Result<(), String> {
     }
 }
 
-// 假定 bz2_bzwrite_open, bz2_bz_write, bz2_bz_write_close64, config_error, out_of_memory, io_error 函数已经正确实现

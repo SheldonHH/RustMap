@@ -2,7 +2,6 @@ use crate::blocksort::scc_68_mainQSort3::*;
 use std::io::{self, BufRead, BufReader, Error, Result, Write};
 use std::fs::File;
 use std::io::stderr;
-// use std::fmt::Write;
 use std::fmt::Display;
 use std::str::FromStr;
 use crate::global_vars::sleep_lib::*;
@@ -101,7 +100,6 @@ const BZ_N_QSORT: usize = 12;
 const BZ_N_SHELL: usize = 18;
 const BZ_N_OVERSHOOT: usize = BZ_N_RADIX + BZ_N_QSORT + BZ_N_SHELL + 2;
 
-// 此函数接受向量的可变引用和其他参数，而不是直接操作裸指针。
 pub fn main_sort(ptr: &mut Vec<u32>, block: &mut Vec<u8>, quadrant: &mut Vec<u16>, ftab: &mut Vec<u32>, nblock: i32, verb: i32, budget: &mut i32) {
     let mut i: i32;
     let mut j: i32; // usize
@@ -547,7 +545,6 @@ pub fn main_sort(ptr: &mut Vec<u32>, block: &mut Vec<u8>, quadrant: &mut Vec<u16
 }
 
 
-// 测试函数
 #[cfg(test)]
 mod tests {
     use super::*;

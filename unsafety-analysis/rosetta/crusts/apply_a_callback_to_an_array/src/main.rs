@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {}
 extern "C" fn callbackFunction(mut location: i32, mut value: i32) {
     print!("array[{}] = {}\n", location, value);

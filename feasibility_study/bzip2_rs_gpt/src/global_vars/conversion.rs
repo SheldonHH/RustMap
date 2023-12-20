@@ -24,8 +24,6 @@ pub fn string_to_u8_array_2000(s: String) -> [u8; 2000] {
     }
     array
 }
-// Rust 目前不支持在运行时确定固定大小数组的长度，所以数组的长度需要在编译时就确定下来。
-// 这意味着您不能直接根据运行时的输入来创建一个固定大小的数组。
 
 pub fn string_to_u8_array_1034(s: String) -> [u8; 1034] {
     let mut array = [0; 1034];

@@ -1,18 +1,3 @@
-// use crate::bzlib::scc_54_root_36_fdopen::*;
-// use crate::bzip2recover::scc_4_bsClose::*;
-// use crate::bzlib::scc_77_BZ2_bzWrite::*;
-// use crate::bzlib::scc_53_root_35_myfeof::*;
-// use crate::bzip2::scc_52_root_34_uInt64_from_UInt32s::*;
-// use crate::bzip2::scc_51_root_33_uInt64_to_double::*;
-// use crate::bzip2::scc_97_saveInputFileMetaInfo::*;
-// use crate::bzlib::scc_50_BZ2_bzWriteOpen::*;
-// use crate::bzip2::scc_108_testStream::*;
-// use crate::bzip2::scc_100_myMalloc::*;
-// use crate::bzip2::scc_99_outOfMemory::*;
-// use crate::bzip2::scc_95_applySavedTimeInfoToOutputFile::*;
-// use crate::global_vars::bzip2_c1::{blockSize100k, verbosity, workFactor, UInt64};
-// use crate::global_vars::bzip2_c5::{outputHandleJustInCase};
-// use crate::global_vars::bzip2_c2::{FILE};
 
 #include "../typedef.h"
 static

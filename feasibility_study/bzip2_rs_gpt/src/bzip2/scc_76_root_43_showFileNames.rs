@@ -3,11 +3,9 @@ use std::fs::File;
 use std::path::Path;
 use crate::global_vars::bzip2_c5::*;
 use crate::global_vars::bzip2_c1::*;
-// 模拟C语言中的Bool和Char类型
 type Bool = bool;
 type Char = u8;
 
-// 全局变量
 pub fn show_file_names() {
     unsafe {
         if NOISY {

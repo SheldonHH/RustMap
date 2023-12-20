@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {}
 #[no_mangle]
 pub extern "C" fn F(n: i32) -> i32 {

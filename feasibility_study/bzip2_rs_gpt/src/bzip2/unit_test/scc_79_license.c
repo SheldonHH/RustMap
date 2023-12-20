@@ -1,6 +1,4 @@
-// use crate::bzlib::scc_62_BZ2_bz__AssertH__fail::*;
 
-// license ( void )
 BZ2_bzlibVersion
 static
 void license ( void )
@@ -30,7 +28,6 @@ void license ( void )
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
-// 假设您已经包含了必要的头文件和定义
 
 void test_license_output(void) {
     // 由于license函数输出到stderr，我们无法直接在测试中捕获输出内容来进行断言验证。

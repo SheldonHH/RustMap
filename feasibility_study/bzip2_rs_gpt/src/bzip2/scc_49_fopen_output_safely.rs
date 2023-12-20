@@ -1,6 +1,3 @@
-// use crate::bzip2::scc_57_root_38_pad::*;
-// use crate::bzip2::scc_55_root_37_open::*;
-// use crate::global_vars::bzip2_c2::{FILE};
 
 
 use std::fs::OpenOptions;

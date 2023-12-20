@@ -1,5 +1,3 @@
-// use crate::blocksort::scc_71_fallbackSort::*;
-// use crate::decompress::scc_63_BZ2_decompress::*;
 static
 void fallbackSort ( UInt32* fmap,
                     UInt32* eclass,

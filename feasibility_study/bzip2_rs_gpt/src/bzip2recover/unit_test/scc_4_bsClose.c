@@ -1,6 +1,5 @@
 #include "../typedef.h"
 #include "../typedef.h"
-// 关闭BitStream流
 static void bsClose ( BitStream* bs )
 {
    Int32 retVal;
@@ -27,7 +26,6 @@ static void bsClose ( BitStream* bs )
    // 释放内存
    free ( bs );
 }
-// 从BitStream中获取一个位
 static Int32 bsGetBit ( BitStream* bs )
 {
    // 如果缓冲区中还有位
@@ -47,7 +45,6 @@ static Int32 bsGetBit ( BitStream* bs )
       return ( ((bs->buffer) >> 7) & 0x1 );
    }
 }
-// CUnit测试
 void test_bsClose_bsGetBit() {
     // 初始化一个BitStream
     BitStream bs;

@@ -1,6 +1,3 @@
-// use crate::bzlib::scc_75_BZ2_bzCompress::*;
-// use crate::bzlib::scc_41_root_28_prepare_new_block::*;
-// use crate::global_vars::bzip2_c1::{blockSize100k, verbosity, workFactor, bz_stream, EState};
 use crate::bzlib::scc_25_root_33_prepare_new_block_init_RL_isempty_RL_flush_RL_bzlib_static::*;
 use crate::bzlib::scc_70_handle_compress::*;
 use crate::global_vars::bzip2_c1::{bz_stream, EState};
@@ -101,7 +98,6 @@ pub fn bz2_compress(strm: &mut bz_stream, action: i32) -> i32 {
 
 
 
-// scc_76
 use crate::bzlib::scc_16_root_13_BZ2_bzCompressEnd::*;
 use std::io::{Error, Write};
 use std::ffi::c_void;
@@ -193,4 +189,3 @@ fn set_error(bzerror: &mut Option<i32>, bzf: Option<&mut bzFile>, err: i32) {
     }
 }
 
-// 你可能需要添加额外的辅助函数和类型

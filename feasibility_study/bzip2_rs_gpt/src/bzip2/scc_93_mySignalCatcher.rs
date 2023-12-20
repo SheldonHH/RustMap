@@ -1,10 +1,5 @@
-// use crate::bzip2::scc_92_compressedStreamEOF::*;
-// use crate::global_vars::bzip2_c2::{progName};
 
-// 我们暂时不处理信号捕获。真正的Rust代码可能会使用`ctrlc`库进行Control-C捕获。
-// 为了简化，我们只重点在模拟cleanUpAndFail和mySignalCatcher。
 
-// 假设IntNative是i32的typedef
 type IntNative = i32;
 use crate::global_vars::bzip2_c2::*;
 fn clean_up_and_fail(n: IntNative) {

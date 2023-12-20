@@ -203,44 +203,11 @@ pub fn bz2_bzcompress_init(
     0
 }
 
-// pub fn bz2_bzcompress_init(strm: &mut bz_stream, block_size100k: i32, verbosity: i32, work_factor: i32) -> i32 {
-//     // Check if bzip2 configuration is correct.
-//     if !bz_config_ok() {
-//         return -9;
-//     }
 
-//     // Use default allocation and free functions if not provided.
-//     // 在进行参数验证之前，为 strm.bzalloc 分配默认值。
-//     if strm.bzalloc.is_none() {
-//         strm.bzalloc = Some(default_bzalloc as fn(*mut std::ffi::c_void, i32, i32) -> *mut std::ffi::c_void);
-//     }
-//     if strm.bzfree.is_none() {
-//         strm.bzfree = Some(default_bzfree);
-//     }
 
-//     // Validate arguments.
-//     if strm.bzalloc.is_none()
-//         || block_size100k < 1 || block_size100k > 9
-//         || work_factor < 0 || work_factor > 250
-//     {
-//         return -2;
-//     }
 
-//     // Allocate memory for EState structure.
-//     let s = strm.bzalloc.expect("bzalloc function not set")(strm.opaque, std::mem::size_of::<EState>() as i32, 1);
-//     if s.is_null() {
-//         // println!("🐱");
-//         return -3;
-//     }
-//     let s_ref = unsafe { &mut *(s as *mut EState) };
 
-//     // Initialization and memory allocations go here...
-//     // Translated based on the provided C code.
 
-//     // Success return.
-//     0
-// }
-// ... [其他代码略去]
 
 #[cfg(test)]
 mod tests {

@@ -1,6 +1,5 @@
 use crate::global_vars::bzip2_c1::*;
 
-// endsInBz2 函数
 pub fn ends_in_bz2(name: &str) -> bool {
     // 获取name的长度
     let n: usize = name.len();
@@ -14,7 +13,6 @@ pub fn ends_in_bz2(name: &str) -> bool {
     return &name[(n - 4)..] == ".bz2";
 }
 
-// 测试
 #[cfg(test)]
 mod tests {
     use super::*;

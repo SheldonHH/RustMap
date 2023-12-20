@@ -1,0 +1,55 @@
+error[E0600]: cannot apply unary operator `-` to type `u64`
+ --> pythagorean_triples.rs:4:9
+  |
+4 |     [1, -2, 2, 2, -1, 2, 2, -2, 3],
+  |         ^^ cannot apply unary operator `-`
+  |
+  = note: unsigned values cannot be negated
+
+error[E0600]: cannot apply unary operator `-` to type `u64`
+ --> pythagorean_triples.rs:4:19
+  |
+4 |     [1, -2, 2, 2, -1, 2, 2, -2, 3],
+  |                   ^^
+  |                   |
+  |                   cannot apply unary operator `-`
+  |                   help: you may have meant the maximum value of `u64`: `u64::MAX`
+  |
+  = note: unsigned values cannot be negated
+
+error[E0600]: cannot apply unary operator `-` to type `u64`
+ --> pythagorean_triples.rs:4:29
+  |
+4 |     [1, -2, 2, 2, -1, 2, 2, -2, 3],
+  |                             ^^ cannot apply unary operator `-`
+  |
+  = note: unsigned values cannot be negated
+
+error[E0600]: cannot apply unary operator `-` to type `u64`
+ --> pythagorean_triples.rs:6:6
+  |
+6 |     [-1, 2, 2, -2, 1, 2, -2, 2, 3],
+  |      ^^
+  |      |
+  |      cannot apply unary operator `-`
+  |      help: you may have meant the maximum value of `u64`: `u64::MAX`
+  |
+  = note: unsigned values cannot be negated
+
+error[E0600]: cannot apply unary operator `-` to type `u64`
+ --> pythagorean_triples.rs:6:16
+  |
+6 |     [-1, 2, 2, -2, 1, 2, -2, 2, 3],
+  |                ^^ cannot apply unary operator `-`
+  |
+  = note: unsigned values cannot be negated
+
+error[E0600]: cannot apply unary operator `-` to type `u64`
+ --> pythagorean_triples.rs:6:26
+  |
+6 |     [-1, 2, 2, -2, 1, 2, -2, 2, 3],
+  |                          ^^ cannot apply unary operator `-`
+  |
+  = note: unsigned values cannot be negated
+
+error: aborting due to 6 previous errors

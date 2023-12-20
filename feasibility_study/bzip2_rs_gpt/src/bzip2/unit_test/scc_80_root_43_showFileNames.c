@@ -1,7 +1,5 @@
-// use crate::global_vars::bzip2_c5::{inName, noisy, outName};
 
 #include "../typedef.h"
-// showFileNames ( void )
 Bool noisy;
 Char inName [1034];
 Char outName[1034];
@@ -21,7 +19,6 @@ void showFileNames ( void )
 #include <CUnit/Basic.h>
 #include <string.h>
 
-// 假设您已经包含了必要的头文件和定义
 
 void test_showFileNames_noisyTrue(void) {
     noisy = TRUE;  // 设置noisy为True
@@ -41,17 +38,7 @@ void test_showFileNames_noisyFalse(void) {
     showFileNames();
 }
 
-// int main() {
-//     CU_initialize_registry();
 
-//     CU_pSuite suite = CU_add_suite("Test showFileNames", NULL, NULL);
 
-//     CU_add_test(suite, "test_showFileNames_noisyTrue", test_showFileNames_noisyTrue);
-//     CU_add_test(suite, "test_showFileNames_noisyFalse", test_showFileNames_noisyFalse);
 
-//     CU_basic_set_mode(CU_BRM_VERBOSE);
-//     CU_basic_run_tests();
 
-//     CU_cleanup_registry();
-//     return 0;
-// }

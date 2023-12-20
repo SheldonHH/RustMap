@@ -1,7 +1,5 @@
-// use crate::global_vars::bzip2_c1::{DState};
 
 
-// makeMaps_d ( DState* s )
 #include <stdio.h>
 #include <string.h>
 #include <CUnit/Basic.h>
@@ -126,7 +124,6 @@ typedef
    }
    DState;
 
-//    函数的主要目的是对数组 inUse 进行遍历，每当遇到 true 值时，就将当前的索引值存储到 seqToUnseq 数组中，并更新 nInUse 的计数。
 static
 void makeMaps_d ( DState* s )
 {

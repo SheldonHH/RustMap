@@ -1,11 +1,7 @@
-// use crate::global_vars::bzip2_c5::{stat};
 
 #include "../typedef.h"
 #include <sys/stat.h>
 
-// 统计一个文件或目录的硬链接数量
-// 参数: name - 需要统计的文件或目录的名字
-// 返回值: 硬链接数量（减去文件本身的一个链接）
 static Int32 countHardLinks(Char* name)
 {
     IntNative i;

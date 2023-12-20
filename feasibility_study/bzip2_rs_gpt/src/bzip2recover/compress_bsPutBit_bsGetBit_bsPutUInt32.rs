@@ -1,4 +1,3 @@
-// use std::io::{Write, Seek, Read, SeekFrom, Cursor};
 use std::io::{Cursor, Write, Read};
 use std::convert::TryInto;
 use crate::global_vars::bzip2_c1::*;

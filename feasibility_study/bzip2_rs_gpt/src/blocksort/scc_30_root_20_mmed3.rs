@@ -1,5 +1,3 @@
-// 该函数获取三个u8中的中间值。
-// 为了与C语言的UChar保持一致，这里我们使用u8。
 pub fn mmed3(a: u8, b: u8, c: u8) -> u8 {
     let mut a = a;
     let mut b = b;

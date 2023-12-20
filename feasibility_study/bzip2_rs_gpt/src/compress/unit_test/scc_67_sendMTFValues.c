@@ -24,7 +24,6 @@ static void sendMTFValues ( EState* s )
    if (s->nMTF < 1200) nGroups = 4; else
    if (s->nMTF < 2400) nGroups = 5; else
                        nGroups = 6;
-// 此段代码似乎在尝试平均地分配MTF列表，使每个组有大致相等的频率
    {
       Int32 nPart, remF, tFreq, aFreq;
       nPart = nGroups;

@@ -1,4 +1,3 @@
-// 之前的 DState 定义和 impl 块 ...
 pub type Int32 = i32;
 pub type UInt32 = u32;
 pub type UInt16 = u16;
@@ -19,24 +18,10 @@ pub static mut NOISY: Bool = false;
 pub static mut NUM_FILE_NAMES: Int32 = 0;
 pub static mut NUM_FILES_PROCESSED: Int32 = 0;
 pub static mut EXIT_VALUE: Int32 = 0;
-// main函数中设为9
 pub static mut blockSize100k: Int32 = 9;
 pub static mut workFactor: Int32 = 0;
 
 
-// pub fn rebuild_arr1_from_mtfv(mtfv: &[u16]) -> Vec<u32> {
-//     mtfv.chunks(2).map(|chunk| {
-//         let high = chunk[0] as u32;
-//         let low = chunk[1] as u32;
-//         (high << 16) | low
-//     }).collect()
-// }
-//TODO: becareful
-// pub fn rebuild_arr2_from_block(block: &[u8]) -> Vec<u32> {
-//     block.chunks(4).map(|chunk| {
-//         u32::from_ne_bytes(chunk.try_into().unwrap())
-//     }).collect()
-// }
 pub fn rebuild_arr2_from_block(block: &[u8]) -> Vec<u32> {
     block.chunks(4).map(|chunk| {
         let mut padded = [0u8; 4];
@@ -53,14 +38,6 @@ pub fn build_block_from_arr2(arr2: &[u32]) -> Vec<u8> {
 
 
 
-// ❌//TODO: 但根据您的期望结果，应该先添加低位，然后添加高位。
-// pub fn build_mtfv_from_arr1(arr1: &[u32]) -> Vec<u16> {
-//     arr1.iter().flat_map(|&x| {
-//         let high = (x >> 16) as u16;
-//         let low = x as u16;
-//         vec![high, low]
-//     }).collect()
-// }
 pub fn build_mtfv_from_arr1(arr1: &[u32]) -> Vec<u16> {
     arr1.iter().flat_map(|&x| {
         let high = (x >> 16) as u16;
@@ -82,7 +59,6 @@ pub fn rebuild_arr1_from_mtfv(arr1: &[u16]) -> Vec<u32> {
 
 
 pub static mut BZ2_rNums: [i32; 512] = [0; 512];
-// 在 Rust 中，数值字面量后面的 L 后缀，用于表示长整型（long）在 C 语言中的用法，在 Rust 中并不需要。Rust 会根据上下文或显示类型注解来推断整数字面量的类型。在您提供的数组中，所有数值都应被视为 u32 类型，无需任何后缀。
 pub static mut BZ2_crc32Table: [u32; 256] = [
    0x00000000, 0x04c11db7, 0x09823b6e, 0x0d4326d9,
    0x130476dc, 0x17c56b6b, 0x1a864db2, 0x1e475005,
@@ -155,17 +131,6 @@ use std::io::{self, Read, BufRead};
 use std::path::Path;
 use std::str::FromStr;
 
-// fn convert_to_vec(ptr_option: Option<*mut u32>, num_elements: usize) -> Vec<u32> {
-//     let mut vec = Vec::with_capacity(num_elements);
-//     if let Some(ptr) = ptr_option {
-//         unsafe {
-//             // 从 ptr 指向的内存地址复制 num_elements 个 u32 元素到 vec 中
-//             vec.extend_from_slice(std::slice::from_raw_parts(ptr, num_elements));
-//         }
-//     }
-//     vec
-// }
-// 泛型函数，将裸指针转换为 Vec<T>
 fn convert_to_vec<T>(ptr_option: Option<*mut T>, num_elements: usize) -> Vec<T> 
 where
     T: Copy, // T 需要实现 Copy trait，因为我们将从裸指针复制数据
@@ -181,7 +146,6 @@ where
     vec
 }
 
-// #[derive(Serialize, Deserialize)]
 #[derive(Clone)]
 pub struct EState {
  pub   strm: Option<*mut bz_stream>,
@@ -190,23 +154,14 @@ pub struct EState {
  pub  state: Int32,
  pub  avail_in_expect: UInt32,
 
-//  pub   arr1: Option<*mut UInt32>,
-//  pub   arr2: Option<*mut UInt32>,
-//  pub   ftab: Option<*mut UInt32>,
 
-// pub   arr1: Vec<u32>,
-// pub   arr2: Vec<u32>,
 pub   ftab: Vec<u32>,
 pub   origPtr: Int32,
 
-//  pub   ptr: Option<*mut UInt32>,
-//  pub   block: Option<*mut UChar>,
-//  pub   mtfv: Option<*mut UInt16>,
 
 pub   ptr: Vec<u32>,
 pub   block: Vec<u8>,
 pub   mtfv: Vec<u16>,
-//  pub   zbits: Option<*mut UChar>, //TODO: Vec<u8>
     pub zbits: Vec<u8>,
 
  pub   workFactor: Int32,
@@ -244,10 +199,6 @@ pub   mtfv: Vec<u16>,
  pub  len_pack: [[UInt32; 4]; 258],
 }
 
-// use serde_json;
-// fn save_EState_as_json(s: &EState) -> Result<String, serde_json::Error> {
-//     serde_json::to_string(s);
-// }
 pub fn print_estate (estate: &EState, file_name: &str){
     let mut file = match File::create(file_name) {
         Ok(file) => file,
@@ -338,7 +289,6 @@ pub fn print_estate (estate: &EState, file_name: &str){
     write_line("}}");
 }
 
-// 打印指针字段的辅助函数
 fn print_ptr_u32(name: &str, ptr: Option<*mut u32>) {
     match ptr {
         Some(p) if !p.is_null() =>  println!("  {}: {:?}", name, p),
@@ -490,7 +440,6 @@ fn default() -> Self {
 
 
 
-// 定义UInt64结构体
 #[derive(Copy, Clone)]
 pub struct UInt64 {
     pub b: [u8; 8],  // UChar在C中通常是u8在Rust中
@@ -542,7 +491,6 @@ pub type BZFILE = *mut bzFile; // Using a raw pointer to represent the opaque BZ
 use serde_json::{Value};
 use std::os::raw::{c_int, c_void};
 use base64::{encode, decode};  // Import specific functions if needed
-// 独立的 serialize 函数
 pub fn serialize_bzfile(bz_file: &bzFile, filename: &str) -> std::io::Result<()> {
     // 创建 JSON 对象
     let serialized_data = json!({
@@ -607,7 +555,6 @@ impl Default for bzFile {
     }
 }
 
-// 管理压缩/解压缩的字节流，具有跟踪输入和输出、维护状态和处理内存分配的字段。
 #[derive(Copy, Clone)]
 pub struct bz_stream {
     pub   next_in: *mut i8, // char in C is i8 in Rust.
@@ -691,7 +638,6 @@ pub struct bz_stream_DState {
     pub   opaque: *mut std::ffi::c_void,
 }
 
-// 用结构体定义 DState
 
 pub struct DState {
     pub  strm: *mut bz_stream_DState,   // 引用关联的 bz_stream // Reference to associated bz_stream
@@ -844,208 +790,3 @@ pub struct DState {
 }
 
 
-//  blockSize100k
-//  verbosity
-//  workFactor
-//  bzerrorstrings-bzlib.i
-//  DState
-//  typedef
-//     struct {
-//  
-//        bz_stream* strm;
-//  
-//  
-//        Int32 state;
-//  
-//  
-//        UChar state_out_ch;
-//        Int32 state_out_len;
-//        Bool blockRandomised;
-//        Int32 rNToGo; Int32 rTPos;
-//  
-//  
-//        UInt32 bsBuff;
-//        Int32 bsLive;
-//  
-//  
-//        Int32 blockSize100k;
-//        Bool smallDecompress;
-//        Int32 currBlockNo;
-//        Int32 verbosity;
-//  
-//  
-//        Int32 origPtr;
-//        UInt32 tPos;
-//        Int32 k0;
-//        Int32 unzftab[256];
-//        Int32 nblock_used;
-//        Int32 cftab[257];
-//        Int32 cftabCopy[257];
-//  
-//  
-//        UInt32 *tt;
-//  
-//  
-//        UInt16 *ll16;
-//        UChar *ll4;
-//  
-//  
-//        UInt32 storedBlockCRC;
-//        UInt32 storedCombinedCRC;
-//        UInt32 calculatedBlockCRC;
-//        UInt32 calculatedCombinedCRC;
-//  
-//  
-//        Int32 nInUse;
-//        Bool inUse[256];
-//        Bool inUse16[16];
-//        UChar seqToUnseq[256];
-//  
-//  
-//        UChar mtfa [4096];
-//        Int32 mtfbase[256 / 16];
-//        UChar selector [(2 + (900000 / 50))];
-//        UChar selectorMtf[(2 + (900000 / 50))];
-//        UChar len [6][258];
-//  
-//        Int32 limit [6][258];
-//        Int32 base [6][258];
-//        Int32 perm [6][258];
-//        Int32 minLens[6];
-//  
-//  
-//        Int32 save_i;
-//        Int32 save_j;
-//        Int32 save_t;
-//        Int32 save_alphaSize;
-//        Int32 save_nGroups;
-//        Int32 save_nSelectors;
-//        Int32 save_EOB;
-//        Int32 save_groupNo;
-//        Int32 save_groupPos;
-//        Int32 save_nextSym;
-//        Int32 save_nblockMAX;
-//        Int32 save_nblock;
-//        Int32 save_es;
-//        Int32 save_N;
-//        Int32 save_curr;
-//        Int32 save_zt;
-//        Int32 save_zn;
-//        Int32 save_zvec;
-//        Int32 save_zj;
-//        Int32 save_gSel;
-//        Int32 save_gMinlen;
-//        Int32* save_gLimit;
-//        Int32* save_gBase;
-//        Int32* save_gPerm;
-//  
-//     }
-//     DState;
-//  bz_stream
-//  typedef
-//     struct {
-//        char *next_in;
-//        unsigned int avail_in;
-//        unsigned int total_in_lo32;
-//        unsigned int total_in_hi32;
-//  
-//        char *next_out;
-//        unsigned int avail_out;
-//        unsigned int total_out_lo32;
-//        unsigned int total_out_hi32;
-//  
-//        void *state;
-//  
-//        void *(*bzalloc)(void *,int,int);
-//        void (*bzfree)(void *,void *);
-//        void *opaque;
-//     }
-//     bz_stream;
-//  EState
-//  typedef
-//     struct {
-//  
-//        bz_stream* strm;
-//  
-//  
-//  
-//        Int32 mode;
-//        Int32 state;
-//  
-//  
-//        UInt32 avail_in_expect;
-//  
-//  
-//        UInt32* arr1;
-//        UInt32* arr2;
-//        UInt32* ftab;
-//        Int32 origPtr;
-//  
-//  
-//        UInt32* ptr;
-//        UChar* block;
-//        UInt16* mtfv;
-//        UChar* zbits;
-//  
-//  
-//        Int32 workFactor;
-//  
-//  
-//        UInt32 state_in_ch;
-//        Int32 state_in_len;
-//        Int32 rNToGo; Int32 rTPos;
-//  
-//  
-//        Int32 nblock;
-//        Int32 nblockMAX;
-//        Int32 numZ;
-//        Int32 state_out_pos;
-//  
-//  
-//        Int32 nInUse;
-//        Bool inUse[256];
-//        UChar unseqToSeq[256];
-//  
-//  
-//        UInt32 bsBuff;
-//        Int32 bsLive;
-//  
-//  
-//        UInt32 blockCRC;
-//        UInt32 combinedCRC;
-//  
-//  
-//        Int32 verbosity;
-//        Int32 blockNo;
-//        Int32 blockSize100k;
-//  
-//  
-//        Int32 nMTF;
-//        Int32 mtfFreq [258];
-//        UChar selector [(2 + (900000 / 50))];
-//        UChar selectorMtf[(2 + (900000 / 50))];
-//  
-//        UChar len [6][258];
-//        Int32 code [6][258];
-//        Int32 rfreq [6][258];
-//  
-//        UInt32 len_pack[258][4];
-//  
-//     }
-//     EState;
-//  UInt64
-//  typedef
-//     struct { UChar b[8]; }
-//     UInt64;
-//  bzFile
-//  typedef
-//     struct {
-//        FILE* handle;
-//        Char buf[5000];
-//        Int32 bufN;
-//        Bool writing;
-//        bz_stream strm;
-//        Int32 lastErr;
-//        Bool initialisedOk;
-//     }
-//     bzFile;

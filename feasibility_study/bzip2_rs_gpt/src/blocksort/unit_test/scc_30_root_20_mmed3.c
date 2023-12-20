@@ -21,7 +21,6 @@ static __inline__ UChar mmed3 ( UChar a, UChar b, UChar c ) {
 #include <CUnit/Basic.h>
 #include <stdio.h>
 
-// 假设你已经有了上面的mmed3函数定义...
 
 void test_mmed3(void) {
    CU_ASSERT(mmed3(1,2,3) == 2);  // 中间值是2
@@ -31,30 +30,8 @@ void test_mmed3(void) {
    CU_ASSERT(mmed3(0,255,128) == 128);  // 测试极限值
 }
 
-// int main(void) {
-//    CU_pSuite pSuite = NULL;
 
-//    /* 初始化CUnit库 */
-//    if (CUE_SUCCESS != CU_initialize_registry())
-//       return CU_get_error();
 
-//    /* 添加测试套件到注册中心 */
-//    pSuite = CU_add_suite("mmed3_test_suite", NULL, NULL);
-//    if (NULL == pSuite) {
-//       CU_cleanup_registry();
-//       return CU_get_error();
-//    }
 
-//    /* 添加测试函数到套件 */
-//    if (NULL == CU_add_test(pSuite, "test_mmed3", test_mmed3)) {
-//       CU_cleanup_registry();
-//       return CU_get_error();
-//    }
 
-//    /* 运行所有测试 */
-//    CU_basic_set_mode(CU_BRM_VERBOSE);
-//    CU_basic_run_tests();
-//    CU_cleanup_registry();
 
-//    return CU_get_error();
-// }

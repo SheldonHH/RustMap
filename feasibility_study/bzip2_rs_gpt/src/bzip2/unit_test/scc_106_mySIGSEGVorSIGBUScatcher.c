@@ -1,6 +1,3 @@
-// use crate::bzip2::scc_91_cleanUpAndFail::*;
-// use crate::global_vars::bzip2_c5::{exitValue, inName, opMode, outName};
-// use crate::global_vars::bzip2_c2::{progName};
 static
 void mySIGSEGVorSIGBUScatcher ( IntNative n )
 {

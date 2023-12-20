@@ -2,7 +2,6 @@
 use crate::global_vars::bzip2_c1::{BZ2_crc32Table, BZ2_rNums, DState};
 
 
-// unRLE_obuf_to_output_FAST ( DState* s )
 type Int32 = i32;
 type UInt32 = u32;
 type UInt16 = u16;

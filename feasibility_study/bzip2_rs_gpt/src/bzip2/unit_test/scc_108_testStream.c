@@ -7,7 +7,6 @@
 #include "./scc_107_configError.c"
 #include "./scc_93_crcError_ioError.c"
 #include "./scc_99_outOfMemory_scc_100_myMalloc.c"
-// 测试一个文件流是否是有效的bzip2压缩的文件
 static Bool testStream ( FILE *zStream ) {
    BZFILE* bzf = NULL;
    Int32 bzerr, bzerr_dummy, ret, streamNo, i;
@@ -96,7 +95,6 @@ static Bool testStream ( FILE *zStream ) {
 
 #include <CUnit/Basic.h>
 
-// 测试testStream函数
 void test_testStream(void) {
     FILE* zStreamValid = fopen("108_tobe_compressed.txt.bz2 ", "r");  // 打开一个有效的bzip2文件
     FILE* zStreamInvalid = fopen("invalid_file.txt", "r");  // 打开一个无效的文件

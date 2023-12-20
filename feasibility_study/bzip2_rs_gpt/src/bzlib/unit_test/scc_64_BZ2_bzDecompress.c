@@ -18,7 +18,6 @@ typedef
       void *opaque;
    }
    bz_stream;
-// 用于bzip2数据解压。具体的解压细节隐藏在函数内部调用的其它函数中。
 int BZ2_bzDecompress ( bz_stream *strm )
 {
    Bool corrupt; // 变量用于标识数据是否损坏

@@ -1,6 +1,5 @@
 #include <stdio.h>
  
-// m-th on the reversed kill list; m = 0 is final survivor
 int jos(int n, int k, int m) {
 	int a;
 	for (a = m + 1; a <= n; a++)
@@ -10,7 +9,6 @@ int jos(int n, int k, int m) {
  
 typedef unsigned long long xint;
  
-// same as jos(), useful if n is large and k is not
 xint jos_large(xint n, xint k, xint m) {
 	if (k <= 1) return n - m - 1;
  

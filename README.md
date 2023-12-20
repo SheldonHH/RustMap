@@ -1,6 +1,8 @@
 - [version introduction](#version-introduction)
 - [Part 1: Feasibility Study](#part-1-feasibility-study)
   - [bzip2](#bzip2)
+    - [build bzip2](#build-bzip2)
+    - [test bzip2](#test-bzip2)
   - [which](#which)
   - [rosetta](#rosetta)
 - [Part 2: Scaffolding Boilerplate Generation](#part-2-scaffolding-boilerplate-generation)
@@ -31,12 +33,37 @@ bzip2recover: This utility is specifically designed for recovering data from dam
 We will only sh
 ow executable binary bzip2 in the aritfact
 
+### build bzip2  
 ```bash
+cd /root/rustmap/feasibility_study/bzip2_rs_gpt
 cargo build --release
+
 ```
+### test bzip2  
+```bash
+cd /root/rustmap/feasibility_study
+python3 random-test-case-generation.py
+
+cp /root/rustmap/feasibility_study/bzip2_rs_gpt/target/release/bzip2_rs_gpt .
+./bzip2-rust-gpt -k /root/rustmap/feasibility_study/random_1_chars.txt
+./bzip2-rust-gpt -k /root/rustmap/feasibility_study/random_10_chars.txt
+./bzip2-rust-gpt -k /root/rustmap/feasibility_study/random_100_chars.txt
+./bzip2-rust-gpt -k /root/rustmap/feasibility_study/random_1000_chars.txt
+./bzip2-rust-gpt -k /root/rustmap/feasibility_study/random_5000_chars.txt
+
+# mv all bz2 to compressed_bz2
+mv *.bz2 
+
+# bzip2recover and 
+# bzip2recover random_1_chars.txt.bz2
+```
+
+
 
 ## which  
 ```bash
+cd /root/rustmap/feasibility_study/which_rs_gpt
+cargo build --release
 
 ```
 
@@ -57,7 +84,7 @@ cp -r c-code/bzip2 scaffolding_test/
 
 ## Step 1: add save preprocessed file *.i during `make`   
 
-mv
+
 ```bash
 cd scaffolding_test/bzip2
 # replace Makefile with the one that can save temp files
@@ -100,5 +127,5 @@ python3 extract.py /root/crown-rust/bzip2-real-test
 ```
 
 # Part 3: Case Study: Why we need Strongly Connected Component Recursive dependency?
+See diagram:
 
- 

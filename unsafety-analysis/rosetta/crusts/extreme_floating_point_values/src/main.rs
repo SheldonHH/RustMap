@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {}
 fn main_0() -> i32 {
     let mut inf: f64 = 1 as f64 / 0.0f64;

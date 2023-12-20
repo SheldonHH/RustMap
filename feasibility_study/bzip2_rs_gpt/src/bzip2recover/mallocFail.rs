@@ -1,11 +1,8 @@
-// use crate::global_vars::bzip2_c2::{progName};
 
 
-// mallocFail ( Int32 n )
 
 use std::io::{self, Write};
 
-// 之前已经给出的定义
 pub static mut PROG_NAME: [Char; 2000] = [0; 2000];
 type Char = u8;
 type Int32 = i32;

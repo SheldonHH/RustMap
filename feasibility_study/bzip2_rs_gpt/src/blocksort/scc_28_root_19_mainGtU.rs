@@ -1,10 +1,6 @@
-// 导入必要的Rust库
 use std::cmp::Ordering;
 
-// 首先，对于这个代码片段，我将使用标准库中的u8、u16、u32和i32。 
-// Bool和UChar在C中通常是u8，而UInt16、UInt32和Int32分别对应u16、u32和i32。
 
-/// 一个用于表示布尔值的别名，对应于C中的Bool。
 type Bool = bool;
 
 pub fn main_gt_u(

@@ -1,10 +1,7 @@
-// use crate::global_vars::bzip2_c1::{UInt64};
 
 
 
 #include "../typedef.h"
-// 定义一个UInt64的结构体，内部有8个字节
-// 对UInt64结构体的值除以10，并返回余数
 static
 Int32 uInt64_qrm10(UInt64* n) {
    UInt32 rem, tmp;  // 定义余数和临时变量
@@ -22,8 +19,6 @@ Int32 uInt64_qrm10(UInt64* n) {
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
-// 你之前的代码...
-// ... ...
 
 void test_uInt64_qrm10_zero_remainder(void) {
    UInt64 n = {{10, 0, 0, 0, 0, 0, 0, 0}};
@@ -45,15 +40,6 @@ void test_uInt64_qrm10_non_zero_remainder(void) {
    }
 }
 
-// int main() {
-//    CU_initialize_registry();
-//    CU_pSuite suite = CU_add_suite("uInt64_qrm10_suite", NULL, NULL);
 
-//    CU_add_test(suite, "test_uInt64_qrm10_zero_remainder", test_uInt64_qrm10_zero_remainder);
-//    CU_add_test(suite, "test_uInt64_qrm10_non_zero_remainder", test_uInt64_qrm10_non_zero_remainder);
 
-//    CU_basic_run_tests();
-//    CU_cleanup_registry();
 
-//    return 0;
-// }

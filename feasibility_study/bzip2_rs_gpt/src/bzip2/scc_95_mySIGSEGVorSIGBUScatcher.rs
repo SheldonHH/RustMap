@@ -37,35 +37,7 @@ pub fn my_sigsegv_or_sigbus_catcher(op_mode: i32) {
 
 
 
-// pub fn my_sigsegv_or_sigbus_catcher(n: i32) {
-//     let msg = if unsafe { OP_MODE } == 1 {
-//         "..." // 压缩时的错误消息，具体内容已简略
-//     } else {
-//         "..." // 解压缩时的错误消息，具体内容已简略
-//     };
 
-//     // 输出错误消息到标准错误输出
-//     let stderr = std::fs::OpenOptions::new().write(true).open("/dev/stderr").unwrap().into_raw_fd();
-//     let _ = write(stderr, b"\n");
-//     let _ = write(stderr, PROG_NAME.as_bytes());
-//     let _ = write(stderr, msg.as_bytes());
 
-//     // 输出当前输入和输出文件的名字
-//     let msg = "\tInput file = ";
-//     let _ = write(stderr, msg.as_bytes());
-//     let _ = write(stderr, IN_NAME.as_bytes());
-//     let _ = write(stderr, b"\n");
 
-//     let msg = "\tOutput file = ";
-//     let _ = write(stderr, msg.as_bytes());
-//     let _ = write(stderr, OUT_NAME.as_bytes());
-//     let _ = write(stderr, b"\n");
 
-//     // 根据操作模式设置退出状态，并退出程序
-//     if unsafe { OP_MODE } == 1 {
-//         set_exit(3);
-//     } else {
-//         set_exit(2);
-//     }
-//     process::exit(unsafe { EXIT_VALUE });
-// }

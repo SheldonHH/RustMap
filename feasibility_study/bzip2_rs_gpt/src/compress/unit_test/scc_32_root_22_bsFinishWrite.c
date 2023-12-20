@@ -92,7 +92,6 @@ static void bsFinishWrite ( EState* s ) {
 #include <CUnit/Basic.h>
 #include <stdio.h>
 
-// 假设你已经定义了上述的EState结构体和bsFinishWrite函数...
 
 void test_bsFinishWrite(void) {
    EState state;

@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {
     fn malloc(_: u64) -> *mut libc::c_void;
     fn pow(_: f64, _: f64) -> f64;

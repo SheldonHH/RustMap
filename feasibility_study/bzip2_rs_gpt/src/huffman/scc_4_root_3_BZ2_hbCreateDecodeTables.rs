@@ -1,14 +1,5 @@
 
-// BZ2_hbCreateDecodeTables ( Int32*, Int32*, Int32*, UChar*,
-//                            Int32, Int32, Int32 )
 
-// BZ2_hbCreateDecodeTables ( Int32 *limit,
-//                                 Int32 *base,
-//                                 Int32 *perm,
-//                                 UChar *length,
-//                                 Int32 minLen,
-//                                 Int32 maxLen,
-//                                 Int32 alphaSize )
 
 pub fn bz2_hb_create_decode_tables(limit: &mut [i32; 23], // 明确数字类型为i32
     base: &mut [i32; 23],  // 明确数字类型为i32
@@ -20,7 +11,6 @@ pub fn bz2_hb_create_decode_tables(limit: &mut [i32; 23], // 明确数字类型�
 
 let mut pp = 0;
 
-// 1. 初始化perm数组
 for i in min_len..=max_len {
 for j in 0..alpha_size {
 if length[j as usize] == i as u8 { // 类型转换
@@ -30,13 +20,11 @@ pp += 1;
 }
 }
 
-// 2. 初始化base和limit数组
 for i in 0..23 {
 base[i as usize] = 0; // 类型转换
 limit[i as usize] = 0; // 类型转换
 }
 
-// 3. 更新base数组
 for i in 0..alpha_size as usize {
     base[(length[i] as usize + 1) as usize] += 1;
 }
@@ -45,7 +33,6 @@ for i in 1..23 {
 base[i as usize] += base[(i - 1) as usize]; // 类型转换
 }
 
-// 4. 更新limit数组和vec
 let mut vec = 0;
 for i in min_len..=max_len {
     vec += base[(i + 1) as usize] - base[i as usize];
@@ -54,7 +41,6 @@ for i in min_len..=max_len {
 }
 
 
-// 5. 更新base数组
 for i in (min_len + 1)..=max_len {
 base[i as usize] = ((limit[(i - 1) as usize] + 1) << 1) - base[i as usize]; // 类型转换
 }

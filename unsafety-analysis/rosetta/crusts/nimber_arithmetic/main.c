@@ -1,24 +1,20 @@
 #include <stdio.h>
 #include <stdint.h>
  
-// highest power of 2 that divides a given number
 uint32_t hpo2(uint32_t n) {
     return n & -n;
 }
  
-// base 2 logarithm of the highest power of 2 dividing a given number
 uint32_t lhpo2(uint32_t n) {
     uint32_t q = 0, m = hpo2(n);
     for (; m % 2 == 0; m >>= 1, ++q) {}
     return q;
 }
  
-// nim-sum of two numbers
 uint32_t nimsum(uint32_t x, uint32_t y) {
     return x ^ y;
 }
  
-// nim-product of two numbers
 uint32_t nimprod(uint32_t x, uint32_t y) {
     if (x < 2 || y < 2)
         return x * y;

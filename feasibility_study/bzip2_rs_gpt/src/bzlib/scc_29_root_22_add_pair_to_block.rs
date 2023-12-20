@@ -1,4 +1,3 @@
-// use crate::global_vars::bzip2_c1::{BZ2_crc32Table, EState};
 use crate::global_vars::bzip2_c1::*;
 pub fn add_pair_to_block(s: &mut EState) {
     // println!("37_进入函数 add_pair_to_block");

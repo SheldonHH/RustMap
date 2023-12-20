@@ -3,9 +3,7 @@ use crate::bzip2::scc_10_root_12_uInt64_qrm10::*;
 use crate::global_vars::bzip2_c1::{UInt64};
 
 
-// uInt64_toAscii ( char* outbuf, UInt64* n )
 
-// 判断UInt64是否为0
 fn uInt64_isZero(n: &UInt64) -> bool {
     for &byte in &n.b {
         if byte != 0 {
@@ -15,7 +13,6 @@ fn uInt64_isZero(n: &UInt64) -> bool {
     true
 }
 
-// 将UInt64转换为ASCII表示
 fn uInt64_toAscii(outbuf: &mut [char; 32], n: &UInt64) {
     let mut q;
     let mut buf = ['\0'; 32]; // 初始化为null字符
@@ -35,7 +32,6 @@ fn uInt64_toAscii(outbuf: &mut [char; 32], n: &UInt64) {
     }
 }
 
-// 注意：由于Rust没有内建的测试框架像CUnit，我们将使用Rust的测试框架
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -53,4 +49,3 @@ mod tests {
     }
 }
 
-// 在Rust中，您可以通过运行 `cargo test` 来运行上面的测试案例。

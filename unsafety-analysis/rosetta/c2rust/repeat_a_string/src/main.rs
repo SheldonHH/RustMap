@@ -1,6 +1,5 @@
 #![no_std]
 #![allow(dead_code, mutable_transmutes, non_camel_case_types, non_snake_case, non_upper_case_globals, unused_assignments, unused_mut)]
-//use ::c2rust_out::*;
 extern "C" {
     fn puts(__s: *const std::os::raw::c_char) -> std::os::raw::c_int;
     fn free(_: *mut std::os::raw::c_void);

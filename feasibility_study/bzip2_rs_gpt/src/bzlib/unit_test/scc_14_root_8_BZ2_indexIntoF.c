@@ -1,7 +1,5 @@
 
-// BZ2_indexIntoF ( Int32, Int32* )
 
-// BZ2_indexIntoF ( Int32 indx, Int32 *cftab )
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
@@ -44,7 +42,6 @@ int main(void) {
     return CU_get_error();
 }
 
-// 通过二分查找方法在cftab数组中搜索一个给定的索引indx。函数返回这个索引所处的位置。
 __inline__ Int32 BZ2_indexIntoF ( Int32 indx, Int32 *cftab )
 {
    // 定义搜索范围的开始和结束

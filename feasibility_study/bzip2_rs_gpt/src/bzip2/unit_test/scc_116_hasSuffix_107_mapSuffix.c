@@ -1,6 +1,5 @@
 
 #include "../typedef.h"
-// 检查字符串s是否以suffix为后缀。
 static
 Bool hasSuffix ( Char* s, const Char* suffix )
 {
@@ -12,7 +11,6 @@ Bool hasSuffix ( Char* s, const Char* suffix )
    return ((Bool)0);
 }
 
-// 替换字符串name的后缀oldSuffix为newSuffix。
 static
 Bool mapSuffix ( Char* name,
                  const Char* oldSuffix,
@@ -45,16 +43,6 @@ void test_mapSuffix(void) {
     CU_ASSERT_STRING_EQUAL(name2, "document.txt");
 }
 
-// int main(void) {
-//     CU_initialize_registry();
     
-//     CU_pSuite suite1 = CU_add_suite("SuffixTests", 0, 0);
-//     CU_add_test(suite1, "test_hasSuffix", test_hasSuffix);
-//     CU_add_test(suite1, "test_mapSuffix", test_mapSuffix);
     
-//     CU_basic_set_mode(CU_BRM_VERBOSE);
-//     CU_basic_run_tests();
-//     CU_cleanup_registry();
     
-//     return 0;
-// }

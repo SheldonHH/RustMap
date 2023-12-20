@@ -2,7 +2,6 @@
 
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
-// 安全地打开一个用于输出的文件
 
 static
 FILE* fopen_output_safely ( Char* name, const char* mode )
@@ -35,7 +34,6 @@ FILE* fopen_output_safely ( Char* name, const char* mode )
 }
 
 
-// 测试fopen_output_safely函数
 void test_fopen_output_safely() {
     FILE* fp;
 
@@ -54,30 +52,8 @@ void test_fopen_output_safely() {
 }
 
 
-// int main() {
-//     CU_pSuite pSuite = NULL;
 
-//     // 初始化CUnit库
-//     if (CUE_SUCCESS != CU_initialize_registry())
-//         return CU_get_error();
 
-//     // 添加一个测试套件
-//     pSuite = CU_add_suite("Suite_1", NULL, NULL);
-//     if (NULL == pSuite) {
-//         CU_cleanup_registry();
-//         return CU_get_error();
-//     }
 
-//     // 在测试套件中添加测试用例
-//     if (NULL == CU_add_test(pSuite, "test of fopen_output_safely", test_fopen_output_safely)) {
-//         CU_cleanup_registry();
-//         return CU_get_error();
-//     }
 
-//     // 运行所有测试
-//     CU_basic_run_tests();
 
-//     // 清理CUnit并退出
-//     CU_cleanup_registry();
-//     return CU_get_error();
-// }

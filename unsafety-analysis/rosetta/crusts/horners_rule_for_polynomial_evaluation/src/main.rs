@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {}
 #[no_mangle]
 pub extern "C" fn horner(mut coeffs: *mut f64, mut s: i32, mut x: f64) -> f64 {

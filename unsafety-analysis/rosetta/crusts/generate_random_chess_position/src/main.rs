@@ -32,7 +32,6 @@ pub fn rust_time(ref_result: Option<&mut i64>) -> i64 {
     return result as i64;
 }
 
-//use c2rust_out::*;
 extern "C" {
     fn strcpy(_: *mut i8, _: *const i8) -> *mut i8;
     fn strlen(_: *const i8) -> u64;

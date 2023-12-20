@@ -2,7 +2,6 @@ use std::fs::File;
 use std::path::Path;
 use std::io::Write;
 
-// 检查给定文件名的文件是否存在
 pub fn file_exists(name: &str) -> bool {
     // 尝试打开文件
     let file = File::open(name);

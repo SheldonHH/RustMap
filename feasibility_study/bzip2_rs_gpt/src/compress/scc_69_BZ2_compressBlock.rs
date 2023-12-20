@@ -4,94 +4,24 @@ use crate::compress::scc_18_root_15_makeMaps_e_scc_19_generateMTFValues::generat
 use crate::blocksort::scc_72_BZ2_blockSort::block_sort;
 use crate::compress::scc_63_sendMTFValues::*;
 use crate::compress::scc_28_root_21_BZ2_bsInitWrite::*;
-// use crate::bzip2recover::scc_2_compress_bsPutBit_bsGetBit_bsPutUInt32::*;
 use crate::global_vars::conversion::*;
 use std::io::{Cursor, Write, Read};
 use std::alloc::{alloc, realloc, Layout};
 use std::process::exit;
-// pub fn bs_needw(s: &mut EState, nz: i32) {
-//     // println!("开始执行 bs_needw 函数");
 
-//     unsafe {
-//         while s.bsLive >= 8 {
-//             // println!("处理循环中，bsLive = {}", s.bsLive);
 
-//             if s.numZ as usize >= s.nblockMAX as usize {
-//                 // println!("检测到内存不足，准备重新分配");
 
-//                 // 如果zbits是None或指向的内存不足，重新分配
-//                 let new_capacity = s.nblockMAX.max(1) * 2;
-//                 let layout = Layout::array::<u8>(new_capacity as usize).unwrap();
-//                 s.zbits = if let Some(zbits_ptr) = s.zbits {
-//                     // println!("zbits 非空，正在重新分配内存");
-//                     Some(realloc(zbits_ptr as *mut u8, layout, new_capacity as usize) as *mut u8)
-//                 } else {
-//                     // println!("zbits 为空，正在分配新内存");
-//                     Some(alloc(layout) as *mut u8)
-//                 };
-//                 // 更新nblockMAX以反映新的容量
-//                 s.nblockMAX = new_capacity as i32;
-//                 // println!("内存重新分配完成，新的 nblockMAX = {}", s.nblockMAX);
-//             }
             
-//             if let Some(zbits_ptr) = s.zbits {
-//                 // println!("正在写入数据到 zbits");
-//                 *zbits_ptr.add(s.numZ as usize) = (s.bsBuff >> 24) as u8;
-//             } else {
-//                 // println!("错误：zbits 为空，无法写入数据");
-//             }
-//             s.numZ += 1;
-//             s.bsBuff <<= 8;
-//             s.bsLive -= 8;
-//             // println!("循环结束，更新后的 numZ = {}, bsBuff = {}, bsLive = {}", s.numZ, s.bsBuff, s.bsLive);
-//         }
-//     }
 
-//     // println!("bs_needw 函数执行完成");
-// }
 
-// pub fn bs_w(s: &mut EState, n: i32, v: u32) {
-//     bs_needw(s, n);
-//     s.bsBuff |= v << (32 - s.bsLive - n) as u32;
-//     s.bsLive += n;
-// }
-// 将 bsW 函数放置在 EState 的 impl 块之外
-// pub fn bs_w(s: &mut EState, n: i32, v: u32) {
-//     // println!("函数开始: bs_w");
-//     // println!("初始 bsLive: {}", s.bsLive);
 
-//     while s.bsLive >= 8 {
-//         // println!("循环: bsLive >= 8");
 
-//         // 确保 zbits 有足够的空间
-//         let numZ_usize = s.numZ as usize;
-//         if numZ_usize >= s.zbits.len() {
-//             // 扩展 zbits 以确保有足够的空间
-//             s.zbits.resize(numZ_usize + 1, 0);
-//         }update_arr2_from_zbits(s);
-//         // 安全地更新 zbits 的内容
-//         unsafe {
-//             // println!("安全访问 zbits, numZ: {}", s.numZ);
-//             // println!("安全访问 bsBuff, bsBuff: {}", s.bsBuff);
 
-//             *s.zbits.as_mut_ptr().add(s.numZ as usize) = (s.bsBuff >> 24) as u8;
-//         }
 
-//         s.numZ += 1;
-//         s.bsBuff <<= 8;
-//         s.bsLive -= 8;
 
-//         // println!("循环结束: numZ: {}, bsBuff: {}, bsLive: {}", s.numZ, s.bsBuff, s.bsLive);
-//     }
 
-//     // println!("循环结束，更新 bsBuff 和 bsLive");
-//     s.bsBuff |= v << (32 - s.bsLive - n);
-//     s.bsLive += n;
 
-//     // println!("函数结束: bsBuff: {}, bsLive: {}", s.bsBuff, s.bsLive);
-// }
 
-// 在您的代码中，当 s.numZ 等于或超过 s.zbits.len() 时，我们需要增加 s.zbits 的大小
 pub fn bs_w(s: &mut EState, n: Int32, v: UInt32) {
     while s.bsLive >= 8 {
         // 在赋值前确保有足够的空间
@@ -174,7 +104,6 @@ fn update_zbits(estate: &mut EState) {
     }
 }
 
-// 我们需要根据系统是大端序还是小端序来决定如何处理字节顺序。
 fn update_arr2(estate: &mut EState) {
     let nblock = estate.nblock as usize;
     let mut arr2 = rebuild_arr2_from_block(&estate.block);

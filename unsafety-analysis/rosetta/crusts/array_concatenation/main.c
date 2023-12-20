@@ -14,7 +14,6 @@ void *array_concat(const void *a, size_t an,
   return p;
 }
 
-// testing
 const int a[] = {1, 2, 3, 4, 5};
 const int b[] = {6, 7, 8, 9, 0};
 

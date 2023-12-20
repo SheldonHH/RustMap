@@ -34,7 +34,6 @@ pub fn bz2_bz_read_get_unused(bzerror: &mut Option<i32>,
     *unused.as_mut().unwrap() = bzf.strm.next_in;
 }
 
-// 由于重复性的代码，提取出一个设置错误的函数
 fn set_error(bzerror: &mut Option<i32>, b: *mut bzFile, err_code: i32) {
     if let Some(err) = bzerror {
         *err = err_code;

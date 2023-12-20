@@ -1,18 +1,13 @@
 use crate::bzip2recover::readError::*;
 use crate::bzip2recover::writeError::*;
-// use crate::bzip2recover::scc_6_root_3_mallocFail::*;
-// use crate::global_vars::bzip2_c2::{bytesOut, BitStream};
 use std::io::Cursor;
 
-// bsClose ( BitStream* bs )
 
-// bsPutBit ( BitStream* bs, Int32 bit )
 type Char = u8;
 type UChar = u8;
 type Int32 = i32; // 对应C的int类型
 type MaybeUInt64 = u64;
 
-// 这是一个模拟的全局变量, 在实际Rust代码中，你可能想要用其他方式来管理
 static mut BYTES_OUT: MaybeUInt64 = 0;
 pub struct BitStream {
     handle: Cursor<Vec<u8>>,

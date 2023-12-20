@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
  
-// we return a static buffer; caller wants it, caller copies it
 char * mid3(int n)
 {
 	static char buf[32];

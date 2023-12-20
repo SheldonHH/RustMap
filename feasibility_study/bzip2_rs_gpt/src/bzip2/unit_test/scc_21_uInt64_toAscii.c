@@ -1,9 +1,5 @@
-// use crate::bzip2::scc_22_root_14_fchown::*;
-// use crate::bzip2::scc_20_root_13_uInt64_qrm10::*;
-// use crate::global_vars::bzip2_c1::{UInt64};
 
 
-// uInt64_toAscii ( char* outbuf, UInt64* n )
 #include "../typedef.h"
 #include "./scc_20_root_13_uInt64_qrm10.c"
 /* 将 UInt64 类型的数字转换为其 ASCII 表示 */

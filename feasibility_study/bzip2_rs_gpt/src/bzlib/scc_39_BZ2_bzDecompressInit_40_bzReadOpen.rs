@@ -1,5 +1,3 @@
-// Assuming UChar is defined as u8.
-// Also assuming that bzFile, bz_stream, DState and associated functions (like default_bzalloc) are defined elsewhere.
 use std::ptr;
 use crate::bzlib::scc_36_root_27_default_bzfree_38_bz_config_ok_37_default_bzalloc::*;
 use crate::global_vars::bzip2_c1::{BZ2_rNums, DState, bz_stream_DState,  bzFile};

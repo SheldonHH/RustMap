@@ -1,11 +1,6 @@
-// use crate::global_vars::bzip2_c1::{DState, bz_stream};
 
 
-// BZ2_bzDecompressEnd (
-//       bz_stream *strm
-//    )
 
-// BZ2_bzDecompressEnd ( bz_stream *strm )
 
 type Int32 = i32;
 type UInt32 = u32;

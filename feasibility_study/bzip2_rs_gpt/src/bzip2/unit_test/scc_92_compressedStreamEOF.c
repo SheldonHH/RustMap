@@ -1,6 +1,5 @@
 #include "../typedef.h"
 
-// 函数 compressedStreamEOF 处理压缩流意外结束的情况
 static
 void compressedStreamEOF ( void )
 {
@@ -27,7 +26,6 @@ void compressedStreamEOF ( void )
   cleanUpAndFail( 2 );
 }
 
-// 为测试函数创建一个模拟的cleanUpAndFail函数
 void mock_cleanUpAndFail(int exitCode) {
     longjmp(test_env, exitCode);
 }

@@ -1,6 +1,5 @@
 use crate::global_vars::bzip2_c1::{EState};
 
-// 将 bsW 函数放置在 EState 的 impl 块之外
 pub fn bs_w(s: &mut EState, n: i32, v: u32) {
     while s.bsLive >= 8 {
         unsafe {

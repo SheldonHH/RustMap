@@ -19,7 +19,6 @@ fn build_str_from_raw_ptr(raw_ptr: *mut u8) -> String {
     }
 }
 
-//use c2rust_out::*;
 extern "C" {
     fn snprintf(_: *mut i8, _: u64, _: *const i8, _: ...) -> i32;
     fn strtoul(_: *const i8, _: *mut *mut i8, _: i32) -> u64;

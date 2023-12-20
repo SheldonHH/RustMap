@@ -59,15 +59,9 @@ static void BZ2_bz__AssertH__fail ( int errcode )
 #include <stdlib.h>
 #include <setjmp.h>
 
-// 跳转环境，用于在exit被调用时返回到测试函数
 jmp_buf test_env;
 
-// 为了测试，我们需要一个替代的exit函数
-// void exit(int status) {
-//     longjmp(test_env, status);
-// }
 
-// 测试函数
 static void test_BZ2_bz__AssertH__fail(void) {
     // 1. 重定向stderr到临时文件
     FILE *tmp = freopen("temp.txt", "w", stderr);
@@ -106,13 +100,4 @@ static void test_BZ2_bz__AssertH__fail(void) {
     remove("temp.txt");
 }
 
-// int main() {
-//     CU_initialize_registry();
-//     CU_pSuite suite = CU_add_suite("TestSuite", NULL, NULL);
-//     CU_add_test(suite, "test_BZ2_bz__AssertH__fail", test_BZ2_bz__AssertH__fail);
-//     CU_basic_set_mode(CU_BRM_VERBOSE);
-//     CU_basic_run_tests();
-//     CU_cleanup_registry();
-//     return CU_get_error();
-// }
 

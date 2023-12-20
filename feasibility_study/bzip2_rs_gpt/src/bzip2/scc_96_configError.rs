@@ -1,4 +1,3 @@
-// use crate::bzip2::scc_91_cleanUpAndFail::*;
 use crate::global_vars::bzip2_c5::{exitValue};
 use crate::bzip2::scc_79_root_46_setExit::*;
 

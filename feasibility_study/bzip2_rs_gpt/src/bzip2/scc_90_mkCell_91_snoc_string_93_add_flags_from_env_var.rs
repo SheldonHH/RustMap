@@ -1,11 +1,5 @@
-// use crate::bzip2::scc_101_mkCell::*;
-// use crate::global_vars::bzip2_c5::{Cell};
 
-// 假设Char是char的typedef
-// use crate::bzip2::scc_101_mkCell::*;
-// use crate::global_vars::bzip2_c5::{Cell};
 
-// 假设Char是char的typedef
 pub type Char = char;
 #[derive(Clone)]
 pub struct Cell {
@@ -106,37 +100,9 @@ fn getenv(var_name: &str) -> Option<&'static str> {
     }
 }
 
-// #[cfg(test)]
-// mod tests {
-//     use super::*;
 
-//     #[test]
-//     fn test_snoc_string() {
-//         let mut root = Cell::mk_cell();
 
-//         root = root.snoc_string("hello");
-//         assert_eq!(root.name.as_ref().unwrap().as_ref(), "hello");
-//         assert!(root.link.is_none());
 
-//         root = root.snoc_string("world");
-//         assert_eq!(root.name.as_ref().unwrap().as_ref(), "hello");
-//         assert_eq!(root.link.as_ref().unwrap().name.as_ref().unwrap().as_ref(), "world");
-//         assert!(root.link.as_ref().unwrap().link.is_none());
 
-//         root = root.snoc_string("rust");
-//         assert_eq!(root.name.as_ref().unwrap().as_ref(), "hello");
-//         assert_eq!(root.link.as_ref().unwrap().name.as_ref().unwrap().as_ref(), "world");
-//         assert_eq!(root.link.as_ref().unwrap().link.as_ref().unwrap().name.as_ref().unwrap().as_ref(), "rust");
-//         assert!(root.link.as_ref().unwrap().link.as_ref().unwrap().link.is_none());
-//     }
 
-//     #[test]
-//     fn test_add_flags_from_env_var() {
-//         let mut root: Option<Box<Cell>> = None;
-//         Cell::add_flags_from_env_var(&mut root, "MY_TEST_ENV");
 
-//         assert_eq!(root.as_ref().unwrap().name.as_ref().unwrap().as_ref(), "flag1");
-//         assert_eq!(root.as_ref().unwrap().link.as_ref().unwrap().name.as_ref().unwrap().as_ref(), "flag2");
-//         assert_eq!(root.as_ref().unwrap().link.as_ref().unwrap().link.as_ref().unwrap().name.as_ref().unwrap().as_ref(), "flag3");
-//     }
-// }

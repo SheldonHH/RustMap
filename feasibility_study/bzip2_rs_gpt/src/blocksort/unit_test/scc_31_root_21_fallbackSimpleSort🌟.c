@@ -1,8 +1,6 @@
 #include "../typedef.h"
 #include <CUnit/Basic.h>
 #include <CUnit/CUnit.h>
-// 该函数对fmap数组在指定范围[lo, hi]内进行排序。
-// 排序是基于eclass数组中的值进行的，即fmap中的值用作eclass的索引。
 void fallbackSimpleSort ( UInt32* fmap,    // 需要排序的数组
                           UInt32* eclass,  // 用于排序的辅助数组
                           Int32 lo,        // 排序范围的开始索引

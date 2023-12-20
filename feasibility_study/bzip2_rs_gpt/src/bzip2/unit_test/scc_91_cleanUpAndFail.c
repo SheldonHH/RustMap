@@ -1,6 +1,5 @@
 #include "../typedef.h"
 #include "./scc_90_root_52_setExit.c"
-// 清理并以指定的错误代码退出程序
 void cleanUpAndFail ( Int32 ec )
 {
    IntNative retVal;
@@ -51,23 +50,7 @@ void cleanUpAndFail ( Int32 ec )
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
-// 测试cleanUpAndFail函数
-// void test_cleanUpAndFail(void) {
-//     // 由于cleanUpAndFail会导致程序退出，所以在实际测试中应避免直接调用它。
-//     // 一个可能的做法是使用mocking技术来拦截并验证其输出或行为，或使用子进程执行它并检查返回值。
-//     // 这里只提供一个简单的示例。
-//     CU_FAIL("This test is just a placeholder and shouldn't be executed directly.");
-// }
 
-// int main(void) {
-//     CU_initialize_registry();
     
-//     CU_pSuite suite1 = CU_add_suite("CleanupTests", 0, 0);
-//     CU_add_test(suite1, "test_cleanUpAndFail", test_cleanUpAndFail);
     
-//     CU_basic_set_mode(CU_BRM_VERBOSE);
-//     CU_basic_run_tests();
-//     CU_cleanup_registry();
     
-//     return 0;
-// }

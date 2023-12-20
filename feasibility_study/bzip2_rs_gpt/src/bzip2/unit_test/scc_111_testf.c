@@ -1,12 +1,8 @@
-// use crate::global_vars::bzip2_c5::{deleteOutputOnInterrupt, inName, noisy, outName, outputHandleJustInCase, srcMode, testFailsExist, stat};
-// use crate::global_vars::bzip2_c2::{progName, FILE};
-// use crate::global_vars::bzip2_c1::{verbosity};
 
 #include "./scc_60_root_41_containsDubiousChars.c"
 #include "./scc_90_root_52_setExit.c"
 
 
-// testf ( Char *name )
 
 static
 void testf ( Char *name )

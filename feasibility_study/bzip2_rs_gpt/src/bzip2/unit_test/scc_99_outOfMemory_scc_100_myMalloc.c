@@ -5,7 +5,6 @@
 #include "./scc_91_cleanUpAndFail.c"
 #include "./scc_80_root_43_showFileNames.c"
 
-// 当内存分配失败时，报告错误信息并退出程序
 static
 void outOfMemory ( void )
 {
@@ -32,9 +31,6 @@ void *myMalloc ( Int32 n )
    return p;
 }
 
-// 注意：这个函数的功能是报告错误并终止程序，因此很难为其编写单元测试。
-// 但如果需要的话，可以模拟内存分配失败或者使用mocking技术来测试它的行为。
-// 以下是一个简单的测试，假设我们可以模拟内存分配失败。
 
 void test_outOfMemory(void) {
     // 假设我们可以模拟内存分配失败
@@ -51,15 +47,5 @@ void test_myMalloc(void) {
     // 例如，可以暂时修改myMalloc中的逻辑来模拟malloc失败，或者尝试分配极大的内存来触发失败。
 }
 
-// int main() {
-//     CU_initialize_registry();
-//     CU_pSuite suite = CU_add_suite("Test myMalloc", NULL, NULL);
     
-//     CU_add_test(suite, "test_myMalloc", test_myMalloc);
-//     CU_add_test(suite, "test_outOfMemory", test_outOfMemory);
 
-//     CU_basic_set_mode(CU_BRM_VERBOSE);
-//     CU_basic_run_tests();
-//     CU_cleanup_registry();
-//     return 0;
-// }

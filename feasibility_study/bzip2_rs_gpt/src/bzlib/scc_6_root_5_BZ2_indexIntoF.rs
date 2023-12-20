@@ -1,9 +1,5 @@
 
-// BZ2_indexIntoF ( Int32, Int32* )
 
-// BZ2_indexIntoF ( Int32 indx, Int32 *cftab )
-/// 使用二分查找在cftab数组中查找给定的索引indx。
-/// 函数返回找到的位置。
 pub fn bz2_index_into_f(indx: i32, cftab: &[i32; 257]) -> i32 {
     // 定义搜索范围的开始和结束
     let mut nb: i32 = 0;    // 明确标记为 i32 类型

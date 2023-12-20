@@ -1,9 +1,7 @@
-// use crate::global_vars::bzip2_c5::{longestFileName};
 
 #include "../typedef.h"
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
-// 该函数的目的是对齐字符串s的长度到longestFileName，通过向stderr打印空格实现对齐。
 static
 void pad ( Char *s )
 {
@@ -67,24 +65,7 @@ void test_pad() {
 }
 
 
-// int main() {
-//     CU_pSuite pSuite = NULL;
 
-//     if (CUE_SUCCESS != CU_initialize_registry())
-//         return CU_get_error();
 
-//     pSuite = CU_add_suite("Suite_1", NULL, NULL);
-//     if (NULL == pSuite) {
-//         CU_cleanup_registry();
-//         return CU_get_error();
-//     }
 
-//     if (NULL == CU_add_test(pSuite, "test of pad", test_pad)) {
-//         CU_cleanup_registry();
-//         return CU_get_error();
-//     }
 
-//     CU_basic_run_tests();
-//     CU_cleanup_registry();
-//     return CU_get_error();
-// }

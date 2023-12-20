@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {}
 pub type intFn = Option<unsafe extern "C" fn(i32, i32) -> i32>;
 #[no_mangle]

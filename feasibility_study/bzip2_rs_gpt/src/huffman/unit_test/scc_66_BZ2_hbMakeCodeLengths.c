@@ -1,6 +1,5 @@
 #include "../typedef.h"
 #include "../bzlib/scc_62_BZ2_bz__AssertH__fail.c"
-// 创建Huffman编码长度
 void BZ2_hbMakeCodeLengths ( UChar *len, Int32 *freq, Int32 alphaSize, Int32 maxLen ) {
 
    // 定义一些变量

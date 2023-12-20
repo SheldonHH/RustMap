@@ -1,5 +1,4 @@
 use crate::global_vars::bzip2_c2::*;
-// 检查字符串s是否以suffix为后缀。
 pub fn has_suffix(s: &[Char], suffix: &[Char]) -> bool {
     // 获取s的长度
     let ns = s.len(); 
@@ -13,7 +12,6 @@ pub fn has_suffix(s: &[Char], suffix: &[Char]) -> bool {
     &s[(ns-nx)..] == suffix
 }
 
-// 替换字符串name的后缀oldSuffix为newSuffix。
 pub fn map_suffix(name: &mut Vec<Char>, old_suffix: &[Char], new_suffix: &[Char]) -> bool {
     // 如果name不以oldSuffix为后缀，则返回false
     if !has_suffix(name, old_suffix) {

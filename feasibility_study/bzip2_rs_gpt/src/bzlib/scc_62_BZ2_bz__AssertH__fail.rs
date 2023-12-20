@@ -1,8 +1,6 @@
 use crate::bzlib::scc_42_root_57_BZ2_bzlibVersion::*;
 
-// BZ2_bz__AssertH__fail ( int errcode )
 
-// BZ2_bz__AssertH__fail ( int errcode )
 use std::fs::{File, remove_file};
 use std::panic::{catch_unwind, AssertUnwindSafe};
 

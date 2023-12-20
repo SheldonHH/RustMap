@@ -1,8 +1,6 @@
-// use crate::global_vars::bzip2_c1::{EState};
 #include  "../typedef.h"
 
 
-// 初始化写入位流的状态
 void BZ2_bsInitWrite ( EState* s )
 {
    // 设置当前有效的位数为0
@@ -15,7 +13,6 @@ void BZ2_bsInitWrite ( EState* s )
 
 #include <CUnit/Basic.h>
 
-// 假设已经定义了EState结构体和BZ2_bsInitWrite函数...
 
 void test_BZ2_bsInitWrite(void) {
    EState s;

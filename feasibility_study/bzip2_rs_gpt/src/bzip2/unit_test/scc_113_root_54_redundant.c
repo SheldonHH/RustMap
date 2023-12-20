@@ -6,11 +6,9 @@
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
-// 全局变量，用于模拟fprintf的行为
 bool mock_fprintf_called = false;
 char captured_msg[1024];
 
-// 模拟fprintf函数
 int mock_fprintf(FILE *stream, const char *format, ...) {
     mock_fprintf_called = true;
     va_list args;
@@ -20,7 +18,6 @@ int mock_fprintf(FILE *stream, const char *format, ...) {
     return 0;
 }
 
-// 使用宏替换的方式模拟fprintf
 #define fprintf mock_fprintf
 
 

@@ -19,7 +19,6 @@ fn build_str_from_raw_ptr(raw_ptr: *mut u8) -> String {
     }
 }
 
-//use c2rust_out::*;
 extern "C" {
     fn atoi(__nptr: *const i8) -> i32;
     fn malloc(_: u64) -> *mut libc::c_void;

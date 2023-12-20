@@ -44,7 +44,6 @@ void add_pair_to_block ( EState* s )
 
 #include <CUnit/Basic.h>
 
-// 假设已经定义了EState结构体和其他所需的函数...
 
 void test_add_pair_to_block(void) {
    EState s = EState_default(); 

@@ -1,13 +1,5 @@
-// use crate::bzlib::scc_62_BZ2_bz__AssertH__fail::*;
-// use crate::global_vars::bzip2_c1::*;
-// use std::io::stderr;
-// use std::fmt::Write;
 
-// // ...其他代码(例如上面的bz2_bz_assert_h_fail和类型定义)
-// // ...[其他导入和函数定义]
 
-// type UChar = u8;
-// type Int32 = i32;
 pub fn bz2_hb_make_code_lengths(len: &mut [u8], freq: &[i32], alpha_size: i32, max_len: i32) {
     // 变量定义
     let mut n_nodes;
@@ -164,23 +156,6 @@ pub fn bz2_hb_make_code_lengths(len: &mut [u8], freq: &[i32], alpha_size: i32, m
 }
 
 
-// #[cfg(test)]
-// mod tests {
-//     use super::*;
 
-//     #[test]
-//     fn test_bz2_hb_make_code_lengths() {
-//         let mut len = [0u8; 5];
-//         let freq = [5, 15, 10, 0, 1];
-//         let alpha_size = 5;
-//         let max_len = 10;
 
-//         bz2_hb_make_code_lengths(&mut len, &freq, alpha_size, max_len);
 
-//         assert!(len[0] <= max_len as u8);
-//         assert!(len[1] <= max_len as u8);
-//         assert!(len[2] <= max_len as u8);
-//         assert!(len[3] <= max_len as u8);
-//         assert!(len[4] <= max_len as u8);
-//     }
-// }

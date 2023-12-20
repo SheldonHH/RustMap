@@ -19,7 +19,6 @@ fn build_str_from_raw_ptr(raw_ptr: *mut u8) -> String {
     }
 }
 
-//use c2rust_out::*;
 extern "C" {
     fn malloc(_: u64) -> *mut libc::c_void;
     fn calloc(_: u64, _: u64) -> *mut libc::c_void;

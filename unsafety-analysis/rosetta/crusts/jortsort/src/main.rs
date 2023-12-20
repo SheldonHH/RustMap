@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {
     fn atoi(__nptr: *const i8) -> i32;
     fn malloc(_: u64) -> *mut libc::c_void;

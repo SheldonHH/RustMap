@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
  
-// row starts with 1; col < row
 size_t bellIndex(int row, int col) {
     return row * (row - 1) / 2 + col;
 }

@@ -1,6 +1,5 @@
 #![no_std]
 #![allow(dead_code, mutable_transmutes, non_camel_case_types, non_snake_case, non_upper_case_globals, unused_assignments, unused_mut)]
-//use ::c2rust_out::*;
 extern "C" {
     fn atan2(_: std::os::raw::c_double, _: std::os::raw::c_double) -> std::os::raw::c_double;
     fn cos(_: std::os::raw::c_double) -> std::os::raw::c_double;

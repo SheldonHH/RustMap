@@ -1,5 +1,4 @@
 
-// 从输入流中复制数据到块中，直到满足停止条件
 #include "../typedef.h"
 #include "./scc_37_root_25_add_pair_to_block.c"
 static
@@ -46,7 +45,6 @@ Bool copy_input_until_stop ( EState* s )
 }
 
 
-// 从处理完的数据中复制到输出流，直到满足停止条件
 static
 Bool copy_output_until_stop ( EState* s )
 {
@@ -75,7 +73,6 @@ Bool copy_output_until_stop ( EState* s )
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
-// CUnit测试用例
 void test_copy_input_until_stop() {
 
     EState s = EState_default();
@@ -98,16 +95,6 @@ void test_copy_output_until_stop() {
     // 例如，你可能想要检查输出流的大小或值。
 }
 
-// int main() {
-//     CU_initialize_registry();
 
-//     CU_pSuite suite = CU_add_suite("Compression Stream Tests", NULL, NULL);
-//     CU_add_test(suite, "test_copy_input_until_stop", test_copy_input_until_stop);
-//     CU_add_test(suite, "test_copy_output_until_stop", test_copy_output_until_stop);
 
-//     CU_basic_set_mode(CU_BRM_VERBOSE);
-//     CU_basic_run_tests();
-//     CU_cleanup_registry();
 
-//     return 0;
-// }

@@ -1,7 +1,5 @@
-// use crate::global_vars::bzip2_c5::{noisy};
 
 
-// cadvise ( void )
 
 
 #include "typedef.h"

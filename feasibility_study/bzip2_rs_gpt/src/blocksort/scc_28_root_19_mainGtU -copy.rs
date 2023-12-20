@@ -1,4 +1,3 @@
-// 导入必要的Rust库
 use std::cmp::Ordering;
 
 pub fn main_gt_u(
@@ -84,112 +83,26 @@ mod tests {
 }
 
 
-// void test_mainGtU(void) {
-//     UInt32 nblock = 98170;
-//     UChar block[nblock + 20];  
-//     UInt16 quadrant[nblock + 20];
-//     Int32 budget = 883445;
     
-//     // 使用循环来初始化block和quadrant数组
-//     for (UInt32 i = 0; i < nblock + 20; i++) {
-//         block[i] = 0;
-//         quadrant[i] = 0;
-//     }
-
-//     // 基于你给的例子：
-//     assert(mainGtU(90047, 91194, block, quadrant, nblock, &budget) == FALSE);
-//        if(budget != 871172) {
-//         printf("Expected budget: 871172, but got: %d\n", budget);
-//     }
-//     assert(budget == 871172);  // 根据函数的逻辑，budget值应该递减1
-
-//     // 在此处，你可以添加更多的断言来测试其他情况
-// }
 
 
 
 
 
 
-// 定义数据类型
-// type UInt32 = u32;
-// type Int32 = i32;
-// type UChar = u8;
-// type UInt16 = u16;
-// type Bool = bool;
 
-// pub fn main_gt_u(mut i1: UInt32, // 第一个索引
-//              mut i2: UInt32, // 第二个索引
-//              block: &[UChar], // 包含字符的块
-//              quadrant: &[UInt16], // 四分区数组
-//              nblock: UInt32, // 块的大小
-//              budget: &mut Int32) // 预算（可能与循环迭代次数有关）
-//              -> Bool {
-//     let mut k = nblock as Int32 + 8;
 
-//     loop {
-//         for _ in 0..8 {
-//             // 注意：这里有可能发生数组越界的风险，需要额外的检查
-//             if i1 as usize >= block.len() || i2 as usize >= block.len() {
-//                 return false;
-//             }
-//             let c1 = block[i1 as usize];
-//             let c2 = block[i2 as usize];
 
-//             if c1 != c2 {
-//                 return c1 > c2;
-//             }
 
-//             let s1 = quadrant[i1 as usize];
-//             let s2 = quadrant[i2 as usize];
 
-//             if s1 != s2 {
-//                 return s1 > s2;
-//             }
 
-//             i1 += 1;
-//             i2 += 1;
 
-//             // 更新索引，如果超出块的大小，则回到块的开头。
-//             if i1 >= nblock {
-//                 i1 -= nblock;
-//             }
-//             if i2 >= nblock {
-//                 i2 -= nblock;
-//             }
-//             // // println!("Comparing i1: {}, i2: {}", i1, i2); // 打印比较的索引
-//             // // println!("Characters c1: {}, c2: {}", c1, c2); // 打印比较的字符
-//             // // println!("Quadrants s1: {}, s2: {}", s1, s2); // 打印四分区值
-//         }
-//         k -= 8;
-//         *budget -= 1; // 更新预算值
 
-//         if k < 0 {
-//             break;
-//         }
-//     }
-//     false
-// }
 
-// #[cfg(test)]
-// mod tests {
-//     use super::*;
 
-//     #[test]
-//     fn test_main_gt_u() {
-//         let block = b"abracadabra";
-//         let quadrant: [UInt16; 11] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-//         let nblock = 11;
-//         let mut budget = 100;
 
-//         // 测试两个相同的索引
-//         assert_eq!(main_gt_u(0, 0, block, &quadrant, nblock, &mut budget), false);
+
+
        
-//         // 测试具有不同字符的两个索引     
-//         assert_eq!(main_gt_u(0, 3, block, &quadrant, nblock, &mut budget), false);
    
-//         // 测试两个索引，其中一个索引会导致越界
-//         assert_eq!(main_gt_u(10, 0, block, &quadrant, nblock, &mut budget), true);
     
-//     }
-// }

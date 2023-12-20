@@ -1,8 +1,5 @@
 use std::fs;
 use std::os::unix::fs::MetadataExt;
-// 统计一个文件或目录的硬链接数量
-// 参数: name - 需要统计的文件或目录的名字
-// 返回值: 硬链接数量（减去文件本身的一个链接）
 pub fn count_hard_links(name: &str) -> i32 {
     match fs::metadata(name) {
         Ok(metadata) => (metadata.nlink() as i32) - 1,

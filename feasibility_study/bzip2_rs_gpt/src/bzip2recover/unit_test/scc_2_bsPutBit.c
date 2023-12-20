@@ -1,6 +1,5 @@
 #include "../typedef.h"
 #include "../bzip2recover/scc_1_root_1_writeError.c"
-// 向位流中写入一个位
 static void bsPutBit ( BitStream* bs, Int32 bit ) {
    // 如果缓存已满（8位）
    if (bs->buffLive == 8) {
@@ -17,14 +16,12 @@ static void bsPutBit ( BitStream* bs, Int32 bit ) {
       bs->buffLive++;
    };
 }
-// 向位流中写入一个无符号字符（8位）
 static void bsPutUChar ( BitStream* bs, UChar c ) {
    Int32 i;
    for (i = 7; i >= 0; i--)
       // 为每个位调用 bsPutBit 函数
       bsPutBit ( bs, (((UInt32) c) >> i) & 0x1 );
 }
-// 向位流中写入一个无符号的32位整数
 static void bsPutUInt32 ( BitStream* bs, UInt32 c ) {
    Int32 i;
    for (i = 31; i >= 0; i--)
@@ -33,7 +30,6 @@ static void bsPutUInt32 ( BitStream* bs, UInt32 c ) {
 }
 #include <CUnit/Basic.h>
 #include <stdio.h>
-// 假设你已经定义了相关的结构体和函数...
 void test_bsPutUChar(void) {
    BitStream bs;
    FILE* tmp = tmpfile();

@@ -1,10 +1,7 @@
-// use crate::huffman::scc_12_root_6_BZ2_hbCreateDecodeTables::*;
-// use crate::global_vars::bzip2_c1::{bzFile};
 #include "../typedef.h"
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 #include "./scc_10_root_5_BZ2_bzDecompressEnd.c"
-// 关闭bzip2的文件流并释放相关资源
 void BZ2_bzReadClose ( int *bzerror, BZFILE *b )
 {
    // 将BZFILE指针转换为bzFile类型，以方便后续操作

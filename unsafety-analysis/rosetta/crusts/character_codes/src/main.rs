@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {}
 fn main_0() -> i32 {
     print!("{}\n", 'a' as i32);

@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {}
 #[no_mangle]
 pub extern "C" fn repeat(mut f: Option<unsafe extern "C" fn() -> ()>, mut n: u32) {

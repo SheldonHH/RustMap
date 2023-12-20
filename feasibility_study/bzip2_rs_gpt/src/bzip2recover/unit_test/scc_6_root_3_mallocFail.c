@@ -1,5 +1,4 @@
 #include "../typedef.h"
-// 当内存分配失败时调用此函数，并退出程序
 static void mallocFail ( Int32 n )
 {
    // 输出内存分配失败的错误消息
@@ -8,7 +7,6 @@ static void mallocFail ( Int32 n )
    // 退出程序
    exit(1);
 }
-// 为读取操作打开一个BitStream结构的实例
 static BitStream* bsOpenReadStream ( FILE* stream )
 {
    BitStream *bs = malloc(sizeof(BitStream));
@@ -21,7 +19,6 @@ static BitStream* bsOpenReadStream ( FILE* stream )
    bs->mode = 'r';
    return bs;
 }
-// 为写入操作打开一个BitStream结构的实例
 static BitStream* bsOpenWriteStream ( FILE* stream )
 {
    BitStream *bs = malloc(sizeof(BitStream));

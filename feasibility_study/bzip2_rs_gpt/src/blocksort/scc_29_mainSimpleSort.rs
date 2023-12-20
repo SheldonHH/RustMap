@@ -2,7 +2,6 @@ use std::fs::File;
 use std::io::{BufRead, BufReader, Result};
 use std::fmt;
 use crate::blocksort::scc_28_root_19_mainGtU::*;
-// 预定义的希尔排序增量序列
 static INCS: [i32; 14] = [1, 4, 13, 40, 121, 364, 1093, 3280,
                    9841, 29524, 88573, 265720,
                    797161, 2391484];

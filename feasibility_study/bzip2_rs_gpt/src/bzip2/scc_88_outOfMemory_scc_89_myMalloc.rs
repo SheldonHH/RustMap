@@ -1,12 +1,9 @@
 use crate::bzip2::scc_76_root_43_showFileNames::*;
 use crate::bzip2::scc_80_cleanUpAndFail::*;
-// use crate::bzip2::scc_92_compressedStreamEOF::*;
-// use crate::global_vars::bzip2_c2::{progName};
 use crate::global_vars::bzip2_c5::*;
 use std::io::{self, Write};
 use std::alloc::{alloc, dealloc, Layout};
 
-// 当内存分配失败时，报告错误信息并退出程序
 pub fn out_of_memory(in_name: &str, out_name: &str, prog_name: &str, output_handle_just_in_case: Option<&mut std::fs::File>) {
     // 向标准错误输出流打印错误信息，其中包含程序名
     writeln!(io::stderr(), "\n{}: couldn't allocate enough memory", prog_name).unwrap();

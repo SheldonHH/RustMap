@@ -67,17 +67,8 @@ int BZ2_bzDecompressInit
 
 
 
-// #include <CUnit/CUnit.h>
-// #include <CUnit/Basic.h>
 
-// void test_BZ2_bzDecompressInit_valid() {
-//     bz_stream strm;
-//     memset(&strm, 0, sizeof(bz_stream));
 
-//     int result = BZ2_bzDecompressInit(&strm, 2, 1);
-//     CU_ASSERT_EQUAL(result, 0);
-//     CU_ASSERT_PTR_NOT_NULL(strm.state);
-// }
 
 /*
 
@@ -99,7 +90,6 @@ nUnused：未使用数据的长度。
 
 */
 
-// 打开bzip2压缩文件并准备进行解压操作
 BZFILE* BZ2_bzReadOpen(int* bzerror, FILE* f, int verbosity, int small, void* unused, int nUnused) {
     bzFile* bzf = NULL;
     int ret;
@@ -167,29 +157,10 @@ BZFILE* BZ2_bzReadOpen(int* bzerror, FILE* f, int verbosity, int small, void* un
     return bzf;
 }
 
-// void test_BZ2_bzReadOpen_valid() {
-//     int error;
-//     FILE* file = fopen("test.bzip2", "rb"); // 请确保有一个叫做test.bzip2的压缩文件
-//     BZFILE* bzf = BZ2_bzReadOpen(&error, file, 2, 1, NULL, 0);
 
-//     CU_ASSERT_PTR_NOT_NULL(bzf);
-//     CU_ASSERT_EQUAL(error, 0);
     
-//     // 在此处添加额外的测试，如关闭文件，释放资源等
-//     fclose(file);
-// }
-
-// int main() {
-//     CU_initialize_registry();
-
-//     CU_pSuite suite = CU_add_suite("Test Two", NULL, NULL);
-//     CU_add_test(suite, "test_BZ2_bzReadOpen_valid", test_BZ2_bzReadOpen_valid);
-//     CU_add_test(suite, "test_BZ2_bzDecompressInit_valid", test_BZ2_bzDecompressInit_valid);
 
 
-//     CU_basic_set_mode(CU_BRM_VERBOSE);
-//     CU_basic_run_tests();
 
-//     CU_cleanup_registry();
-//     return 0;
-// }
+
+

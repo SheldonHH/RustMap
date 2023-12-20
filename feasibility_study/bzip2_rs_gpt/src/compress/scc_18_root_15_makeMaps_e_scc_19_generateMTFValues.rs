@@ -209,214 +209,31 @@ pub fn generate_mtf_values(s: &mut EState) {
 
 
 
-// // 判断出ptr的长度应该是nblock + 34
-// pub fn generate_mtf_values(s: &mut EState) {
-//     // println!("开始 generate_mtf_values 函数");
 
-//     let mut yy = [0u8; 256];
-//     let mut z_pend = 0;
-//     let mut wr = 0;
-//     let eob = s.nInUse + 1;
 
-//     // println!("调用 make_maps_e");
-//     make_maps_e(s);
-//     // let mut ptr_after_mmaps = unsafe { Vec::from_raw_parts(s.ptr.unwrap(), (s.nblock + 34) as usize, s.nblock as usize) };
-//     // // println!("ptr_after_mmaps: {:?}",ptr_after_mmaps);
-//     for i in 0..=eob as usize {
-//         s.mtfFreq[i] = 0;
-//     }
 
-//     // println!("初始化 yy 数组, s.nInUse: {}", s.nInUse);
-//     for i in 0..s.nInUse as usize {
-//         yy[i] = i as u8;
-//     }
 
-//     // println!("yy success");
-//     // // println!(",s.ptr: {}",s.ptr);
-//     //TODO: first time ptr
-//     // let ptr_vec = convert_to_vec(s.ptr, (100000 * s.blockSize100k) as usize);
-//     // let mut ptr_vec = unsafe { Vec::from_raw_parts(s.ptr.unwrap(), (s.nblock + 34) as usize, s.nblock as usize) };
-//     let mut ptr_vec = &s.ptr;
-//     // println!("26_ptr: {:?}",ptr_vec);
-//     // // println!("ptr_vec[0]: {}",ptr_vec[0]);
-//     // my_sleep(1000);
-//     // println!("处理主循环");
-//     for i in 0..s.nblock as usize {
-//         // println!("循环迭代: {}", i);
-//         // println!("尝试解引用 ptr");
         
-//         // let ptr = unsafe { 
-//         //     match s.ptr.as_ref() {
-//         //         Some(ptr_ref) => ptr_ref,
-//         //         None => {
-//         //             // println!("错误：ptr 是空指针");
-//         //             return;
-//         //         }
-//         //     }
-//         // };
-//         // 💡💡💡
-//         let ptr = &s.ptr;
-//         // println!("尝试解引用 block");
-//         // let block = unsafe { 
-//         //     match s.block.as_ref() {
-//         //         Some(block_ref) => block_ref,
-//         //         None => {
-//         //             // println!("错误：block 是空指针");
-//         //             return;
-//         //         }
-//         //     }
-//         // };
-//         // 💡💡💡
-//         let block = &s.block;
-//         // 在🐦中j为97735
-//         // 在这里添加检查，确保 ptr.add(i) 不会越界
-//         // // println!("尝试获取 j 值: {}", ptr[j]); // ❌
 
 
-//         // 用一个临时变量来存储 ptr.add(i) 的结果
-//         // println!("尝试解引用 ptr");
         
-//         let mut j = ptr[i] as isize - 1;
 
 
 
-//         // let j_val = unsafe { ptr.add(i).as_ref() };
-//         // match j_val {
-//         //     Some(val) => // println!("获取到的 j 值: {}", val),
-//         //     None => // println!("错误：尝试访问 ptr 时越界或指向无效内存"),
-//         // }
-//         // // println!("⚡️⛰️⚡️⛰️");
 
 
-//         // if j_val.is_none() {
-//         //     // println!("错误：尝试访问 ptr 时越界或指向无效内存");
-//         //     return;
-//         // }
-//         // let j_val = j_val.unwrap();
-//         // // println!("获取到的 j 值: {}", j_val);
 
-//         // println!("计算后的 j 值: {}", j);
 
-//         if j < 0 {
-//             // println!("j 小于 0，进行调整");
-//             j += s.nblock as isize;
-//             // println!("调整后的 j 值: {}", j);
-//         }
-//         // println!("尝试获取 ll_i 值");
-//         let ll_i = if j < (block.len()) as isize {
-//             s.unseqToSeq[block[j as usize] as usize]
-//         } else {
-//             // 处理索引超出 Vec 长度的情况
-//             // println!("错误：索引超出 block 的范围。j = {}, block 长度 = {}", j, block.len());
-//             // 返回一个默认值或错误处理
-//             0 // 或者其他适当的值
-//         };
         
-//         // println!("ll_i 值: {}", ll_i);
 
 
-//         if yy[0] == ll_i {
-//             z_pend += 1;
-//             // println!("增加 z_pend，当前 z_pend = {}", z_pend);
-//         } else {
-//             if z_pend > 0 {
-//                 // println!("处理 z_pend 大于 0 的情况");
-//                 z_pend -= 1;
-//                 while z_pend >= 0 {
-//                     let value = if z_pend & 1 != 0 { 1 } else { 0 };
-//                     let mtfv = &s.mtfv;
-//                     // 确保 wr 是一个有效的索引
-//                     if wr < mtfv.len() {
-//                         mtfv[wr] = value as u16;
-//                     } else {
-//                         // 索引超出 Vec 的范围
-//                         // println!("错误：索引超出 mtfv 的范围。wr = {}, mtfv 长度 = {}", wr, mtfv.len());
-//                         // 在这里添加额外的错误处理逻辑
-//                     }
-//                     wr += 1;
-//                     s.mtfFreq[value as usize] += 1;
 
-//                     if z_pend < 2 {
-//                         break;
-//                     }
-//                     z_pend = (z_pend - 2) / 2;
-//                 }
-//                 z_pend = 0;
-//             }
 
-//             // println!("处理 yy 数组更新");
-//             let mut ryy_j = 1;
-//             let mut rtmp = yy[1];
-//             yy[1] = yy[0];
-//             while rtmp != ll_i {
-//                 ryy_j += 1;
-//                 let rtmp2 = rtmp;
-//                 rtmp = yy[ryy_j];
-//                 yy[ryy_j] = rtmp2;
-//             }
-//             yy[0] = rtmp;
-//             let mut mtfv = &s.mtfv;
-//             // 确保 wr 是一个有效的索引 💡💡💡
-//             if wr < mtfv.len() {
-//                 mtfv[wr] = (ryy_j + 1) as u16;
-//             } else {
-//                 // 如果 wr 超出 mtfv 的长度，则需要处理这种情况
-//                 // 比如可以打印错误消息或进行其他错误处理
-//                 // println!("26_错误：索引超出 mtfv 的范围。wr = {}, mtfv 长度 = {}", wr, mtfv.len());
-//                 // 这里可以添加错误处理代码
-//             }
 
-//             wr += 1;
-//             s.mtfFreq[ryy_j + 1] += 1;
-//         }
-//     }
 
-//     if z_pend > 0 {
-//         // println!("处理剩余的 z_pend");
-//         z_pend -= 1;
-//         while z_pend >= 0 {
-//             let value = if z_pend & 1 != 0 { 1 } else { 0 };
-//             let mut mtfv = &s.mtfv;
-//             // 确保 wr 是有效的索引 💡💡💡
-//             if wr < mtfv.len() {
-//                 mtfv[wr] = value as u16;
-//             } else {
-//                 // 处理索引超出 Vec 长度的情况
-//                 // println!("错误：索引超出 mtfv 的范围。wr = {}, mtfv 长度 = {}", wr, mtfv.len());
-//                 // 可以添加更多的错误处理代码
-//             }
-//             wr += 1;
-//             s.mtfFreq[value as usize] += 1;
 
-//             if z_pend < 2 {
-//                 break;
-//             }
-//             z_pend = (z_pend - 2) / 2;
-//         }
-//     }
 
-//     // let mtfv = unsafe { s.mtfv.as_mut().unwrap() };
-//     let mut mtfv = &s.mtfv;
-//     // unsafe {
-//     //     *mtfv.add(wr) = eob as u16;
-//     // }
-//     if let Some(index) = wr.checked_sub(1) {
-//         if index < mtfv.len() {
-//             mtfv[index] = eob as u16;
-//         } else {
-//             // println!("索引超出范围: wr = {}, index = {}, Vec 长度 = {}", wr, index, mtfv.len());
-//             // 可以添加更多的错误处理代码
-//         }
-//     } else {
-//         // println!("计算索引时发生下溢: wr = {}", wr);
-//         // 可以添加更多的错误处理代码
-//     }
     
-//     wr += 1;
-//     s.mtfFreq[eob as usize] += 1;
 
-//     s.nMTF = wr as i32;
 
-//     // println!("完成 generate_mtf_values 函数");
-// }
 

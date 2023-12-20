@@ -1,5 +1,3 @@
-// use crate::global_vars::bzip2_c2::{inFileName, progName};
-// readError ( void )
 typedef char Char;
 typedef unsigned long long int MaybeUInt64;
 Char inFileName[2000];

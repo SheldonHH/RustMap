@@ -1,6 +1,5 @@
 
 #include "../typedef.h"
-// 检查配置是否正确
 static
 int bz_config_ok ( void )
 {
@@ -10,7 +9,6 @@ int bz_config_ok ( void )
    return 1;                         // 所有检查都通过，返回1
 }
 
-// 根据指定的项目数量和项目大小分配内存
 static
 void* default_bzalloc ( void* opaque, Int32 items, Int32 size )
 {
@@ -18,7 +16,6 @@ void* default_bzalloc ( void* opaque, Int32 items, Int32 size )
    return v;
 }
 
-// 释放内存
 static
 void default_bzfree ( void* opaque, void* addr )
 {
@@ -39,28 +36,8 @@ void test_default_bzalloc_and_bzfree(void) {
    default_bzfree(NULL, mem);
 }
 
-// int main(void) {
-//    CU_pSuite pSuite = NULL;
 
-//    // 初始化CUnit库
-//    if (CUE_SUCCESS != CU_initialize_registry())
-//       return CU_get_error();
 
-//    // 添加测试套件到注册中心
-//    pSuite = CU_add_suite("bz_test_suite", NULL, NULL);
-//    if (NULL == pSuite) {
-//       CU_cleanup_registry();
-//       return CU_get_error();
-//    }
 
-//    // 添加测试函数到套件
-//    CU_add_test(pSuite, "test_bz_config_ok", test_bz_config_ok);
-//    CU_add_test(pSuite, "test_default_bzalloc_and_bzfree", test_default_bzalloc_and_bzfree);
 
-//    // 运行所有测试
-//    CU_basic_set_mode(CU_BRM_VERBOSE);
-//    CU_basic_run_tests();
-//    CU_cleanup_registry();
 
-//    return CU_get_error();
-// }

@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {
     fn atan2(_: f64, _: f64) -> f64;
     fn cos(_: f64) -> f64;

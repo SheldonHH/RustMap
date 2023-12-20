@@ -19,7 +19,6 @@ fn build_str_from_raw_ptr(raw_ptr: *mut u8) -> String {
     }
 }
 
-//use c2rust_out::*;
 extern "C" {}
 fn main_0(mut argc: i32, mut argv: *mut *mut i8) -> i32 {
     unsafe {

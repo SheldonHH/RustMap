@@ -8,7 +8,6 @@
     unused_assignments,
     unused_mut
 )]
-//use c2rust_out::*;
 extern "C" {
     fn printf(_: *const i8, _: ...) -> i32;
     fn calloc(_: u64, _: u64) -> *mut libc::c_void;

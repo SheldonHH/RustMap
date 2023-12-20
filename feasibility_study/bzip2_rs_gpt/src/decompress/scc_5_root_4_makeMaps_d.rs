@@ -1,10 +1,8 @@
 use crate::global_vars::bzip2_c1::{DState};
 
 
-// makeMaps_d ( DState* s )
 
 
-// 定义 make_maps_d 函数
 fn make_maps_d(s: &mut DState) {
     s.nInUse = 0;
     for i in 0..256 {

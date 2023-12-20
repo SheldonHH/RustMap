@@ -1,8 +1,5 @@
-// use crate::bzlib::scc_16_root_9_unRLE_obuf_to_output_FAST::*;
-// use crate::global_vars::bzip2_c1::{BZ2_crc32Table, BZ2_rNums, DState};
 
 
-// unRLE_obuf_to_output_SMALL ( DState* s )
 #include <stdlib.h> // 为了使用 malloc, calloc
 #include <string.h> // 为了使用 memset
 #include <stdbool.h>
@@ -156,12 +153,9 @@ Int32 BZ2_indexIntoF ( Int32 indx, Int32 *cftab )
 
 
 
-//    函数名称中的"RLE"代表Run-Length Encoding，这是一个简单的无损数据压缩方法。
-
-// 简而言之，该函数的目的是为了将RLE编码的数据解码并输出
 
 
-// 初始化 DState 结构体的函数
+
 DState* initializeDState() {
     DState* ds = (DState*)malloc(sizeof(DState));
     if (ds == NULL) {
@@ -183,10 +177,7 @@ DState* initializeDState() {
     return ds;
 }
 
-// 上面的函数 `initializeDState` 会创建一个 `DState` 的实例并进行初始化。
-// 所有成员都会被设置为 0（对于指针则为 NULL）。如果你想使用特定的默认值而不是零，可以明确地设置它们。
 
-// 你可能还需要编写一个函数，用于在完成结构体后释放内存：
 
 
 void freeDState(DState* ds) {
@@ -302,12 +293,6 @@ Bool unRLE_obuf_to_output_SMALL ( DState* s )
 
 
 
-// 使用initializeDState函数初始化DState结构体。
-// 如果初始化失败（即ds为NULL），则报告内存分配错误并返回。
-// 可以为ds的其他字段设置测试数据。
-// 调用unRLE_obuf_to_output_SMALL函数并获取结果。
-// 使用断言检查结果是否为TRUE。
-// 使用freeDState函数释放已分配的内存。
 void test_unRLE_obuf_to_output_SMALL() {
     DState* ds = initializeDState(); // 使用前面定义的函数初始化DState结构体
     if (ds == NULL) {

@@ -1,4 +1,3 @@
-// use crate::global_vars::bzip2_c1::{EState};
 
 #include "../typedef.h"
 #include "../bzlib/scc_37_root_25_add_pair_to_block.c"
@@ -16,14 +15,12 @@ static void prepare_new_block (EState* s)
    s->blockNo++;               // 块编号递增
 }
 
-// 初始化RLE状态
 static void init_RL (EState* s)
 {
    s->state_in_ch = 256;      // 设置当前输入字符为256
    s->state_in_len = 0;       // 初始化输入长度为0
 }
 
-// 检查RLE状态是否为空
 static Bool isempty_RL (EState* s)
 {
    if (s->state_in_ch < 256 && s->state_in_len > 0)
@@ -32,7 +29,6 @@ static Bool isempty_RL (EState* s)
       return ((Bool)1);
 }
 
-// 清空RLE状态，并将其加入到数据块中
 static void flush_RL (EState* s)
 {
    if (s->state_in_ch < 256) 
@@ -82,27 +78,7 @@ void test_isempty_RL() {
     CU_ASSERT_TRUE(result);
 }
 
-// int main() {
-//     if (CU_initialize_registry() != CUE_SUCCESS) {
-//         return CU_get_error();
-//     }
 
-//     CU_pSuite suite = CU_add_suite("Test Suite", NULL, NULL);
-//     if (!suite) {
-//         CU_cleanup_registry();
-//         return CU_get_error();
-//     }
 
-//     if (!CU_add_test(suite, "test_prepare_new_block", test_prepare_new_block) ||
-//         !CU_add_test(suite, "test_init_RL", test_init_RL) ||
-//         !CU_add_test(suite, "test_isempty_RL", test_isempty_RL)) {
-//         CU_cleanup_registry();
-//         return CU_get_error();
-//     }
 
-//     CU_basic_set_mode(CU_BRM_VERBOSE);
-//     CU_basic_run_tests();
-//     CU_cleanup_registry();
 
-//     return 0;
-// }

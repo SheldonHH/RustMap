@@ -1,7 +1,5 @@
 #include "../typedef.h"
 #include "./scc_44_root_30_default_bzfree.c"
-// 打开并初始化一个用于写入的 BZFILE 结构
-// 定义BZ2_bzWriteOpen函数
 BZFILE* BZ2_bzWriteOpen
                     ( int* bzerror,          // 用于返回的错误码指针
                       FILE* f,               // 目标文件的文件句柄
@@ -76,7 +74,6 @@ BZFILE* BZ2_bzWriteOpen
 
 
 
-// BZ2_bzCompressInit 函数用于初始化 bz_stream 结构，以进行数据压缩。
 int BZ2_bzCompressInit(bz_stream* strm,      // bz_stream 结构指针
                        int blockSize100k,    // 压缩块的大小
                        int verbosity,        // 输出冗余级别

@@ -1,11 +1,7 @@
-// 该函数对fmap数组在指定范围[lo, hi]内进行排序。
-// 排序是基于eclass数组中的值进行的，即fmap中的值用作eclass的索引。
 
-// 假设我们之前已经定义了`typedef.h`中的类型
 type UInt32 = u32;
 type Int32 = i32;
 
-// 该函数对fmap数组在指定范围[lo, hi]内进行排序
 pub fn fallback_simple_sort(fmap: &mut Vec<UInt32>, eclass: &Vec<UInt32>, lo: Int32, hi: Int32) {
     if lo == hi {
         return;

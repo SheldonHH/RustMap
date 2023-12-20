@@ -52,7 +52,6 @@ void BZ2_blockSort ( EState* s )
    for (i = 0; i < s->nblock; i++)
       if (ptr[i] == 0)
          { s->origPtr = i; break; };
-// 确保找到了值为0的元素，否则触发断言
    { if (!(s->origPtr != -1)) BZ2_bz__AssertH__fail ( 1003 ); };
 }
 

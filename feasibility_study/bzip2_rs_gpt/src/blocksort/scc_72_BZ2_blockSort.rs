@@ -8,7 +8,6 @@ use std::mem;
 use std::fmt::Display;
 use crate::global_vars::bzip2_c1::{bz_stream, EState, rebuild_arr1_from_mtfv, rebuild_arr2_from_block, build_mtfv_from_arr1, build_block_from_arr2};
 use crate::global_vars::sleep_lib::*;
-// 填充 [[u8; 258]; 6], [[i32; 258]; 6] 类型的数组
 fn fill_2d_array<T: std::str::FromStr>(arr: &mut [[T; 258]; 6], data: &str) 
 where <T as std::str::FromStr>::Err: std::fmt::Debug {
     // 先按换行符分割数据，再处理每一行
@@ -21,7 +20,6 @@ where <T as std::str::FromStr>::Err: std::fmt::Debug {
 }
 
 
-// 填充 [[u32; 4]; 258] 类型的数组
 fn fill_2d_array_len_pack(arr: &mut [[u32; 4]; 258], data: &str) {
     for (i, line) in data.split_whitespace().enumerate() {
         for (j, num) in line.split(',').enumerate() {
@@ -30,7 +28,6 @@ fn fill_2d_array_len_pack(arr: &mut [[u32; 4]; 258], data: &str) {
     }
 }
 
-// 读取文件行的函数（假设）
 fn read_lines<P>(filename: P) -> std::io::Result<std::io::Lines<std::io::BufReader<std::fs::File>>>
 where P: AsRef<std::path::Path>, {
     let file = std::fs::File::open(filename)?;

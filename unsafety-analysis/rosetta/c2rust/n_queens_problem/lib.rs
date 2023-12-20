@@ -9,7 +9,6 @@
 #![allow(unused_mut)]
 
 
-// extern crate libc;
 pub mod src {
     pub mod main;
 }

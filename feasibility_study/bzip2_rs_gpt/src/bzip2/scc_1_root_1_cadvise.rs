@@ -1,31 +1,12 @@
-// use crate::global_vars::bzip2_c5::{noisy};
 
 
-// cadvise ( void )
 
-// 假设 Int32 和 Bool 的定义如下:
 type Int32 = i32;
 type Bool = bool;
 type Char = char; // 假设 Char 是 char，但可能需要根据上下文进一步确认
 use crate::global_vars::bzip2_c5::*;
 use crate::global_vars::bzip2_c1::*;
-// 全局变量
-// static mut VERBOSITY: Int32 = 0;
-// static mut KEEP_INPUT_FILES: Bool = false;
-// static mut SMALL_MODE: Bool = false;
-// static mut DELETE_OUTPUT_ON_INTERRUPT: Bool = false;
-// static mut FORCE_OVERWRITE: Bool = false;
-// static mut TEST_FAILS_EXIST: Bool = false;
-// static mut UNZ_FAILS_EXIST: Bool = false;
-// static mut NOISY: Bool = false;
-// static mut NUM_FILES_PROCESSED: Int32 = 0;
-// static mut BLOCK_SIZE_100K: Int32 = 0;
-// static mut EXIT_VALUE: Int32 = 0;
-// static mut OP_MODE: Int32 = 0;
-// static mut SRC_MODE: Int32 = 0;
 
-// static mut IN_NAME: [Char; 1034] = ['\0'; 1034]; 
-// static mut OUT_NAME: [Char; 1034] = ['\0'; 1034]; 
 
 pub fn cadvise() {
     unsafe {

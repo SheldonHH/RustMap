@@ -1,5 +1,3 @@
-// use crate::compress::scc_32_root_22_bsFinishWrite::*;
-// use crate::decompress::scc_63_BZ2_decompress::*;
 use crate::blocksort::scc_31_root_21_fallbackSimpleSort::*;
 use std::fs::File;
 use std::io::{BufReader, Result, Error};
@@ -147,12 +145,9 @@ pub fn fallback_qsort_3(fmap: &mut Vec<u32>, eclass: &Vec<u32>, lo_st: i32, hi_s
     }
 }
 
-// 假设 fmap, eclass, bhtab 是 Vec<u32> 类型
-// loSt 和 hiSt 是 u32 类型
 
 
 
-// Test function
 #[cfg(test)]
 mod tests {
     use super::*;

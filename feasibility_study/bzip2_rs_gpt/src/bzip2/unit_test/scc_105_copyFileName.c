@@ -1,11 +1,6 @@
-// use crate::bzip2::scc_90_root_52_setExit::*;
-// use crate::bzip2::scc_91_cleanUpAndFail::*;
-// use crate::global_vars::bzip2_c5::{exitValue};
 
 
-// copyFileName ( Char*, Char* )
 
-// copyFileName ( Char* to, Char* from )
 
 /*/
 数copyFileName的目的是从一个字符串from复制文件名到另一个字符串to。
@@ -40,7 +35,6 @@ void copyFileName ( Char* to, Char* from )
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
-// 假设您已经包含了必要的头文件和定义
 
 void test_copyFileName_valid(void) {
     Char dest[1035];
@@ -62,17 +56,7 @@ void test_copyFileName_tooLong(void) {
     copyFileName(dest, source);
 }
 
-// int main() {
-//     CU_initialize_registry();
 
-//     CU_pSuite suite = CU_add_suite("Test copyFileName", NULL, NULL);
 
-//     CU_add_test(suite, "test_copyFileName_valid", test_copyFileName_valid);
-//     CU_add_test(suite, "test_copyFileName_tooLong", test_copyFileName_tooLong);
 
-//     CU_basic_set_mode(CU_BRM_VERBOSE);
-//     CU_basic_run_tests();
 
-//     CU_cleanup_registry();
-//     return 0;
-// }

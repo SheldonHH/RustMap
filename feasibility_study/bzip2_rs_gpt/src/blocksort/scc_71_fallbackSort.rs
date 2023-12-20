@@ -286,221 +286,27 @@ pub fn fallback_sort(fmap: &mut Vec<u32>, eclass: &mut Vec<u32>, bhtab: &mut Vec
 
 
 
-// only in compress
-// pub fn fallback_sort(fmap: &mut Vec<u32>, eclass: &mut Vec<u32>, bhtab: &mut Vec<u32>, nblock: i32, verb: i32){
-//     // 使用 Vec<i32> 替换数组
-//     let max_eclass = *eclass.iter().max().unwrap_or(&0) as usize;
-//     // println!("max_eclass: {}", max_eclass);
-//     // 初始化空 Vec，并根据 eclass 中的最大值调整大小
-//     let mut ftab: Vec<i32> = vec![0; max_eclass + 1];
-//     let mut ftab_copy: Vec<i32> = vec![0; max_eclass + 1];
 
-//     let mut h: i32;
-//     let mut i: i32;
-//     let mut j: i32;
-//     let mut k: i32;
-//     let mut l: i32;
-//     let mut r: i32;
-//     let mut cc: i32;
-//     let mut cc1: i32;
-//     let mut n_not_done: i32;
-//     let mut n_bhtab: i32;
-//     // let eclass8: Vec<u8> = eclass.iter().map(|&x| x as u8).collect();
-//     // saveBlockArrayToFile(&eclass, nblock as usize, "71_i0_eclass_rust.txt").unwrap();
     
-//     if verb >= 4 {
-//         eprintln!("        bucket sorting ...");
-//     }
-//     /*
-//       UChar* eclass8 = (UChar*)eclass;
-//         原始数组 eclass 是一个 unsigned int 类型的数组，每个元素占据 4 个字节
-//         （这可能因平台而异，但在大多数现代平台上是这样）。
-//         通过将它转换为 unsigned char* 类型的指针，
-//         代码可以以字节为单位而不是以unsigned int为单位来访问数组的每个元素
-//    */
-//     // 初始化 ftab
-//     for i in 0..257 {
-//         ftab[i as usize] = 0;
-//     }
-//     // saveBlockArrayToFile(&ftab, 257 as usize, "71_i1_ftab_rust.txt").unwrap();
-//     // saveBlockArrayToFile(&eclass, nblock as usize, "71_i1_eclassI32_rust.txt").unwrap();
-// // 打印字节视图或整数视图，找到问题
-//     let mut eclass8 = print_int_and_byte_view_of_array(&eclass, "71_int_and_byte_view_rust.txt").unwrap();
 
-//     // 字节视图
-//     // 使用 eclass8 更新 ftab
-//     for i in 0..nblock {
-//         ftab[eclass8[i as usize] as usize] += 1;
-//     }
     
-//     // 遍历 eclass 数组的每个元素
-//     // for &val in eclass.iter() {
-//     //     // 将每个 u32 元素转换为它的字节表示
-//     //     for &byte in val.to_ne_bytes().iter() {
-//     //         // 使用字节值更新 ftab 数组
-//     //         ftab[byte as usize] += 1;
-//     //     }
-//     // }
-//     // 打印字节视图和 ftab
-//     // // println!("ftab: {:?}", ftab);
 
   
-// // ❌抓到出错点❌71_i2_ftab 不一致，原代码如下
-//     // for i in 0..nblock {
-//     //     ftab[eclass[i as usize] as usize] += 1;
-//     // }
-// // ❌❌❌❌
 
 
-//     //解决✅:通过解决字节位图的问题，解决了ftab的问题
-//     // saveBlockArrayToFile(&ftab, 257 as usize, "71_i2_ftab_rust.txt").unwrap();
-//     // std::process::exit(1);
-//     for i in 0..256 {
-//         ftab_copy[i as usize] = ftab[i as usize];
-//     }
-//     for i in 1..257 {
-//         ftab[i as usize] += ftab[(i - 1) as usize];
-//     }
-//    // // saveBlockArrayToFile(&bhtab, n_bhtab as usize, "71_bucketSort_nBhtab_c.txt").unwrap();
-//    // saveBlockArrayToFile(&ftab, 257 as usize, "71_tongqian_ftab_rust.txt").unwrap(); // ✅
-//    // saveBlockArrayToFile(&fmap, nblock as usize, "71_tongqian_fmap_rust.txt").unwrap(); // ✅
  
-//     for i in 0..nblock {
-//         j = eclass8[i as usize] as i32;
-//         k = ftab[j as usize] - 1;
-//         ftab[j as usize] = k;
-//         fmap[k as usize] = i as u32;
-//     }
-//     // saveBlockArrayToFile(&ftab, 257 as usize, "71_bucketSort_ftab_rust.txt").unwrap(); // ✅
-//     // saveBlockArrayToFile(&fmap, nblock as usize, "71_bucketSort_fmap_rust.txt").unwrap(); // ✅
-//     // saveBlockArrayToFile(&eclass8, nblock as usize, "71_bucketSort_eclass8_rust.txt").unwrap(); // ✅
-
-//     n_bhtab = 2 + (nblock / 32);
-//     for i in 0..n_bhtab {
-//         bhtab[i as usize] = 0;
-//     }
-//     for i in 0..256 {
-//         bhtab[(ftab[i as usize] as usize) >> 5] |= 1 << (ftab[i as usize] & 31);
-//     }
-//     for i in 0..32 {
-//         bhtab[((nblock + 2 * i) as usize) >> 5] |= 1 << ((nblock + 2 * i) & 31);
-//         bhtab[((nblock + 2 * i + 1) as usize) >> 5] &= !(1 << ((nblock + 2 * i + 1) & 31));
-//     }
 
 
-//     // 保存数据
-//     // saveBlockArrayToFile(&ftab, 257, "71_xiqian_ftab_rust.txt").unwrap(); // 一致 ✅
-//     // saveBlockArrayToFile(&eclass8, nblock as usize, "71_xiqian_eclass8_rust.txt").unwrap();
-//     // saveBlockArrayToFile(&bhtab, n_bhtab as usize, "71_xiqian_bhtab_rust.txt").unwrap(); // 一致 ✅
-//     // std::process::exit(1);
 
-//     //上方全对勾✅
-//     h = 1;
-//     // 主循环，用于细化排序。
-//     let mut counter1 = 0;
-//     loop {
-//         counter1 += 1;
-//         if verb >= 4 {
-//             eprintln!("        depth {:6} has ", h);
-//         }
 
-//         j = 0;
-//         for i in 0..nblock {
-//             if (bhtab[(i as usize) >> 5] & (1u32 << ((i & 31) as u32))) != 0 {
-//                 j = i;
-//             }
-//             let mut k: i32 = fmap[i as usize] as i32 - h;
-//             if k < 0 {
-//                 k += nblock;
-//             }
-//             eclass[k as usize] = j as u32;
+
             
-//         }
-//         let eclass_filename = format!("71_first_eclass_{}_rust.txt", counter1);
-//         // saveBlockArrayToFile(&eclass, nblock as usize, &eclass_filename);
 
-//         n_not_done = 0;
-//         r = -1;
-//         let mut counter_71 = 0;
-//         loop {
-//             counter_71 += 1;
-//             let mut k = r + 1;
-//             while (bhtab[(k as usize) >> 5] & (1u32 << ((k & 31) as u32)) != 0) && (k & 0x01f != 0) {
-//                 k += 1;
-//             }
-//             if (bhtab[(k as usize) >> 5] & (1u32 << ((k & 31) as u32)) != 0) {
-//                 while bhtab[(k as usize) >> 5] == 0xffffffff {
-//                     k += 32;
-//                 }
-//                 while (bhtab[(k as usize) >> 5] & (1u32 << ((k & 31) as u32)) != 0) {
-//                     k += 1;
-//                 }
-//             }
-//             l = k - 1;
-//             if l >= nblock {
-//                 break;
-//             }
-//             while (bhtab[(k as usize) >> 5] & (1u32 << ((k & 31) as u32)) == 0) && (k & 0x01f != 0) {
-//                 k += 1;
-//             }
-//             if (bhtab[(k as usize) >> 5] & (1u32 << ((k & 31) as u32)) == 0) {
-//                 while bhtab[(k as usize) >> 5] == 0x00000000 {
-//                     k += 32;
-//                 }
-//                 while (bhtab[(k as usize) >> 5] & (1u32 << ((k & 31) as u32)) == 0) {
-//                     k += 1;
-//                 }
-//             }
-//             r = k - 1;
-//             if r >= nblock {
-//                 break;
-//             }
 
-//             if r > l {
-//                 n_not_done += (r - l + 1);
-//                 // println!("counter_71: {}", counter_71);
-//                 fallback_qsort_3(fmap, eclass, l, r);
                 
-//                 let mut cc: i32 = -1;
-//                 for i in l..=r {
-//                     let cc1 = eclass[fmap[i as usize] as usize];
-//                     if cc != cc1 as i32 {
-//                         bhtab[(i as usize) >> 5] |= 1u32 << ((i & 31) as u32);
-//                         cc = cc1 as i32;
-//                     }
-//                 }
-//             }
-//         }
 
-//         if verb >= 4 {
-//             eprintln!("{:6} unresolved strings", n_not_done);
-//         }
 
-//         h *= 2;
-//         if h > nblock || n_not_done == 0 {
-//             break;
-//         }
-//         let almostEnd_eclass_filename = format!("71_almostEnd_eclass_{}_rust.txt", counter1);
-//         // saveBlockArrayToFile(&eclass, nblock as usize, &almostEnd_eclass_filename);
-//     }
 
-//     if verb >= 4 {
-//         eprintln!("        reconstructing block ...");
-//     }
-//     j = 0;
-//     for i in 0..nblock {
-//         while ftab_copy[j as usize] == 0 {
-//             j += 1;
-//         }
-//         ftab_copy[j as usize] -= 1;
-//         eclass8[fmap[i as usize] as usize] = j as u8;
-//     }
-//     // saveBlockArrayToFile(&fmap, nblock as usize, "71_final_fmap_rust.txt").unwrap(); // 一致 ✅
-//     // ❌
-//     // saveBlockArrayToFile(&eclass, nblock as usize, "71_final_eclass_rust.txt").unwrap();
-//     // ✅ 
-//     // saveBlockArrayToFile(&eclass8, nblock as usize, "71_final_eclass8_rust.txt").unwrap();   
-// }
 
 
 #[cfg(test)]

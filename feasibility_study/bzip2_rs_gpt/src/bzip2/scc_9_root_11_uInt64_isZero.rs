@@ -1,10 +1,7 @@
 use crate::global_vars::bzip2_c1::{UInt64};
 
 
-// uInt64_isZero ( UInt64* n )
 
-// 这是Rust中的UInt64结构体
-// 检查UInt64是否为0的函数
 fn u_int64_is_zero(n: &UInt64) -> bool {
     // 遍历这8个字节
     for &byte in n.b.iter() {

@@ -1,7 +1,6 @@
 use crate::bzlib::scc_6_root_5_BZ2_indexIntoF::*;
 use crate::global_vars::bzip2_c1::{BZ2_crc32Table, BZ2_rNums, DState};
 
-// unRLE_obuf_to_output_SMALL ( DState* s )
 pub fn un_rle_obuf_to_output_small(s: &mut DState) {
     let mut t = (*s).tPos as u32;
     let tt = (*s).tt as *mut u32;

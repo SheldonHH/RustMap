@@ -1,5 +1,3 @@
-// use crate::bzlib::scc_40_root_27_isempty_RL::*;
-// use crate::bzlib::scc_39_root_26_copy_output_until_stop::*;
 use crate::global_vars::bzip2_c1::{bz_stream, EState};
 use crate::compress::scc_69_BZ2_compressBlock::bz2_compress_block;
 use crate::bzlib::scc_25_root_33_prepare_new_block_init_RL_isempty_RL_flush_RL_bzlib_static::*;

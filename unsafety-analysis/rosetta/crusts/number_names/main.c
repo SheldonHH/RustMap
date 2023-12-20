@@ -8,8 +8,6 @@ const char *ones[] = { 0, "one", "two", "three", "four",
 const char *tens[] = { 0, "ten", "twenty", "thirty", "forty",
 	"fifty", "sixty", "seventy", "eighty", "ninety" };
 const char *llions[] = { 0, "thousand", "million", "billion", "trillion",
-//	"quadrillion", "quintillion", "sextillion", "septillion",
-//	"octillion", "nonillion", "decillion"
 	};
 const int maxillion = sizeof(llions) / sizeof(llions[0]) * 3 - 3;
  

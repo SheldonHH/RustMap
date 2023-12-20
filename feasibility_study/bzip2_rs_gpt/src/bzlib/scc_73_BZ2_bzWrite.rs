@@ -1,4 +1,3 @@
-// // use crate::bzlib::scc_76_BZ2_bzWriteClose64::*;
 
 use crate::global_vars::bzip2_c1::*;
 use std::io::{Error, Write};
@@ -157,7 +156,6 @@ pub fn bz2_bz_write(bzerror: &mut Option<i32>, b: BZFILE, buf: &[u8], len:i32) {
     //         *error = -2;
     //     }
     // }
-// }
 
 fn set_error(bzerror: &mut Option<i32>, lastErr: &mut i32, err: i32) {
     // println!("设置错误码: {}", err);

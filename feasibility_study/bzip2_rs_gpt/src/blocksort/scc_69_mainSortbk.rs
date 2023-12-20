@@ -159,7 +159,6 @@ pub fn main_sort(
 
     
     // my_sleep(5);
-//    "🦀️标题二：更新ftab数组，统计每个两字节对应的出现次数");
 
 
     // 三：处理残余的块元素
@@ -188,15 +187,12 @@ pub fn main_sort(
     if verb >= 4 {
         eprintln!("        bucket sorting ...");
     }
-// Complete the initial radix sort
-// 标题四：对ftab数组进行前缀和操作，使ftab[i]保存的是小于或等于i的元素的数量。
     for i in 1..=65536 {
         ftab[i] += ftab[i - 1];
     }
     // my_sleep(12);
     let mut s = (block[0] as u16) << 8;
     let mut i = nblock as usize - 1;
-// 从block的末尾开始，进行以下操作：
    // 1. 计算一个新的索引s。
    // 2. 使用s作为ftab的索引，并减少对应的值。
    // 3. 使用ftab[s]的新值更新ptr数组。
@@ -563,7 +559,6 @@ fn read_dat_file(path: &str) -> Result<(Vec<u32>, Vec<u8>, Vec<u16>, Vec<u64>, i
 
 
 
-// 测试函数
 #[cfg(test)]
 mod tests {
     use super::*;

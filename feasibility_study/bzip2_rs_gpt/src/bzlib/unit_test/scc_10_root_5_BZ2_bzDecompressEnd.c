@@ -1,4 +1,3 @@
-// use crate::global_vars::bzip2_c1::{DState, bz_stream};
 #include "../typedef.h"
 int BZ2_bzDecompressEnd ( bz_stream *strm )
 {

@@ -1,6 +1,6 @@
 - [version introduction](#version-introduction)
 - [Part 1: Feasibility Study](#part-1-feasibility-study)
-  - [bzip2](#bzip2)
+  - [bzip2 feasbility test](#bzip2-feasbility-test)
     - [build bzip2](#build-bzip2)
     - [test bzip2](#test-bzip2)
   - [which](#which)
@@ -14,11 +14,12 @@
   - [Step 3: Use cflow](#step-3-use-cflow)
   - [Step 4: Generate RustMap Scaffolding](#step-4-generate-rustmap-scaffolding)
 - [Part 3: Case Study: Why we need Strongly Connected Component Recursive dependency?](#part-3-case-study-why-we-need-strongly-connected-component-recursive-dependency)
-- [Part 4: How to test bzip2 compression function?](#part-4-how-to-test-bzip2-compression-function)
+- [Part 4: Feasbility Test on bzip2: How to test bzip2 compression function?](#part-4-feasbility-test-on-bzip2-how-to-test-bzip2-compression-function)
   - [bzip2 executable binary generation](#bzip2-executable-binary-generation)
   - [test cases generations bzip2](#test-cases-generations-bzip2)
   - [compress test](#compress-test)
   - [uncompress .bz2](#uncompress-bz2)
+- [](#)
 - [Part 5: Evaluation of Unsafe Code for bzip2, which and Rosseta Code](#part-5-evaluation-of-unsafe-code-for-bzip2-which-and-rosseta-code)
 - [Rossta Code](#rossta-code)
 
@@ -29,7 +30,7 @@
 
 
 # Part 1: Feasibility Study
-## bzip2
+## bzip2 feasbility test
 Firstly project bzip2 contains two executable binary files:
 - bzip2
 - bzip2recover
@@ -37,8 +38,7 @@ Firstly project bzip2 contains two executable binary files:
 bzip2: This is the main program used for compressing files using a block-sorting file compressor. It also includes related commands like bunzip2, which is used for decompression, and bzcat, which decompresses files to stdout​​​​.
 bzip2recover: This utility is specifically designed for recovering data from damaged bzip2 files. It works by searching for blocks in .bz2 files and writing each block out into its own .bz2 file. This allows users to test the integrity of these blocks and decompress those which are undamaged​​.
 
-We will only sh
-ow executable binary bzip2 in the aritfact
+We will only show executable binary bzip2 in the aritfact
 
 ### build bzip2  
 ```bash
@@ -46,6 +46,8 @@ cd /root/rustmap/feasibility_study/bzip2_rs_gpt
 cargo build --release
 
 ```
+
+
 ### test bzip2  
 ```bash
 cd /root/rustmap/feasibility_study
@@ -59,8 +61,7 @@ cp /root/rustmap/feasibility_study/bzip2_rs_gpt/target/release/bzip2_rs_gpt .
 ./bzip2-rust-gpt -k /root/rustmap/feasibility_study/random_5000_chars.txt
 
 # mv all bz2 to compressed_bz2
-mv *.bz2 
-
+mv *.bz2 /root/rustmap/feasibility_study/bzip2_tests/compress_output_bz2_files
 # bzip2recover and 
 # bzip2recover random_1_chars.txt.bz2
 ```
@@ -76,7 +77,7 @@ cargo build --release
 
 ## rosetta   
 ```bash
-
+zendose
 ```
 
 
@@ -132,12 +133,12 @@ python3 cflow_generation.py /root/rustmap/bzip2-real-test
 ```bash
 python3 extract.py /root/rustmap/bzip2-real-test
 ```
-
+above is 
 # Part 3: Case Study: Why we need Strongly Connected Component Recursive dependency?
 See diagram
 
 
-# Part 4: How to test bzip2 compression function?
+# Part 4: Feasbility Test on bzip2: How to test bzip2 compression function?
 
 ## bzip2 executable binary generation
 ```bash
@@ -170,6 +171,7 @@ in Times
 
 ## uncompress .bz2
 ```bash
+cd /root/rustmap/feasibility_study/bzip2_tests/compress_output_bz2_files
 bzip2recover random_1_chars.txt.bz2
 bzip2 -d rec00001random_1_chars.txt.bz2
 
@@ -189,7 +191,7 @@ bzip2 -d rec00001random_5000_chars.txt.bz2
 
 
 
-
+#
 
 # Part 5: Evaluation of Unsafe Code for bzip2, which and Rosseta Code
 

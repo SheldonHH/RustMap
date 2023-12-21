@@ -1,0 +1,25 @@
+Running random_1_chars.txt
+
+real	0m13.054s
+user	0m13.006s
+sys	0m0.044s
+Running random_10_chars.txt
+
+real	0m12.158s
+user	0m12.116s
+sys	0m0.036s
+Running random_100_chars.txt
+
+real	0m17.576s
+user	0m17.514s
+sys	0m0.040s
+Running random_1000_chars.txt
+
+real	0m50.617s
+user	0m50.539s
+sys	0m0.040s
+Running random_5000_chars.txt
+
+real	7m8.695s
+user	7m8.450s
+sys	0m0.148s

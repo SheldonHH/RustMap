@@ -14,6 +14,13 @@
   - [Step 3: Use cflow](#step-3-use-cflow)
   - [Step 4: Generate RustMap Scaffolding](#step-4-generate-rustmap-scaffolding)
 - [Part 3: Case Study: Why we need Strongly Connected Component Recursive dependency?](#part-3-case-study-why-we-need-strongly-connected-component-recursive-dependency)
+- [Part 4: How to test bzip2 compression function?](#part-4-how-to-test-bzip2-compression-function)
+  - [bzip2 executable binary generation](#bzip2-executable-binary-generation)
+  - [test cases generations bzip2](#test-cases-generations-bzip2)
+  - [compress test](#compress-test)
+  - [uncompress .bz2](#uncompress-bz2)
+- [Part 5: Evaluation of Unsafe Code for bzip2, which and Rosseta Code](#part-5-evaluation-of-unsafe-code-for-bzip2-which-and-rosseta-code)
+- [Rossta Code](#rossta-code)
 
 # version introduction
 - bzip2-1.0.8:  https://gitlab.com/bzip2/bzip2/-/tree/bzip2-1.0.8?ref_type=tags 
@@ -116,16 +123,76 @@ When using the cflow tool for a C project, it's generally recommended to have on
 
 
 ```bash
-python3 cflow_generation.py /root/crown-rust/bzip2-real-test
+python3 cflow_generation.py /root/rustmap/bzip2-real-test
 ```
 
 
 
 ## Step 4: Generate RustMap Scaffolding
 ```bash
-python3 extract.py /root/crown-rust/bzip2-real-test
+python3 extract.py /root/rustmap/bzip2-real-test
 ```
 
 # Part 3: Case Study: Why we need Strongly Connected Component Recursive dependency?
-See diagram:
+See diagram
 
+
+# Part 4: How to test bzip2 compression function?
+
+## bzip2 executable binary generation
+```bash
+cd /root/rustmap/feasibility_study/bzip2_rs_gpt
+cargo build --release
+```
+It will generate executable binary in `/root/rustmap/feasibility_study/bzip2_rs_gpt/target/release/bzip2_rs_gpt` this path
+
+## test cases generations bzip2
+```bash
+cd /root/rustmap/feasibility_study/bzip2_tests
+python3 random-test-case-generation.py
+```
+This step will generate five small-scale text files: `random_1_chars.txt`, `random_10_chars.txt`, `random_100_chars.txt`, `random_1000_chars.txt`, `random_5000_chars.txt`
+Then we will use bzip2-rust binary to test the results.
+
+
+## compress test
+```bash
+cd /root/rustmap/feasibility_study/bzip2_tests-finished-example
+
+# compress test cases and record its processing time
+{ echo "Running random_1_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_1_chars.txt; echo; echo "Running random_10_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_10_chars.txt; echo; echo "Running random_100_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_100_chars.txt; echo; echo "Running random_1000_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_1000_chars.txt; echo; echo "Running random_5000_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_5000_chars.txt; echo; } 2>&1 | tee
+
+mv *.bz2 compress_output_bz2_files/
+```
+
+in Times 
+
+
+## uncompress .bz2
+```bash
+bzip2recover random_1_chars.txt.bz2
+bzip2 -d rec00001random_1_chars.txt.bz2
+
+bzip2recover random_10_chars.txt.bz2
+bzip2 -d rec00001random_10_chars.txt.bz2
+
+bzip2recover random_100_chars.txt.bz2
+bzip2 -d rec00001random_100_chars.txt.bz2
+
+bzip2recover random_1000_chars.txt.bz2
+bzip2 -d rec00001random_1000_chars.txt.bz2
+
+bzip2recover random_5000_chars.txt.bz2
+bzip2 -d rec00001random_5000_chars.txt.bz2
+```
+
+
+
+
+
+
+# Part 5: Evaluation of Unsafe Code for bzip2, which and Rosseta Code
+
+
+# Rossta Code
+How to run the test

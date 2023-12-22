@@ -3,7 +3,7 @@
 
 type Int32 = i32;
 type Bool = bool;
-type Char = char; // 假设 Char 是 char，但可能需要根据上下文进一步确认
+type Char = char;
 use crate::global_vars::bzip2_c5::*;
 use crate::global_vars::bzip2_c1::*;
 

@@ -11,7 +11,7 @@ typedef struct {
     Int32 nblock;
 } EState;
 // in function BZ2_compressBlock
-s.zbits = (UChar*) (&((UChar*)s.arr2)[s.nblock]);
+// s.zbits = (UChar*) (&((UChar*)s.arr2)[s.nblock]);
 
 int main() {
     EState s;

@@ -28,6 +28,11 @@
 - rosetta code: https://rosettacode.org/
 
 
+Soundness:
+- "RQ1: Can we further rewrite C code with more idiomatic and safer Rust using LLM?" - This RQ is partially answered in Section 10. However, I did not see an explicit discussion of the "more idiomatic" part of this question.
+- "RQ3: How to solve the Issue of Information Forgetting in LLM Chatbots during large project translation?" 
+
+
 # Part 1: Feasibility Study
 ## bzip2 feasbility test
 Firstly project bzip2 contains two executable binary files:

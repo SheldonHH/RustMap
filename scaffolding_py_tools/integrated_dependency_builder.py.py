@@ -11,7 +11,6 @@ import re
 
 
 def process_label(label):
-    """处理标签，移除static关键词，并进行格式化。"""
     label = label.replace("static", "").strip()
     if " " in label:
         before_space, after_space = label.split(" ", 1)
@@ -30,10 +29,9 @@ def process_relationships(variable_relationship, new_function_labels):
         if var not in revised_var_to_fn:
             revised_var_to_fn[var] = []
         for func in funcs:
-            func_label = new_function_labels.get(func, func)  # 使用新的标签替换原始标签，如果存在
+            func_label = new_function_labels.get(func, func) 
             revised_var_to_fn[var].append(func_label)
             
-            # 更新fn_to_vars字典
             if func_label not in fn_to_vars:
                 fn_to_vars[func_label] = []
             fn_to_vars[func_label].append(var)

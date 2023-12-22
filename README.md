@@ -18,9 +18,8 @@
   - [bzip2 executable binary generation](#bzip2-executable-binary-generation)
   - [test cases generations bzip2](#test-cases-generations-bzip2)
   - [compress test](#compress-test)
-  - [uncompress .bz2](#uncompress-bz2)
-- [](#)
-- [Part 5: Evaluation of Unsafe Code for bzip2, which and Rosseta Code](#part-5-evaluation-of-unsafe-code-for-bzip2-which-and-rosseta-code)
+  - [uncompress `.bz2`](#uncompress-bz2)
+- [Part 5: Unsafety Analysis for bzip2, which\_rs\_gpt and Rosseta Code](#part-5-unsafety-analysis-for-bzip2-which_rs_gpt-and-rosseta-code)
 - [Rossta Code](#rossta-code)
 
 # version introduction
@@ -166,10 +165,10 @@ cd /root/rustmap/feasibility_study/bzip2_tests-finished-example
 mv *.bz2 compress_output_bz2_files/
 ```
 
-in Times 
+you may will the generation time in here: /root/rustmap/feasibility_study/bzip2_tests/timings.txt
 
 
-## uncompress .bz2
+## uncompress `.bz2`
 ```bash
 cd /root/rustmap/feasibility_study/bzip2_tests/compress_output_bz2_files
 bzip2recover random_1_chars.txt.bz2
@@ -191,9 +190,11 @@ bzip2 -d rec00001random_5000_chars.txt.bz2
 
 
 
-#
+# Part 5: Unsafety Analysis for bzip2, which_rs_gpt and Rosseta Code
 
-# Part 5: Evaluation of Unsafe Code for bzip2, which and Rosseta Code
+
+for Figure 22, Figure 23 and Figure 24.
+
 
 
 # Rossta Code

@@ -1,5 +1,7 @@
 - [1. Introduction](#1-introduction)
   - [1.1. Replicable Artifact](#11-replicable-artifact)
+  - [Feasibility Study](#feasibility-study)
+  - [Unsatety Evaluation](#unsatety-evaluation)
   - [1.2. version introduction](#12-version-introduction)
 - [2.  Scaffolding Boilerplate Generation  RQ2](#2--scaffolding-boilerplate-generation--rq2)
   - [2.1. Step 0: Prepare](#21-step-0-prepare)
@@ -8,38 +10,39 @@
     - [2.2.2. Step 1.2 rename `bzip2recover.i` to `bzip2recover.i.bk`](#222-step-12-rename-bzip2recoveri-to-bzip2recoveribk)
   - [2.3. Step 2: Generating C Tags: Command for Recursive Ctags with Custom Fields and Language Mapping](#23-step-2-generating-c-tags-command-for-recursive-ctags-with-custom-fields-and-language-mapping)
   - [2.4. Step 3: Use cflow](#24-step-3-use-cflow)
-  - [2.5. Step 4: Generate RustMap Scaffolding](#25-step-4-generate-rustmap-scaffolding)
-  - [2.6. Project-Scale Executable Test on bzip2: How to test bzip2 compression function?](#26-project-scale-executable-test-on-bzip2-how-to-test-bzip2-compression-function)
-    - [2.6.1. bzip2 executable binary generation](#261-bzip2-executable-binary-generation)
-    - [2.6.2. test cases generations bzip2](#262-test-cases-generations-bzip2)
-    - [2.6.3. compress test](#263-compress-test)
-    - [2.6.4. uncompress `.bz2`](#264-uncompress-bz2)
-  - [2.7. which](#27-which)
-  - [2.8. Rosseta Executable Test](#28-rosseta-executable-test)
-- [3. Scaffolding Boilerplate Generation](#3-scaffolding-boilerplate-generation)
-  - [3.1. Step 0: Prepare](#31-step-0-prepare)
-  - [3.2. Step 1: add save preprocessed file \*.i during `make`](#32-step-1-add-save-preprocessed-file-i-during-make)
-    - [3.2.1. Step 1.1 remove directives from \*.i](#321-step-11-remove-directives-from-i)
-    - [3.2.2. Step 1.2 rename `bzip2recover.i` to `bzip2recover.i.bk`](#322-step-12-rename-bzip2recoveri-to-bzip2recoveribk)
-  - [3.3. Step 2: Generating C Tags: Command for Recursive Ctags with Custom Fields and Language Mapping](#33-step-2-generating-c-tags-command-for-recursive-ctags-with-custom-fields-and-language-mapping)
-  - [3.4. Step 3: Use cflow](#34-step-3-use-cflow)
-  - [3.5. Step 4: Generate RustMap Scaffolding](#35-step-4-generate-rustmap-scaffolding)
+    - [2.4.1. Step 4: Generate RustMap Scaffolding](#241-step-4-generate-rustmap-scaffolding)
+- [3. Functional Test (Project-Scale to Single-File-Scale)](#3-functional-test-project-scale-to-single-file-scale)
+  - [3.1. Project-Scale Executable Test on bzip2: How to test bzip2 compression function?](#31-project-scale-executable-test-on-bzip2-how-to-test-bzip2-compression-function)
+    - [3.1.1. bzip2 executable binary generation](#311-bzip2-executable-binary-generation)
+    - [3.1.2. test cases generations bzip2](#312-test-cases-generations-bzip2)
+    - [3.1.3. Functional Test compress small-files](#313-functional-test-compress-small-files)
+    - [3.1.4. uncompress `.bz2`](#314-uncompress-bz2)
+  - [3.2. which](#32-which)
+    - [3.2.1. which\_rs\_gpt executable binary generation](#321-which_rs_gpt-executable-binary-generation)
+    - [3.2.2. Functional Test](#322-functional-test)
+  - [3.3. Rosseta Executable Test](#33-rosseta-executable-test)
+  - [3.4. 2.9 Function Consistency Verification](#34-29-function-consistency-verification)
 - [4. Unsafety Analysis for bzip2-rustmap-gpt, which-rustmap-gpt and rossta-rustmap-gpt RQ2](#4-unsafety-analysis-for-bzip2-rustmap-gpt-which-rustmap-gpt-and-rossta-rustmap-gpt-rq2)
     - [4.0.1. Figure 22 which GNU unsafety categorization](#401-figure-22-which-gnu-unsafety-categorization)
     - [4.0.2. Figure 23 which GNU unsafety categorization](#402-figure-23-which-gnu-unsafety-categorization)
     - [4.0.3. Figure 25 Bzip2 unsafety categorization](#403-figure-25-bzip2-unsafety-categorization)
   - [4.1. Unit Test Examples](#41-unit-test-examples)
-  - [4.2. Why we need Strongly Connected Component Recursive dependency?](#42-why-we-need-strongly-connected-component-recursive-dependency)
-  - [4.3. Pointer Aliasing Examples in Section 6, 7, 8](#43-pointer-aliasing-examples-in-section-6-7-8)
-    - [4.3.1. Section 6](#431-section-6)
-    - [4.3.2. Section 7](#432-section-7)
-    - [4.3.3. Section 8](#433-section-8)
+  - [4.2. Pointer Aliasing Examples in Section 6, 7, 8](#42-pointer-aliasing-examples-in-section-6-7-8)
+  - [4.3. Why we need Strongly Connected Component Recursive dependency?](#43-why-we-need-strongly-connected-component-recursive-dependency)
+- [5. Extra Test on idiomatic](#5-extra-test-on-idiomatic)
 
 
 # 1. Introduction
 There are three parts in the 
 ## 1.1. Replicable Artifact 
 I have provided for both and unsafety analysis for Figure 21, 22, 23, 24 in [zenodo](https://10.5281/zenodo.10421039)
+
+
+## Feasibility Study
+dockrustmap-unsafety-evaluation.tar.gz
+
+
+## Unsatety Evaluation
 
 
 
@@ -97,15 +100,16 @@ python3 cflow_generation.py /root/rustmap/bzip2-real-test
 
 
 
-## 2.5. Step 4: Generate RustMap Scaffolding
+### 2.4.1. Step 4: Generate RustMap Scaffolding
 ```bash
 python3 extract.py /root/rustmap/bzip2-real-test
 ```
 
 
-## 2.6. Project-Scale Executable Test on bzip2: How to test bzip2 compression function?
+# 3. Functional Test (Project-Scale to Single-File-Scale)
+## 3.1. Project-Scale Executable Test on bzip2: How to test bzip2 compression function?
 
-### 2.6.1. bzip2 executable binary generation
+### 3.1.1. bzip2 executable binary generation
 ```bash
 cd /root/rustmap/feasibility_study/bzip2_rs_gpt
 cargo build --release
@@ -113,7 +117,7 @@ cargo build --release
 It will generate executable binary in `/root/rustmap/feasibility_study/bzip2_rs_gpt/target/release/bzip2_rs_gpt` this path
 
 
-### 2.6.2. test cases generations bzip2
+### 3.1.2. test cases generations bzip2
 ```bash
 cd /root/rustmap/feasibility_study/bzip2_tests
 python3 random-test-case-generation.py
@@ -122,7 +126,7 @@ This step will generate five small-scale text files: `random_1_chars.txt`, `rand
 Then we will use bzip2-rust binary to test the results.
 
 
-### 2.6.3. compress test
+### 3.1.3. Functional Test compress small-files
 ```bash
 cd /root/rustmap/feasibility_study/bzip2_tests-finished-example
 
@@ -135,7 +139,7 @@ mv *.bz2 compress_output_bz2_files/
 you may will the generation time in here: /root/rustmap/feasibility_study/bzip2_tests/timings.txt
 
 
-### 2.6.4. uncompress `.bz2`
+### 3.1.4. uncompress `.bz2`
 ```bash
 cd /root/rustmap/feasibility_study/bzip2_tests/compress_output_bz2_files
 bzip2recover random_1_chars.txt.bz2
@@ -156,7 +160,9 @@ bzip2 -d rec00001random_5000_chars.txt.bz2
 
 
 
-## 2.7. which  
+## 3.2. which  
+
+### 3.2.1. which_rs_gpt executable binary generation
 ```bash
 cd /root/rustmap/feasibility_study/which_rs_gpt
 cargo build --release
@@ -166,69 +172,20 @@ cargo build --release
 ```
 
 
+### 3.2.2. Functional Test
 
 
 
-## 2.8. Rosseta Executable Test
+
+## 3.3. Rosseta Executable Test
 Original rosseta code is located in `/root/rustmap/c-code/rosseta-125`
 As stated in the paper it has 
 
 
 
-# 3. Scaffolding Boilerplate Generation 
-
-## 3.1. Step 0: Prepare
-copy c-code/bzip2 to scaffolding
-```bash
-cp -r c-code/bzip2 scaffolding_test/
+## 3.4. 2.9 Function Consistency Verification
 ```
-
-## 3.2. Step 1: add save preprocessed file *.i during `make`   
-
-
-```bash
-cd scaffolding_test/bzip2
-# replace Makefile with the one that can save temp files
-cp -r Makefile-save-temps Makefile
 ```
-
-### 3.2.1. Step 1.1 remove directives from *.i
- 
-```bash
-for file in *.i; do awk '!/^#[ \t]*[0-9]+[ \t]+"/' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"; done
-
-```
-
-### 3.2.2. Step 1.2 rename `bzip2recover.i` to `bzip2recover.i.bk`
-
-Since we only focus on bzip2 executable binary, we need to exclude the bzip2recover.i
-( Caveat: if the binary has more than one executable, we should exclude the unnecessary one )
-
-## 3.3. Step 2: Generating C Tags: Command for Recursive Ctags with Custom Fields and Language Mapping
-   
-```bash
-ctags -R --fields=+l --c-kinds=+v+f --languages=C --langmap=C:.i -o ctagop.txt 
-```
-
-   
-## 3.4. Step 3: Use cflow
-
-When using the cflow tool for a C project, it's generally recommended to have only one main function in the project. cflow is designed to analyze function call relationships in C programs and generates a call graph. If there are multiple main functions, cflow might face difficulties, as the main function typically serves as the entry point of a program. For projects with multiple main functions, like those containing independent sub-projects, you might need to run cflow separately for each part or adjust the project structure for effective analysis. In summary, having a single main function is the best practice for using cflow, unless you have specific needs and strategies to handle multiple instances.  
-
-
-```bash
-python3 cflow_generation.py /root/rustmap/bzip2-real-test
-```
-
-
-
-## 3.5. Step 4: Generate RustMap Scaffolding
-```bash
-python3 extract.py /root/rustmap/bzip2-real-test
-```
-above is 
-
-
 
 
 
@@ -333,28 +290,26 @@ cargo run --release --bin unsafe-counter -- ../laertes/test-inputs/bzip2-laertes
 
 ## 4.1. Unit Test Examples
 
+We use intercept the input and output for C program, 
+In the case of bzip2, the length of pointer array can be decided based on 
 
-## 4.2. Why we need Strongly Connected Component Recursive dependency? 
+
+
+## 4.2. Pointer Aliasing Examples in Section 6, 7, 8
+See the code under `/root/rustmap/pointer_aliasing` to illustrate 
+
+
+
+## 4.3. Why we need Strongly Connected Component Recursive dependency? 
 
 `/root/rustmap/SCC_recursive_study/SCC_4_RecursiveDependencyDemo`
 
 
-## 4.3. Pointer Aliasing Examples in Section 6, 7, 8
-See the code under folder
 
 
-### 4.3.1. Section 6
+# 5. Extra Test on idiomatic 
+```bash
+
+```
 
 
-### 4.3.2. Section 7
-
-### 4.3.3. Section 8
-
-
-
-
-
-
-
-We use intercept the input and output for C program, 
-In the case of bzip2, the length of pointer array can be decided based on 

@@ -1,0 +1,9 @@
+The code snippets displayed here show a side-by-side view of a function named `caller_function` in both C and Rust languages, as part of the unit testing phase in the Rustmap framework. This framework is instrumental in translating C code to Rust, and it relies on large language models for guidance. A key aspect of this translation is ensuring that the serialization of variable states is consistent across both languages.
+
+In the C code, `variablesSerialize` is used to serialize `callee_input_variables` and `otherVariables` both before and after the invocation of `callee_function`. These states are saved into JSON files named with the convention `scc_no_#_callee_input_BEFORE-C.json` and `scc_no_#_callee_others_BEFORE-C.json`, and similarly for the states after the function call.
+
+Correspondingly in the Rust code, `variables_serialize` serves the same purpose. The Rust language's borrow checker requires mutable references to be explicitly declared, as seen with `&mut callee_input_variables`. The serialized states in Rust are saved into files with analogous naming, for example, `scc_no_#_callee_input_BEFORE-RS.json`, maintaining a direct mapping to the C code's file names for consistency and ease of comparison.
+
+This translation process is not entirely automated and requires human-in-the-loop operations for fine-tuning and ensuring the accuracy of the translated code. The developers can intervene in the translation loop, especially when certain units do not translate correctly, providing additional input to the language models. The aim is to produce Rust code that is not only executable but also retains the safety and behavior characteristics of the original C program.
+
+In essence, the unit testing component of the Rustmap framework emphasizes maintaining a coherent strategy for the serialization of variables' states during the C-to-Rust translation process, allowing for a transparent and reliable translation outcome.

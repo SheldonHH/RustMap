@@ -212,21 +212,22 @@ Original rosseta code 125 is located in `/root/rustmap/c-code/rosseta-125`
 
 
 
-#### 3.4.2.4. Function Consistency Cross-Verification C and Rust
+#### 3.4.2.4. Function Consistency Cross-Verification C and Rust for Rosseta Code
+   
 ```bash
-
+diff /root/rustmap/c-code/rosseta-125/rosseta_run_C_log.txt /root/rustmap/executable_binaries_test/rossta_code_gpt/125-rossta-code-gpt/rosseta_rust_run_log.txt
 ```
 
 
 #### 3.4.2.5. Unit Test Examples
 
-We use intercept the input and output for C program, 
-In the case of bzip2, the length of pointer array can be decided based on 
+In the case of bzip2, the length of pointer array.
 
+/root/rustmap/unit_test_examples/SCC_no_func.c /root/rustmap/unit_test_examples/SCC_no_func.rs
 
 
 #### 3.4.2.6. Pointer Aliasing Examples in Section 6, 7, 8
-See the code under `/root/rustmap/pointer_aliasing` to illustrate 
+See the code under `/root/rustmap/pointer_aliasing`. 
 
 
 

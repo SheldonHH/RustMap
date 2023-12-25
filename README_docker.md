@@ -1,4 +1,4 @@
-1. Artifact for "RustMap Feasibility Study and Unsafety Evaluation"
+Artifact for "RustMap Feasibility Study and Unsafety Evaluation"
 ============================================================
 
 
@@ -37,8 +37,7 @@ We packaged our artifact as a Docker image
 
 The `lab` folder is under the root folder
 
-After this, you can start a container based on our image (named `rustmap-feasbility-study` and
-`rustmap-unsafety-evaluation`).  
+After this, you can start a container based on our image (named `rustmap-feasbility-study` and `rustmap-unsafety-evaluation`).  
 
 
 
@@ -60,16 +59,16 @@ In the `rustmap-unsafety-evaluation` artifact:
 
 ## 2.3. Directory structure
 
-
-Our paper consists of 1 technical contributions implemented in the `rustmap-unsafety-evaluation` artifact:
-
-- Executable Binary Test: how to build, test, and verify bzip2-rustmap-gpt, which-rustmap-gpt, and executables of selected GPT-generated Rosseta Code
-- Scaffolding Geneartion: how to generate rustmap scaffolding
-- Unit Test Illustration: how to intercept, save the input output C and Rust for unit test and semantic cloning 
+- `c-code`: original C programs
+- `executable_binaries_test`: how to build, test, and verify `bzip2-rustmap-gpt`, `which-rustmap-gpt`, and executables of selected GPT-generated Rosseta Code
+- `scaffolding_py_tools`: rustmap scaffolding automation tools
+- `SCC_recursive_study`: strongly connected components recursive examples, contains callgraph generated from preprocess *.i files
+- `unit_test_examples`: intercept approach for `SCC_no_func.c` and `SCC_no_func.rs` to save json files
+- `pointer_aliasing`: pointer aliasing examples for section 6, 7, 8
 - Other Techncial Study: code in paper
-  - prompt used in the paper: two types of main prompt used
-  - Types of Pointer Aliasings
-  - Complex Strongly Connected Illustration
+  - `prompt_used_in_paper`
+  - `pointer_aliasing`
+
 
 
 
@@ -86,13 +85,13 @@ Our paper consists of 1 technical contributions implemented in the `rustmap-unsa
 
 ##  3.1.  Scaffolding Boilerplate Generation  RQ2
 
-#### 3.1.0.1. Step 0: Prepare
+## 3.2. Step 0: Prepare
 copy c-code/bzip2 to scaffolding
 ```bash
 cp -r c-code/bzip2 scaffolding_test/
 ```
 
-#### 3.1.0.2. Step 1: add save preprocessed file *.i during `make`   
+## 3.3. Step 1: add save preprocessed file *.i during `make`   
 
 
 ```bash
@@ -101,46 +100,46 @@ cd scaffolding_test/bzip2
 cp -r Makefile-save-temps Makefile
 ```
 
-###### 3.1.0.2.0.1. Step 1.1 remove directives from *.i
+### 3.3.1. Step 1.1 remove directives from *.i
  
 ```bash
 for file in *.i; do awk '!/^##[ \t]*[0-9]+[ \t]+"/' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"; done
 
 ```
 
-###### 3.1.0.2.0.2. Step 1.2 rename `bzip2recover.i` to `bzip2recover.i.bk`
+### 3.3.2. Step 1.2 rename `bzip2recover.i` to `bzip2recover.i.bk`
 
 Since we only focus on bzip2 executable binary, we need to exclude the bzip2recover.i
 ( Caveat: if the binary has more than one executable, we should exclude the unnecessary one )
 
-#### 3.1.0.3. Step 2: Generating C Tags: Command for Recursive Ctags with Custom Fields and Language Mapping
+### 3.3.3. Step 2: Generating C Tags: Command for Recursive Ctags with Custom Fields and Language Mapping
    
 ```bash
 ctags -R --fields=+l --c-kinds=+v+f --languages=C --langmap=C:.i -o ctagop.txt 
 ```
 
    
-#### 3.1.0.4. Step 3: Use cflow
+### 3.3.4. Step 3: Use cflow
 
 When using the cflow tool for a C project, it's generally recommended to have only one main function in the project. cflow is designed to analyze function call relationships in C programs and generates a call graph. If there are multiple main functions, cflow might face difficulties, as the main function typically serves as the entry point of a program. For projects with multiple main functions, like those containing independent sub-projects, you might need to run cflow separately for each part or adjust the project structure for effective analysis. In summary, having a single main function is the best practice for using cflow, unless you have specific needs and strategies to handle multiple instances.  
 
 
 ```bash
-python3 cflow_generation.py /root/rustmap/bzip2-real-test
+python3 cflow_generation.py /root/rustmap/bzip2-scc-test
 ```
 
 
 
-###### 3.1.0.4.0.1. Step 4: Generate RustMap Scaffolding
+### 3.3.5. Step 4: Generate RustMap Scaffolding
 ```bash
-python3 extract.py /root/rustmap/bzip2-real-test
+python3 extract.py /root/rustmap/bzip2-scc-test
 ```
 
 
-## 3.2. Functional Test (Project-Scale to Single-File-Scale)
-#### 3.2.0.1. Project-Scale Executable Test on bzip2: How to test bzip2 compression function?
+## 3.4. Functional Test (Project-Scale to Single-File-Scale)
+### 3.4.1. Project-Scale Executable Test on bzip2: How to test bzip2 compression function?
 
-###### 3.2.0.1.0.1. bzip2 executable binary generation
+#### 3.4.1.1. bzip2 executable binary generation
 ```bash
 cd /root/rustmap/feasibility_study/bzip2_rs_gpt
 cargo build --release
@@ -148,7 +147,7 @@ cargo build --release
 It will generate executable binary in `/root/rustmap/feasibility_study/bzip2_rs_gpt/target/release/bzip2_rs_gpt` this path
 
 
-###### 3.2.0.1.0.2. test cases generations bzip2
+#### 3.4.1.2. test cases generations bzip2
 ```bash
 cd /root/rustmap/feasibility_study/bzip2_tests
 python3 random-test-case-generation.py
@@ -157,7 +156,7 @@ This step will generate five small-scale text files: `random_1_chars.txt`, `rand
 Then we will use bzip2-rust binary to test the results.
 
 
-###### 3.2.0.1.0.3. Functional Test compress small-files
+#### 3.4.1.3. Functional Test compress small-files
 ```bash
 cd /root/rustmap/feasibility_study/bzip2_tests-finished-example
 
@@ -167,16 +166,18 @@ cd /root/rustmap/feasibility_study/bzip2_tests-finished-example
 mv *.bz2 compress_output_bz2_files/
 ```
 
-you may will the generation time in here: /root/rustmap/feasibility_study/bzip2_tests/timings.txt
+you may will the generation time in here: 
+```bash
+/root/rustmap/feasibility_study/bzip2_tests/timings.txt
+```
 
-
-###### 3.2.0.1.0.4. uncompress `.bz2`
+#### 3.4.1.4. uncompress `.bz2`
 ```bash
 cd /root/rustmap/feasibility_study/bzip2_tests/compress_output_bz2_files
 bzip2recover random_1_chars.txt.bz2
 bzip2 -d rec00001random_1_chars.txt.bz2
 
-bzip2recover random_10_chars.txt.bz2
+bzip2recover random_10_chars.txt.bz2 w
 bzip2 -d rec00001random_10_chars.txt.bz2
 
 bzip2recover random_100_chars.txt.bz2
@@ -191,47 +192,45 @@ bzip2 -d rec00001random_5000_chars.txt.bz2
 
 
 
-#### 3.2.0.2. which  
+### 3.4.2. which  
 
-###### 3.2.0.2.0.1. which_rs_gpt executable binary generation
-```bash
+#### 3.4.2.1. which_rs_gpt executable binary generation
+```bash  
+
 cd /root/rustmap/feasibility_study/which_rs_gpt
 cargo build --release
 
+```
 
+
+
+
+
+
+#### 3.4.2.3. rustmap-generated Rosseta Executable Test
+Original rosseta code 125 is located in `/root/rustmap/c-code/rosseta-125`
+
+
+
+#### 3.4.2.4. Function Consistency Cross-Verification C and Rust
+```bash
 
 ```
 
 
-###### 3.2.0.2.0.2. Functional Test
-
-
-
-
-#### 3.2.0.3. Rosseta Executable Test
-Original rosseta code is located in `/root/rustmap/c-code/rosseta-125`
-As stated in the paper it has 
-
-
-
-#### 3.2.0.4. 2.9 Function Consistency Verification
-```
-```
-
-
-#### 3.2.0.5. Unit Test Examples
+#### 3.4.2.5. Unit Test Examples
 
 We use intercept the input and output for C program, 
 In the case of bzip2, the length of pointer array can be decided based on 
 
 
 
-#### 3.2.0.6. Pointer Aliasing Examples in Section 6, 7, 8
+#### 3.4.2.6. Pointer Aliasing Examples in Section 6, 7, 8
 See the code under `/root/rustmap/pointer_aliasing` to illustrate 
 
 
 
-#### 3.2.0.7. Why we need Strongly Connected Component Recursive dependency? 
+#### 3.4.2.7. Why we need Strongly Connected Component Recursive dependency? 
 
 `/root/rustmap/SCC_recursive_study/SCC_4_RecursiveDependencyDemo`
 
@@ -240,19 +239,19 @@ See the code under `/root/rustmap/pointer_aliasing` to illustrate
 
 
 
-# 4. Unsafety Analysis for bzip2-rustmap-gpt, which-rustmap-gpt and rossta-rustmap-gpt RQ2
+# 4. Unsafety Analysis for `bzip2-rustmap-gpt`, `which-rustmap-gpt` and `rossta-rustmap-gpt` in RQ2
 
 
 for Figure 22 Rosseta Code, Figure 23 GNU which and Figure 25 Bzip2 unsafety categorization
 - for C2Rust: we use [C2Rust](https://github.com/immunant/c2rust)
 - for CRUSTS : we use [In Rust We Trust – A Transpiler from Unsafe C to Safer Rust](https://ieeexplore.ieee.org/document/9793767) from [CRustS - Transpiling Unsafe C code to Safer Rust](https://github.com/yijunyu/crusts)
-- for Laertes: we use [aliasing-limit-23](10.5281/zenodo.7714175) from *[Aliasing Limits on Translating C to Safe Rust](https://dl.acm.org/doi/abs/10.1145/3586046)* 
+- for Laertes: we use [aliasing-limit-23](10.5281/zenodo.7714175) from [Aliasing Limits on Translating C to Safe Rust](https://dl.acm.org/doi/abs/10.1145/3586046)
 - for rustmap: we use GPT-4 to generate result, which located in feasibility folder to generate the result
 - for unsafe-counter: We will use [unsafe-counter](10.5281/zenodo.5442253) from [Translating C to safer Rust](https://dl.acm.org/doi/abs/10.1145/3485498)
 
 
 
- In order to execute the instructions below, we recommend to the unsafe-counter docker image use [zenodo doi](10.5281/zenodo.10421039)  
+In order to execute the instructions below, we recommend to the unsafe-counter docker image use [zenodo doi](10.5281/zenodo.10421039)  
 
 
 the core step is below:
@@ -267,7 +266,7 @@ Benchmark,Statistic,ReadFromUnion,MutGlobalAccess,InlineAsm,ExternCall,RawPtrDer
 (unknown),Occurrences, ........,........,........,........,........,........
 ```
 
- ######  4.0.0.0.0.1. Figure 22 which GNU unsafety categorization
+ ##  4.1. Figure 22 which GNU unsafety categorization
 ```bash
 ## rosseta-c2rust
 ## rosseta-crust
@@ -308,7 +307,7 @@ done
 ```
 
 
-######  4.0.0.0.0.2. Figure 23 which GNU unsafety categorization
+##  4.2. Figure 23 which GNU unsafety categorization
 ```bash
 ## which-c2rust
 cargo run --release --bin unsafe-counter -- ../laertes/test-inputs/bzip2-c2rust/rust/c2rust-lib.rs 
@@ -323,7 +322,7 @@ cargo run --release --bin unsafe-counter -- ../laertes/test-inputs/bzip2-laertes
 ```
 
 
-######  4.0.0.0.0.3. Figure 25 Bzip2 unsafety categorization
+##  4.3. Figure 25 Bzip2 unsafety categorization
 ```bash
 
 ## bzip2-c2rust

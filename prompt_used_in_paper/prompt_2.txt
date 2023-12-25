@@ -1,0 +1,9 @@
+Function Signature:
+/* details of function signature */
+
+Possible Inputs:
+/* Range and types of input parameters */
+
+Expected Output:
+/* Results the function is supposed to return */
+

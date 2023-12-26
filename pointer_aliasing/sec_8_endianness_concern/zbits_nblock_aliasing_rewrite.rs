@@ -77,11 +77,11 @@ fn main() {
     };
 
     println!("Before updating zbits: {:?}", estate.zbits);
-    update_zbits(&mut estate);
+    update_block_from_zbits(&mut estate);
     println!("After updating zbits: {:?}", estate.zbits);
     estate.zbits[1] = 90;
     println!("After updating zbits: {:?}", estate.zbits);
-    update_arr2(&mut estate);
+    get_zbits(&mut estate);
     println!("After updating arr2: {:?}", estate.arr2);
 }
 

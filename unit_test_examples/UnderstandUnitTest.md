@@ -4,26 +4,28 @@ Your approach of serializing the EState structure to JSON files before and after
 
 Here’s an interpretation of your approach:
 
-``C Code:``
 Serialize the EState structure to a JSON file before the blockSort function call:
-c
-Copy code
-serializeEState(s, "72_before_blockSort_EState_c.json");
+```c
+serializeEState(s, "scc_63_block_sort-BEFORE-C.json");
+```
+
 Call the BZ2_blockSort function.
 Serialize the EState structure to another JSON file after the function call:
-c
-Copy code
-serializeEState(s, "72_after_blockSort_EState_c.json");
-Rust Code:
+```rust
+serializeEState(s, "scc_63_block_sort-BEFORE-RS.json");
+```
+
 You're currently printing the state and then executing a command to save it to a file. This can be more directly achieved by serializing the EState structure to a JSON file (similar to the C implementation) before the block_sort function call:
-rust
-Copy code
-serialize_estate(s, "72_before_block_sort_rust.json");
+```c
+serialize_estate(s, "scc_63_block_sort-AFTER-C.json");
+```
+
 Call the block_sort function.
 Serialize the EState structure to another JSON file after the function call:
-rust
-Copy code
-serialize_estate(s, "72_after_block_sort_rust.json");
+```rust
+serialize_estate(s, "scc_63_block_sort-AFTER-RS.json");
+```
+
 In both cases, serialization captures the state of EState into a structured format (JSON), which can then be compared to ensure that the C code and its Rust translation have the same effect on EState.
 
 To facilitate a thorough comparison, you might consider writing a script or using a diff tool to compare the before and after JSON files for each version (C and Rust). This will provide a clear indication of any discrepancies between the two implementations and whether the Rust translation accurately replicates the functionality of the original C code.

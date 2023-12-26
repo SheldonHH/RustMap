@@ -38,7 +38,6 @@ def find_references(item, source_files):
     return references
 
 
-
 def build_dependency(variables, functions, source_files):
     dependencies = {var: set() for var in variables}  # Initialize with all variables with an empty set
     

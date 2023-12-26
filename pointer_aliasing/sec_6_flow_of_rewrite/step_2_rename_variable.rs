@@ -1,4 +1,4 @@
-r{
+{
     unsigned char tempValue;
     unsigned char* currentPointer;
     unsigned char targetValue;

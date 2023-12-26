@@ -35,14 +35,12 @@ pub fn bz2_compress_block(s: &mut EState, is_last_block: bool) {
         // let mut ptr_before_gmtf = unsafe { Vec::from_raw_parts(s.p9tr.unwrap(), (100000 * s.blockSize100k) as usize, (100000 * s.blockSize100k) as usize) };
         // // println!("ptr_before_gmtf: {:?}",ptr_before_gmtf);
 
-        // print_estate(s, "73compressB_72_before_block_sort_rust.json");
-        // execute 
-        // execute_command("cat 73compressB_72_before_block_sort_rust.json | cut -c 1-100 > 73_before.rs.txt");
+        print_estate(s, "scc_63_BZ_block_sort-BEFORE-RS.json");
+        // execute_command("cat scc_63_BZ_block_sort-BEFORE-RS.json | cut -c 1-100 > 73_before.rs.txt");
         block_sort(s);
-        // print_estate(s, "73compressB_72_before_block_sort_rust.json");
-        // execute_command("cat 73compressB_72_before_block_sort_rust.json | cut -c 1-100 > 73_after.rs.txt");
+        print_estate(s, "scc_63_BZ_block_sort-AFTER-RS.json");
+        // execute_command("cat scc_63_BZ_block_sort-AFTER-RS.json | cut -c 1-100 > 73_after.rs.txt");
         // my_sleep(1000);
-        // println!("73compressB_72_blocksort_Sorting complete");
         // exit(1);
 
     }

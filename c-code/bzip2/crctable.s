@@ -1,7 +1,7 @@
 	.file	"crctable.c"
 	.text
 .Ltext0:
-	.file 0 "/root/crown-rust/bzip2-real-test" "crctable.c"
+	.file 0 "/root/rustmap/bzip2-real-test" "crctable.c"
 	.globl	BZ2_crc32Table
 	.data
 	.align 32
@@ -501,7 +501,7 @@ BZ2_crc32Table:
 	.string	"long long int"
 	.section	.debug_line_str,"MS",@progbits,1
 .LASF1:
-	.string	"/root/crown-rust/bzip2-real-test"
+	.string	"/root/rustmap/bzip2-real-test"
 .LASF0:
 	.string	"crctable.c"
 	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"

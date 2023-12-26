@@ -89,14 +89,14 @@ When using the cflow tool for a C project, it's generally recommended to have on
 
 
 ```bash
-python3 cflow_generation.py /root/crown-rust/bzip2-real-test
+python3 cflow_generation.py /root/rustmap/bzip2-real-test
 ```
 
 
 
 ## Step 4: Generate RustMap Scaffolding
 ```bash
-python3 extract.py /root/crown-rust/bzip2-real-test
+python3 extract.py /root/rustmap/bzip2-real-test
 ```
 
 # Part 3: Case Study: Why we need Strongly Connected Component Recursive dependency?

@@ -1,7 +1,7 @@
 	.file	"decompress.c"
 	.text
 .Ltext0:
-	.file 0 "/root/crown-rust/bzip2-real-test" "decompress.c"
+	.file 0 "/root/rustmap/bzip2-real-test" "decompress.c"
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC0:
 	.string	"\n    [%d: huff+mtf "
@@ -23674,7 +23674,7 @@ BZ2_decompress:
 	.string	"nblock_used"
 	.section	.debug_line_str,"MS",@progbits,1
 .LASF1:
-	.string	"/root/crown-rust/bzip2-real-test"
+	.string	"/root/rustmap/bzip2-real-test"
 .LASF0:
 	.string	"decompress.c"
 	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"

@@ -1,7 +1,7 @@
 	.file	"bzlib.c"
 	.text
 .Ltext0:
-	.file 0 "/root/crown-rust/bzip2-real-test" "bzlib.c"
+	.file 0 "/root/rustmap/bzip2-real-test" "bzlib.c"
 	.p2align 4
 	.type	add_pair_to_block, @function
 add_pair_to_block:
@@ -26249,7 +26249,7 @@ bzerrorstrings:
 	.string	"fputc"
 	.section	.debug_line_str,"MS",@progbits,1
 .LASF1:
-	.string	"/root/crown-rust/bzip2-real-test"
+	.string	"/root/rustmap/bzip2-real-test"
 .LASF0:
 	.string	"bzlib.c"
 	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"

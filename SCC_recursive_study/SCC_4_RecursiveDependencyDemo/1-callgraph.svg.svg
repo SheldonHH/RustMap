@@ -14,7 +14,7 @@
 <title>main</title>
 <ellipse fill="none" stroke="black" cx="175.36" cy="-174.87" rx="175.23" ry="26.74"/>
 <text text-anchor="middle" x="175.36" y="-178.67" font-family="Times,serif" font-size="14.00">int main ()</text>
-<text text-anchor="middle" x="175.36" y="-163.67" font-family="Times,serif" font-size="14.00">/root/crown&#45;rust/SCC_4/main.c:6</text>
+<text text-anchor="middle" x="175.36" y="-163.67" font-family="Times,serif" font-size="14.00">/root/rustmap/SCC_4/main.c:6</text>
 </g>
 <!-- printf -->
 <g id="node2" class="node">
@@ -33,7 +33,7 @@
 <title>funcB</title>
 <ellipse fill="none" stroke="black" cx="556.43" cy="-174.87" rx="169.91" ry="26.74"/>
 <text text-anchor="middle" x="556.43" y="-178.67" font-family="Times,serif" font-size="14.00">void funcB (int n)</text>
-<text text-anchor="middle" x="556.43" y="-163.67" font-family="Times,serif" font-size="14.00">/root/crown&#45;rust/SCC_4/dp1.c:5</text>
+<text text-anchor="middle" x="556.43" y="-163.67" font-family="Times,serif" font-size="14.00">/root/rustmap/SCC_4/dp1.c:5</text>
 </g>
 <!-- main&#45;&gt;funcB -->
 <g id="edge2" class="edge">
@@ -46,7 +46,7 @@
 <title>funcC</title>
 <ellipse fill="none" stroke="black" cx="931.84" cy="-54.87" rx="169.91" ry="26.74"/>
 <text text-anchor="middle" x="931.84" y="-58.67" font-family="Times,serif" font-size="14.00">int funcC (int n)</text>
-<text text-anchor="middle" x="931.84" y="-43.67" font-family="Times,serif" font-size="14.00">/root/crown&#45;rust/SCC_4/dp4.c:5</text>
+<text text-anchor="middle" x="931.84" y="-43.67" font-family="Times,serif" font-size="14.00">/root/rustmap/SCC_4/dp4.c:5</text>
 </g>
 <!-- main&#45;&gt;funcC -->
 <g id="edge3" class="edge">
@@ -65,7 +65,7 @@
 <title>funcA</title>
 <ellipse fill="none" stroke="black" cx="931.84" cy="-174.87" rx="169.91" ry="26.74"/>
 <text text-anchor="middle" x="931.84" y="-178.67" font-family="Times,serif" font-size="14.00">void funcA (int n)</text>
-<text text-anchor="middle" x="931.84" y="-163.67" font-family="Times,serif" font-size="14.00">/root/crown&#45;rust/SCC_4/dp2.c:5</text>
+<text text-anchor="middle" x="931.84" y="-163.67" font-family="Times,serif" font-size="14.00">/root/rustmap/SCC_4/dp2.c:5</text>
 </g>
 <!-- funcB&#45;&gt;funcA -->
 <g id="edge5" class="edge">
@@ -84,7 +84,7 @@
 <title>funcD</title>
 <ellipse fill="none" stroke="black" cx="1313.62" cy="-26.87" rx="169.91" ry="26.74"/>
 <text text-anchor="middle" x="1313.62" y="-30.67" font-family="Times,serif" font-size="14.00">int funcD (int n)</text>
-<text text-anchor="middle" x="1313.62" y="-15.67" font-family="Times,serif" font-size="14.00">/root/crown&#45;rust/SCC_4/dp3.c:5</text>
+<text text-anchor="middle" x="1313.62" y="-15.67" font-family="Times,serif" font-size="14.00">/root/rustmap/SCC_4/dp3.c:5</text>
 </g>
 <!-- funcC&#45;&gt;funcD -->
 <g id="edge11" class="edge">
@@ -109,7 +109,7 @@
 <title>happy</title>
 <ellipse fill="none" stroke="black" cx="1313.62" cy="-136.87" rx="176.14" ry="26.74"/>
 <text text-anchor="middle" x="1313.62" y="-140.67" font-family="Times,serif" font-size="14.00">int happy (int n)</text>
-<text text-anchor="middle" x="1313.62" y="-125.67" font-family="Times,serif" font-size="14.00">/root/crown&#45;rust/SCC_4/dp3.c:14</text>
+<text text-anchor="middle" x="1313.62" y="-125.67" font-family="Times,serif" font-size="14.00">/root/rustmap/SCC_4/dp3.c:14</text>
 </g>
 <!-- funcA&#45;&gt;happy -->
 <g id="edge7" class="edge">

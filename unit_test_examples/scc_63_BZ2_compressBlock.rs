@@ -2,7 +2,7 @@
 pub fn bz2_compress_block(s: &mut EState, is_last_block: bool) {
     // println!("Starting compression of the data block");
     // print_estate(s, "73_compressBlock_BEFORE_71_BZ_FINALISE_CRC_rust.json");
-    // execute_command("cat 73_compressBlock_BEFORE_71_BZ_FINALISE_CRC_rust.json | cut -c 1-100 > /root/crown-rust/bzip2_rs_gpt/73_enter.rs.json");
+    // execute_command("cat 73_compressBlock_BEFORE_71_BZ_FINALISE_CRC_rust.json | cut -c 1-100 > /root/rustmap/bzip2_rs_gpt/73_enter.rs.json");
     // my_sleep(1000);
     if s.nblock > 0 {
         // println!("Processing data block, block number: {}", s.blockNo);
@@ -52,7 +52,7 @@ pub fn bz2_compress_block(s: &mut EState, is_last_block: bool) {
     update_zbits(s);
 
     // print_estate(s, "73_zbitsD_rs.json");
-    // execute_command("cat 73_zbitsD_rs.json | cut -c 1-100 > /root/crown-rust/73_zbits.rs.json");
+    // execute_command("cat 73_zbitsD_rs.json | cut -c 1-100 > /root/rustmap/73_zbits.rs.json");
      
 
     // If it's the first block, output the bzip2 file header
@@ -62,18 +62,18 @@ pub fn bz2_compress_block(s: &mut EState, is_last_block: bool) {
         bs_put_uchar(s, 0x42); // 'B'
 
         // print_estate(s, "73_ADa_rs.json");
-        // execute_command("cat 73_ADa_rs.json | cut -c 1-100 > /root/crown-rust/73_A.rs.txt");
+        // execute_command("cat 73_ADa_rs.json | cut -c 1-100 > /root/rustmap/73_A.rs.txt");
         bs_put_uchar(s, 0x5a); // 'Z'
 
         // print_estate(s, "73_BDa_rs.json");
-        // execute_command("cat 73_BDa_rs.json | cut -c 1-100 > /root/crown-rust/73_B.rs.txt");
+        // execute_command("cat 73_BDa_rs.json | cut -c 1-100 > /root/rustmap/73_B.rs.txt");
         bs_put_uchar(s, 0x68); // 'h'
 
         // print_estate(s, "73_CDa_rs.json");
-        // execute_command("cat 73_CDa_rs.json | cut -c 1-100 > /root/crown-rust/73_C.rs.txt");
+        // execute_command("cat 73_CDa_rs.json | cut -c 1-100 > /root/rustmap/73_C.rs.txt");
         bs_put_uchar(s, 0x30 + s.blockSize100k as u8); // '0' + blockSize100k
         // print_estate(s, "73_bN1Da_rs.json");
-        // execute_command("cat 73_bN1Da_rs.json | cut -c 1-100 > /root/crown-rust/bzip2_rs_gpt/73_bN1.rs.txt");
+        // execute_command("cat 73_bN1Da_rs.json | cut -c 1-100 > /root/rustmap/bzip2_rs_gpt/73_bN1.rs.txt");
         // println!("bzip2 file header write complete");
     }
     // No difference between 🐦 and 🦀️
@@ -94,14 +94,14 @@ pub fn bz2_compress_block(s: &mut EState, is_last_block: bool) {
         // println!("Output of block's CRC and original pointer complete");
 
         // print_estate(s, "73_qian_MTF_DA_rs.json");
-        // execute_command("cat 73_qian_MTF_DA_rs.json | cut -c 1-100 > /root/crown-rust/bzip2_rs_gpt/73_qian_MTF_rs.txt");
+        // execute_command("cat 73_qian_MTF_DA_rs.json | cut -c 1-100 > /root/rustmap/bzip2_rs_gpt/73_qian_MTF_rs.txt");
         // Generate and send MTF values
         // // println!("Generating and sending MTF values");
         // let mut ptr_before_gmtf = unsafe { Vec::from_raw_parts(s.ptr.unwrap(), (s.nblock + 34) as usize, s.nblock as usize) };
         // // println!("ptr_before_gmtf: {:?}",ptr_before_gmtf);
         generate_mtf_values(s);
         // print_estate(s, "73_G_DA_rs.json");
-        // execute_command("cat 73_G_DA_rs.json | cut -c 1-100 > /root/crown-rust/bzip2_rs_gpt/73_G_rs.txt");
+        // execute_command("cat 73_G_DA_rs.json | cut -c 1-100 > /root/rustmap/bzip2_rs_gpt/73_G_rs.txt");
         // Absolutely correct
         // 🔥 s.bsLive == 25 🔥 
         sendMTFValues(s);
@@ -111,7 +111,7 @@ pub fn bz2_compress_block(s: &mut EState, is_last_block: bool) {
     }
 
     // print_estate(s, "73_S_DA_rs.json");
-    // execute_command("cat 73_S_DA_rs.json | cut -c 1-100 > /root/crown-rust/bzip2_rs_gpt/73_S_rs.txt");
+    // execute_command("cat 73_S_DA_rs.json | cut -c 1-100 > /root/rustmap/bzip2_rs_gpt/73_S_rs.txt");
     // If it's the last data block
     if is_last_block {
         // println!("Processing the last data block"); // s.bsLive==9
@@ -135,7 +135,7 @@ pub fn bz2_compress_block(s: &mut EState, is_last_block: bool) {
     }
 
     // print_estate(s, "73_jieshuDA.rs.json");
-    // execute_command("cat 73_jieshuDA.rs.json | cut -c 1-100 > /root/crown-rust/bzip2_rs_gpt/73_jieshu.rs.txt");
+    // execute_command("cat 73_jieshuDA.rs.json | cut -c 1-100 > /root/rustmap/bzip2_rs_gpt/73_jieshu.rs.txt");
 
     // println!("Data block compression process complete");
 }

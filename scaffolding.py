@@ -550,7 +550,7 @@ def group_variables(var_to_functions, weighted_edges):
 
 
 from tree_sitter import Language, Parser
-SO_FILE_PATH = '/root/crown-rust/tree-sitter-c.so'
+SO_FILE_PATH = '/root/rustmap/tree-sitter-c.so'
 C_LANGUAGE = Language(SO_FILE_PATH, 'c')
 parser = Parser()
 parser.set_language(C_LANGUAGE)

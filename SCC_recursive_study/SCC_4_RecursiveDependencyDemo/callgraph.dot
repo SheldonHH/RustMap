@@ -1,29 +1,29 @@
 digraph G {
 rankdir="LR";
     main [label="int main ()
-/root/crown-rust/SCC_4/main.i:628"]
+/root/rustmap/SCC_4/main.i:628"]
     main -> printf
     main -> funcB
     main -> funcC
     printf [label="printf()"]
     funcB [label="void funcB (int n)
-/root/crown-rust/SCC_4/dp1.i:629"]
+/root/rustmap/SCC_4/dp1.i:629"]
     funcB -> printf
     funcB -> funcA
     funcA [label="void funcA (int n)
-/root/crown-rust/SCC_4/dp2.i:627"]
+/root/rustmap/SCC_4/dp2.i:627"]
     funcA -> printf
     funcA -> happy
     funcA -> funcB
     happy [label="int happy (int n)
-/root/crown-rust/SCC_4/dp3.i:636"]
+/root/rustmap/SCC_4/dp3.i:636"]
     happy -> printf
     funcC [label="int funcC (int n)
-/root/crown-rust/SCC_4/dp4.i:627"]
+/root/rustmap/SCC_4/dp4.i:627"]
     funcC -> printf
     funcC -> funcD
     funcD [label="int funcD (int n)
-/root/crown-rust/SCC_4/dp3.i:627"]
+/root/rustmap/SCC_4/dp3.i:627"]
     funcD -> printf
     funcD -> funcC
 }

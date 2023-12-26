@@ -1,7 +1,7 @@
 	.file	"bzip2recover.c"
 	.text
 .Ltext0:
-	.file 0 "/root/crown-rust/bzip2-real-test" "bzip2recover.c"
+	.file 0 "/root/rustmap/bzip2-real-test" "bzip2recover.c"
 	.section	.rodata.str1.8,"aMS",@progbits,1
 	.align 8
 .LC0:
@@ -9293,7 +9293,7 @@ inFileName:
 .LASF0:
 	.string	"bzip2recover.c"
 .LASF1:
-	.string	"/root/crown-rust/bzip2-real-test"
+	.string	"/root/rustmap/bzip2-real-test"
 	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
 	.section	.note.GNU-stack,"",@progbits
 	.section	.note.gnu.property,"a"

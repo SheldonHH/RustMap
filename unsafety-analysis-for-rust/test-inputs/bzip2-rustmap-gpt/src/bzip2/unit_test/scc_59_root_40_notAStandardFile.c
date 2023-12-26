@@ -59,7 +59,7 @@ Bool notAStandardFile ( Char* name )
 
 // int main() {
 //     CU_pSuite pSuite = NULL;
-//     remove("/root/crown-rust/bzip2_rs_gpt/src/bzip2/scc_59_root_40_notAStandardFile.gcda");
+//     remove("/root/rustmap/bzip2_rs_gpt/src/bzip2/scc_59_root_40_notAStandardFile.gcda");
 
 //     // 初始化CUnit库
 //     if (CUE_SUCCESS != CU_initialize_registry())

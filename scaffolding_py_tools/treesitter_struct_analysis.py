@@ -6,7 +6,7 @@ from graphviz import Digraph
 import sys
 sys.setrecursionlimit(5000)  # 设置为5000或更高
 from GlobDep_FnDep import extract_tags_from_ctags,build_dependency
-SO_FILE_PATH = '/root/crown-rust/tree-sitter-c.so'
+SO_FILE_PATH = '/root/rustmap/tree-sitter-c.so'
 C_LANGUAGE = Language(SO_FILE_PATH, 'c')
 parser = Parser()
 parser.set_language(C_LANGUAGE)

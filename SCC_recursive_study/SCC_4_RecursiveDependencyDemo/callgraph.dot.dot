@@ -5,7 +5,7 @@ digraph G {
 	node [label="\N"];
 	main	[height=0.74639,
 		label="int main ()
-/root/crown-rust/SCC_4/main.i:628",
+/root/rustmap/SCC_4/main.i:628",
 		pos="185.97,174.87",
 		width=5.1658];
 	printf	[height=0.5,
@@ -16,13 +16,13 @@ digraph G {
 1395.7,284.02 1561.8,224.87 1583.2,217.26 1603.4,201.5 1618,187.91"];
 	funcB	[height=0.74639,
 		label="void funcB (int n)
-/root/crown-rust/SCC_4/dp1.i:629",
+/root/rustmap/SCC_4/dp1.i:629",
 		pos="588.25,174.87",
 		width=5.0087];
 	main -> funcB	[pos="e,407.83,174.87 372.17,174.87 380.7,174.87 389.27,174.87 397.81,174.87"];
 	funcC	[height=0.74639,
 		label="int funcC (int n)
-/root/crown-rust/SCC_4/dp4.i:627",
+/root/rustmap/SCC_4/dp4.i:627",
 		pos="984.87,54.87",
 		width=5.0087];
 	main -> funcC	[pos="e,853.4,73.267 308.77,154.65 341,149.41 375.77,143.84 407.94,138.87 556.4,115.95 726.67,91.323 843.34,74.7"];
@@ -30,14 +30,14 @@ digraph G {
 183.7 1599.7,179.7"];
 	funcA	[height=0.74639,
 		label="void funcA (int n)
-/root/crown-rust/SCC_4/dp2.i:627",
+/root/rustmap/SCC_4/dp2.i:627",
 		pos="984.87,174.87",
 		width=5.0087];
 	funcB -> funcA	[pos="e,810.26,168.16 762.91,168.16 775.19,168.12 787.59,168.11 799.92,168.13"];
 	funcC -> printf	[pos="e,1625.6,146.86 1156,63.415 1312.2,72.079 1524.8,86.258 1561.8,100.87 1583.4,109.38 1603.8,125.86 1618.4,139.84"];
 	funcD	[height=0.74639,
 		label="int funcD (int n)
-/root/crown-rust/SCC_4/dp3.i:627",
+/root/rustmap/SCC_4/dp3.i:627",
 		pos="1381.5,26.87",
 		width=5.0087];
 	funcC -> funcD	[pos="e,1205,32.608 1127.2,38.338 1149.2,36.58 1172.2,34.872 1194.9,33.298"];
@@ -45,7 +45,7 @@ digraph G {
 	funcA -> funcB	[pos="e,762.91,181.58 810.26,181.58 797.98,181.62 785.58,181.63 773.25,181.61"];
 	happy	[height=0.74639,
 		label="int happy (int n)
-/root/crown-rust/SCC_4/dp3.i:636",
+/root/rustmap/SCC_4/dp3.i:636",
 		pos="1381.5,136.87",
 		width=5.0087];
 	funcA -> happy	[pos="e,1229.7,151.39 1136.8,160.34 1163.9,157.73 1192.3,155 1219.7,152.36"];

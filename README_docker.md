@@ -1,4 +1,4 @@
-Artifact for "RustMap Feasibility Study and Unsafety Evaluation"
+1. Artifact for "RustMap Feasibility Study and Unsafety Evaluation"
 ============================================================
 
 
@@ -59,7 +59,7 @@ In the `rustmap-unsafety-evaluation` artifact:
 
 ## 2.3. Directory structure
 
-- `c-code`: original C programs
+- `c-code`: original C programs and pre-processed C programs
 - `executable_binaries_test`: how to build, test, and verify `bzip2-rustmap-gpt`, `which-rustmap-gpt`, and executables of selected GPT-generated Rosseta Code
 - `scaffolding_py_tools`: rustmap scaffolding automation tools
 - `SCC_recursive_study`: strongly connected components recursive examples, contains callgraph generated from preprocess *.i files
@@ -83,15 +83,15 @@ In the `rustmap-unsafety-evaluation` artifact:
 
 # 3. Feasibility Study
 
-##  3.1.  Scaffolding Boilerplate Generation  RQ2
+##  3.1. Scaffolding Boilerplate Generation  RQ2
 
-## 3.2. Step 0: Prepare
+### 3.1.1. Step 0: Prepare
 copy c-code/bzip2 to scaffolding
 ```bash
 cp -r c-code/bzip2 scaffolding_test/
 ```
 
-## 3.3. Step 1: add save preprocessed file *.i during `make`   
+### 3.1.2. Step 1: add save preprocessed file *.i during `make`   
 
 
 ```bash
@@ -100,80 +100,80 @@ cd scaffolding_test/bzip2
 cp -r Makefile-save-temps Makefile
 ```
 
-### 3.3.1. Step 1.1 remove directives from *.i
+#### 3.1.2.1. Step 1.1 remove directives from *.i
  
 ```bash
 for file in *.i; do awk '!/^##[ \t]*[0-9]+[ \t]+"/' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"; done
 
 ```
 
-### 3.3.2. Step 1.2 rename `bzip2recover.i` to `bzip2recover.i.bk`
+#### 3.1.2.2. Step 1.2 rename `bzip2recover.i` to `bzip2recover.i.bk`
 
 Since we only focus on bzip2 executable binary, we need to exclude the bzip2recover.i
 ( Caveat: if the binary has more than one executable, we should exclude the unnecessary one )
 
-### 3.3.3. Step 2: Generating C Tags: Command for Recursive Ctags with Custom Fields and Language Mapping
+### 3.1.3. Step 2: Generating C Tags: Command for Recursive Ctags with Custom Fields and Language Mapping
    
 ```bash
 ctags -R --fields=+l --c-kinds=+v+f --languages=C --langmap=C:.i -o ctagop.txt 
 ```
 
    
-### 3.3.4. Step 3: Use cflow
+### 3.1.4. Step 3: Use cflow
 
 When using the cflow tool for a C project, it's generally recommended to have only one main function in the project. cflow is designed to analyze function call relationships in C programs and generates a call graph. If there are multiple main functions, cflow might face difficulties, as the main function typically serves as the entry point of a program. For projects with multiple main functions, like those containing independent sub-projects, you might need to run cflow separately for each part or adjust the project structure for effective analysis. In summary, having a single main function is the best practice for using cflow, unless you have specific needs and strategies to handle multiple instances.  
 
 
 ```bash
-python3 cflow_generation.py /root/rustmap/bzip2-scc-test
+python3 cflow_generation.py /root/rustmap/executable_binaries_test
 ```
 
 
 
-### 3.3.5. Step 4: Generate RustMap Scaffolding
+### 3.1.5. Step 4: Generate RustMap Scaffolding
 ```bash
-python3 extract.py /root/rustmap/bzip2-scc-test
+python3 extract.py /root/rustmap/executable_binaries_test
 ```
 
 
-## 3.4. Functional Test (Project-Scale to Single-File-Scale)
-### 3.4.1. Project-Scale Executable Test on bzip2: How to test bzip2 compression function?
+## 3.2. Functional Test of Executable Binaries (Project-Scale to Single-File-Scale) `bzip2-rustmap-gpt`, `which-rustmap-gpt` and rosseta 125 executable binaries
+### 3.2.1. Project-Scale Executable Test on bzip2: How to test bzip2 compression function?
 
-#### 3.4.1.1. bzip2 executable binary generation
+#### 3.2.1.1. bzip2 executable binary generation  
 ```bash
-cd /root/rustmap/feasibility_study/bzip2_rs_gpt
+cd /root/rustmap/executable_binaries_test/bzip2_rs_gpt
 cargo build --release
 ```
-It will generate executable binary in `/root/rustmap/feasibility_study/bzip2_rs_gpt/target/release/bzip2_rs_gpt` this path
+It will generate executable binary in `/root/rustmap/executable_binaries_test/bzip2_rs_gpt/target/release/bzip2_rs_gpt` this path
 
 
-#### 3.4.1.2. test cases generations bzip2
+#### 3.2.1.2. test cases generations bzip2
 ```bash
-cd /root/rustmap/feasibility_study/bzip2_tests
+cd /root/rustmap/executable_binaries_test/bzip2_tests
 python3 random-test-case-generation.py
 ```
 This step will generate five small-scale text files: `random_1_chars.txt`, `random_10_chars.txt`, `random_100_chars.txt`, `random_1000_chars.txt`, `random_5000_chars.txt`
 Then we will use bzip2-rust binary to test the results.
 
 
-#### 3.4.1.3. Functional Test compress small-files
+#### 3.2.1.3. Functional Test compress small-files
 ```bash
-cd /root/rustmap/feasibility_study/bzip2_tests-finished-example
+cd /root/rustmap/executable_binaries_test/bzip2_tests-finished-example
 
 ## compress test cases and record its processing time
-{ echo "Running random_1_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_1_chars.txt; echo; echo "Running random_10_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_10_chars.txt; echo; echo "Running random_100_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_100_chars.txt; echo; echo "Running random_1000_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_1000_chars.txt; echo; echo "Running random_5000_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_5000_chars.txt; echo; } 2>&1 | tee
+{ echo "Running random_1_chars.txt"; time /root/rustmap/executable_binaries_test/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_1_chars.txt; echo; echo "Running random_10_chars.txt"; time /root/rustmap/executable_binaries_test/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_10_chars.txt; echo; echo "Running random_100_chars.txt"; time /root/rustmap/executable_binaries_test/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_100_chars.txt; echo; echo "Running random_1000_chars.txt"; time /root/rustmap/executable_binaries_test/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_1000_chars.txt; echo; echo "Running random_5000_chars.txt"; time /root/rustmap/executable_binaries_test/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_5000_chars.txt; echo; } 2>&1 | tee
 
 mv *.bz2 compress_output_bz2_files/
 ```
 
 you may will the generation time in here: 
 ```bash
-/root/rustmap/feasibility_study/bzip2_tests/timings.txt
+/root/rustmap/executable_binaries_test/bzip2_tests/timings.txt
 ```
 
-#### 3.4.1.4. uncompress `.bz2`
+#### 3.2.1.4. uncompress `.bz2`
 ```bash
-cd /root/rustmap/feasibility_study/bzip2_tests/compress_output_bz2_files
+cd /root/rustmap/executable_binaries_test/bzip2_tests/compress_output_bz2_files
 bzip2recover random_1_chars.txt.bz2
 bzip2 -d rec00001random_1_chars.txt.bz2
 
@@ -192,12 +192,12 @@ bzip2 -d rec00001random_5000_chars.txt.bz2
 
 
 
-### 3.4.2. which  
+### 3.2.2. `which-rustmap-gpt`  
 
-#### 3.4.2.1. which_rs_gpt executable binary generation
+#### 3.2.2.1. which_rs_gpt executable binary generation
 ```bash  
 
-cd /root/rustmap/feasibility_study/which_rs_gpt
+cd /root/rustmap/executable_binaries_test/which_rs_gpt
 cargo build --release
 
 ```
@@ -207,33 +207,40 @@ cargo build --release
 
 
 
-#### 3.4.2.3. rustmap-generated Rosseta Executable Test
+### 3.2.3. rustmap-generated Rosseta Executable Test
 Original rosseta code 125 is located in `/root/rustmap/c-code/rosseta-125`
 
 
 
-#### 3.4.2.4. Function Consistency Cross-Verification C and Rust for Rosseta Code
-   
+#### 3.2.3.1. Function Consistency Cross-Verification C and Rust for Rosseta Code
+```bash
+# generate rust
+
+
+```
+
 ```bash
 diff /root/rustmap/c-code/rosseta-125/rosseta_run_C_log.txt /root/rustmap/executable_binaries_test/rossta_code_gpt/125-rossta-code-gpt/rosseta_rust_run_log.txt
 ```
 
 
-#### 3.4.2.5. Unit Test Examples
+#### 3.2.3.2. Unit Test Examples
 
 In the case of bzip2, the length of pointer array.
 
+```bash
 /root/rustmap/unit_test_examples/SCC_no_func.c /root/rustmap/unit_test_examples/SCC_no_func.rs
+```
 
 
-#### 3.4.2.6. Pointer Aliasing Examples in Section 6, 7, 8
+#### 3.2.3.3. Pointer Aliasing Examples in Section 6, 7, 8
 See the code under `/root/rustmap/pointer_aliasing`. 
 
 
 
-#### 3.4.2.7. Why we need Strongly Connected Component Recursive dependency? 
+#### 3.2.3.4. Why we need Strongly Connected Component Recursive dependency? 
 
-`/root/rustmap/SCC_recursive_study/SCC_4_RecursiveDependencyDemo`
+see example of inter-dependent `/root/rustmap/SCC_recursive_study/SCC_4_RecursiveDependencyDemo`
 
 
 

@@ -446,19 +446,20 @@ extern User;
 extern BankAccount;
 extern void funcB(int n);
 extern int funcC(int n);
+extern void funcX(User* user);
 
 int main() {
     User user;
     BankAccount acc;
+
 
     user.userId = 1;
     user.account = &acc;
     acc.balance = 100.50;
     acc.owner = &user;
 
+
     funcX(&user);
-
-
 
     printf("Main function started.\n");
     funcB(3);

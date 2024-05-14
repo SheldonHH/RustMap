@@ -1,6 +1,0 @@
-digraph G {
-	graph [bb="0,0,0,0",
-		rankdir=LR
-	];
-	node [label="\N"];
-}

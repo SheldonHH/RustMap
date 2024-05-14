@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 extern int funcD(int n);
 
 int funcC(int n) {

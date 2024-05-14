@@ -15,7 +15,7 @@ python3 cflow_two_args.py i /Users/mac/rustmap-clone/SCC_recursive_study/SCC_4_R
 
 
 # generate *.svg
-dot -Tsvg i-callgraph.svg -o final-SCC-graph.svg
+dot -Tsvg i-callgraph.svg -o i-callgraph.svg.svg
 
 
 

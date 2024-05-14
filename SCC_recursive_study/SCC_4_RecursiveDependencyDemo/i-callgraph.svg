@@ -1,15 +1,23 @@
 digraph G {
 rankdir="LR";
     main [label="int main ()
-main.i:450"]
+main.i:451"]
     main -> funcX
     main -> printf
     main -> funcB
     main -> funcC
     funcX [label="void funcX (User *user)
-dpx.i:446"]
-    funcX -> printf
+dpx.i:447"]
+    funcX -> funcC
+    funcC [label="int funcC (int n)
+dp4.i:428"]
+    funcC -> printf
+    funcC -> funcD
     printf [label="printf()"]
+    funcD [label="int funcD (int n)
+dp3.i:429"]
+    funcD -> printf
+    funcD -> funcC
     funcB [label="void funcB (int n)
 dp1.i:432"]
     funcB -> printf
@@ -22,12 +30,4 @@ dp2.i:429"]
     happy [label="int happy (int n)
 dp3.i:438"]
     happy -> printf
-    funcC [label="int funcC (int n)
-dp4.i:429"]
-    funcC -> printf
-    funcC -> funcD
-    funcD [label="int funcD (int n)
-dp3.i:429"]
-    funcD -> printf
-    funcD -> funcC
 }

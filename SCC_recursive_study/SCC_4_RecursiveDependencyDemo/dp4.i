@@ -423,7 +423,6 @@ extern int __vsprintf_chk (char * restrict, int, size_t,
 
 extern int __vsnprintf_chk (char * restrict, size_t, int, size_t,
        const char * restrict, va_list);
-
 extern int funcD(int n);
 
 int funcC(int n) {

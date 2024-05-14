@@ -441,10 +441,15 @@ extern int __vsprintf_chk (char * restrict, int, size_t,
 
 extern int __vsnprintf_chk (char * restrict, size_t, int, size_t,
        const char * restrict, va_list);
+extern int funcC(int n);
 
 
 void funcX(User* user) {
-    printf("User ID: %d\n", user->userId);
-    printf("User's bank account balance: %.2f\n", user->account->balance);
-    printf("Bank account owner's user ID: %d\n", user->account->owner->userId);
+
+
+
+
+
+    int result = funcC(10);
+
 }

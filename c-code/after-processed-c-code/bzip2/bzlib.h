@@ -94,6 +94,10 @@ typedef
 #   define BZ_EXTERN extern
 #endif
 
+// fn-call graph (not macro call) -> file-level(可读性，cfg，其他)
+// 考虑到两个问题，在C里面，对两种分别
+// 处理过的C，变成*i，变成fn
+// *.i fn-call,生成完整的不可能
 
 /*-- Core (low-level) library functions --*/
 

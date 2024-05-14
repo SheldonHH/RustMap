@@ -17,13 +17,13 @@ from bidict import bidict
 import sys
 sys.setrecursionlimit(5000)  # 设置为5000或更高
 import time
-from ./scaffolding_test/cflow_fn_global import process_file,generate_cflow_old_dot,create_integrated_dependency_graph
-from ./scaffolding_test/combined_dependency_analyzer import extract_global_variables_from_ctags
+# from ./scaffolding_py_tools/cflow_fn_global import process_file,generate_cflow_old_dot,create_integrated_dependency_graph
+# from ./scaffolding_py_tools/combined_dependency_analyzer import extract_global_variables_from_ctags
 
 # export PATH=/root/.cargo/bin/cargo
 
 def extract_fn_from_filename(s):
-    # 定义两个正则表达式模式
+    # 定义两个正则表达式模
     pattern_root = r'scc_\d+_root_\d+_(.*)'
     pattern_non_root = r'scc_\d+_(?!root)(.*)'
 

@@ -1,3505 +1,3835 @@
-	.file	"huffman.c"
-	.text
-.Ltext0:
-	.file 0 "/root/rustmap/bzip2-real-test" "huffman.c"
-	.p2align 4
-	.globl	BZ2_hbMakeCodeLengths
-	.type	BZ2_hbMakeCodeLengths, @function
-BZ2_hbMakeCodeLengths:
-.LVL0:
-.LFB53:
-	.file 1 "huffman.c"
-	.loc 1 67 1 view -0
+	.section	__TEXT,__text,regular,pure_instructions
+	.build_version macos, 14, 0	sdk_version 14, 2
+	.file	1 "/Users/mac/rustmap-clone/c-code/bzip2" "./bzlib_private.h"
+	.globl	_BZ2_hbMakeCodeLengths          ; -- Begin function BZ2_hbMakeCodeLengths
+	.p2align	2
+_BZ2_hbMakeCodeLengths:                 ; @BZ2_hbMakeCodeLengths
+Lfunc_begin0:
+	.file	2 "/Users/mac/rustmap-clone/c-code/bzip2" "huffman.c"
+	.loc	2 67 0                          ; huffman.c:67:0
 	.cfi_startproc
-	.loc 1 67 1 is_stmt 0 view .LVU1
-	endbr64
-	pushq	%r15
-	.cfi_def_cfa_offset 16
-	.cfi_offset 15, -16
-	pushq	%r14
-	.cfi_def_cfa_offset 24
-	.cfi_offset 14, -24
-	pushq	%r13
-	.cfi_def_cfa_offset 32
-	.cfi_offset 13, -32
-	pushq	%r12
-	.cfi_def_cfa_offset 40
-	.cfi_offset 12, -40
-	pushq	%rbp
-	.cfi_def_cfa_offset 48
-	.cfi_offset 6, -48
-	pushq	%rbx
-	.cfi_def_cfa_offset 56
-	.cfi_offset 3, -56
-	subq	$4096, %rsp
-	.cfi_def_cfa_offset 4152
-	orq	$0, (%rsp)
-	subq	$1176, %rsp
-	.cfi_def_cfa_offset 5328
-	movl	$256, %r8d
-	.loc 1 67 1 view .LVU2
-	movq	%rdi, 32(%rsp)
-	movslq	%edx, %rdi
-.LVL1:
-	.loc 1 67 1 view .LVU3
-	leaq	1120(%rsp), %r9
-	movl	%edi, 40(%rsp)
-	movl	%ecx, 44(%rsp)
-	movq	%fs:40, %rax
-	movq	%rax, 5256(%rsp)
-	xorl	%eax, %eax
-	.loc 1 72 4 is_stmt 1 view .LVU4
-	.loc 1 73 4 view .LVU5
-	.loc 1 75 4 view .LVU6
-	.loc 1 76 4 view .LVU7
-	.loc 1 77 4 view .LVU8
-	.loc 1 79 4 view .LVU9
-.LVL2:
-	.loc 1 79 18 view .LVU10
-	testl	%edi, %edi
-	jle	.L6
-.LVL3:
-	.p2align 4,,10
-	.p2align 3
-.L5:
-	.loc 1 80 7 view .LVU11
-	.loc 1 80 26 is_stmt 0 view .LVU12
-	movl	(%rsi,%rax,4), %ecx
-	.loc 1 80 50 view .LVU13
-	movl	%ecx, %edx
-	sall	$8, %edx
-	testl	%ecx, %ecx
-	cmove	%r8d, %edx
-	.loc 1 80 19 view .LVU14
-	movl	%edx, 4(%r9,%rax,4)
-	.loc 1 79 32 is_stmt 1 view .LVU15
-.LVL4:
-	.loc 1 79 18 view .LVU16
-	addq	$1, %rax
-.LVL5:
-	.loc 1 79 18 is_stmt 0 view .LVU17
-	cmpq	%rdi, %rax
-	jne	.L5
-.L6:
-	.loc 1 79 18 view .LVU18
-	movl	40(%rsp), %ebx
-	leaq	80(%rsp), %rax
-	movq	%rax, 48(%rsp)
-	leaq	(%rax,%rdi,4), %rax
-	movq	%rax, 24(%rsp)
-	leal	-1(%rbx), %eax
-	leaq	1128(%rsp,%rax,4), %rdi
-.LVL6:
-	.loc 1 79 18 view .LVU19
-	addq	$2, %rax
-	movq	%rax, 56(%rsp)
-	leal	1(%rbx), %eax
-	movl	%eax, 64(%rsp)
-	.loc 1 103 16 view .LVU20
-	leal	-1(%rbx,%rbx), %eax
-	movq	%rdi, 72(%rsp)
-	movl	%eax, 68(%rsp)
-.LVL7:
-	.p2align 4,,10
-	.p2align 3
-.L3:
-	.loc 1 82 4 is_stmt 1 view .LVU21
-	.loc 1 84 7 view .LVU22
-	.loc 1 85 7 view .LVU23
-	.loc 1 87 7 view .LVU24
-	.loc 1 91 21 is_stmt 0 view .LVU25
-	movl	40(%rsp), %eax
-	.loc 1 87 15 view .LVU26
-	movl	$0, 80(%rsp)
-	.loc 1 88 7 is_stmt 1 view .LVU27
-	.loc 1 88 17 is_stmt 0 view .LVU28
-	movl	$0, 1120(%rsp)
-	.loc 1 89 7 is_stmt 1 view .LVU29
-	.loc 1 89 17 is_stmt 0 view .LVU30
-	movl	$-2, 3184(%rsp)
-	.loc 1 91 7 is_stmt 1 view .LVU31
-.LVL8:
-	.loc 1 91 21 view .LVU32
-	testl	%eax, %eax
-	jle	.L1
-	movq	48(%rsp), %r11
-	movq	56(%rsp), %r12
-	leaq	1120(%rsp), %rbp
-	leaq	3184(%rsp), %rbx
-	movq	%rbp, 16(%rsp)
-	movl	$1, %r8d
-	movq	%rbx, 8(%rsp)
-.LVL9:
-	.p2align 4,,10
-	.p2align 3
-.L10:
-.LBB2:
-	.loc 1 95 91 is_stmt 0 view .LVU33
-	movl	%r8d, %edx
-.LBE2:
-	.loc 1 94 22 view .LVU34
-	movl	%r8d, (%r11,%r8,4)
-.LBB3:
-	.loc 1 95 68 view .LVU35
-	movl	0(%rbp,%r8,4), %r9d
-	movl	%r8d, %r10d
-.LVL10:
-	.loc 1 95 68 view .LVU36
-.LBE3:
-	.loc 1 92 10 is_stmt 1 view .LVU37
-.LBB4:
-	.loc 1 95 91 is_stmt 0 view .LVU38
-	sarl	%edx
-.LVL11:
-	.loc 1 95 91 view .LVU39
-.LBE4:
-	.loc 1 92 20 view .LVU40
-	movl	$-1, (%rbx,%r8,4)
-	.loc 1 93 10 is_stmt 1 view .LVU41
-.LVL12:
-	.loc 1 94 10 view .LVU42
-.LBB5:
-	.loc 1 95 12 view .LVU43
-	.loc 1 95 27 view .LVU44
-	.loc 1 95 39 view .LVU45
-	.loc 1 95 55 view .LVU46
-	.loc 1 95 74 view .LVU47
-	.loc 1 95 87 is_stmt 0 view .LVU48
-	movslq	%edx, %rax
-	movslq	80(%rsp,%rax,4), %rax
-	movq	%rax, %rcx
-	.loc 1 95 74 view .LVU49
-	cmpl	1120(%rsp,%rax,4), %r9d
-	jge	.L31
-.LBE5:
-	.loc 1 93 15 view .LVU50
-	movslq	%r8d, %rax
-	jmp	.L9
-.LVL13:
-	.p2align 4,,10
-	.p2align 3
-.L32:
-.LBB6:
-	.loc 1 95 91 view .LVU51
-	movl	%esi, %edx
-.LVL14:
-.L9:
-	.loc 1 95 101 is_stmt 1 discriminator 3 view .LVU52
-	.loc 1 95 91 is_stmt 0 discriminator 3 view .LVU53
-	movl	%edx, %esi
-	.loc 1 95 110 discriminator 3 view .LVU54
-	movl	%ecx, 80(%rsp,%rax,4)
-	.loc 1 95 127 is_stmt 1 discriminator 3 view .LVU55
-.LVL15:
-	.loc 1 95 74 discriminator 3 view .LVU56
-	.loc 1 95 91 is_stmt 0 discriminator 3 view .LVU57
-	sarl	%esi
-	.loc 1 95 87 discriminator 3 view .LVU58
-	movslq	%esi, %rax
-	movslq	80(%rsp,%rax,4), %rdi
-	movslq	%edx, %rax
-	movq	%rdi, %rcx
-	.loc 1 95 74 discriminator 3 view .LVU59
-	cmpl	%r9d, 1120(%rsp,%rdi,4)
-	jg	.L32
-.LVL16:
-.L8:
-	.loc 1 95 139 is_stmt 1 discriminator 4 view .LVU60
-	.loc 1 95 148 is_stmt 0 discriminator 4 view .LVU61
-	movslq	%edx, %rdx
-.LBE6:
-	.loc 1 91 21 discriminator 4 view .LVU62
-	addq	$1, %r8
-.LVL17:
-.LBB7:
-	.loc 1 95 148 discriminator 4 view .LVU63
-	movl	%r10d, 80(%rsp,%rdx,4)
-.LBE7:
-	.loc 1 95 156 is_stmt 1 discriminator 4 view .LVU64
-	.loc 1 91 36 discriminator 4 view .LVU65
-.LVL18:
-	.loc 1 91 21 discriminator 4 view .LVU66
-	cmpq	%r12, %r8
-	jne	.L10
-.LVL19:
-	.loc 1 109 156 view .LVU67
-	.loc 1 100 20 view .LVU68
-	movl	40(%rsp), %eax
-	cmpl	$1, %eax
-	je	.L11
-	movslq	64(%rsp), %rbp
-	movq	24(%rsp), %r12
-	leal	-2(%rax), %r9d
-	movl	%eax, %r8d
-.LVL20:
-	.p2align 4,,10
-	.p2align 3
-.L20:
-	.loc 1 101 10 view .LVU69
-	.loc 1 101 38 is_stmt 0 view .LVU70
-	movl	(%r12), %r13d
-	.loc 1 101 52 view .LVU71
-	subl	$1, %r8d
-.LVL21:
-	.loc 1 101 13 view .LVU72
-	movslq	84(%rsp), %r14
-.LVL22:
-	.loc 1 101 24 is_stmt 1 view .LVU73
-	.loc 1 101 32 is_stmt 0 view .LVU74
-	movl	%r13d, 84(%rsp)
-	.loc 1 101 47 is_stmt 1 view .LVU75
-.LVL23:
-.LBB8:
-	.loc 1 101 58 view .LVU76
-	.loc 1 101 77 view .LVU77
-	.loc 1 101 85 view .LVU78
-	.loc 1 101 101 view .LVU79
-	.loc 1 101 121 view .LVU80
-	.loc 1 101 135 view .LVU81
-	.loc 1 101 138 is_stmt 0 view .LVU82
-	cmpl	$1, %r8d
-	je	.L33
-	.loc 1 101 231 view .LVU83
-	movslq	%r13d, %rax
-	.loc 1 101 124 view .LVU84
-	movl	$2, %edx
-	.loc 1 101 80 view .LVU85
-	movl	$1, %ecx
-	.loc 1 101 231 view .LVU86
-	movl	1120(%rsp,%rax,4), %ebx
-	jmp	.L14
-.LVL24:
-	.p2align 4,,10
-	.p2align 3
-.L64:
-	.loc 1 101 173 view .LVU87
-	movl	%edx, %eax
-.LVL25:
-.L13:
-	.loc 1 101 221 is_stmt 1 discriminator 8 view .LVU88
-	.loc 1 101 224 is_stmt 0 discriminator 8 view .LVU89
-	cmpl	%esi, %ebx
-	jl	.L12
-.L65:
-	.loc 1 101 264 is_stmt 1 discriminator 10 view .LVU90
-	.loc 1 101 124 is_stmt 0 discriminator 10 view .LVU91
-	leal	(%rax,%rax), %edx
-	.loc 1 101 273 discriminator 10 view .LVU92
-	movl	%edi, 80(%rsp,%rcx,4)
-	.loc 1 101 285 is_stmt 1 discriminator 10 view .LVU93
-.LVL26:
-	.loc 1 101 107 discriminator 10 view .LVU94
-	.loc 1 101 101 discriminator 10 view .LVU95
-	.loc 1 101 121 discriminator 10 view .LVU96
-	.loc 1 101 135 discriminator 10 view .LVU97
-	movslq	%eax, %rcx
-	.loc 1 101 138 is_stmt 0 discriminator 10 view .LVU98
-	cmpl	%edx, %r8d
-	jl	.L12
-.LVL27:
-.L14:
-	.loc 1 101 158 is_stmt 1 discriminator 3 view .LVU99
-	.loc 1 101 208 is_stmt 0 discriminator 3 view .LVU100
-	movslq	%edx, %rax
-	movslq	80(%rsp,%rax,4), %rax
-	.loc 1 101 203 discriminator 3 view .LVU101
-	movl	1120(%rsp,%rax,4), %esi
-	.loc 1 101 208 discriminator 3 view .LVU102
-	movq	%rax, %rdi
-	movl	%edx, %eax
-	.loc 1 101 161 discriminator 3 view .LVU103
-	cmpl	%edx, %r8d
-	jle	.L13
-	.loc 1 101 190 discriminator 4 view .LVU104
-	addl	$1, %eax
-	.loc 1 101 187 discriminator 4 view .LVU105
-	movslq	%eax, %r10
-	movslq	80(%rsp,%r10,4), %r11
-	movq	%r11, %r10
-	.loc 1 101 182 discriminator 4 view .LVU106
-	movl	1120(%rsp,%r11,4), %r11d
-	.loc 1 101 173 discriminator 4 view .LVU107
-	cmpl	%esi, %r11d
-	jge	.L64
-	movl	%r11d, %esi
-	movl	%r10d, %edi
-.LVL28:
-	.loc 1 101 221 is_stmt 1 view .LVU108
-	.loc 1 101 224 is_stmt 0 view .LVU109
-	cmpl	%esi, %ebx
-	jge	.L65
-.LVL29:
-	.p2align 4,,10
-	.p2align 3
-.L12:
-	.loc 1 101 296 is_stmt 1 discriminator 9 view .LVU110
-	.loc 1 101 305 is_stmt 0 discriminator 9 view .LVU111
-	movl	%r13d, 80(%rsp,%rcx,4)
-.LBE8:
-	.loc 1 101 313 is_stmt 1 discriminator 9 view .LVU112
-	.loc 1 102 10 discriminator 9 view .LVU113
-	.loc 1 102 38 is_stmt 0 discriminator 9 view .LVU114
-	movl	-4(%r12), %r15d
-	.loc 1 102 13 discriminator 9 view .LVU115
-	movslq	84(%rsp), %r13
-.LVL30:
-	.loc 1 102 24 is_stmt 1 discriminator 9 view .LVU116
-	.loc 1 102 32 is_stmt 0 discriminator 9 view .LVU117
-	movl	%r15d, 84(%rsp)
-.LVL31:
-	.loc 1 102 47 is_stmt 1 discriminator 9 view .LVU118
-.LBB9:
-	.loc 1 102 58 discriminator 9 view .LVU119
-	.loc 1 102 77 discriminator 9 view .LVU120
-	.loc 1 102 85 discriminator 9 view .LVU121
-	.loc 1 102 101 discriminator 9 view .LVU122
-	.loc 1 102 121 discriminator 9 view .LVU123
-	.loc 1 102 135 discriminator 9 view .LVU124
-	.loc 1 102 138 is_stmt 0 discriminator 9 view .LVU125
-	cmpl	$1, %r9d
-	jle	.L37
-	.loc 1 102 231 view .LVU126
-	movslq	%r15d, %rax
-	.loc 1 102 124 view .LVU127
-	movl	$2, %edx
-	.loc 1 102 80 view .LVU128
-	movl	$1, %ecx
-	.loc 1 102 231 view .LVU129
-	movl	1120(%rsp,%rax,4), %ebx
-	jmp	.L17
-.LVL32:
-	.p2align 4,,10
-	.p2align 3
-.L66:
-	.loc 1 102 173 view .LVU130
-	movl	%edx, %eax
-.LVL33:
-.L16:
-	.loc 1 102 221 is_stmt 1 discriminator 8 view .LVU131
-	.loc 1 102 224 is_stmt 0 discriminator 8 view .LVU132
-	cmpl	%esi, %ebx
-	jl	.L15
-.L67:
-	.loc 1 102 264 is_stmt 1 discriminator 10 view .LVU133
-	.loc 1 102 124 is_stmt 0 discriminator 10 view .LVU134
-	leal	(%rax,%rax), %edx
-	.loc 1 102 273 discriminator 10 view .LVU135
-	movl	%edi, 80(%rsp,%rcx,4)
-	.loc 1 102 285 is_stmt 1 discriminator 10 view .LVU136
-.LVL34:
-	.loc 1 102 107 discriminator 10 view .LVU137
-	.loc 1 102 101 discriminator 10 view .LVU138
-	.loc 1 102 121 discriminator 10 view .LVU139
-	.loc 1 102 135 discriminator 10 view .LVU140
-	movslq	%eax, %rcx
-	.loc 1 102 138 is_stmt 0 discriminator 10 view .LVU141
-	cmpl	%r9d, %edx
-	jg	.L15
-.LVL35:
-.L17:
-	.loc 1 102 158 is_stmt 1 discriminator 3 view .LVU142
-	.loc 1 102 208 is_stmt 0 discriminator 3 view .LVU143
-	movslq	%edx, %rax
-	movslq	80(%rsp,%rax,4), %rax
-	.loc 1 102 203 discriminator 3 view .LVU144
-	movl	1120(%rsp,%rax,4), %esi
-	.loc 1 102 208 discriminator 3 view .LVU145
-	movq	%rax, %rdi
-	movl	%edx, %eax
-	.loc 1 102 161 discriminator 3 view .LVU146
-	cmpl	%edx, %r9d
-	jle	.L16
-	.loc 1 102 190 discriminator 4 view .LVU147
-	addl	$1, %eax
-	.loc 1 102 187 discriminator 4 view .LVU148
-	movslq	%eax, %r10
-	movslq	80(%rsp,%r10,4), %r11
-	movq	%r11, %r10
-	.loc 1 102 182 discriminator 4 view .LVU149
-	movl	1120(%rsp,%r11,4), %r11d
-	.loc 1 102 173 discriminator 4 view .LVU150
-	cmpl	%esi, %r11d
-	jge	.L66
-	movl	%r11d, %esi
-	movl	%r10d, %edi
-.LVL36:
-	.loc 1 102 221 is_stmt 1 view .LVU151
-	.loc 1 102 224 is_stmt 0 view .LVU152
-	cmpl	%esi, %ebx
-	jge	.L67
-.LVL37:
-	.p2align 4,,10
-	.p2align 3
-.L15:
-	.loc 1 102 296 is_stmt 1 discriminator 9 view .LVU153
-.LBE9:
-	.loc 1 105 36 is_stmt 0 discriminator 9 view .LVU154
-	movl	1120(%rsp,%r14,4), %eax
-.LBB10:
-	.loc 1 102 305 discriminator 9 view .LVU155
-	movl	%r15d, 80(%rsp,%rcx,4)
-.LBE10:
-	.loc 1 102 313 is_stmt 1 discriminator 9 view .LVU156
-	.loc 1 103 10 discriminator 9 view .LVU157
-	.loc 1 103 16 is_stmt 0 discriminator 9 view .LVU158
-	movl	%ebp, %edi
-.LVL38:
-	.loc 1 104 10 is_stmt 1 discriminator 9 view .LVU159
-	.loc 1 105 64 is_stmt 0 discriminator 9 view .LVU160
-	movl	1120(%rsp,%r13,4), %edx
-	.loc 1 104 34 discriminator 9 view .LVU161
-	movl	%ebp, 3184(%rsp,%r13,4)
-	.loc 1 105 108 discriminator 9 view .LVU162
-	movzbl	%al, %ecx
-	.loc 1 104 21 discriminator 9 view .LVU163
-	movl	%ebp, 3184(%rsp,%r14,4)
-	.loc 1 105 10 is_stmt 1 discriminator 9 view .LVU164
-	.loc 1 105 140 is_stmt 0 discriminator 9 view .LVU165
-	movzbl	%dl, %r10d
-	.loc 1 108 22 discriminator 9 view .LVU166
-	movl	%ebp, -4(%r12)
-	.loc 1 105 187 discriminator 9 view .LVU167
-	cmpl	%ecx, %r10d
-	cmovl	%ecx, %r10d
-	.loc 1 105 70 discriminator 9 view .LVU168
-	xorb	%dl, %dl
-	.loc 1 105 42 discriminator 9 view .LVU169
-	xorb	%al, %al
-	.loc 1 105 55 discriminator 9 view .LVU170
-	addl	%edx, %eax
-.LBB11:
-	.loc 1 109 91 discriminator 9 view .LVU171
-	movl	%r8d, %edx
-.LBE11:
-	.loc 1 105 90 discriminator 9 view .LVU172
-	addl	$1, %r10d
-.LBB12:
-	.loc 1 109 91 discriminator 9 view .LVU173
-	sarl	%edx
-.LBE12:
-	.loc 1 105 85 discriminator 9 view .LVU174
-	orl	%eax, %r10d
-	.loc 1 105 25 discriminator 9 view .LVU175
-	movq	16(%rsp), %rax
-	movl	%r10d, (%rax,%rbp,4)
-	.loc 1 106 10 is_stmt 1 discriminator 9 view .LVU176
-	.loc 1 106 25 is_stmt 0 discriminator 9 view .LVU177
-	movq	8(%rsp), %rax
-	movl	$-1, (%rax,%rbp,4)
-	.loc 1 107 10 is_stmt 1 discriminator 9 view .LVU178
-.LVL39:
-	.loc 1 108 10 discriminator 9 view .LVU179
-.LBB13:
-	.loc 1 109 12 discriminator 9 view .LVU180
-	.loc 1 109 27 discriminator 9 view .LVU181
-	.loc 1 109 39 discriminator 9 view .LVU182
-	.loc 1 109 55 discriminator 9 view .LVU183
-	.loc 1 109 74 discriminator 9 view .LVU184
-	.loc 1 109 87 is_stmt 0 discriminator 9 view .LVU185
-	movslq	%edx, %rax
-	movslq	80(%rsp,%rax,4), %rax
-	movq	%rax, %rcx
-	.loc 1 109 74 discriminator 9 view .LVU186
-	cmpl	1120(%rsp,%rax,4), %r10d
-	jge	.L41
-	.loc 1 109 74 discriminator 9 view .LVU187
-.LBE13:
-	.loc 1 101 52 view .LVU188
-	movslq	%r8d, %rax
-	jmp	.L19
-.LVL40:
-	.p2align 4,,10
-	.p2align 3
-.L42:
-.LBB14:
-	.loc 1 109 91 view .LVU189
-	movl	%esi, %edx
-.LVL41:
-.L19:
-	.loc 1 109 101 is_stmt 1 discriminator 3 view .LVU190
-	.loc 1 109 91 is_stmt 0 discriminator 3 view .LVU191
-	movl	%edx, %esi
-	.loc 1 109 110 discriminator 3 view .LVU192
-	movl	%ecx, 80(%rsp,%rax,4)
-	.loc 1 109 127 is_stmt 1 discriminator 3 view .LVU193
-.LVL42:
-	.loc 1 109 74 discriminator 3 view .LVU194
-	.loc 1 109 91 is_stmt 0 discriminator 3 view .LVU195
-	sarl	%esi
-	.loc 1 109 87 discriminator 3 view .LVU196
-	movslq	%esi, %rax
-	movslq	80(%rsp,%rax,4), %r11
-	movslq	%edx, %rax
-	movq	%r11, %rcx
-	.loc 1 109 74 discriminator 3 view .LVU197
-	cmpl	1120(%rsp,%r11,4), %r10d
-	jl	.L42
-.L18:
-	.loc 1 109 139 is_stmt 1 discriminator 4 view .LVU198
-	.loc 1 109 148 is_stmt 0 discriminator 4 view .LVU199
-	movslq	%edx, %rdx
-	.loc 1 109 148 discriminator 4 view .LVU200
-.LBE14:
-	.loc 1 100 20 discriminator 4 view .LVU201
-	addq	$1, %rbp
-	subq	$4, %r12
-	subl	$1, %r9d
-.LBB15:
-	.loc 1 109 148 discriminator 4 view .LVU202
-	movl	%edi, 80(%rsp,%rdx,4)
-	.loc 1 109 148 discriminator 4 view .LVU203
-.LBE15:
-	.loc 1 109 156 is_stmt 1 discriminator 4 view .LVU204
-	.loc 1 100 20 discriminator 4 view .LVU205
-	cmpl	$1, %r8d
-	jne	.L20
-	.loc 1 112 9 view .LVU206
-	.loc 1 112 12 is_stmt 0 view .LVU207
-	cmpl	$515, 68(%rsp)
-	jle	.L11
-	.loc 1 112 36 is_stmt 1 view .LVU208
-	movl	$2002, %edi
-.LVL43:
-	.loc 1 112 36 is_stmt 0 view .LVU209
-	call	BZ2_bz__AssertH__fail@PLT
-.LVL44:
-	.loc 1 115 21 is_stmt 1 view .LVU210
-.L11:
-	.loc 1 115 21 is_stmt 0 view .LVU211
-	movq	32(%rsp), %r8
-	movl	40(%rsp), %r9d
-	.loc 1 120 34 view .LVU212
-	movl	$1, %ecx
-	xorl	%esi, %esi
-	movl	44(%rsp), %r10d
-	movq	8(%rsp), %r11
-	movl	$1, %edi
-	.p2align 4,,10
-	.p2align 3
-.L22:
-.LVL45:
-	.loc 1 118 27 is_stmt 1 view .LVU213
-	.loc 1 118 23 is_stmt 0 view .LVU214
-	movslq	(%r11,%rcx,4), %rax
-	.loc 1 116 12 view .LVU215
-	xorl	%edx, %edx
-	.loc 1 118 27 view .LVU216
-	testl	%eax, %eax
-	js	.L68
-.LVL46:
-	.p2align 4,,10
-	.p2align 3
-.L23:
-	.loc 1 118 35 is_stmt 1 discriminator 2 view .LVU217
-	.loc 1 118 50 discriminator 2 view .LVU218
-	.loc 1 118 23 is_stmt 0 discriminator 2 view .LVU219
-	movslq	3184(%rsp,%rax,4), %rax
-.LVL47:
-	.loc 1 118 51 discriminator 2 view .LVU220
-	addl	$1, %edx
-.LVL48:
-	.loc 1 118 27 is_stmt 1 discriminator 2 view .LVU221
-	testl	%eax, %eax
-	jns	.L23
-	.loc 1 119 19 is_stmt 0 view .LVU222
-	movl	%edx, %eax
-.LVL49:
-.L26:
-	.loc 1 119 10 is_stmt 1 view .LVU223
-	.loc 1 120 34 is_stmt 0 view .LVU224
-	cmpl	%edx, %r10d
-	.loc 1 119 19 view .LVU225
-	movb	%al, -1(%r8,%rcx)
-	.loc 1 120 10 is_stmt 1 view .LVU226
-	.loc 1 120 34 is_stmt 0 view .LVU227
-	cmovl	%edi, %esi
-.LVL50:
-	.loc 1 115 36 is_stmt 1 view .LVU228
-	.loc 1 115 21 view .LVU229
-	addq	$1, %rcx
-.LVL51:
-	.loc 1 115 21 is_stmt 0 view .LVU230
-	cmpl	%ecx, %r9d
-	jge	.L22
-	.loc 1 123 7 is_stmt 1 view .LVU231
-	.loc 1 123 10 is_stmt 0 view .LVU232
-	testb	%sil, %sil
-	je	.L1
-.LVL52:
-	.loc 1 142 21 is_stmt 1 view .LVU233
-	movq	72(%rsp), %rsi
-.LVL53:
-	.loc 1 142 21 is_stmt 0 view .LVU234
-	leaq	1124(%rsp), %rdx
-.LVL54:
-	.p2align 4,,10
-	.p2align 3
-.L27:
-	.loc 1 143 10 is_stmt 1 discriminator 3 view .LVU235
-	.loc 1 144 10 discriminator 3 view .LVU236
-	.loc 1 143 12 is_stmt 0 discriminator 3 view .LVU237
-	movl	(%rdx), %eax
-	.loc 1 142 21 discriminator 3 view .LVU238
-	addq	$4, %rdx
-.LVL55:
-	.loc 1 143 12 discriminator 3 view .LVU239
-	movl	%eax, %ecx
-	.loc 1 144 21 discriminator 3 view .LVU240
-	shrl	$31, %eax
-.LVL56:
-	.loc 1 143 12 discriminator 3 view .LVU241
-	sarl	$8, %ecx
-.LVL57:
-	.loc 1 144 21 discriminator 3 view .LVU242
-	addl	%ecx, %eax
-	sarl	%eax
-.LVL58:
-	.loc 1 145 10 is_stmt 1 discriminator 3 view .LVU243
-	.loc 1 144 12 is_stmt 0 discriminator 3 view .LVU244
-	addl	$1, %eax
-.LVL59:
-	.loc 1 145 24 discriminator 3 view .LVU245
-	sall	$8, %eax
-.LVL60:
-	.loc 1 145 24 discriminator 3 view .LVU246
-	movl	%eax, -4(%rdx)
-.LVL61:
-	.loc 1 142 36 is_stmt 1 discriminator 3 view .LVU247
-	.loc 1 142 21 discriminator 3 view .LVU248
-	cmpq	%rdx, %rsi
-	jne	.L27
-	jmp	.L3
-.LVL62:
-	.p2align 4,,10
-	.p2align 3
-.L68:
-	.loc 1 118 27 is_stmt 0 view .LVU249
-	xorl	%eax, %eax
-	jmp	.L26
-.LVL63:
-	.p2align 4,,10
-	.p2align 3
-.L41:
-	.loc 1 101 52 view .LVU250
-	movl	%r8d, %edx
-	jmp	.L18
-.LVL64:
-	.p2align 4,,10
-	.p2align 3
-.L31:
-	.loc 1 93 15 view .LVU251
-	movl	%r8d, %edx
-	jmp	.L8
-.LVL65:
-.L33:
-.LBB16:
-	.loc 1 101 80 view .LVU252
-	movl	$1, %ecx
-	jmp	.L12
-.LVL66:
-.L37:
-	.loc 1 101 80 view .LVU253
-.LBE16:
-.LBB17:
-	.loc 1 102 80 view .LVU254
-	movl	$1, %ecx
-	jmp	.L15
-.LVL67:
-.L1:
-	.loc 1 102 80 view .LVU255
-.LBE17:
-	.loc 1 148 1 view .LVU256
-	movq	5256(%rsp), %rax
-	subq	%fs:40, %rax
-	jne	.L69
-	addq	$5272, %rsp
-	.cfi_remember_state
-	.cfi_def_cfa_offset 56
-	popq	%rbx
-	.cfi_def_cfa_offset 48
-	popq	%rbp
-	.cfi_def_cfa_offset 40
-	popq	%r12
-	.cfi_def_cfa_offset 32
-	popq	%r13
-	.cfi_def_cfa_offset 24
-	popq	%r14
-	.cfi_def_cfa_offset 16
-	popq	%r15
-	.cfi_def_cfa_offset 8
+; %bb.0:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x0
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:freq <- $x1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w3
+	stp	x28, x27, [sp, #-96]!           ; 16-byte Folded Spill
+	.cfi_def_cfa_offset 96
+	stp	x26, x25, [sp, #16]             ; 16-byte Folded Spill
+	stp	x24, x23, [sp, #32]             ; 16-byte Folded Spill
+	stp	x22, x21, [sp, #48]             ; 16-byte Folded Spill
+	stp	x20, x19, [sp, #64]             ; 16-byte Folded Spill
+	stp	x29, x30, [sp, #80]             ; 16-byte Folded Spill
+	add	x29, sp, #80
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	.cfi_offset w19, -24
+	.cfi_offset w20, -32
+	.cfi_offset w21, -40
+	.cfi_offset w22, -48
+	.cfi_offset w23, -56
+	.cfi_offset w24, -64
+	.cfi_offset w25, -72
+	.cfi_offset w26, -80
+	.cfi_offset w27, -88
+	.cfi_offset w28, -96
+	mov	w9, #5232
+Lloh0:
+	adrp	x16, ___chkstk_darwin@GOTPAGE
+Lloh1:
+	ldr	x16, [x16, ___chkstk_darwin@GOTPAGEOFF]
+	blr	x16
+Ltmp0:
+	sub	sp, sp, #1, lsl #12             ; =4096
+	sub	sp, sp, #1136
+	mov	x19, x3
+Ltmp1:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	mov	x20, x2
+Ltmp2:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	mov	x21, x0
+Ltmp3:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+Lloh2:
+	adrp	x8, ___stack_chk_guard@GOTPAGE
+Lloh3:
+	ldr	x8, [x8, ___stack_chk_guard@GOTPAGEOFF]
+Lloh4:
+	ldr	x8, [x8]
+	stur	x8, [x29, #-96]
+Ltmp4:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 0
+	.loc	2 0 0 is_stmt 0                 ; huffman.c:0:0
+	mov	w24, w2
+Ltmp5:
+	.loc	2 79 4 prologue_end is_stmt 1   ; huffman.c:79:4
+	cmp	w2, #1
+	b.lt	LBB0_8
+Ltmp6:
+; %bb.1:                                ; %.lr.ph.preheader
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 0
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:freq <- $x1
+	cmp	w20, #16
+	b.hs	LBB0_3
+Ltmp7:
+; %bb.2:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 0
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:freq <- $x1
+	.loc	2 0 4 is_stmt 0                 ; huffman.c:0:4
+	mov	x8, #0
+	b	LBB0_6
+Ltmp8:
+LBB0_3:                                 ; %vector.ph
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 0
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:freq <- $x1
+	.loc	2 79 4                          ; huffman.c:79:4
+	and	x8, x24, #0xfffffff0
+	add	x9, x1, #32
+	add	x10, sp, #2112
+	add	x10, x10, #36
+	movi.4s	v0, #1, lsl #8
+	mov	x11, x8
+Ltmp9:
+LBB0_4:                                 ; %vector.body
+                                        ; =>This Inner Loop Header: Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 0
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:freq <- $x1
+	.loc	2 80 22 is_stmt 1               ; huffman.c:80:22
+	ldp	q1, q2, [x9, #-32]
+	ldp	q3, q4, [x9], #64
+	.loc	2 80 30 is_stmt 0               ; huffman.c:80:30
+	cmeq.4s	v5, v1, #0
+	cmeq.4s	v6, v2, #0
+	cmeq.4s	v7, v3, #0
+	cmeq.4s	v16, v4, #0
+	.loc	2 80 50                         ; huffman.c:80:50
+	shl.4s	v1, v1, #8
+	shl.4s	v2, v2, #8
+	shl.4s	v3, v3, #8
+	shl.4s	v4, v4, #8
+	bit.16b	v1, v0, v5
+	bit.16b	v2, v0, v6
+	bit.16b	v3, v0, v7
+	.loc	2 80 19                         ; huffman.c:80:19
+	stp	q1, q2, [x10, #-32]
+	.loc	2 80 50                         ; huffman.c:80:50
+	mov.16b	v1, v16
+	bsl.16b	v1, v0, v4
+	.loc	2 80 19                         ; huffman.c:80:19
+	stp	q3, q1, [x10], #64
+	.loc	2 80 15                         ; huffman.c:80:15
+	subs	x11, x11, #16
+	b.ne	LBB0_4
+Ltmp10:
+; %bb.5:                                ; %middle.block
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 0
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:freq <- $x1
+	.loc	2 79 4 is_stmt 1                ; huffman.c:79:4
+	cmp	x8, x24
+	b.eq	LBB0_8
+Ltmp11:
+LBB0_6:                                 ; %.lr.ph.preheader250
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 0
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:freq <- $x1
+	lsl	x10, x8, #2
+	add	x9, x1, x10
+	sub	x8, x24, x8
+	add	x11, sp, #2112
+	add	x10, x10, x11
+	add	x10, x10, #4
+	mov	w11, #256
+Ltmp12:
+LBB0_7:                                 ; %.lr.ph
+                                        ; =>This Inner Loop Header: Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:freq <- $x1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- [DW_OP_LLVM_arg 0, DW_OP_consts 4, DW_OP_LLVM_arg 0, DW_OP_mul, DW_OP_LLVM_arg 0, DW_OP_plus, DW_OP_minus, DW_OP_consts 4, DW_OP_div, DW_OP_LLVM_arg 0, DW_OP_plus, DW_OP_stack_value] undef
+	.loc	2 80 22                         ; huffman.c:80:22
+	ldr	w12, [x9], #4
+	.loc	2 80 50 is_stmt 0               ; huffman.c:80:50
+	lsl	w13, w12, #8
+	cmp	w12, #0
+	csel	w12, w11, w13, eq
+	.loc	2 80 19                         ; huffman.c:80:19
+	str	w12, [x10], #4
+Ltmp13:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- [DW_OP_LLVM_arg 0, DW_OP_consts 4, DW_OP_LLVM_arg 0, DW_OP_mul, DW_OP_LLVM_arg 0, DW_OP_plus, DW_OP_minus, DW_OP_consts 4, DW_OP_div, DW_OP_consts 1, DW_OP_LLVM_arg 0, DW_OP_plus, DW_OP_plus, DW_OP_stack_value] undef
+	.loc	2 79 18 is_stmt 1               ; huffman.c:79:18
+	subs	x8, x8, #1
+Ltmp14:
+	.loc	2 79 4 is_stmt 0                ; huffman.c:79:4
+	b.ne	LBB0_7
+Ltmp15:
+LBB0_8:                                 ; %.preheader137
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:freq <- $x1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- 0
+	.loc	2 87 15 is_stmt 1               ; huffman.c:87:15
+	str	wzr, [sp, #4176]
+	.loc	2 88 17                         ; huffman.c:88:17
+	str	wzr, [sp, #2112]
+	mov	w8, #-2
+	.loc	2 89 17                         ; huffman.c:89:17
+	str	w8, [sp, #48]
+Ltmp16:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 1
+	.loc	2 91 7                          ; huffman.c:91:7
+	cmp	w20, #1
+	b.lt	LBB0_58
+Ltmp17:
+; %bb.9:                                ; %.lr.ph145.preheader.lr.ph
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- 0
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:freq <- $x1
+	.loc	2 0 7 is_stmt 0                 ; huffman.c:0:7
+	add	x26, sp, #48
+	add	x9, x26, #4
+	lsl	x8, x24, #2
+	stp	x8, x9, [sp, #32]               ; 16-byte Folded Spill
+	sxtw	x9, w20
+	add	w28, w20, #1
+	.loc	2 91 7                          ; huffman.c:91:7
+	sub	x27, x28, #1
+	and	x8, x27, #0xfffffffffffffffc
+	stp	x9, x8, [sp, #16]               ; 16-byte Folded Spill
+	orr	x9, x8, #0x1
+	add	x22, sp, #2112
+	add	x8, x22, #4
+	stp	x8, x9, [sp]                    ; 16-byte Folded Spill
+	add	x23, sp, #1, lsl #12            ; =4096
+	add	x23, x23, #80
+	mov	w25, #-1
+	b	LBB0_11
+Ltmp18:
+LBB0_10:                                ; %.loopexit
+                                        ;   in Loop: Header=BB0_11 Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- 0
+	.loc	2 87 15 is_stmt 1               ; huffman.c:87:15
+	str	wzr, [sp, #4176]
+	.loc	2 88 17                         ; huffman.c:88:17
+	str	wzr, [sp, #2112]
+	.loc	2 89 17                         ; huffman.c:89:17
+	mov	w8, #-2
+	str	w8, [sp, #48]
+Ltmp19:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 1
+	.loc	2 91 7                          ; huffman.c:91:7
+	cmp	w20, #1
+	b.lt	LBB0_58
+Ltmp20:
+LBB0_11:                                ; %.lr.ph145.preheader
+                                        ; =>This Loop Header: Depth=1
+                                        ;     Child Loop BB0_14 Depth 2
+                                        ;       Child Loop BB0_16 Depth 3
+                                        ;     Child Loop BB0_23 Depth 2
+                                        ;       Child Loop BB0_25 Depth 3
+                                        ;       Child Loop BB0_35 Depth 3
+                                        ;       Child Loop BB0_43 Depth 3
+                                        ;     Child Loop BB0_47 Depth 2
+                                        ;       Child Loop BB0_48 Depth 3
+                                        ;     Child Loop BB0_54 Depth 2
+                                        ;     Child Loop BB0_57 Depth 2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- 0
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 0 7 is_stmt 0                 ; huffman.c:0:7
+	ldp	x2, x0, [sp, #32]               ; 16-byte Folded Reload
+Ltmp21:
+	.loc	2 92 20 is_stmt 1               ; huffman.c:92:20
+	mov	w1, #255
+Ltmp22:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:freq <- [DW_OP_LLVM_entry_value 1] $x1
+	bl	_memset
+Ltmp23:
+	.loc	2 0 20 is_stmt 0                ; huffman.c:0:20
+	mov	x8, #0
+	mov	w9, #1
+	b	LBB0_14
+Ltmp24:
+LBB0_12:                                ;   in Loop: Header=BB0_14 Depth=2
+	;DEBUG_VALUE: zz <- $x8
+	;DEBUG_VALUE: tmp <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	mov	x13, x12
+Ltmp25:
+LBB0_13:                                ; %._crit_edge
+                                        ;   in Loop: Header=BB0_14 Depth=2
+	;DEBUG_VALUE: tmp <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 95 148 is_stmt 1              ; huffman.c:95:148
+	str	w9, [x23, x13, lsl  #2]
+Ltmp26:
+	.loc	2 91 36                         ; huffman.c:91:36
+	add	x9, x9, #1
+Ltmp27:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- $x9
+	.loc	2 91 7 is_stmt 0                ; huffman.c:91:7
+	cmp	x8, x24
+	b.eq	LBB0_17
+Ltmp28:
+LBB0_14:                                ; %.lr.ph145
+                                        ;   Parent Loop BB0_11 Depth=1
+                                        ; =>  This Loop Header: Depth=2
+                                        ;       Child Loop BB0_16 Depth 3
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x8
+	.loc	2 93 15 is_stmt 1               ; huffman.c:93:15
+	add	x8, x8, #1
+Ltmp29:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x8
+	.loc	2 94 22                         ; huffman.c:94:22
+	str	w9, [x23, x8, lsl  #2]
+Ltmp30:
+	;DEBUG_VALUE: tmp <- $x9
+	;DEBUG_VALUE: zz <- $x8
+	.loc	2 0 22 is_stmt 0                ; huffman.c:0:22
+	ldr	w10, [x22, x9, lsl  #2]
+Ltmp31:
+	.loc	2 95 91 is_stmt 1               ; huffman.c:95:91
+	and	x12, x8, #0xffffffff
+	ubfx	x11, x8, #1, #31
+	.loc	2 95 83 is_stmt 0               ; huffman.c:95:83
+	ldrsw	x14, [x23, x11, lsl  #2]
+	.loc	2 95 76                         ; huffman.c:95:76
+	ldr	w13, [x22, x14, lsl  #2]
+	.loc	2 95 55                         ; huffman.c:95:55
+	cmp	w10, w13
+	b.ge	LBB0_12
+Ltmp32:
+; %bb.15:                               ; %.lr.ph140.preheader
+                                        ;   in Loop: Header=BB0_14 Depth=2
+	;DEBUG_VALUE: zz <- $x8
+	;DEBUG_VALUE: tmp <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+                                        ; kill: def $w14 killed $w14 killed $x14 def $x14
+LBB0_16:                                ; %.lr.ph140
+                                        ;   Parent Loop BB0_11 Depth=1
+                                        ;     Parent Loop BB0_14 Depth=2
+                                        ; =>    This Inner Loop Header: Depth=3
+	;DEBUG_VALUE: tmp <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 0 55                          ; huffman.c:0:55
+	mov	x13, x11
+Ltmp33:
+	;DEBUG_VALUE: zz <- $x12
+	.loc	2 95 110                        ; huffman.c:95:110
+	str	w14, [x23, x12, lsl  #2]
+Ltmp34:
+	;DEBUG_VALUE: zz <- $x13
+	.loc	2 95 91                         ; huffman.c:95:91
+	lsr	x11, x11, #1
+	.loc	2 95 83                         ; huffman.c:95:83
+	ldrsw	x14, [x23, x11, lsl  #2]
+	.loc	2 95 76                         ; huffman.c:95:76
+	ldr	w15, [x22, x14, lsl  #2]
+	mov	x12, x13
+	.loc	2 95 55                         ; huffman.c:95:55
+	cmp	w10, w15
+	b.lt	LBB0_16
+	b	LBB0_13
+Ltmp35:
+LBB0_17:                                ; %._crit_edge146
+                                        ;   in Loop: Header=BB0_11 Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 98 13 is_stmt 1               ; huffman.c:98:13
+	cmp	w20, #260
+	b.lo	LBB0_19
+Ltmp36:
+; %bb.18:                               ;   in Loop: Header=BB0_11 Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 98 34 is_stmt 0               ; huffman.c:98:34
+	mov	w0, #2001
+	bl	_BZ2_bz__AssertH__fail
+Ltmp37:
+LBB0_19:                                ;   in Loop: Header=BB0_11 Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $w20
+	.loc	2 0 34                          ; huffman.c:0:34
+	mov	x8, x20
+	.loc	2 100 7 is_stmt 1               ; huffman.c:100:7
+	cmp	w20, #2
+	movi.4s	v2, #1, lsl #8
+	b.lt	LBB0_44
+Ltmp38:
+; %bb.20:                               ; %.lr.ph171.preheader
+                                        ;   in Loop: Header=BB0_11 Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 0 7 is_stmt 0                 ; huffman.c:0:7
+	mov	x9, x24
+	ldr	x8, [sp, #16]                   ; 8-byte Folded Reload
+	b	LBB0_23
+Ltmp39:
+LBB0_21:                                ;   in Loop: Header=BB0_23 Depth=2
+	;DEBUG_VALUE: zz <- $x10
+	;DEBUG_VALUE: tmp <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	mov	x14, x13
+Ltmp40:
+LBB0_22:                                ; %._crit_edge166
+                                        ;   in Loop: Header=BB0_23 Depth=2
+	;DEBUG_VALUE: tmp <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 109 148 is_stmt 1             ; huffman.c:109:148
+	str	w8, [x23, x14, lsl  #2]
+Ltmp41:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	.loc	2 100 7                         ; huffman.c:100:7
+	cmp	x9, #2
+	mov	x9, x10
+Ltmp42:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x9
+	b.ls	LBB0_44
+Ltmp43:
+LBB0_23:                                ; %.lr.ph171
+                                        ;   Parent Loop BB0_11 Depth=1
+                                        ; =>  This Loop Header: Depth=2
+                                        ;       Child Loop BB0_25 Depth 3
+                                        ;       Child Loop BB0_35 Depth 3
+                                        ;       Child Loop BB0_43 Depth 3
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x9
+	.loc	2 101 15                        ; huffman.c:101:15
+	ldrsw	x11, [sp, #4180]
+Ltmp44:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:n1 <- undef
+	.loc	2 101 34 is_stmt 0              ; huffman.c:101:34
+	ldr	w12, [x23, x9, lsl  #2]
+	.loc	2 101 32                        ; huffman.c:101:32
+	str	w12, [sp, #4180]
+	.loc	2 101 52                        ; huffman.c:101:52
+	sub	x10, x9, #1
+Ltmp45:
+	;DEBUG_VALUE: yy <- 2
+	;DEBUG_VALUE: tmp <- $w12
+	;DEBUG_VALUE: zz <- 1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	.loc	2 101 139                       ; huffman.c:101:139
+	subs	x13, x9, #2
+	b.ls	LBB0_30
+Ltmp46:
+; %bb.24:                               ; %.lr.ph151
+                                        ;   in Loop: Header=BB0_23 Depth=2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	;DEBUG_VALUE: zz <- 1
+	;DEBUG_VALUE: tmp <- $w12
+	;DEBUG_VALUE: yy <- 2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 0 139                         ; huffman.c:0:139
+	sxtw	x14, w12
+	ldr	w14, [x22, x14, lsl  #2]
+	mov	w15, #1
+	mov	w17, #2
+Ltmp47:
+LBB0_25:                                ;   Parent Loop BB0_11 Depth=1
+                                        ;     Parent Loop BB0_23 Depth=2
+                                        ; =>    This Inner Loop Header: Depth=3
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	;DEBUG_VALUE: tmp <- $w12
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: zz <- $w15
+	.loc	2 101 165                       ; huffman.c:101:165
+	sxtw	x0, w17
+	.loc	2 101 173                       ; huffman.c:101:173
+	cmp	x10, x0
+	b.le	LBB0_27
+Ltmp48:
+; %bb.26:                               ;   in Loop: Header=BB0_25 Depth=3
+	;DEBUG_VALUE: zz <- $w15
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	;DEBUG_VALUE: tmp <- $w12
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 101 190                       ; huffman.c:101:190
+	orr	x16, x0, #0x1
+	.loc	2 101 183                       ; huffman.c:101:183
+	ldrsw	x1, [x23, x16, lsl  #2]
+	.loc	2 101 176                       ; huffman.c:101:176
+	ldr	w1, [x22, x1, lsl  #2]
+	.loc	2 101 204                       ; huffman.c:101:204
+	ldrsw	x0, [x23, x0, lsl  #2]
+	.loc	2 101 197                       ; huffman.c:101:197
+	ldr	w0, [x22, x0, lsl  #2]
+Ltmp49:
+	.loc	2 101 162                       ; huffman.c:101:162
+	cmp	w1, w0
+	csel	w16, w16, w17, lt
+Ltmp50:
+	.loc	2 101 246                       ; huffman.c:101:246
+	sxtw	x0, w16
+	b	LBB0_28
+Ltmp51:
+LBB0_27:                                ;   in Loop: Header=BB0_25 Depth=3
+	;DEBUG_VALUE: zz <- $w15
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	;DEBUG_VALUE: tmp <- $w12
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 0 246                         ; huffman.c:0:246
+	mov	x16, x17
+Ltmp52:
+LBB0_28:                                ;   in Loop: Header=BB0_25 Depth=3
+	;DEBUG_VALUE: zz <- $w15
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	;DEBUG_VALUE: tmp <- $w12
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: yy <- $w16
+	.loc	2 101 246                       ; huffman.c:101:246
+	ldrsw	x17, [x23, x0, lsl  #2]
+	.loc	2 101 239                       ; huffman.c:101:239
+	ldr	w0, [x22, x17, lsl  #2]
+Ltmp53:
+	.loc	2 101 225                       ; huffman.c:101:225
+	cmp	w14, w0
+	b.lt	LBB0_31
+Ltmp54:
+; %bb.29:                               ;   in Loop: Header=BB0_25 Depth=3
+	;DEBUG_VALUE: yy <- $w16
+	;DEBUG_VALUE: zz <- $w15
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	;DEBUG_VALUE: tmp <- $w12
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 101 273                       ; huffman.c:101:273
+	str	w17, [x23, w15, sxtw  #2]
+Ltmp55:
+	;DEBUG_VALUE: zz <- $w16
+	.loc	2 101 129                       ; huffman.c:101:129
+	lsl	w17, w16, #1
+Ltmp56:
+	;DEBUG_VALUE: yy <- $w17
+	.loc	2 101 139                       ; huffman.c:101:139
+	cmp	x9, w17, sxtw
+	mov	x15, x16
+	b.gt	LBB0_25
+	b	LBB0_32
+Ltmp57:
+LBB0_30:                                ; %._crit_edge152.thread
+                                        ;   in Loop: Header=BB0_23 Depth=2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	;DEBUG_VALUE: zz <- 1
+	;DEBUG_VALUE: tmp <- $w12
+	;DEBUG_VALUE: yy <- 2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 101 305                       ; huffman.c:101:305
+	str	w12, [sp, #4180]
+Ltmp58:
+	.loc	2 102 34 is_stmt 1              ; huffman.c:102:34
+	ldr	w14, [x23, x10, lsl  #2]
+	.loc	2 102 32 is_stmt 0              ; huffman.c:102:32
+	str	w14, [sp, #4180]
+	mov	w15, #1
+	;DEBUG_VALUE: yy <- 2
+	;DEBUG_VALUE: zz <- 1
+	b	LBB0_41
+Ltmp59:
+LBB0_31:                                ;   in Loop: Header=BB0_23 Depth=2
+	;DEBUG_VALUE: yy <- $w16
+	;DEBUG_VALUE: zz <- $w15
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	;DEBUG_VALUE: tmp <- $w12
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 0 32                          ; huffman.c:0:32
+	mov	x16, x15
+Ltmp60:
+LBB0_32:                                ; %._crit_edge152
+                                        ;   in Loop: Header=BB0_23 Depth=2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	;DEBUG_VALUE: tmp <- $w12
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 101 305 is_stmt 1             ; huffman.c:101:305
+	str	w12, [x23, w16, sxtw  #2]
+Ltmp61:
+	.loc	2 102 15                        ; huffman.c:102:15
+	ldr	w12, [sp, #4180]
+Ltmp62:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:n2 <- $w12
+	.loc	2 102 34 is_stmt 0              ; huffman.c:102:34
+	ldr	w14, [x23, x10, lsl  #2]
+Ltmp63:
+	;DEBUG_VALUE: tmp <- $w14
+	.loc	2 102 32                        ; huffman.c:102:32
+	str	w14, [sp, #4180]
+Ltmp64:
+	;DEBUG_VALUE: yy <- 2
+	;DEBUG_VALUE: zz <- 1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x13
+	.loc	2 102 139                       ; huffman.c:102:139
+	cmp	x9, #4
+	b.ge	LBB0_34
+Ltmp65:
+; %bb.33:                               ;   in Loop: Header=BB0_23 Depth=2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x13
+	;DEBUG_VALUE: tmp <- $w14
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:n2 <- $w12
+	;DEBUG_VALUE: zz <- 1
+	;DEBUG_VALUE: yy <- 2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 0 139                         ; huffman.c:0:139
+	mov	w15, #1
+	b	LBB0_41
+Ltmp66:
+LBB0_34:                                ; %.lr.ph158
+                                        ;   in Loop: Header=BB0_23 Depth=2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x13
+	;DEBUG_VALUE: tmp <- $w14
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:n2 <- $w12
+	;DEBUG_VALUE: zz <- 1
+	;DEBUG_VALUE: yy <- 2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	sxtw	x15, w14
+	ldr	w16, [x22, x15, lsl  #2]
+	mov	w15, #1
+	mov	w17, #2
+Ltmp67:
+LBB0_35:                                ;   Parent Loop BB0_11 Depth=1
+                                        ;     Parent Loop BB0_23 Depth=2
+                                        ; =>    This Inner Loop Header: Depth=3
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x13
+	;DEBUG_VALUE: tmp <- $w14
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:n2 <- $w12
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: zz <- $w15
+	.loc	2 102 165                       ; huffman.c:102:165
+	sxtw	x1, w17
+	.loc	2 102 173                       ; huffman.c:102:173
+	cmp	x13, x1
+	b.le	LBB0_37
+Ltmp68:
+; %bb.36:                               ;   in Loop: Header=BB0_35 Depth=3
+	;DEBUG_VALUE: zz <- $w15
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x13
+	;DEBUG_VALUE: tmp <- $w14
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:n2 <- $w12
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 102 190                       ; huffman.c:102:190
+	orr	x0, x1, #0x1
+	.loc	2 102 183                       ; huffman.c:102:183
+	ldrsw	x2, [x23, x0, lsl  #2]
+	.loc	2 102 176                       ; huffman.c:102:176
+	ldr	w2, [x22, x2, lsl  #2]
+	.loc	2 102 204                       ; huffman.c:102:204
+	ldrsw	x1, [x23, x1, lsl  #2]
+	.loc	2 102 197                       ; huffman.c:102:197
+	ldr	w1, [x22, x1, lsl  #2]
+Ltmp69:
+	.loc	2 102 162                       ; huffman.c:102:162
+	cmp	w2, w1
+	csel	w0, w0, w17, lt
+Ltmp70:
+	.loc	2 102 246                       ; huffman.c:102:246
+	sxtw	x1, w0
+	b	LBB0_38
+Ltmp71:
+LBB0_37:                                ;   in Loop: Header=BB0_35 Depth=3
+	;DEBUG_VALUE: zz <- $w15
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x13
+	;DEBUG_VALUE: tmp <- $w14
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:n2 <- $w12
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 0 246                         ; huffman.c:0:246
+	mov	x0, x17
+Ltmp72:
+LBB0_38:                                ;   in Loop: Header=BB0_35 Depth=3
+	;DEBUG_VALUE: zz <- $w15
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x13
+	;DEBUG_VALUE: tmp <- $w14
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:n2 <- $w12
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: yy <- $w0
+	.loc	2 102 246                       ; huffman.c:102:246
+	ldrsw	x17, [x23, x1, lsl  #2]
+	.loc	2 102 239                       ; huffman.c:102:239
+	ldr	w1, [x22, x17, lsl  #2]
+Ltmp73:
+	.loc	2 102 225                       ; huffman.c:102:225
+	cmp	w16, w1
+	b.lt	LBB0_41
+Ltmp74:
+; %bb.39:                               ;   in Loop: Header=BB0_35 Depth=3
+	;DEBUG_VALUE: yy <- $w0
+	;DEBUG_VALUE: zz <- $w15
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x13
+	;DEBUG_VALUE: tmp <- $w14
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:n2 <- $w12
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 102 273                       ; huffman.c:102:273
+	str	w17, [x23, w15, sxtw  #2]
+Ltmp75:
+	;DEBUG_VALUE: zz <- $w0
+	.loc	2 102 129                       ; huffman.c:102:129
+	lsl	w17, w0, #1
+Ltmp76:
+	;DEBUG_VALUE: yy <- $w17
+	.loc	2 102 139                       ; huffman.c:102:139
+	cmp	x13, w17, sxtw
+	mov	x15, x0
+	b.ge	LBB0_35
+Ltmp77:
+; %bb.40:                               ;   in Loop: Header=BB0_23 Depth=2
+	;DEBUG_VALUE: yy <- $w17
+	;DEBUG_VALUE: zz <- $w0
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x13
+	;DEBUG_VALUE: tmp <- $w14
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:n2 <- $w12
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 0 139                         ; huffman.c:0:139
+	mov	x15, x0
+Ltmp78:
+LBB0_41:                                ; %._crit_edge159
+                                        ;   in Loop: Header=BB0_23 Depth=2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 102 305                       ; huffman.c:102:305
+	str	w14, [x23, w15, sxtw  #2]
+Ltmp79:
+	.loc	2 103 16 is_stmt 1              ; huffman.c:103:16
+	add	x8, x8, #1
+Ltmp80:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+                                        ; kill: def $w12 killed $w12 killed $x12 def $x12
+	.loc	2 104 23                        ; huffman.c:104:23
+	sbfiz	x12, x12, #2, #32
+	.loc	2 104 34 is_stmt 0              ; huffman.c:104:34
+	str	w8, [x26, x12]
+	.loc	2 104 10                        ; huffman.c:104:10
+	lsl	x11, x11, #2
+	.loc	2 104 21                        ; huffman.c:104:21
+	str	w8, [x26, x11]
+	.loc	2 105 30 is_stmt 1              ; huffman.c:105:30
+	ldr	w11, [x22, x11]
+	.loc	2 105 58 is_stmt 0              ; huffman.c:105:58
+	ldr	w12, [x22, x12]
+	.loc	2 105 42                        ; huffman.c:105:42
+	and	w13, w11, #0xffffff00
+	.loc	2 105 70                        ; huffman.c:105:70
+	and	w14, w12, #0xffffff00
+	.loc	2 105 108                       ; huffman.c:105:108
+	and	w11, w11, #0xff
+	.loc	2 105 140                       ; huffman.c:105:140
+	and	w12, w12, #0xff
+	.loc	2 105 93                        ; huffman.c:105:93
+	cmp	w11, w12
+	csel	w11, w11, w12, hi
+	.loc	2 105 90                        ; huffman.c:105:90
+	add	w11, w11, #1
+	.loc	2 105 55                        ; huffman.c:105:55
+	add	w12, w14, w13
+	.loc	2 105 85                        ; huffman.c:105:85
+	orr	w11, w11, w12
+	.loc	2 105 10                        ; huffman.c:105:10
+	lsl	x12, x8, #2
+	.loc	2 105 25                        ; huffman.c:105:25
+	str	w11, [x22, x12]
+	.loc	2 106 25 is_stmt 1              ; huffman.c:106:25
+	str	w25, [x26, x12]
+Ltmp81:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	.loc	2 108 22                        ; huffman.c:108:22
+	str	w8, [x23, x10, lsl  #2]
+Ltmp82:
+	;DEBUG_VALUE: tmp <- $x8
+	;DEBUG_VALUE: zz <- $x10
+	.loc	2 0 22 is_stmt 0                ; huffman.c:0:22
+	and	x13, x10, #0xffffffff
+	ubfx	x12, x10, #1, #31
+Ltmp83:
+	.loc	2 109 83 is_stmt 1              ; huffman.c:109:83
+	ldrsw	x15, [x23, x12, lsl  #2]
+	.loc	2 109 76 is_stmt 0              ; huffman.c:109:76
+	ldr	w14, [x22, x15, lsl  #2]
+	.loc	2 109 55                        ; huffman.c:109:55
+	cmp	w11, w14
+	b.ge	LBB0_21
+Ltmp84:
+; %bb.42:                               ; %.lr.ph165.preheader
+                                        ;   in Loop: Header=BB0_23 Depth=2
+	;DEBUG_VALUE: zz <- $x10
+	;DEBUG_VALUE: tmp <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+                                        ; kill: def $w15 killed $w15 killed $x15 def $x15
+LBB0_43:                                ; %.lr.ph165
+                                        ;   Parent Loop BB0_11 Depth=1
+                                        ;     Parent Loop BB0_23 Depth=2
+                                        ; =>    This Inner Loop Header: Depth=3
+	;DEBUG_VALUE: tmp <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nHeap <- $x10
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:nNodes <- $x8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 0 55                          ; huffman.c:0:55
+	mov	x14, x12
+Ltmp85:
+	;DEBUG_VALUE: zz <- $x13
+	.loc	2 109 110                       ; huffman.c:109:110
+	str	w15, [x23, x13, lsl  #2]
+Ltmp86:
+	;DEBUG_VALUE: zz <- $x14
+	.loc	2 0 110                         ; huffman.c:0:110
+	lsr	x12, x12, #1
+Ltmp87:
+	.loc	2 109 83                        ; huffman.c:109:83
+	ldrsw	x15, [x23, x12, lsl  #2]
+	.loc	2 109 76                        ; huffman.c:109:76
+	ldr	w16, [x22, x15, lsl  #2]
+	mov	x13, x14
+	.loc	2 109 55                        ; huffman.c:109:55
+	cmp	w11, w16
+	b.lt	LBB0_43
+	b	LBB0_22
+Ltmp88:
+LBB0_44:                                ; %._crit_edge172
+                                        ;   in Loop: Header=BB0_11 Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 112 13 is_stmt 1              ; huffman.c:112:13
+	cmp	w8, #516
+	b.lt	LBB0_46
+Ltmp89:
+; %bb.45:                               ;   in Loop: Header=BB0_11 Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 112 36 is_stmt 0              ; huffman.c:112:36
+	mov	w0, #2002
+	bl	_BZ2_bz__AssertH__fail
+Ltmp90:
+	.loc	2 0 36                          ; huffman.c:0:36
+	movi.4s	v2, #1, lsl #8
+Ltmp91:
+LBB0_46:                                ; %.preheader.preheader
+                                        ;   in Loop: Header=BB0_11 Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	mov	w8, #0
+	mov	w9, #1
+Ltmp92:
+LBB0_47:                                ; %.preheader
+                                        ;   Parent Loop BB0_11 Depth=1
+                                        ; =>  This Loop Header: Depth=2
+                                        ;       Child Loop BB0_48 Depth 3
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:tooLong <- $w8
+	mov	w10, #-1
+	mov	x11, x9
+Ltmp93:
+LBB0_48:                                ;   Parent Loop BB0_11 Depth=1
+                                        ;     Parent Loop BB0_47 Depth=2
+                                        ; =>    This Inner Loop Header: Depth=3
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:tooLong <- $w8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:j <- [DW_OP_plus_uconst 1, DW_OP_stack_value] $w10
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:k <- $w11
+	.loc	2 118 17 is_stmt 1              ; huffman.c:118:17
+	ldr	w11, [x26, w11, sxtw  #2]
+Ltmp94:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:k <- $w11
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:j <- [DW_OP_plus_uconst 2, DW_OP_stack_value] $w10
+	.loc	2 118 10 is_stmt 0              ; huffman.c:118:10
+	add	w10, w10, #1
+Ltmp95:
+	tbz	w11, #31, LBB0_48
+Ltmp96:
+; %bb.49:                               ;   in Loop: Header=BB0_47 Depth=2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:k <- $w11
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:tooLong <- $w8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 119 15 is_stmt 1              ; huffman.c:119:15
+	add	x11, x9, x21
+Ltmp97:
+	.loc	2 119 19 is_stmt 0              ; huffman.c:119:19
+	sturb	w10, [x11, #-1]
+	.loc	2 120 14 is_stmt 1              ; huffman.c:120:14
+	cmp	w10, w19
+	csinc	w8, w8, wzr, le
+Ltmp98:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:tooLong <- $w8
+	.loc	2 115 36                        ; huffman.c:115:36
+	add	x9, x9, #1
+Ltmp99:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- $x9
+	.loc	2 115 7 is_stmt 0               ; huffman.c:115:7
+	cmp	x9, x28
+	b.ne	LBB0_47
+Ltmp100:
+; %bb.50:                               ; %._crit_edge177
+                                        ;   in Loop: Header=BB0_11 Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:tooLong <- $w8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 123 13 is_stmt 1              ; huffman.c:123:13
+	tst	w8, #0xff
+Ltmp101:
+	.loc	2 123 11 is_stmt 0              ; huffman.c:123:11
+	b.eq	LBB0_58
+Ltmp102:
+; %bb.51:                               ; %.lr.ph181.preheader
+                                        ;   in Loop: Header=BB0_11 Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:tooLong <- $w8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- $x9
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 1
+	.loc	2 142 7 is_stmt 1               ; huffman.c:142:7
+	cmp	x27, #4
+	b.hs	LBB0_53
+Ltmp103:
+; %bb.52:                               ;   in Loop: Header=BB0_11 Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:tooLong <- $w8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 0 7 is_stmt 0                 ; huffman.c:0:7
+	mov	w9, #1
+	b	LBB0_56
+Ltmp104:
+LBB0_53:                                ; %vector.body239.preheader
+                                        ;   in Loop: Header=BB0_11 Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:tooLong <- $w8
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	ldr	x8, [sp, #24]                   ; 8-byte Folded Reload
+Ltmp105:
+	ldr	x9, [sp]                        ; 8-byte Folded Reload
+Ltmp106:
+LBB0_54:                                ; %vector.body239
+                                        ;   Parent Loop BB0_11 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 143 14 is_stmt 1              ; huffman.c:143:14
+	ldr	q0, [x9]
+	.loc	2 143 24 is_stmt 0              ; huffman.c:143:24
+	sshr.4s	v1, v0, #8
+	.loc	2 144 21 is_stmt 1              ; huffman.c:144:21
+	ushr.4s	v0, v0, #31
+	shadd.4s	v0, v1, v0
+	.loc	2 145 24                        ; huffman.c:145:24
+	shl.4s	v0, v0, #8
+	add.4s	v0, v0, v2
+	.loc	2 145 20 is_stmt 0              ; huffman.c:145:20
+	str	q0, [x9], #16
+	subs	x8, x8, #4
+	b.ne	LBB0_54
+Ltmp107:
+; %bb.55:                               ; %middle.block231
+                                        ;   in Loop: Header=BB0_11 Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 0 20                          ; huffman.c:0:20
+	ldr	x9, [sp, #8]                    ; 8-byte Folded Reload
+	ldr	x8, [sp, #24]                   ; 8-byte Folded Reload
+	.loc	2 142 7 is_stmt 1               ; huffman.c:142:7
+	cmp	x27, x8
+	b.eq	LBB0_10
+Ltmp108:
+LBB0_56:                                ; %.lr.ph181.preheader249
+                                        ;   in Loop: Header=BB0_11 Depth=1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- 1
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	add	x8, x22, x9, lsl #2
+	sub	x9, x28, x9
+Ltmp109:
+LBB0_57:                                ; %.lr.ph181
+                                        ;   Parent Loop BB0_11 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- [DW_OP_LLVM_arg 0, DW_OP_consts 4, DW_OP_LLVM_arg 0, DW_OP_mul, DW_OP_LLVM_arg 0, DW_OP_plus, DW_OP_minus, DW_OP_consts 4, DW_OP_div, DW_OP_LLVM_arg 0, DW_OP_plus, DW_OP_stack_value] undef
+	.loc	2 143 14                        ; huffman.c:143:14
+	ldr	w10, [x8]
+	.loc	2 143 24 is_stmt 0              ; huffman.c:143:24
+	asr	w10, w10, #8
+Ltmp110:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:j <- $w10
+	.loc	2 144 21 is_stmt 1              ; huffman.c:144:21
+	cmp	w10, #0
+	cinc	w10, w10, lt
+Ltmp111:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:j <- [DW_OP_plus_uconst 1, DW_OP_stack_value] undef
+	.loc	2 145 24                        ; huffman.c:145:24
+	lsl	w10, w10, #7
+	and	w10, w10, #0xffffff00
+	add	w10, w10, #256
+	.loc	2 145 20 is_stmt 0              ; huffman.c:145:20
+	str	w10, [x8], #4
+Ltmp112:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:i <- [DW_OP_LLVM_arg 0, DW_OP_consts 4, DW_OP_LLVM_arg 0, DW_OP_mul, DW_OP_LLVM_arg 0, DW_OP_plus, DW_OP_minus, DW_OP_consts 4, DW_OP_div, DW_OP_consts 1, DW_OP_LLVM_arg 0, DW_OP_plus, DW_OP_plus, DW_OP_stack_value] undef
+	.loc	2 142 21 is_stmt 1              ; huffman.c:142:21
+	subs	x9, x9, #1
+Ltmp113:
+	.loc	2 142 7 is_stmt 0               ; huffman.c:142:7
+	b.ne	LBB0_57
+	b	LBB0_10
+Ltmp114:
+LBB0_58:                                ; %._crit_edge177.thread
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 0 7                           ; huffman.c:0:7
+	ldur	x8, [x29, #-96]
+Lloh5:
+	adrp	x9, ___stack_chk_guard@GOTPAGE
+Lloh6:
+	ldr	x9, [x9, ___stack_chk_guard@GOTPAGEOFF]
+Lloh7:
+	ldr	x9, [x9]
+	cmp	x9, x8
+	b.ne	LBB0_60
+Ltmp115:
+; %bb.59:                               ; %._crit_edge177.thread
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 148 1 is_stmt 1               ; huffman.c:148:1
+	add	sp, sp, #1, lsl #12             ; =4096
+	add	sp, sp, #1136
+	ldp	x29, x30, [sp, #80]             ; 16-byte Folded Reload
+	ldp	x20, x19, [sp, #64]             ; 16-byte Folded Reload
+Ltmp116:
+	ldp	x22, x21, [sp, #48]             ; 16-byte Folded Reload
+Ltmp117:
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- [DW_OP_LLVM_entry_value 1] $x0
+	ldp	x24, x23, [sp, #32]             ; 16-byte Folded Reload
+	ldp	x26, x25, [sp, #16]             ; 16-byte Folded Reload
+	ldp	x28, x27, [sp], #96             ; 16-byte Folded Reload
 	ret
-.L69:
-	.cfi_restore_state
-	call	__stack_chk_fail@PLT
-.LVL68:
+Ltmp118:
+LBB0_60:                                ; %._crit_edge177.thread
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:len <- $x21
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:alphaSize <- $w20
+	;DEBUG_VALUE: BZ2_hbMakeCodeLengths:maxLen <- $w19
+	.loc	2 0 1 is_stmt 0                 ; huffman.c:0:1
+	bl	___stack_chk_fail
+Ltmp119:
+	.loh AdrpLdrGotLdr	Lloh2, Lloh3, Lloh4
+	.loh AdrpLdrGot	Lloh0, Lloh1
+	.loh AdrpLdrGotLdr	Lloh5, Lloh6, Lloh7
+Lfunc_end0:
 	.cfi_endproc
-.LFE53:
-	.size	BZ2_hbMakeCodeLengths, .-BZ2_hbMakeCodeLengths
-	.p2align 4
-	.globl	BZ2_hbAssignCodes
-	.type	BZ2_hbAssignCodes, @function
-BZ2_hbAssignCodes:
-.LVL69:
-.LFB54:
-	.loc 1 157 1 is_stmt 1 view -0
+                                        ; -- End function
+	.globl	_BZ2_hbAssignCodes              ; -- Begin function BZ2_hbAssignCodes
+	.p2align	2
+_BZ2_hbAssignCodes:                     ; @BZ2_hbAssignCodes
+Lfunc_begin1:
+	.loc	2 157 0 is_stmt 1               ; huffman.c:157:0
 	.cfi_startproc
-	.loc 1 157 1 is_stmt 0 view .LVU258
-	endbr64
-	.loc 1 158 4 is_stmt 1 view .LVU259
-	.loc 1 160 4 view .LVU260
-.LVL70:
-	.loc 1 161 4 view .LVU261
-	.loc 1 161 23 view .LVU262
-	.loc 1 157 1 is_stmt 0 view .LVU263
-	movq	%rdi, %r10
-	movq	%rsi, %rdi
-.LVL71:
-	.loc 1 161 23 view .LVU264
-	cmpl	%ecx, %edx
-	jg	.L70
-	leal	1(%rcx), %r11d
-	.loc 1 160 8 view .LVU265
-	xorl	%esi, %esi
-.LVL72:
-	.loc 1 160 8 view .LVU266
-	movslq	%r8d, %r9
-.LVL73:
-	.p2align 4,,10
-	.p2align 3
-.L72:
-	.loc 1 162 21 is_stmt 1 view .LVU267
-	xorl	%eax, %eax
-	testl	%r8d, %r8d
-	jle	.L76
-.LVL74:
-	.p2align 4,,10
-	.p2align 3
-.L74:
-	.loc 1 163 10 view .LVU268
-	.loc 1 163 20 is_stmt 0 view .LVU269
-	movzbl	(%rdi,%rax), %ecx
-	.loc 1 163 13 view .LVU270
-	cmpl	%edx, %ecx
-	jne	.L73
-	.loc 1 163 32 is_stmt 1 discriminator 1 view .LVU271
-	.loc 1 163 40 is_stmt 0 discriminator 1 view .LVU272
-	movl	%esi, (%r10,%rax,4)
-	.loc 1 163 47 is_stmt 1 discriminator 1 view .LVU273
-	.loc 1 163 50 is_stmt 0 discriminator 1 view .LVU274
-	addl	$1, %esi
-.LVL75:
-.L73:
-	.loc 1 162 35 is_stmt 1 discriminator 2 view .LVU275
-	.loc 1 162 21 discriminator 2 view .LVU276
-	addq	$1, %rax
-.LVL76:
-	.loc 1 162 21 is_stmt 0 discriminator 2 view .LVU277
-	cmpq	%rax, %r9
-	jne	.L74
-.L76:
-	.loc 1 163 55 is_stmt 1 discriminator 2 view .LVU278
-	.loc 1 164 7 discriminator 2 view .LVU279
-	.loc 1 161 35 is_stmt 0 discriminator 2 view .LVU280
-	addl	$1, %edx
-.LVL77:
-	.loc 1 164 11 discriminator 2 view .LVU281
-	addl	%esi, %esi
-.LVL78:
-	.loc 1 161 35 is_stmt 1 discriminator 2 view .LVU282
-	.loc 1 161 23 discriminator 2 view .LVU283
-	cmpl	%r11d, %edx
-	jne	.L72
-.LVL79:
-.L70:
-	.loc 1 166 1 is_stmt 0 view .LVU284
+; %bb.0:
+	;DEBUG_VALUE: BZ2_hbAssignCodes:code <- $x0
+	;DEBUG_VALUE: BZ2_hbAssignCodes:length <- $x1
+	;DEBUG_VALUE: BZ2_hbAssignCodes:minLen <- $w2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:maxLen <- $w3
+	;DEBUG_VALUE: BZ2_hbAssignCodes:alphaSize <- $w4
+	;DEBUG_VALUE: BZ2_hbAssignCodes:n <- $w2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:vec <- 0
+	.loc	2 161 4 prologue_end            ; huffman.c:161:4
+	cmp	w2, w3
+	b.le	LBB1_2
+Ltmp120:
+LBB1_1:                                 ; %._crit_edge21
+	;DEBUG_VALUE: BZ2_hbAssignCodes:n <- $w2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:alphaSize <- $w4
+	;DEBUG_VALUE: BZ2_hbAssignCodes:maxLen <- $w3
+	;DEBUG_VALUE: BZ2_hbAssignCodes:length <- $x1
+	;DEBUG_VALUE: BZ2_hbAssignCodes:code <- $x0
+	.loc	2 166 1                         ; huffman.c:166:1
 	ret
+Ltmp121:
+LBB1_2:                                 ; %.preheader.lr.ph
+	;DEBUG_VALUE: BZ2_hbAssignCodes:vec <- 0
+	;DEBUG_VALUE: BZ2_hbAssignCodes:n <- $w2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:alphaSize <- $w4
+	;DEBUG_VALUE: BZ2_hbAssignCodes:maxLen <- $w3
+	;DEBUG_VALUE: BZ2_hbAssignCodes:minLen <- $w2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:length <- $x1
+	;DEBUG_VALUE: BZ2_hbAssignCodes:code <- $x0
+	.loc	2 0 1 is_stmt 0                 ; huffman.c:0:1
+	mov	w8, #0
+	mov	w9, w4
+	b	LBB1_4
+Ltmp122:
+LBB1_3:                                 ; %._crit_edge
+                                        ;   in Loop: Header=BB1_4 Depth=1
+	;DEBUG_VALUE: BZ2_hbAssignCodes:vec <- $w8
+	;DEBUG_VALUE: BZ2_hbAssignCodes:n <- $w2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:alphaSize <- $w4
+	;DEBUG_VALUE: BZ2_hbAssignCodes:maxLen <- $w3
+	;DEBUG_VALUE: BZ2_hbAssignCodes:length <- $x1
+	;DEBUG_VALUE: BZ2_hbAssignCodes:code <- $x0
+	.loc	2 164 11 is_stmt 1              ; huffman.c:164:11
+	lsl	w8, w8, #1
+Ltmp123:
+	;DEBUG_VALUE: BZ2_hbAssignCodes:vec <- $w8
+	.loc	2 161 35                        ; huffman.c:161:35
+	add	w10, w2, #1
+Ltmp124:
+	;DEBUG_VALUE: BZ2_hbAssignCodes:n <- $w10
+	.loc	2 161 4 is_stmt 0               ; huffman.c:161:4
+	cmp	w2, w3
+	mov	x2, x10
+Ltmp125:
+	;DEBUG_VALUE: BZ2_hbAssignCodes:minLen <- [DW_OP_LLVM_entry_value 1] $w2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:n <- $w2
+	b.eq	LBB1_1
+Ltmp126:
+LBB1_4:                                 ; %.preheader
+                                        ; =>This Loop Header: Depth=1
+                                        ;     Child Loop BB1_7 Depth 2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:n <- $w2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:alphaSize <- $w4
+	;DEBUG_VALUE: BZ2_hbAssignCodes:maxLen <- $w3
+	;DEBUG_VALUE: BZ2_hbAssignCodes:length <- $x1
+	;DEBUG_VALUE: BZ2_hbAssignCodes:code <- $x0
+	;DEBUG_VALUE: BZ2_hbAssignCodes:n <- $w2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:vec <- $w8
+	;DEBUG_VALUE: BZ2_hbAssignCodes:i <- 0
+	.loc	2 162 7 is_stmt 1               ; huffman.c:162:7
+	cmp	w4, #1
+	b.lt	LBB1_3
+Ltmp127:
+; %bb.5:                                ; %.lr.ph.preheader
+                                        ;   in Loop: Header=BB1_4 Depth=1
+	;DEBUG_VALUE: BZ2_hbAssignCodes:i <- 0
+	;DEBUG_VALUE: BZ2_hbAssignCodes:vec <- $w8
+	;DEBUG_VALUE: BZ2_hbAssignCodes:n <- $w2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:alphaSize <- $w4
+	;DEBUG_VALUE: BZ2_hbAssignCodes:maxLen <- $w3
+	;DEBUG_VALUE: BZ2_hbAssignCodes:length <- $x1
+	;DEBUG_VALUE: BZ2_hbAssignCodes:code <- $x0
+	.loc	2 0 7 is_stmt 0                 ; huffman.c:0:7
+	mov	x10, x9
+	mov	x11, x1
+	mov	x12, x0
+	b	LBB1_7
+Ltmp128:
+LBB1_6:                                 ;   in Loop: Header=BB1_7 Depth=2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:i <- [DW_OP_LLVM_arg 0, DW_OP_LLVM_arg 1, DW_OP_minus, DW_OP_consts 4, DW_OP_div, DW_OP_stack_value] $x12, $x0
+	;DEBUG_VALUE: BZ2_hbAssignCodes:vec <- $w8
+	;DEBUG_VALUE: BZ2_hbAssignCodes:n <- $w2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:alphaSize <- $w4
+	;DEBUG_VALUE: BZ2_hbAssignCodes:maxLen <- $w3
+	;DEBUG_VALUE: BZ2_hbAssignCodes:length <- $x1
+	;DEBUG_VALUE: BZ2_hbAssignCodes:code <- $x0
+	;DEBUG_VALUE: BZ2_hbAssignCodes:vec <- $w8
+	;DEBUG_VALUE: BZ2_hbAssignCodes:i <- [DW_OP_LLVM_arg 0, DW_OP_LLVM_arg 1, DW_OP_minus, DW_OP_consts 4, DW_OP_div, DW_OP_consts 1, DW_OP_plus, DW_OP_stack_value] $x12, $x0
+	.loc	2 162 21                        ; huffman.c:162:21
+	add	x12, x12, #4
+Ltmp129:
+	add	x11, x11, #1
+	subs	x10, x10, #1
+Ltmp130:
+	.loc	2 162 7                         ; huffman.c:162:7
+	b.eq	LBB1_3
+Ltmp131:
+LBB1_7:                                 ; %.lr.ph
+                                        ;   Parent Loop BB1_4 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:vec <- $w8
+	;DEBUG_VALUE: BZ2_hbAssignCodes:n <- $w2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:alphaSize <- $w4
+	;DEBUG_VALUE: BZ2_hbAssignCodes:maxLen <- $w3
+	;DEBUG_VALUE: BZ2_hbAssignCodes:length <- $x1
+	;DEBUG_VALUE: BZ2_hbAssignCodes:code <- $x0
+	;DEBUG_VALUE: BZ2_hbAssignCodes:vec <- $w8
+	;DEBUG_VALUE: BZ2_hbAssignCodes:i <- [DW_OP_LLVM_arg 0, DW_OP_LLVM_arg 1, DW_OP_minus, DW_OP_consts 4, DW_OP_div, DW_OP_stack_value] $x12, $x0
+	.loc	2 163 14 is_stmt 1              ; huffman.c:163:14
+	ldrb	w13, [x11]
+Ltmp132:
+	.loc	2 163 14 is_stmt 0              ; huffman.c:163:14
+	cmp	w2, w13
+	b.ne	LBB1_6
+Ltmp133:
+; %bb.8:                                ;   in Loop: Header=BB1_7 Depth=2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:i <- [DW_OP_LLVM_arg 0, DW_OP_LLVM_arg 1, DW_OP_minus, DW_OP_consts 4, DW_OP_div, DW_OP_stack_value] $x12, $x0
+	;DEBUG_VALUE: BZ2_hbAssignCodes:vec <- $w8
+	;DEBUG_VALUE: BZ2_hbAssignCodes:n <- $w2
+	;DEBUG_VALUE: BZ2_hbAssignCodes:alphaSize <- $w4
+	;DEBUG_VALUE: BZ2_hbAssignCodes:maxLen <- $w3
+	;DEBUG_VALUE: BZ2_hbAssignCodes:length <- $x1
+	;DEBUG_VALUE: BZ2_hbAssignCodes:code <- $x0
+	.loc	2 163 40                        ; huffman.c:163:40
+	str	w8, [x12]
+	.loc	2 163 50                        ; huffman.c:163:50
+	add	w8, w8, #1
+Ltmp134:
+	;DEBUG_VALUE: BZ2_hbAssignCodes:vec <- $w8
+	.loc	2 0 50                          ; huffman.c:0:50
+	b	LBB1_6
+Ltmp135:
+Lfunc_end1:
 	.cfi_endproc
-.LFE54:
-	.size	BZ2_hbAssignCodes, .-BZ2_hbAssignCodes
-	.p2align 4
-	.globl	BZ2_hbCreateDecodeTables
-	.type	BZ2_hbCreateDecodeTables, @function
-BZ2_hbCreateDecodeTables:
-.LVL80:
-.LFB55:
-	.loc 1 177 1 is_stmt 1 view -0
+                                        ; -- End function
+	.globl	_BZ2_hbCreateDecodeTables       ; -- Begin function BZ2_hbCreateDecodeTables
+	.p2align	2
+_BZ2_hbCreateDecodeTables:              ; @BZ2_hbCreateDecodeTables
+Lfunc_begin2:
+	.loc	2 177 0 is_stmt 1               ; huffman.c:177:0
 	.cfi_startproc
-	.loc 1 177 1 is_stmt 0 view .LVU286
-	endbr64
-	pushq	%r13
-	.cfi_def_cfa_offset 16
-	.cfi_offset 13, -16
-	movq	%rsi, %r11
-	.loc 1 178 4 is_stmt 1 view .LVU287
-	.loc 1 180 4 view .LVU288
-.LVL81:
-	.loc 1 181 4 view .LVU289
-	.loc 1 181 23 view .LVU290
-	.loc 1 177 1 is_stmt 0 view .LVU291
-	movq	%rdi, %r10
-	movq	%rcx, %rsi
-.LVL82:
-	.loc 1 177 1 view .LVU292
-	pushq	%r12
-	.cfi_def_cfa_offset 24
-	.cfi_offset 12, -24
-	pushq	%rbp
-	.cfi_def_cfa_offset 32
-	.cfi_offset 6, -32
-	pushq	%rbx
-	.cfi_def_cfa_offset 40
-	.cfi_offset 3, -40
-	.loc 1 177 1 view .LVU293
-	movl	%r8d, %ebx
-	movl	40(%rsp), %ebp
-	.loc 1 181 23 view .LVU294
-	cmpl	%r9d, %r8d
-	jg	.L80
-	movl	%r8d, %ecx
-.LVL83:
-	.loc 1 181 23 view .LVU295
-	movq	%rdx, %r12
-	leal	1(%r9), %r13d
-	.loc 1 180 7 view .LVU296
-	xorl	%edi, %edi
-.LVL84:
-	.loc 1 180 7 view .LVU297
-	movslq	%ebp, %r8
-.LVL85:
-	.p2align 4,,10
-	.p2align 3
-.L81:
-	.loc 1 182 21 is_stmt 1 view .LVU298
-	xorl	%eax, %eax
-	testl	%ebp, %ebp
-	jle	.L85
-.LVL86:
-	.p2align 4,,10
-	.p2align 3
-.L83:
-	.loc 1 183 10 view .LVU299
-	.loc 1 183 20 is_stmt 0 view .LVU300
-	movzbl	(%rsi,%rax), %edx
-	.loc 1 183 13 view .LVU301
-	cmpl	%ecx, %edx
-	jne	.L82
-	.loc 1 183 32 is_stmt 1 discriminator 1 view .LVU302
-	.loc 1 183 36 is_stmt 0 discriminator 1 view .LVU303
-	movslq	%edi, %rdx
-	.loc 1 183 48 discriminator 1 view .LVU304
-	addl	$1, %edi
-.LVL87:
-	.loc 1 183 41 discriminator 1 view .LVU305
-	movl	%eax, (%r12,%rdx,4)
-	.loc 1 183 46 is_stmt 1 discriminator 1 view .LVU306
-.LVL88:
-.L82:
-	.loc 1 182 35 discriminator 2 view .LVU307
-	.loc 1 182 21 discriminator 2 view .LVU308
-	addq	$1, %rax
-.LVL89:
-	.loc 1 182 21 is_stmt 0 discriminator 2 view .LVU309
-	cmpq	%rax, %r8
-	jne	.L83
-.L85:
-	.loc 1 181 35 is_stmt 1 discriminator 2 view .LVU310
-	addl	$1, %ecx
-.LVL90:
-	.loc 1 181 23 discriminator 2 view .LVU311
-	cmpl	%r13d, %ecx
-	jne	.L81
-.LVL91:
-.L80:
-	.loc 1 185 37 is_stmt 0 view .LVU312
-	leaq	8(%r11), %rdi
-	movq	%r11, %rcx
-	xorl	%eax, %eax
-	movq	$0, (%r11)
-	andq	$-8, %rdi
-	movq	$0, 84(%r11)
-	subq	%rdi, %rcx
-	addl	$92, %ecx
-	shrl	$3, %ecx
-	rep stosq
-.LVL92:
-	.loc 1 186 18 is_stmt 1 view .LVU313
-	testl	%ebp, %ebp
-	jle	.L86
-	.loc 1 186 18 is_stmt 0 view .LVU314
-	leal	-1(%rbp), %eax
-	leaq	1(%rsi,%rax), %rdx
-.LVL93:
-	.p2align 4,,10
-	.p2align 3
-.L87:
-	.loc 1 186 36 is_stmt 1 discriminator 3 view .LVU315
-	.loc 1 186 40 is_stmt 0 discriminator 3 view .LVU316
-	movzbl	(%rsi), %eax
-	.loc 1 186 18 discriminator 3 view .LVU317
-	addq	$1, %rsi
-.LVL94:
-	.loc 1 186 53 discriminator 3 view .LVU318
-	addl	$1, 4(%r11,%rax,4)
-	.loc 1 186 32 is_stmt 1 discriminator 3 view .LVU319
-	.loc 1 186 18 discriminator 3 view .LVU320
-	cmpq	%rsi, %rdx
-	jne	.L87
-.L86:
-	.loc 1 186 18 is_stmt 0 discriminator 3 view .LVU321
-	leaq	4(%r11), %rax
-	leaq	92(%r11), %rcx
-	.p2align 4,,10
-	.p2align 3
-.L88:
-.LVL95:
-	.loc 1 188 29 is_stmt 1 discriminator 3 view .LVU322
-	.loc 1 188 37 is_stmt 0 discriminator 3 view .LVU323
-	movl	-4(%rax), %edx
-	addl	%edx, (%rax)
-	.loc 1 188 25 is_stmt 1 discriminator 3 view .LVU324
-.LVL96:
-	.loc 1 188 18 discriminator 3 view .LVU325
-	addq	$4, %rax
-.LVL97:
-	.loc 1 188 18 is_stmt 0 discriminator 3 view .LVU326
-	cmpq	%rax, %rcx
-	jne	.L88
-	.loc 1 190 38 view .LVU327
-	leaq	8(%r10), %rdi
-	movq	%r10, %rcx
-	xorl	%eax, %eax
-.LVL98:
-	.loc 1 190 38 view .LVU328
-	movq	$0, (%r10)
-	andq	$-8, %rdi
-	movq	$0, 84(%r10)
-	subq	%rdi, %rcx
-	addl	$92, %ecx
-	shrl	$3, %ecx
-	rep stosq
-.LVL99:
-	.loc 1 193 23 is_stmt 1 view .LVU329
-	cmpl	%r9d, %ebx
-	jg	.L89
-	movslq	%ebx, %rdx
-.LVL100:
-	.p2align 4,,10
-	.p2align 3
-.L90:
-	.loc 1 194 7 discriminator 3 view .LVU330
-	.loc 1 194 25 is_stmt 0 discriminator 3 view .LVU331
-	addl	4(%r11,%rdx,4), %eax
-.LVL101:
-	.loc 1 194 11 discriminator 3 view .LVU332
-	subl	(%r11,%rdx,4), %eax
-.LVL102:
-	.loc 1 195 7 is_stmt 1 discriminator 3 view .LVU333
-	.loc 1 195 21 is_stmt 0 discriminator 3 view .LVU334
-	leal	-1(%rax), %ecx
-	.loc 1 196 11 discriminator 3 view .LVU335
-	addl	%eax, %eax
-.LVL103:
-	.loc 1 195 21 discriminator 3 view .LVU336
-	movl	%ecx, (%r10,%rdx,4)
-	.loc 1 196 7 is_stmt 1 discriminator 3 view .LVU337
-.LVL104:
-	.loc 1 193 35 discriminator 3 view .LVU338
-	.loc 1 193 23 discriminator 3 view .LVU339
-	addq	$1, %rdx
-.LVL105:
-	.loc 1 193 23 is_stmt 0 discriminator 3 view .LVU340
-	cmpl	%edx, %r9d
-	jge	.L90
-.LVL106:
-.L89:
-	.loc 1 198 4 is_stmt 1 view .LVU341
-	.loc 1 198 11 is_stmt 0 view .LVU342
-	leal	1(%rbx), %eax
-.LVL107:
-	.loc 1 198 27 is_stmt 1 view .LVU343
-	cmpl	%eax, %r9d
-	jl	.L79
-	cltq
-.LVL108:
-	.p2align 4,,10
-	.p2align 3
-.L92:
-	.loc 1 199 7 discriminator 3 view .LVU344
-	.loc 1 199 30 is_stmt 0 discriminator 3 view .LVU345
-	movl	-4(%r10,%rax,4), %edx
-	.loc 1 199 35 discriminator 3 view .LVU346
-	leal	2(%rdx,%rdx), %edx
-	.loc 1 199 41 discriminator 3 view .LVU347
-	subl	(%r11,%rax,4), %edx
-	.loc 1 199 15 discriminator 3 view .LVU348
-	movl	%edx, (%r11,%rax,4)
-	.loc 1 198 39 is_stmt 1 discriminator 3 view .LVU349
-.LVL109:
-	.loc 1 198 27 discriminator 3 view .LVU350
-	addq	$1, %rax
-.LVL110:
-	.loc 1 198 27 is_stmt 0 discriminator 3 view .LVU351
-	cmpl	%eax, %r9d
-	jge	.L92
-.L79:
-	.loc 1 200 1 view .LVU352
-	popq	%rbx
-	.cfi_def_cfa_offset 32
-.LVL111:
-	.loc 1 200 1 view .LVU353
-	popq	%rbp
-	.cfi_def_cfa_offset 24
-.LVL112:
-	.loc 1 200 1 view .LVU354
-	popq	%r12
-	.cfi_def_cfa_offset 16
-	popq	%r13
-	.cfi_def_cfa_offset 8
+; %bb.0:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:length <- $x3
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- $w6
+	stp	x26, x25, [sp, #-64]!           ; 16-byte Folded Spill
+	.cfi_def_cfa_offset 64
+	stp	x24, x23, [sp, #16]             ; 16-byte Folded Spill
+	stp	x22, x21, [sp, #32]             ; 16-byte Folded Spill
+	stp	x20, x19, [sp, #48]             ; 16-byte Folded Spill
+	.cfi_offset w19, -8
+	.cfi_offset w20, -16
+	.cfi_offset w21, -24
+	.cfi_offset w22, -32
+	.cfi_offset w23, -40
+	.cfi_offset w24, -48
+	.cfi_offset w25, -56
+	.cfi_offset w26, -64
+Ltmp136:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- $w4
+                                        ; kill: def $w5 killed $w5 def $x5
+                                        ; kill: def $w4 killed $w4 def $x4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:pp <- 0
+	.loc	2 181 4 prologue_end            ; huffman.c:181:4
+	cmp	w4, w5
+	b.le	LBB2_5
+Ltmp137:
+LBB2_1:                                 ; %.preheader68
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:length <- $x3
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 0
+	.loc	2 185 37                        ; huffman.c:185:37
+	movi.2d	v0, #0000000000000000
+	stur	q0, [x1, #76]
+	stp	q0, q0, [x1, #48]
+	stp	q0, q0, [x1, #16]
+	str	q0, [x1]
+Ltmp138:
+	.loc	2 186 4                         ; huffman.c:186:4
+	cmp	w6, #0
+	b.le	LBB2_12
+Ltmp139:
+; %bb.2:                                ; %.lr.ph77.preheader
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:length <- $x3
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	.loc	2 186 18 is_stmt 0              ; huffman.c:186:18
+	mov	w8, w6
+Ltmp140:
+LBB2_3:                                 ; %.lr.ph77
+                                        ; =>This Inner Loop Header: Depth=1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- [DW_OP_LLVM_arg 0, DW_OP_LLVM_arg 0, DW_OP_minus, DW_OP_stack_value] undef
+	.loc	2 186 41                        ; huffman.c:186:41
+	ldrb	w9, [x3], #1
+Ltmp141:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:length <- [DW_OP_LLVM_entry_value 1] $x3
+	.loc	2 186 36                        ; huffman.c:186:36
+	add	x9, x1, x9, lsl #2
+	.loc	2 186 53                        ; huffman.c:186:53
+	ldr	w10, [x9, #4]
+	add	w10, w10, #1
+	str	w10, [x9, #4]
+Ltmp142:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- [DW_OP_LLVM_arg 0, DW_OP_LLVM_arg 0, DW_OP_minus, DW_OP_consts 1, DW_OP_plus, DW_OP_stack_value] undef
+	.loc	2 186 18                        ; huffman.c:186:18
+	subs	x8, x8, #1
+Ltmp143:
+	.loc	2 186 4                         ; huffman.c:186:4
+	b.ne	LBB2_3
+Ltmp144:
+; %bb.4:                                ; %.preheader66.loopexit
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	.loc	2 188 37 is_stmt 1              ; huffman.c:188:37
+	ldp	w24, w25, [x1, #4]
+	ldp	w26, w23, [x1, #12]
+	ldp	w22, w21, [x1, #20]
+	ldp	w20, w19, [x1, #28]
+	ldp	w7, w6, [x1, #36]
+Ltmp145:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	ldp	w3, w2, [x1, #44]
+Ltmp146:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	ldp	w17, w16, [x1, #52]
+	ldp	w15, w14, [x1, #60]
+	ldp	w13, w12, [x1, #68]
+	ldp	w11, w10, [x1, #76]
+	ldp	w9, w8, [x1, #84]
+	b	LBB2_13
+Ltmp147:
+LBB2_5:                                 ; %.preheader69.lr.ph
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:pp <- 0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:length <- $x3
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	.loc	2 0 37 is_stmt 0                ; huffman.c:0:37
+	mov	w8, #0
+	mov	w9, w6
+	mov	x10, x4
+	b	LBB2_7
+Ltmp148:
+LBB2_6:                                 ; %._crit_edge
+                                        ;   in Loop: Header=BB2_7 Depth=1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:pp <- $w8
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- $w10
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:length <- $x3
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	.loc	2 181 35 is_stmt 1              ; huffman.c:181:35
+	add	w11, w10, #1
+Ltmp149:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:pp <- $w8
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- $w11
+	.loc	2 181 4 is_stmt 0               ; huffman.c:181:4
+	cmp	w10, w5
+	mov	x10, x11
+Ltmp150:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- $w10
+	b.eq	LBB2_1
+Ltmp151:
+LBB2_7:                                 ; %.preheader69
+                                        ; =>This Loop Header: Depth=1
+                                        ;     Child Loop BB2_10 Depth 2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:length <- $x3
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- $w10
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:pp <- $w8
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:j <- 0
+	.loc	2 182 7 is_stmt 1               ; huffman.c:182:7
+	cmp	w6, #1
+	b.lt	LBB2_6
+Ltmp152:
+; %bb.8:                                ; %.lr.ph.preheader
+                                        ;   in Loop: Header=BB2_7 Depth=1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:j <- 0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:pp <- $w8
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- $w10
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:length <- $x3
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	.loc	2 0 7 is_stmt 0                 ; huffman.c:0:7
+	mov	x11, #0
+	b	LBB2_10
+Ltmp153:
+LBB2_9:                                 ;   in Loop: Header=BB2_10 Depth=2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:j <- $x11
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:pp <- $w8
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- $w10
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:length <- $x3
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:pp <- $w8
+	.loc	2 182 35                        ; huffman.c:182:35
+	add	x11, x11, #1
+Ltmp154:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:j <- $x11
+	.loc	2 182 7                         ; huffman.c:182:7
+	cmp	x9, x11
+	b.eq	LBB2_6
+Ltmp155:
+LBB2_10:                                ; %.lr.ph
+                                        ;   Parent Loop BB2_7 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:pp <- $w8
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- $w10
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:length <- $x3
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:pp <- $w8
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:j <- $x11
+	.loc	2 183 14 is_stmt 1              ; huffman.c:183:14
+	ldrb	w12, [x3, x11]
+Ltmp156:
+	.loc	2 183 14 is_stmt 0              ; huffman.c:183:14
+	cmp	w10, w12
+	b.ne	LBB2_9
+Ltmp157:
+; %bb.11:                               ;   in Loop: Header=BB2_10 Depth=2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:j <- $x11
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:pp <- $w8
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- $w10
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:length <- $x3
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	.loc	2 183 41                        ; huffman.c:183:41
+	str	w11, [x2, w8, sxtw  #2]
+	.loc	2 183 48                        ; huffman.c:183:48
+	add	w8, w8, #1
+Ltmp158:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:pp <- $w8
+	.loc	2 0 48                          ; huffman.c:0:48
+	b	LBB2_9
+Ltmp159:
+LBB2_12:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:length <- $x3
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	mov	w8, #0
+	mov	w9, #0
+	mov	w10, #0
+	mov	w11, #0
+	mov	w12, #0
+	mov	w13, #0
+	mov	w14, #0
+	mov	w15, #0
+	mov	w16, #0
+	mov	w17, #0
+	mov	w2, #0
+Ltmp160:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	mov	w3, #0
+Ltmp161:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:length <- [DW_OP_LLVM_entry_value 1] $x3
+	mov	w6, #0
+Ltmp162:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	mov	w7, #0
+	mov	w19, #0
+	mov	w20, #0
+	mov	w21, #0
+	mov	w22, #0
+	mov	w23, #0
+	mov	w26, #0
+	mov	w25, #0
+	mov	w24, #0
+Ltmp163:
+LBB2_13:                                ; %.preheader66
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 1
+	.loc	2 188 37 is_stmt 1              ; huffman.c:188:37
+	add	w25, w25, w24
+	add	w26, w26, w25
+	stp	w24, w25, [x1, #4]
+Ltmp164:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 3
+	add	w23, w23, w26
+	add	w22, w22, w23
+	stp	w26, w23, [x1, #12]
+Ltmp165:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 5
+	add	w21, w21, w22
+	add	w20, w20, w21
+	stp	w22, w21, [x1, #20]
+Ltmp166:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 7
+	add	w19, w19, w20
+	add	w7, w7, w19
+	stp	w20, w19, [x1, #28]
+Ltmp167:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 8
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 9
+	add	w6, w6, w7
+	add	w3, w3, w6
+	stp	w7, w6, [x1, #36]
+Ltmp168:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 10
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 11
+	add	w2, w2, w3
+	add	w17, w17, w2
+	stp	w3, w2, [x1, #44]
+Ltmp169:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 12
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 13
+	add	w16, w16, w17
+	add	w15, w15, w16
+	stp	w17, w16, [x1, #52]
+Ltmp170:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 14
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 15
+	add	w14, w14, w15
+	add	w13, w13, w14
+	stp	w15, w14, [x1, #60]
+Ltmp171:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 16
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 17
+	add	w12, w12, w13
+	add	w11, w11, w12
+	stp	w13, w12, [x1, #68]
+Ltmp172:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 18
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 19
+	add	w10, w10, w11
+	add	w9, w9, w10
+	stp	w11, w10, [x1, #76]
+Ltmp173:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 20
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 21
+	add	w8, w8, w9
+	stp	w9, w8, [x1, #84]
+Ltmp174:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 22
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- 23
+	.loc	2 190 38                        ; huffman.c:190:38
+	stur	q0, [x0, #76]
+	stp	q0, q0, [x0, #48]
+	stp	q0, q0, [x0, #16]
+	str	q0, [x0]
+Ltmp175:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:vec <- 0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- $w4
+	.loc	2 193 4                         ; huffman.c:193:4
+	cmp	w4, w5
+	b.gt	LBB2_16
+Ltmp176:
+; %bb.14:                               ; %.lr.ph83.preheader
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:vec <- 0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	.loc	2 0 4 is_stmt 0                 ; huffman.c:0:4
+	mov	w9, #0
+	.loc	2 193 4                         ; huffman.c:193:4
+	mov	x8, x4
+	sbfiz	x10, x8, #2, #32
+	add	x8, x10, x1
+	add	x8, x8, #4
+	add	x10, x0, x10
+	sub	w11, w5, w4
+	add	w11, w11, #1
+Ltmp177:
+LBB2_15:                                ; %.lr.ph83
+                                        ; =>This Inner Loop Header: Depth=1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- [DW_OP_LLVM_arg 0, DW_OP_consts 4, DW_OP_consts 4, DW_OP_LLVM_arg 1, DW_OP_LLVM_convert 64 5, DW_OP_mul, DW_OP_plus, DW_OP_LLVM_arg 2, DW_OP_plus, DW_OP_minus, DW_OP_consts 4, DW_OP_div, DW_OP_LLVM_arg 1, DW_OP_LLVM_convert 64 5, DW_OP_plus, DW_OP_stack_value] $x8, $w4, $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:vec <- $w9
+	.loc	2 194 15 is_stmt 1              ; huffman.c:194:15
+	ldp	w13, w12, [x8, #-4]
+	.loc	2 194 25 is_stmt 0              ; huffman.c:194:25
+	sub	w12, w12, w13
+	.loc	2 194 11                        ; huffman.c:194:11
+	add	w9, w12, w9
+Ltmp178:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:vec <- $w9
+	.loc	2 195 21 is_stmt 1              ; huffman.c:195:21
+	sub	w12, w9, #1
+	.loc	2 195 16 is_stmt 0              ; huffman.c:195:16
+	str	w12, [x10], #4
+	.loc	2 196 11 is_stmt 1              ; huffman.c:196:11
+	lsl	w9, w9, #1
+Ltmp179:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:vec <- $w9
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- [DW_OP_LLVM_arg 0, DW_OP_consts 4, DW_OP_consts 4, DW_OP_LLVM_arg 1, DW_OP_LLVM_convert 64 5, DW_OP_mul, DW_OP_plus, DW_OP_LLVM_arg 2, DW_OP_plus, DW_OP_minus, DW_OP_consts 4, DW_OP_div, DW_OP_consts 1, DW_OP_LLVM_arg 1, DW_OP_LLVM_convert 64 5, DW_OP_plus, DW_OP_plus, DW_OP_stack_value] $x8, $w4, $x1
+	.loc	2 193 23                        ; huffman.c:193:23
+	add	x8, x8, #4
+Ltmp180:
+	subs	w11, w11, #1
+Ltmp181:
+	.loc	2 193 4 is_stmt 0               ; huffman.c:193:4
+	b.ne	LBB2_15
+Ltmp182:
+LBB2_16:                                ; %.preheader
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- [DW_OP_plus_uconst 1, DW_OP_stack_value] $w4
+	.loc	2 198 4 is_stmt 1               ; huffman.c:198:4
+	cmp	w4, w5
+	b.ge	LBB2_25
+Ltmp183:
+; %bb.17:                               ; %.lr.ph86.preheader
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- [DW_OP_plus_uconst 1, DW_OP_stack_value] $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	sxtw	x8, w4
+Ltmp184:
+	.loc	2 198 27 is_stmt 0              ; huffman.c:198:27
+	sxtw	x9, w5
+Ltmp185:
+	.loc	2 198 4                         ; huffman.c:198:4
+	sub	x10, x9, x8
+	cmp	x10, #16
+	b.lo	LBB2_23
+Ltmp186:
+; %bb.18:                               ; %vector.memcheck
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- [DW_OP_plus_uconst 1, DW_OP_stack_value] $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	lsl	x12, x8, #2
+	add	x13, x12, x1
+	add	x14, x13, #4
+	lsl	x11, x9, #2
+	add	x15, x0, x11
+	cmp	x14, x15
+	b.hs	LBB2_20
+Ltmp187:
+; %bb.19:                               ; %vector.memcheck
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- [DW_OP_plus_uconst 1, DW_OP_stack_value] $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	add	x11, x11, x1
+	add	x11, x11, #4
+	add	x14, x0, x12
+	cmp	x14, x11
+	b.lo	LBB2_23
+Ltmp188:
+LBB2_20:                                ; %vector.ph
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- [DW_OP_plus_uconst 1, DW_OP_stack_value] $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	and	x11, x10, #0xfffffffffffffff0
+	add	x8, x11, x8
+	add	x12, x12, x0
+	add	x12, x12, #32
+	add	x13, x13, #36
+	movi.4s	v0, #2
+	mov	x14, x11
+Ltmp189:
+LBB2_21:                                ; %vector.body
+                                        ; =>This Inner Loop Header: Depth=1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- [DW_OP_plus_uconst 1, DW_OP_stack_value] $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	.loc	2 199 19 is_stmt 1              ; huffman.c:199:19
+	ldp	q1, q2, [x12, #-32]
+	ldp	q3, q4, [x12], #64
+	.loc	2 199 35 is_stmt 0              ; huffman.c:199:35
+	shl.4s	v1, v1, #1
+	shl.4s	v2, v2, #1
+	shl.4s	v3, v3, #1
+	shl.4s	v4, v4, #1
+	.loc	2 199 43                        ; huffman.c:199:43
+	ldp	q5, q6, [x13, #-32]
+	ldp	q7, q16, [x13]
+	.loc	2 199 41                        ; huffman.c:199:41
+	sub.4s	v1, v1, v5
+	add.4s	v1, v1, v0
+	sub.4s	v2, v2, v6
+	add.4s	v2, v2, v0
+	sub.4s	v3, v3, v7
+	add.4s	v3, v3, v0
+	sub.4s	v4, v4, v16
+	add.4s	v4, v4, v0
+	.loc	2 199 15                        ; huffman.c:199:15
+	stp	q1, q2, [x13, #-32]
+	stp	q3, q4, [x13], #64
+	subs	x14, x14, #16
+	b.ne	LBB2_21
+Ltmp190:
+; %bb.22:                               ; %middle.block
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- [DW_OP_plus_uconst 1, DW_OP_stack_value] $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	.loc	2 198 4 is_stmt 1               ; huffman.c:198:4
+	cmp	x10, x11
+	b.eq	LBB2_25
+Ltmp191:
+LBB2_23:                                ; %.lr.ph86.preheader167
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- [DW_OP_plus_uconst 1, DW_OP_stack_value] $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	lsl	x11, x8, #2
+	add	x10, x0, x11
+	sub	x8, x9, x8
+	add	x9, x11, x1
+	add	x9, x9, #4
+Ltmp192:
+LBB2_24:                                ; %.lr.ph86
+                                        ; =>This Inner Loop Header: Depth=1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- [DW_OP_LLVM_arg 0, DW_OP_consts 4, DW_OP_LLVM_arg 0, DW_OP_mul, DW_OP_LLVM_arg 0, DW_OP_plus, DW_OP_minus, DW_OP_consts 4, DW_OP_div, DW_OP_consts 1, DW_OP_LLVM_arg 0, DW_OP_plus, DW_OP_plus, DW_OP_stack_value] undef
+	.loc	2 199 19                        ; huffman.c:199:19
+	ldr	w11, [x10], #4
+	.loc	2 199 35 is_stmt 0              ; huffman.c:199:35
+	lsl	w11, w11, #1
+	.loc	2 199 43                        ; huffman.c:199:43
+	ldr	w12, [x9]
+	.loc	2 199 41                        ; huffman.c:199:41
+	sub	w11, w11, w12
+	add	w11, w11, #2
+	.loc	2 199 15                        ; huffman.c:199:15
+	str	w11, [x9], #4
+Ltmp193:
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:i <- [DW_OP_plus_uconst 1, DW_OP_stack_value] $x10
+	.loc	2 198 27 is_stmt 1              ; huffman.c:198:27
+	subs	x8, x8, #1
+Ltmp194:
+	.loc	2 198 4 is_stmt 0               ; huffman.c:198:4
+	b.ne	LBB2_24
+Ltmp195:
+LBB2_25:                                ; %._crit_edge87
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:alphaSize <- [DW_OP_LLVM_entry_value 1] $w6
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:perm <- [DW_OP_LLVM_entry_value 1] $x2
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:maxLen <- $w5
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:minLen <- $w4
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:base <- $x1
+	;DEBUG_VALUE: BZ2_hbCreateDecodeTables:limit <- $x0
+	.loc	2 200 1 is_stmt 1               ; huffman.c:200:1
+	ldp	x20, x19, [sp, #48]             ; 16-byte Folded Reload
+	ldp	x22, x21, [sp, #32]             ; 16-byte Folded Reload
+	ldp	x24, x23, [sp, #16]             ; 16-byte Folded Reload
+	ldp	x26, x25, [sp], #64             ; 16-byte Folded Reload
 	ret
+Ltmp196:
+Lfunc_end2:
 	.cfi_endproc
-.LFE55:
-	.size	BZ2_hbCreateDecodeTables, .-BZ2_hbCreateDecodeTables
-.Letext0:
-	.file 2 "bzlib_private.h"
-	.section	.debug_info,"",@progbits
-.Ldebug_info0:
-	.long	0x498
-	.value	0x5
-	.byte	0x1
-	.byte	0x8
-	.long	.Ldebug_abbrev0
-	.uleb128 0xd
-	.long	.LASF33
-	.byte	0x1d
-	.long	.LASF0
-	.long	.LASF1
-	.quad	.Ltext0
-	.quad	.Letext0-.Ltext0
-	.long	.Ldebug_line0
-	.uleb128 0x3
-	.byte	0x8
-	.byte	0x7
-	.long	.LASF2
-	.uleb128 0xe
-	.byte	0x4
-	.byte	0x5
-	.string	"int"
-	.uleb128 0x3
-	.byte	0x8
-	.byte	0x5
-	.long	.LASF3
-	.uleb128 0x3
-	.byte	0x8
-	.byte	0x5
-	.long	.LASF4
-	.uleb128 0x3
-	.byte	0x1
-	.byte	0x8
-	.long	.LASF5
-	.uleb128 0x3
-	.byte	0x2
-	.byte	0x7
-	.long	.LASF6
-	.uleb128 0x3
-	.byte	0x4
-	.byte	0x7
-	.long	.LASF7
-	.uleb128 0x3
-	.byte	0x1
-	.byte	0x6
-	.long	.LASF8
-	.uleb128 0x3
-	.byte	0x2
-	.byte	0x5
-	.long	.LASF9
-	.uleb128 0x3
-	.byte	0x1
-	.byte	0x6
-	.long	.LASF10
-	.uleb128 0x3
-	.byte	0x8
-	.byte	0x7
-	.long	.LASF11
-	.uleb128 0x5
-	.long	.LASF12
-	.byte	0x2a
-	.byte	0x17
-	.long	0x4a
-	.uleb128 0x5
-	.long	.LASF13
-	.byte	0x2b
-	.byte	0x17
-	.long	0x4a
-	.uleb128 0x5
-	.long	.LASF14
-	.byte	0x2c
-	.byte	0xd
-	.long	0x35
-	.uleb128 0x9
-	.long	0x86
-	.uleb128 0x9
-	.long	0x91
-	.uleb128 0xf
-	.long	.LASF34
-	.byte	0x2
-	.byte	0x3a
-	.byte	0xd
-	.long	0xb8
-	.uleb128 0x10
-	.long	0x35
-	.byte	0
-	.uleb128 0x6
-	.long	.LASF21
-	.byte	0xaa
-	.quad	.LFB55
-	.quad	.LFE55-.LFB55
-	.uleb128 0x1
-	.byte	0x9c
-	.long	0x19b
-	.uleb128 0x2
-	.long	.LASF15
-	.byte	0xaa
-	.byte	0x28
-	.long	0xa1
-	.long	.LLST33
-	.long	.LVUS33
-	.uleb128 0x2
-	.long	.LASF16
-	.byte	0xab
-	.byte	0x28
-	.long	0xa1
-	.long	.LLST34
-	.long	.LVUS34
-	.uleb128 0x2
-	.long	.LASF17
-	.byte	0xac
-	.byte	0x28
-	.long	0xa1
-	.long	.LLST35
-	.long	.LVUS35
-	.uleb128 0x2
-	.long	.LASF18
-	.byte	0xad
-	.byte	0x28
-	.long	0x9c
-	.long	.LLST36
-	.long	.LVUS36
-	.uleb128 0x2
-	.long	.LASF19
-	.byte	0xae
-	.byte	0x27
-	.long	0x91
-	.long	.LLST37
-	.long	.LVUS37
-	.uleb128 0xa
-	.long	.LASF24
-	.byte	0xaf
-	.byte	0x27
-	.long	0x91
-	.uleb128 0x1
-	.byte	0x59
-	.uleb128 0x2
-	.long	.LASF20
-	.byte	0xb0
-	.byte	0x27
-	.long	0x91
-	.long	.LLST38
-	.long	.LVUS38
-	.uleb128 0x1
-	.string	"pp"
-	.byte	0xb2
-	.byte	0xa
-	.long	0x91
-	.long	.LLST39
-	.long	.LVUS39
-	.uleb128 0x1
-	.string	"i"
-	.byte	0xb2
-	.byte	0xe
-	.long	0x91
-	.long	.LLST40
-	.long	.LVUS40
-	.uleb128 0x1
-	.string	"j"
-	.byte	0xb2
-	.byte	0x11
-	.long	0x91
-	.long	.LLST41
-	.long	.LVUS41
-	.uleb128 0x1
-	.string	"vec"
-	.byte	0xb2
-	.byte	0x14
-	.long	0x91
-	.long	.LLST42
-	.long	.LVUS42
-	.byte	0
-	.uleb128 0x6
-	.long	.LASF22
-	.byte	0x98
-	.quad	.LFB54
-	.quad	.LFE54-.LFB54
-	.uleb128 0x1
-	.byte	0x9c
-	.long	0x246
-	.uleb128 0x2
-	.long	.LASF23
-	.byte	0x98
-	.byte	0x21
-	.long	0xa1
-	.long	.LLST26
-	.long	.LVUS26
-	.uleb128 0x2
-	.long	.LASF18
-	.byte	0x99
-	.byte	0x21
-	.long	0x9c
-	.long	.LLST27
-	.long	.LVUS27
-	.uleb128 0x2
-	.long	.LASF19
-	.byte	0x9a
-	.byte	0x20
-	.long	0x91
-	.long	.LLST28
-	.long	.LVUS28
-	.uleb128 0x2
-	.long	.LASF24
-	.byte	0x9b
-	.byte	0x20
-	.long	0x91
-	.long	.LLST29
-	.long	.LVUS29
-	.uleb128 0xa
-	.long	.LASF20
-	.byte	0x9c
-	.byte	0x20
-	.long	0x91
-	.uleb128 0x1
-	.byte	0x58
-	.uleb128 0x1
-	.string	"n"
-	.byte	0x9e
-	.byte	0xa
-	.long	0x91
-	.long	.LLST30
-	.long	.LVUS30
-	.uleb128 0x1
-	.string	"vec"
-	.byte	0x9e
-	.byte	0xd
-	.long	0x91
-	.long	.LLST31
-	.long	.LVUS31
-	.uleb128 0x1
-	.string	"i"
-	.byte	0x9e
-	.byte	0x12
-	.long	0x91
-	.long	.LLST32
-	.long	.LVUS32
-	.byte	0
-	.uleb128 0x6
-	.long	.LASF25
-	.byte	0x3f
-	.quad	.LFB53
-	.quad	.LFE53-.LFB53
-	.uleb128 0x1
-	.byte	0x9c
-	.long	0x470
-	.uleb128 0x11
-	.string	"len"
-	.byte	0x1
-	.byte	0x3f
-	.byte	0x25
-	.long	0x9c
-	.long	.LLST0
-	.long	.LVUS0
-	.uleb128 0x2
-	.long	.LASF26
-	.byte	0x40
-	.byte	0x25
-	.long	0xa1
-	.long	.LLST1
-	.long	.LVUS1
-	.uleb128 0x2
-	.long	.LASF20
-	.byte	0x41
-	.byte	0x24
-	.long	0x91
-	.long	.LLST2
-	.long	.LVUS2
-	.uleb128 0x2
-	.long	.LASF24
-	.byte	0x42
-	.byte	0x24
-	.long	0x91
-	.long	.LLST3
-	.long	.LVUS3
-	.uleb128 0x7
-	.long	.LASF27
-	.byte	0x48
-	.byte	0xa
-	.long	0x91
-	.long	.LLST4
-	.long	.LVUS4
-	.uleb128 0x7
-	.long	.LASF28
-	.byte	0x48
-	.byte	0x12
-	.long	0x91
-	.long	.LLST5
-	.long	.LVUS5
-	.uleb128 0x1
-	.string	"n1"
-	.byte	0x48
-	.byte	0x19
-	.long	0x91
-	.long	.LLST6
-	.long	.LVUS6
-	.uleb128 0x1
-	.string	"n2"
-	.byte	0x48
-	.byte	0x1d
-	.long	0x91
-	.long	.LLST7
-	.long	.LVUS7
-	.uleb128 0x1
-	.string	"i"
-	.byte	0x48
-	.byte	0x21
-	.long	0x91
-	.long	.LLST8
-	.long	.LVUS8
-	.uleb128 0x1
-	.string	"j"
-	.byte	0x48
-	.byte	0x24
-	.long	0x91
-	.long	.LLST9
-	.long	.LVUS9
-	.uleb128 0x1
-	.string	"k"
-	.byte	0x48
-	.byte	0x27
-	.long	0x91
-	.long	.LLST10
-	.long	.LVUS10
-	.uleb128 0x7
-	.long	.LASF29
-	.byte	0x49
-	.byte	0x9
-	.long	0x7b
-	.long	.LLST11
-	.long	.LVUS11
-	.uleb128 0x8
-	.long	.LASF30
-	.byte	0x4b
-	.long	0x470
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -5248
-	.uleb128 0x8
-	.long	.LASF31
-	.byte	0x4c
-	.long	0x481
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -4208
-	.uleb128 0x8
-	.long	.LASF32
-	.byte	0x4d
-	.long	0x481
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -2144
-	.uleb128 0x4
-	.long	.LLRL12
-	.long	0x398
-	.uleb128 0x1
-	.string	"zz"
-	.byte	0x5f
-	.byte	0x12
-	.long	0x91
-	.long	.LLST13
-	.long	.LVUS13
-	.uleb128 0x1
-	.string	"tmp"
-	.byte	0x5f
-	.byte	0x16
-	.long	0x91
-	.long	.LLST14
-	.long	.LVUS14
-	.byte	0
-	.uleb128 0x4
-	.long	.LLRL15
-	.long	0x3d9
-	.uleb128 0x1
-	.string	"zz"
-	.byte	0x65
-	.byte	0x40
-	.long	0x91
-	.long	.LLST16
-	.long	.LVUS16
-	.uleb128 0x1
-	.string	"yy"
-	.byte	0x65
-	.byte	0x44
-	.long	0x91
-	.long	.LLST17
-	.long	.LVUS17
-	.uleb128 0x1
-	.string	"tmp"
-	.byte	0x65
-	.byte	0x48
-	.long	0x91
-	.long	.LLST18
-	.long	.LVUS18
-	.byte	0
-	.uleb128 0x4
-	.long	.LLRL19
-	.long	0x41a
-	.uleb128 0x1
-	.string	"zz"
-	.byte	0x66
-	.byte	0x40
-	.long	0x91
-	.long	.LLST20
-	.long	.LVUS20
-	.uleb128 0x1
-	.string	"yy"
-	.byte	0x66
-	.byte	0x44
-	.long	0x91
-	.long	.LLST21
-	.long	.LVUS21
-	.uleb128 0x1
-	.string	"tmp"
-	.byte	0x66
-	.byte	0x48
-	.long	0x91
-	.long	.LLST22
-	.long	.LVUS22
-	.byte	0
-	.uleb128 0x4
-	.long	.LLRL23
-	.long	0x449
-	.uleb128 0x1
-	.string	"zz"
-	.byte	0x6d
-	.byte	0x12
-	.long	0x91
-	.long	.LLST24
-	.long	.LVUS24
-	.uleb128 0x1
-	.string	"tmp"
-	.byte	0x6d
-	.byte	0x16
-	.long	0x91
-	.long	.LLST25
-	.long	.LVUS25
-	.byte	0
-	.uleb128 0x12
-	.quad	.LVL44
-	.long	0xa6
-	.long	0x462
-	.uleb128 0x13
-	.uleb128 0x1
-	.byte	0x55
-	.uleb128 0x3
-	.byte	0xa
-	.value	0x7d2
-	.byte	0
-	.uleb128 0x14
-	.quad	.LVL68
-	.long	0x492
-	.byte	0
-	.uleb128 0xb
-	.long	0x91
-	.long	0x481
-	.uleb128 0xc
-	.long	0x2e
-	.value	0x103
-	.byte	0
-	.uleb128 0xb
-	.long	0x91
-	.long	0x492
-	.uleb128 0xc
-	.long	0x2e
-	.value	0x203
-	.byte	0
-	.uleb128 0x15
-	.long	.LASF35
-	.long	.LASF35
-	.byte	0
-	.section	.debug_abbrev,"",@progbits
-.Ldebug_abbrev0:
-	.uleb128 0x1
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0x21
-	.sleb128 1
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x39
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.uleb128 0x2137
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x2
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0x21
-	.sleb128 1
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x39
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.uleb128 0x2137
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x24
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3e
-	.uleb128 0xb
-	.uleb128 0x3
-	.uleb128 0xe
-	.byte	0
-	.byte	0
-	.uleb128 0x4
-	.uleb128 0xb
-	.byte	0x1
-	.uleb128 0x55
-	.uleb128 0x17
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x5
-	.uleb128 0x16
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0x21
-	.sleb128 2
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x39
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x6
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0x21
-	.sleb128 1
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x39
-	.uleb128 0x21
-	.sleb128 6
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x7
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x7a
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x7
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0x21
-	.sleb128 1
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x39
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.uleb128 0x2137
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x8
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0x21
-	.sleb128 1
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x39
-	.uleb128 0x21
-	.sleb128 10
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x9
-	.uleb128 0xf
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0x21
-	.sleb128 8
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0xa
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0x21
-	.sleb128 1
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x39
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0x1
-	.byte	0x1
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0xc
-	.uleb128 0x21
-	.byte	0
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2f
-	.uleb128 0x5
-	.byte	0
-	.byte	0
-	.uleb128 0xd
-	.uleb128 0x11
-	.byte	0x1
-	.uleb128 0x25
-	.uleb128 0xe
-	.uleb128 0x13
-	.uleb128 0xb
-	.uleb128 0x3
-	.uleb128 0x1f
-	.uleb128 0x1b
-	.uleb128 0x1f
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x7
-	.uleb128 0x10
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0xe
-	.uleb128 0x24
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3e
-	.uleb128 0xb
-	.uleb128 0x3
-	.uleb128 0x8
-	.byte	0
-	.byte	0
-	.uleb128 0xf
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x39
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x3c
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x10
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x11
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x39
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.uleb128 0x2137
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x12
-	.uleb128 0x48
-	.byte	0x1
-	.uleb128 0x7d
-	.uleb128 0x1
-	.uleb128 0x7f
-	.uleb128 0x13
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x13
-	.uleb128 0x49
-	.byte	0
-	.uleb128 0x2
-	.uleb128 0x18
-	.uleb128 0x7e
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x14
-	.uleb128 0x48
-	.byte	0
-	.uleb128 0x7d
-	.uleb128 0x1
-	.uleb128 0x7f
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x15
-	.uleb128 0x2e
-	.byte	0
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3c
-	.uleb128 0x19
-	.uleb128 0x6e
-	.uleb128 0xe
-	.uleb128 0x3
-	.uleb128 0xe
-	.byte	0
-	.byte	0
-	.byte	0
-	.section	.debug_loclists,"",@progbits
-	.long	.Ldebug_loc3-.Ldebug_loc2
-.Ldebug_loc2:
-	.value	0x5
-	.byte	0x8
-	.byte	0
-	.long	0
-.Ldebug_loc0:
-.LVUS33:
-	.uleb128 0
-	.uleb128 .LVU297
-	.uleb128 .LVU297
-	.uleb128 0
-.LLST33:
-	.byte	0x4
-	.uleb128 .LVL80-.Ltext0
-	.uleb128 .LVL84-.Ltext0
-	.uleb128 0x1
-	.byte	0x55
-	.byte	0x4
-	.uleb128 .LVL84-.Ltext0
-	.uleb128 .LFE55-.Ltext0
-	.uleb128 0x1
-	.byte	0x5a
-	.byte	0
-.LVUS34:
-	.uleb128 0
-	.uleb128 .LVU292
-	.uleb128 .LVU292
-	.uleb128 0
-.LLST34:
-	.byte	0x4
-	.uleb128 .LVL80-.Ltext0
-	.uleb128 .LVL82-.Ltext0
-	.uleb128 0x1
-	.byte	0x54
-	.byte	0x4
-	.uleb128 .LVL82-.Ltext0
-	.uleb128 .LFE55-.Ltext0
-	.uleb128 0x1
-	.byte	0x5b
-	.byte	0
-.LVUS35:
-	.uleb128 0
-	.uleb128 .LVU298
-	.uleb128 .LVU298
-	.uleb128 .LVU312
-	.uleb128 .LVU312
-	.uleb128 0
-.LLST35:
-	.byte	0x4
-	.uleb128 .LVL80-.Ltext0
-	.uleb128 .LVL85-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL85-.Ltext0
-	.uleb128 .LVL91-.Ltext0
-	.uleb128 0x1
-	.byte	0x5c
-	.byte	0x4
-	.uleb128 .LVL91-.Ltext0
-	.uleb128 .LFE55-.Ltext0
-	.uleb128 0x4
-	.byte	0xa3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.byte	0
-.LVUS36:
-	.uleb128 0
-	.uleb128 .LVU295
-	.uleb128 .LVU295
-	.uleb128 .LVU315
-	.uleb128 .LVU315
-	.uleb128 0
-.LLST36:
-	.byte	0x4
-	.uleb128 .LVL80-.Ltext0
-	.uleb128 .LVL83-.Ltext0
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x4
-	.uleb128 .LVL83-.Ltext0
-	.uleb128 .LVL93-.Ltext0
-	.uleb128 0x1
-	.byte	0x54
-	.byte	0x4
-	.uleb128 .LVL93-.Ltext0
-	.uleb128 .LFE55-.Ltext0
-	.uleb128 0x4
-	.byte	0xa3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x9f
-	.byte	0
-.LVUS37:
-	.uleb128 0
-	.uleb128 .LVU298
-	.uleb128 .LVU298
-	.uleb128 .LVU353
-	.uleb128 .LVU353
-	.uleb128 0
-.LLST37:
-	.byte	0x4
-	.uleb128 .LVL80-.Ltext0
-	.uleb128 .LVL85-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0x4
-	.uleb128 .LVL85-.Ltext0
-	.uleb128 .LVL111-.Ltext0
-	.uleb128 0x1
-	.byte	0x53
-	.byte	0x4
-	.uleb128 .LVL111-.Ltext0
-	.uleb128 .LFE55-.Ltext0
-	.uleb128 0x4
-	.byte	0xa3
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0x9f
-	.byte	0
-.LVUS38:
-	.uleb128 0
-	.uleb128 .LVU312
-	.uleb128 .LVU312
-	.uleb128 .LVU354
-.LLST38:
-	.byte	0x4
-	.uleb128 .LVL80-.Ltext0
-	.uleb128 .LVL91-.Ltext0
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 0
-	.byte	0x4
-	.uleb128 .LVL91-.Ltext0
-	.uleb128 .LVL112-.Ltext0
-	.uleb128 0x1
-	.byte	0x56
-	.byte	0
-.LVUS39:
-	.uleb128 .LVU289
-	.uleb128 .LVU298
-	.uleb128 .LVU298
-	.uleb128 .LVU305
-	.uleb128 .LVU305
-	.uleb128 .LVU307
-	.uleb128 .LVU307
-	.uleb128 .LVU312
-.LLST39:
-	.byte	0x4
-	.uleb128 .LVL81-.Ltext0
-	.uleb128 .LVL85-.Ltext0
-	.uleb128 0x2
-	.byte	0x30
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL85-.Ltext0
-	.uleb128 .LVL87-.Ltext0
-	.uleb128 0x1
-	.byte	0x55
-	.byte	0x4
-	.uleb128 .LVL87-.Ltext0
-	.uleb128 .LVL88-.Ltext0
-	.uleb128 0x3
-	.byte	0x75
-	.sleb128 -1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL88-.Ltext0
-	.uleb128 .LVL91-.Ltext0
-	.uleb128 0x1
-	.byte	0x55
-	.byte	0
-.LVUS40:
-	.uleb128 .LVU290
-	.uleb128 .LVU298
-	.uleb128 .LVU298
-	.uleb128 .LVU312
-	.uleb128 .LVU313
-	.uleb128 .LVU315
-	.uleb128 .LVU315
-	.uleb128 .LVU318
-	.uleb128 .LVU322
-	.uleb128 .LVU325
-	.uleb128 .LVU325
-	.uleb128 .LVU326
-	.uleb128 .LVU326
-	.uleb128 .LVU328
-	.uleb128 .LVU329
-	.uleb128 .LVU330
-	.uleb128 .LVU330
-	.uleb128 .LVU339
-	.uleb128 .LVU339
-	.uleb128 .LVU340
-	.uleb128 .LVU343
-	.uleb128 .LVU350
-	.uleb128 .LVU350
-	.uleb128 .LVU351
-.LLST40:
-	.byte	0x4
-	.uleb128 .LVL81-.Ltext0
-	.uleb128 .LVL85-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0x4
-	.uleb128 .LVL85-.Ltext0
-	.uleb128 .LVL91-.Ltext0
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x4
-	.uleb128 .LVL92-.Ltext0
-	.uleb128 .LVL93-.Ltext0
-	.uleb128 0x2
-	.byte	0x30
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL93-.Ltext0
-	.uleb128 .LVL94-.Ltext0
-	.uleb128 0x7
-	.byte	0x74
-	.sleb128 0
-	.byte	0xa3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x1c
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL95-.Ltext0
-	.uleb128 .LVL96-.Ltext0
-	.uleb128 0xc
-	.byte	0x70
-	.sleb128 0
-	.byte	0x7b
-	.sleb128 0
-	.byte	0x1c
-	.byte	0x34
-	.byte	0x1c
-	.byte	0x32
-	.byte	0x25
-	.byte	0x23
-	.uleb128 0x1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL96-.Ltext0
-	.uleb128 .LVL97-.Ltext0
-	.uleb128 0xc
-	.byte	0x70
-	.sleb128 0
-	.byte	0x7b
-	.sleb128 0
-	.byte	0x1c
-	.byte	0x34
-	.byte	0x1c
-	.byte	0x32
-	.byte	0x25
-	.byte	0x23
-	.uleb128 0x2
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL97-.Ltext0
-	.uleb128 .LVL98-.Ltext0
-	.uleb128 0xc
-	.byte	0x70
-	.sleb128 0
-	.byte	0x7b
-	.sleb128 0
-	.byte	0x1c
-	.byte	0x38
-	.byte	0x1c
-	.byte	0x32
-	.byte	0x25
-	.byte	0x23
-	.uleb128 0x2
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL99-.Ltext0
-	.uleb128 .LVL100-.Ltext0
-	.uleb128 0x1
-	.byte	0x53
-	.byte	0x4
-	.uleb128 .LVL100-.Ltext0
-	.uleb128 .LVL104-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL104-.Ltext0
-	.uleb128 .LVL105-.Ltext0
-	.uleb128 0x3
-	.byte	0x71
-	.sleb128 1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL107-.Ltext0
-	.uleb128 .LVL109-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL109-.Ltext0
-	.uleb128 .LVL110-.Ltext0
-	.uleb128 0x3
-	.byte	0x70
-	.sleb128 1
-	.byte	0x9f
-	.byte	0
-.LVUS41:
-	.uleb128 .LVU298
-	.uleb128 .LVU299
-	.uleb128 .LVU299
-	.uleb128 .LVU308
-	.uleb128 .LVU308
-	.uleb128 .LVU309
-.LLST41:
-	.byte	0x4
-	.uleb128 .LVL85-.Ltext0
-	.uleb128 .LVL86-.Ltext0
-	.uleb128 0x2
-	.byte	0x30
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL86-.Ltext0
-	.uleb128 .LVL88-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL88-.Ltext0
-	.uleb128 .LVL89-.Ltext0
-	.uleb128 0x3
-	.byte	0x70
-	.sleb128 1
-	.byte	0x9f
-	.byte	0
-.LVUS42:
-	.uleb128 .LVU329
-	.uleb128 .LVU330
-	.uleb128 .LVU330
-	.uleb128 .LVU332
-	.uleb128 .LVU333
-	.uleb128 .LVU336
-	.uleb128 .LVU336
-	.uleb128 .LVU338
-	.uleb128 .LVU338
-	.uleb128 .LVU341
-.LLST42:
-	.byte	0x4
-	.uleb128 .LVL99-.Ltext0
-	.uleb128 .LVL100-.Ltext0
-	.uleb128 0x2
-	.byte	0x30
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL100-.Ltext0
-	.uleb128 .LVL101-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL102-.Ltext0
-	.uleb128 .LVL103-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL103-.Ltext0
-	.uleb128 .LVL104-.Ltext0
-	.uleb128 0x3
-	.byte	0x72
-	.sleb128 1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL104-.Ltext0
-	.uleb128 .LVL106-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0
-.LVUS26:
-	.uleb128 0
-	.uleb128 .LVU264
-	.uleb128 .LVU264
-	.uleb128 0
-.LLST26:
-	.byte	0x4
-	.uleb128 .LVL69-.Ltext0
-	.uleb128 .LVL71-.Ltext0
-	.uleb128 0x1
-	.byte	0x55
-	.byte	0x4
-	.uleb128 .LVL71-.Ltext0
-	.uleb128 .LFE54-.Ltext0
-	.uleb128 0x1
-	.byte	0x5a
-	.byte	0
-.LVUS27:
-	.uleb128 0
-	.uleb128 .LVU266
-	.uleb128 .LVU266
-	.uleb128 0
-.LLST27:
-	.byte	0x4
-	.uleb128 .LVL69-.Ltext0
-	.uleb128 .LVL72-.Ltext0
-	.uleb128 0x1
-	.byte	0x54
-	.byte	0x4
-	.uleb128 .LVL72-.Ltext0
-	.uleb128 .LFE54-.Ltext0
-	.uleb128 0x1
-	.byte	0x55
-	.byte	0
-.LVUS28:
-	.uleb128 0
-	.uleb128 .LVU267
-	.uleb128 .LVU267
-	.uleb128 0
-.LLST28:
-	.byte	0x4
-	.uleb128 .LVL69-.Ltext0
-	.uleb128 .LVL73-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL73-.Ltext0
-	.uleb128 .LFE54-.Ltext0
-	.uleb128 0x4
-	.byte	0xa3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.byte	0
-.LVUS29:
-	.uleb128 0
-	.uleb128 .LVU267
-	.uleb128 .LVU267
-	.uleb128 .LVU284
-	.uleb128 .LVU284
-	.uleb128 0
-.LLST29:
-	.byte	0x4
-	.uleb128 .LVL69-.Ltext0
-	.uleb128 .LVL73-.Ltext0
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x4
-	.uleb128 .LVL73-.Ltext0
-	.uleb128 .LVL79-.Ltext0
-	.uleb128 0x3
-	.byte	0x7b
-	.sleb128 -1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL79-.Ltext0
-	.uleb128 .LFE54-.Ltext0
-	.uleb128 0x4
-	.byte	0xa3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x9f
-	.byte	0
-.LVUS30:
-	.uleb128 .LVU262
-	.uleb128 .LVU281
-	.uleb128 .LVU281
-	.uleb128 .LVU283
-	.uleb128 .LVU283
-	.uleb128 0
-.LLST30:
-	.byte	0x4
-	.uleb128 .LVL70-.Ltext0
-	.uleb128 .LVL77-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL77-.Ltext0
-	.uleb128 .LVL78-.Ltext0
-	.uleb128 0x3
-	.byte	0x71
-	.sleb128 -1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL78-.Ltext0
-	.uleb128 .LFE54-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0
-.LVUS31:
-	.uleb128 .LVU261
-	.uleb128 .LVU267
-	.uleb128 .LVU267
-	.uleb128 .LVU284
-.LLST31:
-	.byte	0x4
-	.uleb128 .LVL70-.Ltext0
-	.uleb128 .LVL73-.Ltext0
-	.uleb128 0x2
-	.byte	0x30
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL73-.Ltext0
-	.uleb128 .LVL79-.Ltext0
-	.uleb128 0x1
-	.byte	0x54
-	.byte	0
-.LVUS32:
-	.uleb128 .LVU267
-	.uleb128 .LVU268
-	.uleb128 .LVU268
-	.uleb128 .LVU276
-	.uleb128 .LVU276
-	.uleb128 .LVU277
-.LLST32:
-	.byte	0x4
-	.uleb128 .LVL73-.Ltext0
-	.uleb128 .LVL74-.Ltext0
-	.uleb128 0x2
-	.byte	0x30
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL74-.Ltext0
-	.uleb128 .LVL75-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL75-.Ltext0
-	.uleb128 .LVL76-.Ltext0
-	.uleb128 0x3
-	.byte	0x70
-	.sleb128 1
-	.byte	0x9f
-	.byte	0
-.LVUS0:
-	.uleb128 0
-	.uleb128 .LVU3
-	.uleb128 .LVU3
-	.uleb128 0
-.LLST0:
-	.byte	0x4
-	.uleb128 .LVL0-.Ltext0
-	.uleb128 .LVL1-.Ltext0
-	.uleb128 0x1
-	.byte	0x55
-	.byte	0x4
-	.uleb128 .LVL1-.Ltext0
-	.uleb128 .LFE53-.Ltext0
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -5296
-	.byte	0
-.LVUS1:
-	.uleb128 0
-	.uleb128 .LVU21
-	.uleb128 .LVU21
-	.uleb128 0
-.LLST1:
-	.byte	0x4
-	.uleb128 .LVL0-.Ltext0
-	.uleb128 .LVL7-.Ltext0
-	.uleb128 0x1
-	.byte	0x54
-	.byte	0x4
-	.uleb128 .LVL7-.Ltext0
-	.uleb128 .LFE53-.Ltext0
-	.uleb128 0x4
-	.byte	0xa3
-	.uleb128 0x1
-	.byte	0x54
-	.byte	0x9f
-	.byte	0
-.LVUS2:
-	.uleb128 0
-	.uleb128 .LVU11
-	.uleb128 .LVU11
-	.uleb128 .LVU19
-	.uleb128 .LVU19
-	.uleb128 0
-.LLST2:
-	.byte	0x4
-	.uleb128 .LVL0-.Ltext0
-	.uleb128 .LVL3-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL3-.Ltext0
-	.uleb128 .LVL6-.Ltext0
-	.uleb128 0x1
-	.byte	0x55
-	.byte	0x4
-	.uleb128 .LVL6-.Ltext0
-	.uleb128 .LFE53-.Ltext0
-	.uleb128 0x4
-	.byte	0xa3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.byte	0
-.LVUS3:
-	.uleb128 0
-	.uleb128 .LVU11
-	.uleb128 .LVU11
-	.uleb128 0
-.LLST3:
-	.byte	0x4
-	.uleb128 .LVL0-.Ltext0
-	.uleb128 .LVL3-.Ltext0
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x4
-	.uleb128 .LVL3-.Ltext0
-	.uleb128 .LFE53-.Ltext0
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -5284
-	.byte	0
-.LVUS4:
-	.uleb128 .LVU23
-	.uleb128 .LVU69
-	.uleb128 .LVU69
-	.uleb128 .LVU159
-	.uleb128 .LVU159
-	.uleb128 .LVU209
-	.uleb128 .LVU209
-	.uleb128 .LVU210
-	.uleb128 .LVU250
-	.uleb128 .LVU251
-	.uleb128 .LVU251
-	.uleb128 .LVU252
-	.uleb128 .LVU252
-	.uleb128 .LVU255
-.LLST4:
-	.byte	0x4
-	.uleb128 .LVL7-.Ltext0
-	.uleb128 .LVL20-.Ltext0
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -5288
-	.byte	0x4
-	.uleb128 .LVL20-.Ltext0
-	.uleb128 .LVL38-.Ltext0
-	.uleb128 0x3
-	.byte	0x76
-	.sleb128 -1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL38-.Ltext0
-	.uleb128 .LVL43-.Ltext0
-	.uleb128 0x1
-	.byte	0x55
-	.byte	0x4
-	.uleb128 .LVL43-.Ltext0
-	.uleb128 .LVL44-1-.Ltext0
-	.uleb128 0xb
-	.byte	0x71
-	.sleb128 0
-	.byte	0x32
-	.byte	0x24
-	.byte	0x91
-	.sleb128 0
-	.byte	0x22
-	.byte	0xa
-	.value	0x1480
-	.byte	0x1c
-	.byte	0x4
-	.uleb128 .LVL63-.Ltext0
-	.uleb128 .LVL64-.Ltext0
-	.uleb128 0x1
-	.byte	0x55
-	.byte	0x4
-	.uleb128 .LVL64-.Ltext0
-	.uleb128 .LVL65-.Ltext0
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -5288
-	.byte	0x4
-	.uleb128 .LVL65-.Ltext0
-	.uleb128 .LVL67-.Ltext0
-	.uleb128 0x3
-	.byte	0x76
-	.sleb128 -1
-	.byte	0x9f
-	.byte	0
-.LVUS5:
-	.uleb128 .LVU24
-	.uleb128 .LVU33
-	.uleb128 .LVU36
-	.uleb128 .LVU39
-	.uleb128 .LVU39
-	.uleb128 .LVU42
-	.uleb128 .LVU42
-	.uleb128 .LVU63
-	.uleb128 .LVU63
-	.uleb128 .LVU67
-	.uleb128 .LVU67
-	.uleb128 .LVU69
-	.uleb128 .LVU69
-	.uleb128 .LVU72
-	.uleb128 .LVU72
-	.uleb128 .LVU76
-	.uleb128 .LVU76
-	.uleb128 .LVU119
-	.uleb128 .LVU119
-	.uleb128 .LVU179
-	.uleb128 .LVU179
-	.uleb128 .LVU210
-	.uleb128 .LVU250
-	.uleb128 .LVU253
-	.uleb128 .LVU253
-	.uleb128 .LVU255
-.LLST5:
-	.byte	0x4
-	.uleb128 .LVL7-.Ltext0
-	.uleb128 .LVL9-.Ltext0
-	.uleb128 0x2
-	.byte	0x30
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL10-.Ltext0
-	.uleb128 .LVL11-.Ltext0
-	.uleb128 0x3
-	.byte	0x71
-	.sleb128 -1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL11-.Ltext0
-	.uleb128 .LVL12-.Ltext0
-	.uleb128 0x3
-	.byte	0x78
-	.sleb128 -1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL12-.Ltext0
-	.uleb128 .LVL17-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0x4
-	.uleb128 .LVL17-.Ltext0
-	.uleb128 .LVL19-.Ltext0
-	.uleb128 0x1
-	.byte	0x5a
-	.byte	0x4
-	.uleb128 .LVL19-.Ltext0
-	.uleb128 .LVL20-.Ltext0
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -5288
-	.byte	0x4
-	.uleb128 .LVL20-.Ltext0
-	.uleb128 .LVL21-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0x4
-	.uleb128 .LVL21-.Ltext0
-	.uleb128 .LVL23-.Ltext0
-	.uleb128 0x3
-	.byte	0x78
-	.sleb128 1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL23-.Ltext0
-	.uleb128 .LVL31-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0x4
-	.uleb128 .LVL31-.Ltext0
-	.uleb128 .LVL39-.Ltext0
-	.uleb128 0x3
-	.byte	0x78
-	.sleb128 -1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL39-.Ltext0
-	.uleb128 .LVL44-1-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0x4
-	.uleb128 .LVL63-.Ltext0
-	.uleb128 .LVL66-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0x4
-	.uleb128 .LVL66-.Ltext0
-	.uleb128 .LVL67-.Ltext0
-	.uleb128 0x3
-	.byte	0x78
-	.sleb128 -1
-	.byte	0x9f
-	.byte	0
-.LVUS6:
-	.uleb128 .LVU73
-	.uleb128 .LVU211
-	.uleb128 .LVU250
-	.uleb128 .LVU251
-	.uleb128 .LVU252
-	.uleb128 .LVU255
-.LLST6:
-	.byte	0x4
-	.uleb128 .LVL22-.Ltext0
-	.uleb128 .LVL44-.Ltext0
-	.uleb128 0x1
-	.byte	0x5e
-	.byte	0x4
-	.uleb128 .LVL63-.Ltext0
-	.uleb128 .LVL64-.Ltext0
-	.uleb128 0x1
-	.byte	0x5e
-	.byte	0x4
-	.uleb128 .LVL65-.Ltext0
-	.uleb128 .LVL67-.Ltext0
-	.uleb128 0x1
-	.byte	0x5e
-	.byte	0
-.LVUS7:
-	.uleb128 .LVU116
-	.uleb128 .LVU211
-	.uleb128 .LVU250
-	.uleb128 .LVU251
-	.uleb128 .LVU253
-	.uleb128 .LVU255
-.LLST7:
-	.byte	0x4
-	.uleb128 .LVL30-.Ltext0
-	.uleb128 .LVL44-.Ltext0
-	.uleb128 0x1
-	.byte	0x5d
-	.byte	0x4
-	.uleb128 .LVL63-.Ltext0
-	.uleb128 .LVL64-.Ltext0
-	.uleb128 0x1
-	.byte	0x5d
-	.byte	0x4
-	.uleb128 .LVL66-.Ltext0
-	.uleb128 .LVL67-.Ltext0
-	.uleb128 0x1
-	.byte	0x5d
-	.byte	0
-.LVUS8:
-	.uleb128 .LVU10
-	.uleb128 .LVU11
-	.uleb128 .LVU11
-	.uleb128 .LVU16
-	.uleb128 .LVU16
-	.uleb128 .LVU17
-	.uleb128 .LVU32
-	.uleb128 .LVU33
-	.uleb128 .LVU36
-	.uleb128 .LVU39
-	.uleb128 .LVU39
-	.uleb128 .LVU63
-	.uleb128 .LVU63
-	.uleb128 .LVU66
-	.uleb128 .LVU210
-	.uleb128 .LVU211
-	.uleb128 .LVU213
-	.uleb128 .LVU229
-	.uleb128 .LVU229
-	.uleb128 .LVU230
-	.uleb128 .LVU233
-	.uleb128 .LVU235
-	.uleb128 .LVU235
-	.uleb128 .LVU239
-	.uleb128 .LVU239
-	.uleb128 .LVU248
-	.uleb128 .LVU249
-	.uleb128 .LVU250
-	.uleb128 .LVU251
-	.uleb128 .LVU252
-.LLST8:
-	.byte	0x4
-	.uleb128 .LVL2-.Ltext0
-	.uleb128 .LVL3-.Ltext0
-	.uleb128 0x2
-	.byte	0x30
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL3-.Ltext0
-	.uleb128 .LVL4-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL4-.Ltext0
-	.uleb128 .LVL5-.Ltext0
-	.uleb128 0x3
-	.byte	0x70
-	.sleb128 1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL8-.Ltext0
-	.uleb128 .LVL9-.Ltext0
-	.uleb128 0x2
-	.byte	0x31
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL10-.Ltext0
-	.uleb128 .LVL11-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL11-.Ltext0
-	.uleb128 .LVL17-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0x4
-	.uleb128 .LVL17-.Ltext0
-	.uleb128 .LVL18-.Ltext0
-	.uleb128 0x1
-	.byte	0x5a
-	.byte	0x4
-	.uleb128 .LVL44-.Ltext0
-	.uleb128 .LVL44-.Ltext0
-	.uleb128 0x2
-	.byte	0x31
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL45-.Ltext0
-	.uleb128 .LVL50-.Ltext0
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x4
-	.uleb128 .LVL50-.Ltext0
-	.uleb128 .LVL51-.Ltext0
-	.uleb128 0x3
-	.byte	0x72
-	.sleb128 1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL52-.Ltext0
-	.uleb128 .LVL54-.Ltext0
-	.uleb128 0x2
-	.byte	0x31
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL54-.Ltext0
-	.uleb128 .LVL55-.Ltext0
-	.uleb128 0xd
-	.byte	0x71
-	.sleb128 0
-	.byte	0x91
-	.sleb128 0
-	.byte	0x1c
-	.byte	0x23
-	.uleb128 0x106c
-	.byte	0x32
-	.byte	0x25
-	.byte	0x23
-	.uleb128 0x1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL55-.Ltext0
-	.uleb128 .LVL61-.Ltext0
-	.uleb128 0xd
-	.byte	0x71
-	.sleb128 0
-	.byte	0x91
-	.sleb128 0
-	.byte	0x1c
-	.byte	0x23
-	.uleb128 0x1068
-	.byte	0x32
-	.byte	0x25
-	.byte	0x23
-	.uleb128 0x1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL62-.Ltext0
-	.uleb128 .LVL63-.Ltext0
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x4
-	.uleb128 .LVL64-.Ltext0
-	.uleb128 .LVL65-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0
-.LVUS9:
-	.uleb128 .LVU213
-	.uleb128 .LVU217
-	.uleb128 .LVU217
-	.uleb128 .LVU223
-	.uleb128 .LVU236
-	.uleb128 .LVU239
-	.uleb128 .LVU239
-	.uleb128 .LVU241
-	.uleb128 .LVU241
-	.uleb128 .LVU242
-	.uleb128 .LVU242
-	.uleb128 .LVU243
-	.uleb128 .LVU243
-	.uleb128 .LVU245
-	.uleb128 .LVU245
-	.uleb128 .LVU246
-	.uleb128 .LVU246
-	.uleb128 .LVU247
-	.uleb128 .LVU249
-	.uleb128 .LVU250
-.LLST9:
-	.byte	0x4
-	.uleb128 .LVL45-.Ltext0
-	.uleb128 .LVL46-.Ltext0
-	.uleb128 0x2
-	.byte	0x30
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL46-.Ltext0
-	.uleb128 .LVL49-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL54-.Ltext0
-	.uleb128 .LVL55-.Ltext0
-	.uleb128 0x7
-	.byte	0x71
-	.sleb128 0
-	.byte	0x94
-	.byte	0x4
-	.byte	0x38
-	.byte	0x26
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL55-.Ltext0
-	.uleb128 .LVL56-.Ltext0
-	.uleb128 0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x38
-	.byte	0x26
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL56-.Ltext0
-	.uleb128 .LVL57-.Ltext0
-	.uleb128 0x5
-	.byte	0x72
-	.sleb128 0
-	.byte	0x38
-	.byte	0x26
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL57-.Ltext0
-	.uleb128 .LVL58-.Ltext0
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x4
-	.uleb128 .LVL58-.Ltext0
-	.uleb128 .LVL59-.Ltext0
-	.uleb128 0x3
-	.byte	0x70
-	.sleb128 1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL59-.Ltext0
-	.uleb128 .LVL60-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL60-.Ltext0
-	.uleb128 .LVL61-.Ltext0
-	.uleb128 0xe
-	.byte	0x71
-	.sleb128 -4
-	.byte	0x94
-	.byte	0x4
-	.byte	0x4f
-	.byte	0x25
-	.byte	0x72
-	.sleb128 0
-	.byte	0x22
-	.byte	0x31
-	.byte	0x26
-	.byte	0x23
-	.uleb128 0x1
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL62-.Ltext0
-	.uleb128 .LVL63-.Ltext0
-	.uleb128 0x2
-	.byte	0x30
-	.byte	0x9f
-	.byte	0
-.LVUS10:
-	.uleb128 .LVU213
-	.uleb128 .LVU217
-	.uleb128 .LVU218
-	.uleb128 .LVU220
-	.uleb128 .LVU249
-	.uleb128 .LVU250
-.LLST10:
-	.byte	0x4
-	.uleb128 .LVL45-.Ltext0
-	.uleb128 .LVL46-.Ltext0
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x4
-	.uleb128 .LVL46-.Ltext0
-	.uleb128 .LVL47-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL62-.Ltext0
-	.uleb128 .LVL63-.Ltext0
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0
-.LVUS11:
-	.uleb128 .LVU210
-	.uleb128 .LVU211
-	.uleb128 .LVU213
-	.uleb128 .LVU234
-	.uleb128 .LVU249
-	.uleb128 .LVU250
-.LLST11:
-	.byte	0x4
-	.uleb128 .LVL44-.Ltext0
-	.uleb128 .LVL44-.Ltext0
-	.uleb128 0x2
-	.byte	0x30
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL45-.Ltext0
-	.uleb128 .LVL53-.Ltext0
-	.uleb128 0x1
-	.byte	0x54
-	.byte	0x4
-	.uleb128 .LVL62-.Ltext0
-	.uleb128 .LVL63-.Ltext0
-	.uleb128 0x1
-	.byte	0x54
-	.byte	0
-.LVUS13:
-	.uleb128 .LVU45
-	.uleb128 .LVU51
-	.uleb128 .LVU51
-	.uleb128 .LVU52
-	.uleb128 .LVU52
-	.uleb128 .LVU56
-	.uleb128 .LVU56
-	.uleb128 .LVU60
-	.uleb128 .LVU251
-	.uleb128 .LVU252
-.LLST13:
-	.byte	0x4
-	.uleb128 .LVL12-.Ltext0
-	.uleb128 .LVL13-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0x4
-	.uleb128 .LVL13-.Ltext0
-	.uleb128 .LVL14-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL14-.Ltext0
-	.uleb128 .LVL15-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL15-.Ltext0
-	.uleb128 .LVL16-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL64-.Ltext0
-	.uleb128 .LVL65-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0
-.LVUS14:
-	.uleb128 .LVU46
-	.uleb128 .LVU63
-	.uleb128 .LVU63
-	.uleb128 .LVU69
-	.uleb128 .LVU251
-	.uleb128 .LVU252
-.LLST14:
-	.byte	0x4
-	.uleb128 .LVL12-.Ltext0
-	.uleb128 .LVL17-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0x4
-	.uleb128 .LVL17-.Ltext0
-	.uleb128 .LVL20-.Ltext0
-	.uleb128 0x1
-	.byte	0x5a
-	.byte	0x4
-	.uleb128 .LVL64-.Ltext0
-	.uleb128 .LVL65-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0
-.LVUS16:
-	.uleb128 .LVU78
-	.uleb128 .LVU87
-	.uleb128 .LVU87
-	.uleb128 .LVU94
-	.uleb128 .LVU94
-	.uleb128 .LVU99
-	.uleb128 .LVU99
-	.uleb128 .LVU110
-	.uleb128 .LVU252
-	.uleb128 .LVU253
-.LLST16:
-	.byte	0x4
-	.uleb128 .LVL23-.Ltext0
-	.uleb128 .LVL24-.Ltext0
-	.uleb128 0x2
-	.byte	0x31
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL24-.Ltext0
-	.uleb128 .LVL26-.Ltext0
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x4
-	.uleb128 .LVL26-.Ltext0
-	.uleb128 .LVL27-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL27-.Ltext0
-	.uleb128 .LVL29-.Ltext0
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x4
-	.uleb128 .LVL65-.Ltext0
-	.uleb128 .LVL66-.Ltext0
-	.uleb128 0x2
-	.byte	0x31
-	.byte	0x9f
-	.byte	0
-.LVUS17:
-	.uleb128 .LVU81
-	.uleb128 .LVU87
-	.uleb128 .LVU87
-	.uleb128 .LVU88
-	.uleb128 .LVU88
-	.uleb128 .LVU97
-	.uleb128 .LVU97
-	.uleb128 .LVU108
-	.uleb128 .LVU108
-	.uleb128 .LVU110
-	.uleb128 .LVU252
-	.uleb128 .LVU253
-.LLST17:
-	.byte	0x4
-	.uleb128 .LVL23-.Ltext0
-	.uleb128 .LVL24-.Ltext0
-	.uleb128 0x2
-	.byte	0x32
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL24-.Ltext0
-	.uleb128 .LVL25-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL25-.Ltext0
-	.uleb128 .LVL26-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL26-.Ltext0
-	.uleb128 .LVL28-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL28-.Ltext0
-	.uleb128 .LVL29-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL65-.Ltext0
-	.uleb128 .LVL66-.Ltext0
-	.uleb128 0x2
-	.byte	0x32
-	.byte	0x9f
-	.byte	0
-.LVUS18:
-	.uleb128 .LVU79
-	.uleb128 .LVU116
-	.uleb128 .LVU116
-	.uleb128 .LVU118
-	.uleb128 .LVU252
-	.uleb128 .LVU253
-.LLST18:
-	.byte	0x4
-	.uleb128 .LVL23-.Ltext0
-	.uleb128 .LVL30-.Ltext0
-	.uleb128 0x1
-	.byte	0x5d
-	.byte	0x4
-	.uleb128 .LVL30-.Ltext0
-	.uleb128 .LVL31-.Ltext0
-	.uleb128 0xb
-	.byte	0x72
-	.sleb128 0
-	.byte	0x32
-	.byte	0x24
-	.byte	0x91
-	.sleb128 0
-	.byte	0x22
-	.byte	0xa
-	.value	0x1480
-	.byte	0x1c
-	.byte	0x4
-	.uleb128 .LVL65-.Ltext0
-	.uleb128 .LVL66-.Ltext0
-	.uleb128 0x1
-	.byte	0x5d
-	.byte	0
-.LVUS20:
-	.uleb128 .LVU121
-	.uleb128 .LVU130
-	.uleb128 .LVU130
-	.uleb128 .LVU137
-	.uleb128 .LVU137
-	.uleb128 .LVU142
-	.uleb128 .LVU142
-	.uleb128 .LVU153
-	.uleb128 .LVU253
-	.uleb128 .LVU255
-.LLST20:
-	.byte	0x4
-	.uleb128 .LVL31-.Ltext0
-	.uleb128 .LVL32-.Ltext0
-	.uleb128 0x2
-	.byte	0x31
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL32-.Ltext0
-	.uleb128 .LVL34-.Ltext0
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x4
-	.uleb128 .LVL34-.Ltext0
-	.uleb128 .LVL35-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL35-.Ltext0
-	.uleb128 .LVL37-.Ltext0
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x4
-	.uleb128 .LVL66-.Ltext0
-	.uleb128 .LVL67-.Ltext0
-	.uleb128 0x2
-	.byte	0x31
-	.byte	0x9f
-	.byte	0
-.LVUS21:
-	.uleb128 .LVU124
-	.uleb128 .LVU130
-	.uleb128 .LVU130
-	.uleb128 .LVU131
-	.uleb128 .LVU131
-	.uleb128 .LVU140
-	.uleb128 .LVU140
-	.uleb128 .LVU151
-	.uleb128 .LVU151
-	.uleb128 .LVU153
-	.uleb128 .LVU253
-	.uleb128 .LVU255
-.LLST21:
-	.byte	0x4
-	.uleb128 .LVL31-.Ltext0
-	.uleb128 .LVL32-.Ltext0
-	.uleb128 0x2
-	.byte	0x32
-	.byte	0x9f
-	.byte	0x4
-	.uleb128 .LVL32-.Ltext0
-	.uleb128 .LVL33-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL33-.Ltext0
-	.uleb128 .LVL34-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL34-.Ltext0
-	.uleb128 .LVL36-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL36-.Ltext0
-	.uleb128 .LVL37-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL66-.Ltext0
-	.uleb128 .LVL67-.Ltext0
-	.uleb128 0x2
-	.byte	0x32
-	.byte	0x9f
-	.byte	0
-.LVUS22:
-	.uleb128 .LVU122
-	.uleb128 .LVU211
-	.uleb128 .LVU250
-	.uleb128 .LVU251
-	.uleb128 .LVU253
-	.uleb128 .LVU255
-.LLST22:
-	.byte	0x4
-	.uleb128 .LVL31-.Ltext0
-	.uleb128 .LVL44-.Ltext0
-	.uleb128 0x1
-	.byte	0x5f
-	.byte	0x4
-	.uleb128 .LVL63-.Ltext0
-	.uleb128 .LVL64-.Ltext0
-	.uleb128 0x1
-	.byte	0x5f
-	.byte	0x4
-	.uleb128 .LVL66-.Ltext0
-	.uleb128 .LVL67-.Ltext0
-	.uleb128 0x1
-	.byte	0x5f
-	.byte	0
-.LVUS24:
-	.uleb128 .LVU182
-	.uleb128 .LVU189
-	.uleb128 .LVU189
-	.uleb128 .LVU190
-	.uleb128 .LVU190
-	.uleb128 .LVU194
-	.uleb128 .LVU194
-	.uleb128 .LVU210
-	.uleb128 .LVU250
-	.uleb128 .LVU251
-.LLST24:
-	.byte	0x4
-	.uleb128 .LVL39-.Ltext0
-	.uleb128 .LVL40-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0x4
-	.uleb128 .LVL40-.Ltext0
-	.uleb128 .LVL41-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL41-.Ltext0
-	.uleb128 .LVL42-.Ltext0
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x4
-	.uleb128 .LVL42-.Ltext0
-	.uleb128 .LVL44-1-.Ltext0
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x4
-	.uleb128 .LVL63-.Ltext0
-	.uleb128 .LVL64-.Ltext0
-	.uleb128 0x1
-	.byte	0x58
-	.byte	0
-.LVUS25:
-	.uleb128 .LVU183
-	.uleb128 .LVU209
-	.uleb128 .LVU209
-	.uleb128 .LVU210
-	.uleb128 .LVU250
-	.uleb128 .LVU251
-.LLST25:
-	.byte	0x4
-	.uleb128 .LVL39-.Ltext0
-	.uleb128 .LVL43-.Ltext0
-	.uleb128 0x1
-	.byte	0x55
-	.byte	0x4
-	.uleb128 .LVL43-.Ltext0
-	.uleb128 .LVL44-1-.Ltext0
-	.uleb128 0xb
-	.byte	0x71
-	.sleb128 0
-	.byte	0x32
-	.byte	0x24
-	.byte	0x91
-	.sleb128 0
-	.byte	0x22
-	.byte	0xa
-	.value	0x1480
-	.byte	0x1c
-	.byte	0x4
-	.uleb128 .LVL63-.Ltext0
-	.uleb128 .LVL64-.Ltext0
-	.uleb128 0x1
-	.byte	0x55
-	.byte	0
-.Ldebug_loc3:
-	.section	.debug_aranges,"",@progbits
-	.long	0x2c
-	.value	0x2
-	.long	.Ldebug_info0
-	.byte	0x8
-	.byte	0
-	.value	0
-	.value	0
-	.quad	.Ltext0
-	.quad	.Letext0-.Ltext0
+                                        ; -- End function
+	.section	__DWARF,__debug_loc,regular,debug
+Lsection_debug_loc:
+Ldebug_loc0:
+.set Lset0, Lfunc_begin0-Lfunc_begin0
+	.quad	Lset0
+.set Lset1, Ltmp3-Lfunc_begin0
+	.quad	Lset1
+	.short	1                               ; Loc expr size
+	.byte	80                              ; DW_OP_reg0
+.set Lset2, Ltmp3-Lfunc_begin0
+	.quad	Lset2
+.set Lset3, Ltmp117-Lfunc_begin0
+	.quad	Lset3
+	.short	1                               ; Loc expr size
+	.byte	101                             ; DW_OP_reg21
+.set Lset4, Ltmp117-Lfunc_begin0
+	.quad	Lset4
+.set Lset5, Ltmp118-Lfunc_begin0
+	.quad	Lset5
+	.short	4                               ; Loc expr size
+	.byte	163                             ; DW_OP_entry_value
+	.byte	1                               ; 1
+	.byte	80                              ; DW_OP_reg0
+	.byte	159                             ; DW_OP_stack_value
+.set Lset6, Ltmp118-Lfunc_begin0
+	.quad	Lset6
+.set Lset7, Lfunc_end0-Lfunc_begin0
+	.quad	Lset7
+	.short	1                               ; Loc expr size
+	.byte	101                             ; DW_OP_reg21
 	.quad	0
 	.quad	0
-	.section	.debug_rnglists,"",@progbits
-.Ldebug_ranges0:
-	.long	.Ldebug_ranges3-.Ldebug_ranges2
-.Ldebug_ranges2:
-	.value	0x5
-	.byte	0x8
+Ldebug_loc1:
+.set Lset8, Lfunc_begin0-Lfunc_begin0
+	.quad	Lset8
+.set Lset9, Ltmp18-Lfunc_begin0
+	.quad	Lset9
+	.short	1                               ; Loc expr size
+	.byte	81                              ; DW_OP_reg1
+.set Lset10, Ltmp22-Lfunc_begin0
+	.quad	Lset10
+.set Lset11, Ltmp24-Lfunc_begin0
+	.quad	Lset11
+	.short	4                               ; Loc expr size
+	.byte	163                             ; DW_OP_entry_value
+	.byte	1                               ; 1
+	.byte	81                              ; DW_OP_reg1
+	.byte	159                             ; DW_OP_stack_value
+	.quad	0
+	.quad	0
+Ldebug_loc2:
+.set Lset12, Lfunc_begin0-Lfunc_begin0
+	.quad	Lset12
+.set Lset13, Ltmp2-Lfunc_begin0
+	.quad	Lset13
+	.short	1                               ; Loc expr size
+	.byte	82                              ; DW_OP_reg2
+.set Lset14, Ltmp2-Lfunc_begin0
+	.quad	Lset14
+.set Lset15, Ltmp116-Lfunc_begin0
+	.quad	Lset15
+	.short	1                               ; Loc expr size
+	.byte	100                             ; DW_OP_reg20
+.set Lset16, Ltmp118-Lfunc_begin0
+	.quad	Lset16
+.set Lset17, Lfunc_end0-Lfunc_begin0
+	.quad	Lset17
+	.short	1                               ; Loc expr size
+	.byte	100                             ; DW_OP_reg20
+	.quad	0
+	.quad	0
+Ldebug_loc3:
+.set Lset18, Lfunc_begin0-Lfunc_begin0
+	.quad	Lset18
+.set Lset19, Ltmp1-Lfunc_begin0
+	.quad	Lset19
+	.short	1                               ; Loc expr size
+	.byte	83                              ; DW_OP_reg3
+.set Lset20, Ltmp1-Lfunc_begin0
+	.quad	Lset20
+.set Lset21, Ltmp116-Lfunc_begin0
+	.quad	Lset21
+	.short	1                               ; Loc expr size
+	.byte	99                              ; DW_OP_reg19
+.set Lset22, Ltmp118-Lfunc_begin0
+	.quad	Lset22
+.set Lset23, Lfunc_end0-Lfunc_begin0
+	.quad	Lset23
+	.short	1                               ; Loc expr size
+	.byte	99                              ; DW_OP_reg19
+	.quad	0
+	.quad	0
+Ldebug_loc4:
+.set Lset24, Ltmp4-Lfunc_begin0
+	.quad	Lset24
+.set Lset25, Ltmp12-Lfunc_begin0
+	.quad	Lset25
+	.short	2                               ; Loc expr size
+	.byte	48                              ; DW_OP_lit0
+	.byte	159                             ; DW_OP_stack_value
+.set Lset26, Ltmp16-Lfunc_begin0
+	.quad	Lset26
+.set Lset27, Ltmp18-Lfunc_begin0
+	.quad	Lset27
+	.short	2                               ; Loc expr size
+	.byte	49                              ; DW_OP_lit1
+	.byte	159                             ; DW_OP_stack_value
+.set Lset28, Ltmp19-Lfunc_begin0
+	.quad	Lset28
+.set Lset29, Ltmp24-Lfunc_begin0
+	.quad	Lset29
+	.short	2                               ; Loc expr size
+	.byte	49                              ; DW_OP_lit1
+	.byte	159                             ; DW_OP_stack_value
+.set Lset30, Ltmp24-Lfunc_begin0
+	.quad	Lset30
+.set Lset31, Ltmp37-Lfunc_begin0
+	.quad	Lset31
+	.short	1                               ; Loc expr size
+	.byte	89                              ; DW_OP_reg9
+.set Lset32, Ltmp92-Lfunc_begin0
+	.quad	Lset32
+.set Lset33, Ltmp102-Lfunc_begin0
+	.quad	Lset33
+	.short	1                               ; Loc expr size
+	.byte	89                              ; DW_OP_reg9
+.set Lset34, Ltmp102-Lfunc_begin0
+	.quad	Lset34
+.set Lset35, Ltmp109-Lfunc_begin0
+	.quad	Lset35
+	.short	2                               ; Loc expr size
+	.byte	49                              ; DW_OP_lit1
+	.byte	159                             ; DW_OP_stack_value
+	.quad	0
+	.quad	0
+Ldebug_loc5:
+.set Lset36, Ltmp15-Lfunc_begin0
+	.quad	Lset36
+.set Lset37, Ltmp39-Lfunc_begin0
+	.quad	Lset37
+	.short	1                               ; Loc expr size
+	.byte	100                             ; DW_OP_reg20
+.set Lset38, Ltmp39-Lfunc_begin0
+	.quad	Lset38
+.set Lset39, Ltmp88-Lfunc_begin0
+	.quad	Lset39
+	.short	1                               ; Loc expr size
+	.byte	88                              ; DW_OP_reg8
+	.quad	0
+	.quad	0
+Ldebug_loc6:
+.set Lset40, Ltmp15-Lfunc_begin0
+	.quad	Lset40
+.set Lset41, Ltmp24-Lfunc_begin0
+	.quad	Lset41
+	.short	2                               ; Loc expr size
+	.byte	48                              ; DW_OP_lit0
+	.byte	159                             ; DW_OP_stack_value
+.set Lset42, Ltmp24-Lfunc_begin0
+	.quad	Lset42
+.set Lset43, Ltmp37-Lfunc_begin0
+	.quad	Lset43
+	.short	1                               ; Loc expr size
+	.byte	88                              ; DW_OP_reg8
+.set Lset44, Ltmp37-Lfunc_begin0
+	.quad	Lset44
+.set Lset45, Ltmp39-Lfunc_begin0
+	.quad	Lset45
+	.short	1                               ; Loc expr size
+	.byte	100                             ; DW_OP_reg20
+.set Lset46, Ltmp39-Lfunc_begin0
+	.quad	Lset46
+.set Lset47, Ltmp42-Lfunc_begin0
+	.quad	Lset47
+	.short	1                               ; Loc expr size
+	.byte	90                              ; DW_OP_reg10
+.set Lset48, Ltmp42-Lfunc_begin0
+	.quad	Lset48
+.set Lset49, Ltmp45-Lfunc_begin0
+	.quad	Lset49
+	.short	1                               ; Loc expr size
+	.byte	89                              ; DW_OP_reg9
+.set Lset50, Ltmp45-Lfunc_begin0
+	.quad	Lset50
+.set Lset51, Ltmp64-Lfunc_begin0
+	.quad	Lset51
+	.short	1                               ; Loc expr size
+	.byte	90                              ; DW_OP_reg10
+.set Lset52, Ltmp64-Lfunc_begin0
+	.quad	Lset52
+.set Lset53, Ltmp78-Lfunc_begin0
+	.quad	Lset53
+	.short	1                               ; Loc expr size
+	.byte	93                              ; DW_OP_reg13
+.set Lset54, Ltmp81-Lfunc_begin0
+	.quad	Lset54
+.set Lset55, Ltmp88-Lfunc_begin0
+	.quad	Lset55
+	.short	1                               ; Loc expr size
+	.byte	90                              ; DW_OP_reg10
+	.quad	0
+	.quad	0
+Ldebug_loc7:
+.set Lset56, Ltmp30-Lfunc_begin0
+	.quad	Lset56
+.set Lset57, Ltmp32-Lfunc_begin0
+	.quad	Lset57
+	.short	1                               ; Loc expr size
+	.byte	88                              ; DW_OP_reg8
+.set Lset58, Ltmp33-Lfunc_begin0
+	.quad	Lset58
+.set Lset59, Ltmp34-Lfunc_begin0
+	.quad	Lset59
+	.short	1                               ; Loc expr size
+	.byte	92                              ; DW_OP_reg12
+.set Lset60, Ltmp34-Lfunc_begin0
+	.quad	Lset60
+.set Lset61, Ltmp35-Lfunc_begin0
+	.quad	Lset61
+	.short	1                               ; Loc expr size
+	.byte	93                              ; DW_OP_reg13
+	.quad	0
+	.quad	0
+Ldebug_loc8:
+.set Lset62, Ltmp25-Lfunc_begin0
+	.quad	Lset62
+.set Lset63, Ltmp27-Lfunc_begin0
+	.quad	Lset63
+	.short	1                               ; Loc expr size
+	.byte	89                              ; DW_OP_reg9
+.set Lset64, Ltmp30-Lfunc_begin0
+	.quad	Lset64
+.set Lset65, Ltmp35-Lfunc_begin0
+	.quad	Lset65
+	.short	1                               ; Loc expr size
+	.byte	89                              ; DW_OP_reg9
+	.quad	0
+	.quad	0
+Ldebug_loc9:
+.set Lset66, Ltmp82-Lfunc_begin0
+	.quad	Lset66
+.set Lset67, Ltmp84-Lfunc_begin0
+	.quad	Lset67
+	.short	1                               ; Loc expr size
+	.byte	90                              ; DW_OP_reg10
+.set Lset68, Ltmp85-Lfunc_begin0
+	.quad	Lset68
+.set Lset69, Ltmp86-Lfunc_begin0
+	.quad	Lset69
+	.short	1                               ; Loc expr size
+	.byte	93                              ; DW_OP_reg13
+.set Lset70, Ltmp86-Lfunc_begin0
+	.quad	Lset70
+.set Lset71, Ltmp88-Lfunc_begin0
+	.quad	Lset71
+	.short	1                               ; Loc expr size
+	.byte	94                              ; DW_OP_reg14
+	.quad	0
+	.quad	0
+Ldebug_loc10:
+.set Lset72, Ltmp40-Lfunc_begin0
+	.quad	Lset72
+.set Lset73, Ltmp43-Lfunc_begin0
+	.quad	Lset73
+	.short	1                               ; Loc expr size
+	.byte	88                              ; DW_OP_reg8
+.set Lset74, Ltmp82-Lfunc_begin0
+	.quad	Lset74
+.set Lset75, Ltmp88-Lfunc_begin0
+	.quad	Lset75
+	.short	1                               ; Loc expr size
+	.byte	88                              ; DW_OP_reg8
+	.quad	0
+	.quad	0
+Ldebug_loc11:
+.set Lset76, Ltmp45-Lfunc_begin0
+	.quad	Lset76
+.set Lset77, Ltmp47-Lfunc_begin0
+	.quad	Lset77
+	.short	2                               ; Loc expr size
+	.byte	50                              ; DW_OP_lit2
+	.byte	159                             ; DW_OP_stack_value
+.set Lset78, Ltmp52-Lfunc_begin0
+	.quad	Lset78
+.set Lset79, Ltmp56-Lfunc_begin0
+	.quad	Lset79
+	.short	1                               ; Loc expr size
+	.byte	96                              ; DW_OP_reg16
+.set Lset80, Ltmp56-Lfunc_begin0
+	.quad	Lset80
+.set Lset81, Ltmp57-Lfunc_begin0
+	.quad	Lset81
+	.short	1                               ; Loc expr size
+	.byte	97                              ; DW_OP_reg17
+.set Lset82, Ltmp57-Lfunc_begin0
+	.quad	Lset82
+.set Lset83, Ltmp59-Lfunc_begin0
+	.quad	Lset83
+	.short	2                               ; Loc expr size
+	.byte	50                              ; DW_OP_lit2
+	.byte	159                             ; DW_OP_stack_value
+	.quad	0
+	.quad	0
+Ldebug_loc12:
+.set Lset84, Ltmp45-Lfunc_begin0
+	.quad	Lset84
+.set Lset85, Ltmp59-Lfunc_begin0
+	.quad	Lset85
+	.short	1                               ; Loc expr size
+	.byte	92                              ; DW_OP_reg12
+.set Lset86, Ltmp60-Lfunc_begin0
+	.quad	Lset86
+.set Lset87, Ltmp62-Lfunc_begin0
+	.quad	Lset87
+	.short	1                               ; Loc expr size
+	.byte	92                              ; DW_OP_reg12
+	.quad	0
+	.quad	0
+Ldebug_loc13:
+.set Lset88, Ltmp45-Lfunc_begin0
+	.quad	Lset88
+.set Lset89, Ltmp47-Lfunc_begin0
+	.quad	Lset89
+	.short	2                               ; Loc expr size
+	.byte	49                              ; DW_OP_lit1
+	.byte	159                             ; DW_OP_stack_value
+.set Lset90, Ltmp47-Lfunc_begin0
+	.quad	Lset90
+.set Lset91, Ltmp55-Lfunc_begin0
+	.quad	Lset91
+	.short	1                               ; Loc expr size
+	.byte	95                              ; DW_OP_reg15
+.set Lset92, Ltmp55-Lfunc_begin0
+	.quad	Lset92
+.set Lset93, Ltmp57-Lfunc_begin0
+	.quad	Lset93
+	.short	1                               ; Loc expr size
+	.byte	96                              ; DW_OP_reg16
+.set Lset94, Ltmp57-Lfunc_begin0
+	.quad	Lset94
+.set Lset95, Ltmp59-Lfunc_begin0
+	.quad	Lset95
+	.short	2                               ; Loc expr size
+	.byte	49                              ; DW_OP_lit1
+	.byte	159                             ; DW_OP_stack_value
+	.quad	0
+	.quad	0
+Ldebug_loc14:
+.set Lset96, Ltmp64-Lfunc_begin0
+	.quad	Lset96
+.set Lset97, Ltmp67-Lfunc_begin0
+	.quad	Lset97
+	.short	2                               ; Loc expr size
+	.byte	50                              ; DW_OP_lit2
+	.byte	159                             ; DW_OP_stack_value
+.set Lset98, Ltmp72-Lfunc_begin0
+	.quad	Lset98
+.set Lset99, Ltmp76-Lfunc_begin0
+	.quad	Lset99
+	.short	1                               ; Loc expr size
+	.byte	80                              ; DW_OP_reg0
+.set Lset100, Ltmp76-Lfunc_begin0
+	.quad	Lset100
+.set Lset101, Ltmp78-Lfunc_begin0
+	.quad	Lset101
+	.short	1                               ; Loc expr size
+	.byte	97                              ; DW_OP_reg17
+	.quad	0
+	.quad	0
+Ldebug_loc15:
+.set Lset102, Ltmp64-Lfunc_begin0
+	.quad	Lset102
+.set Lset103, Ltmp67-Lfunc_begin0
+	.quad	Lset103
+	.short	2                               ; Loc expr size
+	.byte	49                              ; DW_OP_lit1
+	.byte	159                             ; DW_OP_stack_value
+.set Lset104, Ltmp67-Lfunc_begin0
+	.quad	Lset104
+.set Lset105, Ltmp75-Lfunc_begin0
+	.quad	Lset105
+	.short	1                               ; Loc expr size
+	.byte	95                              ; DW_OP_reg15
+.set Lset106, Ltmp75-Lfunc_begin0
+	.quad	Lset106
+.set Lset107, Ltmp78-Lfunc_begin0
+	.quad	Lset107
+	.short	1                               ; Loc expr size
+	.byte	80                              ; DW_OP_reg0
+	.quad	0
+	.quad	0
+Ldebug_loc16:
+.set Lset108, Ltmp62-Lfunc_begin0
+	.quad	Lset108
+.set Lset109, Ltmp78-Lfunc_begin0
+	.quad	Lset109
+	.short	1                               ; Loc expr size
+	.byte	92                              ; DW_OP_reg12
+	.quad	0
+	.quad	0
+Ldebug_loc17:
+.set Lset110, Ltmp63-Lfunc_begin0
+	.quad	Lset110
+.set Lset111, Ltmp78-Lfunc_begin0
+	.quad	Lset111
+	.short	1                               ; Loc expr size
+	.byte	94                              ; DW_OP_reg14
+	.quad	0
+	.quad	0
+Ldebug_loc18:
+.set Lset112, Ltmp92-Lfunc_begin0
+	.quad	Lset112
+.set Lset113, Ltmp105-Lfunc_begin0
+	.quad	Lset113
+	.short	1                               ; Loc expr size
+	.byte	88                              ; DW_OP_reg8
+	.quad	0
+	.quad	0
+Ldebug_loc19:
+.set Lset114, Ltmp93-Lfunc_begin0
+	.quad	Lset114
+.set Lset115, Ltmp94-Lfunc_begin0
+	.quad	Lset115
+	.short	3                               ; Loc expr size
+	.byte	122                             ; DW_OP_breg10
+	.byte	1                               ; 1
+	.byte	159                             ; DW_OP_stack_value
+.set Lset116, Ltmp94-Lfunc_begin0
+	.quad	Lset116
+.set Lset117, Ltmp95-Lfunc_begin0
+	.quad	Lset117
+	.short	3                               ; Loc expr size
+	.byte	122                             ; DW_OP_breg10
+	.byte	2                               ; 2
+	.byte	159                             ; DW_OP_stack_value
+.set Lset118, Ltmp110-Lfunc_begin0
+	.quad	Lset118
+.set Lset119, Ltmp111-Lfunc_begin0
+	.quad	Lset119
+	.short	1                               ; Loc expr size
+	.byte	90                              ; DW_OP_reg10
+	.quad	0
+	.quad	0
+Ldebug_loc20:
+.set Lset120, Ltmp93-Lfunc_begin0
+	.quad	Lset120
+.set Lset121, Ltmp97-Lfunc_begin0
+	.quad	Lset121
+	.short	1                               ; Loc expr size
+	.byte	91                              ; DW_OP_reg11
+	.quad	0
+	.quad	0
+Ldebug_loc21:
+.set Lset122, Lfunc_begin1-Lfunc_begin0
+	.quad	Lset122
+.set Lset123, Ltmp120-Lfunc_begin0
+	.quad	Lset123
+	.short	1                               ; Loc expr size
+	.byte	82                              ; DW_OP_reg2
+.set Lset124, Ltmp121-Lfunc_begin0
+	.quad	Lset124
+.set Lset125, Ltmp122-Lfunc_begin0
+	.quad	Lset125
+	.short	1                               ; Loc expr size
+	.byte	82                              ; DW_OP_reg2
+.set Lset126, Ltmp125-Lfunc_begin0
+	.quad	Lset126
+.set Lset127, Ltmp126-Lfunc_begin0
+	.quad	Lset127
+	.short	4                               ; Loc expr size
+	.byte	163                             ; DW_OP_entry_value
+	.byte	1                               ; 1
+	.byte	82                              ; DW_OP_reg2
+	.byte	159                             ; DW_OP_stack_value
+	.quad	0
+	.quad	0
+Ldebug_loc22:
+.set Lset128, Lfunc_begin1-Lfunc_begin0
+	.quad	Lset128
+.set Lset129, Ltmp124-Lfunc_begin0
+	.quad	Lset129
+	.short	1                               ; Loc expr size
+	.byte	82                              ; DW_OP_reg2
+.set Lset130, Ltmp124-Lfunc_begin0
+	.quad	Lset130
+.set Lset131, Ltmp125-Lfunc_begin0
+	.quad	Lset131
+	.short	1                               ; Loc expr size
+	.byte	90                              ; DW_OP_reg10
+.set Lset132, Ltmp125-Lfunc_begin0
+	.quad	Lset132
+.set Lset133, Lfunc_end1-Lfunc_begin0
+	.quad	Lset133
+	.short	1                               ; Loc expr size
+	.byte	82                              ; DW_OP_reg2
+	.quad	0
+	.quad	0
+Ldebug_loc23:
+.set Lset134, Lfunc_begin1-Lfunc_begin0
+	.quad	Lset134
+.set Lset135, Ltmp120-Lfunc_begin0
+	.quad	Lset135
+	.short	2                               ; Loc expr size
+	.byte	48                              ; DW_OP_lit0
+	.byte	159                             ; DW_OP_stack_value
+.set Lset136, Ltmp121-Lfunc_begin0
+	.quad	Lset136
+.set Lset137, Ltmp122-Lfunc_begin0
+	.quad	Lset137
+	.short	2                               ; Loc expr size
+	.byte	48                              ; DW_OP_lit0
+	.byte	159                             ; DW_OP_stack_value
+.set Lset138, Ltmp122-Lfunc_begin0
+	.quad	Lset138
+.set Lset139, Lfunc_end1-Lfunc_begin0
+	.quad	Lset139
+	.short	1                               ; Loc expr size
+	.byte	88                              ; DW_OP_reg8
+	.quad	0
+	.quad	0
+Ldebug_loc24:
+.set Lset140, Ltmp126-Lfunc_begin0
+	.quad	Lset140
+.set Lset141, Ltmp128-Lfunc_begin0
+	.quad	Lset141
+	.short	2                               ; Loc expr size
+	.byte	48                              ; DW_OP_lit0
+	.byte	159                             ; DW_OP_stack_value
+.set Lset142, Ltmp128-Lfunc_begin0
+	.quad	Lset142
+.set Lset143, Ltmp129-Lfunc_begin0
+	.quad	Lset143
+	.short	12                              ; Loc expr size
+	.byte	124                             ; DW_OP_breg12
+	.byte	0                               ; 0
+	.byte	112                             ; DW_OP_breg0
+	.byte	0                               ; 0
+	.byte	28                              ; DW_OP_minus
+	.byte	17                              ; DW_OP_consts
+	.byte	4                               ; 4
+	.byte	27                              ; DW_OP_div
+	.byte	17                              ; DW_OP_consts
+	.byte	1                               ; 1
+	.byte	34                              ; DW_OP_plus
+	.byte	159                             ; DW_OP_stack_value
+.set Lset144, Ltmp131-Lfunc_begin0
+	.quad	Lset144
+.set Lset145, Lfunc_end1-Lfunc_begin0
+	.quad	Lset145
+	.short	9                               ; Loc expr size
+	.byte	124                             ; DW_OP_breg12
+	.byte	0                               ; 0
+	.byte	112                             ; DW_OP_breg0
+	.byte	0                               ; 0
+	.byte	28                              ; DW_OP_minus
+	.byte	17                              ; DW_OP_consts
+	.byte	4                               ; 4
+	.byte	27                              ; DW_OP_div
+	.byte	159                             ; DW_OP_stack_value
+	.quad	0
+	.quad	0
+Ldebug_loc25:
+.set Lset146, Lfunc_begin2-Lfunc_begin0
+	.quad	Lset146
+.set Lset147, Ltmp146-Lfunc_begin0
+	.quad	Lset147
+	.short	1                               ; Loc expr size
+	.byte	82                              ; DW_OP_reg2
+.set Lset148, Ltmp146-Lfunc_begin0
+	.quad	Lset148
+.set Lset149, Ltmp147-Lfunc_begin0
+	.quad	Lset149
+	.short	4                               ; Loc expr size
+	.byte	163                             ; DW_OP_entry_value
+	.byte	1                               ; 1
+	.byte	82                              ; DW_OP_reg2
+	.byte	159                             ; DW_OP_stack_value
+.set Lset150, Ltmp147-Lfunc_begin0
+	.quad	Lset150
+.set Lset151, Ltmp160-Lfunc_begin0
+	.quad	Lset151
+	.short	1                               ; Loc expr size
+	.byte	82                              ; DW_OP_reg2
+.set Lset152, Ltmp160-Lfunc_begin0
+	.quad	Lset152
+.set Lset153, Lfunc_end2-Lfunc_begin0
+	.quad	Lset153
+	.short	4                               ; Loc expr size
+	.byte	163                             ; DW_OP_entry_value
+	.byte	1                               ; 1
+	.byte	82                              ; DW_OP_reg2
+	.byte	159                             ; DW_OP_stack_value
+	.quad	0
+	.quad	0
+Ldebug_loc26:
+.set Lset154, Lfunc_begin2-Lfunc_begin0
+	.quad	Lset154
+.set Lset155, Ltmp140-Lfunc_begin0
+	.quad	Lset155
+	.short	1                               ; Loc expr size
+	.byte	83                              ; DW_OP_reg3
+.set Lset156, Ltmp141-Lfunc_begin0
+	.quad	Lset156
+.set Lset157, Ltmp144-Lfunc_begin0
+	.quad	Lset157
+	.short	4                               ; Loc expr size
+	.byte	163                             ; DW_OP_entry_value
+	.byte	1                               ; 1
+	.byte	83                              ; DW_OP_reg3
+	.byte	159                             ; DW_OP_stack_value
+.set Lset158, Ltmp147-Lfunc_begin0
+	.quad	Lset158
+.set Lset159, Ltmp161-Lfunc_begin0
+	.quad	Lset159
+	.short	1                               ; Loc expr size
+	.byte	83                              ; DW_OP_reg3
+.set Lset160, Ltmp161-Lfunc_begin0
+	.quad	Lset160
+.set Lset161, Ltmp163-Lfunc_begin0
+	.quad	Lset161
+	.short	4                               ; Loc expr size
+	.byte	163                             ; DW_OP_entry_value
+	.byte	1                               ; 1
+	.byte	83                              ; DW_OP_reg3
+	.byte	159                             ; DW_OP_stack_value
+	.quad	0
+	.quad	0
+Ldebug_loc27:
+.set Lset162, Lfunc_begin2-Lfunc_begin0
+	.quad	Lset162
+.set Lset163, Ltmp145-Lfunc_begin0
+	.quad	Lset163
+	.short	1                               ; Loc expr size
+	.byte	86                              ; DW_OP_reg6
+.set Lset164, Ltmp145-Lfunc_begin0
+	.quad	Lset164
+.set Lset165, Ltmp147-Lfunc_begin0
+	.quad	Lset165
+	.short	4                               ; Loc expr size
+	.byte	163                             ; DW_OP_entry_value
+	.byte	1                               ; 1
+	.byte	86                              ; DW_OP_reg6
+	.byte	159                             ; DW_OP_stack_value
+.set Lset166, Ltmp147-Lfunc_begin0
+	.quad	Lset166
+.set Lset167, Ltmp162-Lfunc_begin0
+	.quad	Lset167
+	.short	1                               ; Loc expr size
+	.byte	86                              ; DW_OP_reg6
+.set Lset168, Ltmp162-Lfunc_begin0
+	.quad	Lset168
+.set Lset169, Lfunc_end2-Lfunc_begin0
+	.quad	Lset169
+	.short	4                               ; Loc expr size
+	.byte	163                             ; DW_OP_entry_value
+	.byte	1                               ; 1
+	.byte	86                              ; DW_OP_reg6
+	.byte	159                             ; DW_OP_stack_value
+	.quad	0
+	.quad	0
+Ldebug_loc28:
+.set Lset170, Ltmp136-Lfunc_begin0
+	.quad	Lset170
+.set Lset171, Ltmp137-Lfunc_begin0
+	.quad	Lset171
+	.short	1                               ; Loc expr size
+	.byte	84                              ; DW_OP_reg4
+.set Lset172, Ltmp137-Lfunc_begin0
+	.quad	Lset172
+.set Lset173, Ltmp140-Lfunc_begin0
+	.quad	Lset173
+	.short	2                               ; Loc expr size
+	.byte	48                              ; DW_OP_lit0
+	.byte	159                             ; DW_OP_stack_value
+.set Lset174, Ltmp147-Lfunc_begin0
+	.quad	Lset174
+.set Lset175, Ltmp148-Lfunc_begin0
+	.quad	Lset175
+	.short	1                               ; Loc expr size
+	.byte	84                              ; DW_OP_reg4
+.set Lset176, Ltmp148-Lfunc_begin0
+	.quad	Lset176
+.set Lset177, Ltmp149-Lfunc_begin0
+	.quad	Lset177
+	.short	1                               ; Loc expr size
+	.byte	90                              ; DW_OP_reg10
+.set Lset178, Ltmp149-Lfunc_begin0
+	.quad	Lset178
+.set Lset179, Ltmp150-Lfunc_begin0
+	.quad	Lset179
+	.short	1                               ; Loc expr size
+	.byte	91                              ; DW_OP_reg11
+.set Lset180, Ltmp150-Lfunc_begin0
+	.quad	Lset180
+.set Lset181, Ltmp159-Lfunc_begin0
+	.quad	Lset181
+	.short	1                               ; Loc expr size
+	.byte	90                              ; DW_OP_reg10
+.set Lset182, Ltmp159-Lfunc_begin0
+	.quad	Lset182
+.set Lset183, Ltmp163-Lfunc_begin0
+	.quad	Lset183
+	.short	2                               ; Loc expr size
+	.byte	48                              ; DW_OP_lit0
+	.byte	159                             ; DW_OP_stack_value
+.set Lset184, Ltmp163-Lfunc_begin0
+	.quad	Lset184
+.set Lset185, Ltmp164-Lfunc_begin0
+	.quad	Lset185
+	.short	2                               ; Loc expr size
+	.byte	49                              ; DW_OP_lit1
+	.byte	159                             ; DW_OP_stack_value
+.set Lset186, Ltmp164-Lfunc_begin0
+	.quad	Lset186
+.set Lset187, Ltmp165-Lfunc_begin0
+	.quad	Lset187
+	.short	2                               ; Loc expr size
+	.byte	51                              ; DW_OP_lit3
+	.byte	159                             ; DW_OP_stack_value
+.set Lset188, Ltmp165-Lfunc_begin0
+	.quad	Lset188
+.set Lset189, Ltmp166-Lfunc_begin0
+	.quad	Lset189
+	.short	2                               ; Loc expr size
+	.byte	53                              ; DW_OP_lit5
+	.byte	159                             ; DW_OP_stack_value
+.set Lset190, Ltmp166-Lfunc_begin0
+	.quad	Lset190
+.set Lset191, Ltmp167-Lfunc_begin0
+	.quad	Lset191
+	.short	2                               ; Loc expr size
+	.byte	55                              ; DW_OP_lit7
+	.byte	159                             ; DW_OP_stack_value
+.set Lset192, Ltmp167-Lfunc_begin0
+	.quad	Lset192
+.set Lset193, Ltmp168-Lfunc_begin0
+	.quad	Lset193
+	.short	2                               ; Loc expr size
+	.byte	57                              ; DW_OP_lit9
+	.byte	159                             ; DW_OP_stack_value
+.set Lset194, Ltmp168-Lfunc_begin0
+	.quad	Lset194
+.set Lset195, Ltmp169-Lfunc_begin0
+	.quad	Lset195
+	.short	2                               ; Loc expr size
+	.byte	59                              ; DW_OP_lit11
+	.byte	159                             ; DW_OP_stack_value
+.set Lset196, Ltmp169-Lfunc_begin0
+	.quad	Lset196
+.set Lset197, Ltmp170-Lfunc_begin0
+	.quad	Lset197
+	.short	2                               ; Loc expr size
+	.byte	61                              ; DW_OP_lit13
+	.byte	159                             ; DW_OP_stack_value
+.set Lset198, Ltmp170-Lfunc_begin0
+	.quad	Lset198
+.set Lset199, Ltmp171-Lfunc_begin0
+	.quad	Lset199
+	.short	2                               ; Loc expr size
+	.byte	63                              ; DW_OP_lit15
+	.byte	159                             ; DW_OP_stack_value
+.set Lset200, Ltmp171-Lfunc_begin0
+	.quad	Lset200
+.set Lset201, Ltmp172-Lfunc_begin0
+	.quad	Lset201
+	.short	2                               ; Loc expr size
+	.byte	65                              ; DW_OP_lit17
+	.byte	159                             ; DW_OP_stack_value
+.set Lset202, Ltmp172-Lfunc_begin0
+	.quad	Lset202
+.set Lset203, Ltmp173-Lfunc_begin0
+	.quad	Lset203
+	.short	2                               ; Loc expr size
+	.byte	67                              ; DW_OP_lit19
+	.byte	159                             ; DW_OP_stack_value
+.set Lset204, Ltmp173-Lfunc_begin0
+	.quad	Lset204
+.set Lset205, Ltmp174-Lfunc_begin0
+	.quad	Lset205
+	.short	2                               ; Loc expr size
+	.byte	69                              ; DW_OP_lit21
+	.byte	159                             ; DW_OP_stack_value
+.set Lset206, Ltmp174-Lfunc_begin0
+	.quad	Lset206
+.set Lset207, Ltmp175-Lfunc_begin0
+	.quad	Lset207
+	.short	2                               ; Loc expr size
+	.byte	71                              ; DW_OP_lit23
+	.byte	159                             ; DW_OP_stack_value
+.set Lset208, Ltmp175-Lfunc_begin0
+	.quad	Lset208
+.set Lset209, Ltmp177-Lfunc_begin0
+	.quad	Lset209
+	.short	1                               ; Loc expr size
+	.byte	84                              ; DW_OP_reg4
+.set Lset210, Ltmp177-Lfunc_begin0
+	.quad	Lset210
+.set Lset211, Ltmp179-Lfunc_begin0
+	.quad	Lset211
+	.short	21                              ; Loc expr size
+	.byte	120                             ; DW_OP_breg8
+	.byte	0                               ; 0
+	.byte	17                              ; DW_OP_consts
+	.byte	4                               ; 4
+	.byte	17                              ; DW_OP_consts
+	.byte	4                               ; 4
+	.byte	116                             ; DW_OP_breg4
+	.byte	0                               ; 0
+	.byte	30                              ; DW_OP_mul
+	.byte	34                              ; DW_OP_plus
+	.byte	113                             ; DW_OP_breg1
+	.byte	0                               ; 0
+	.byte	34                              ; DW_OP_plus
+	.byte	28                              ; DW_OP_minus
+	.byte	17                              ; DW_OP_consts
+	.byte	4                               ; 4
+	.byte	27                              ; DW_OP_div
+	.byte	116                             ; DW_OP_breg4
+	.byte	0                               ; 0
+	.byte	34                              ; DW_OP_plus
+	.byte	159                             ; DW_OP_stack_value
+.set Lset212, Ltmp179-Lfunc_begin0
+	.quad	Lset212
+.set Lset213, Ltmp180-Lfunc_begin0
+	.quad	Lset213
+	.short	24                              ; Loc expr size
+	.byte	120                             ; DW_OP_breg8
+	.byte	0                               ; 0
+	.byte	17                              ; DW_OP_consts
+	.byte	4                               ; 4
+	.byte	17                              ; DW_OP_consts
+	.byte	4                               ; 4
+	.byte	116                             ; DW_OP_breg4
+	.byte	0                               ; 0
+	.byte	30                              ; DW_OP_mul
+	.byte	34                              ; DW_OP_plus
+	.byte	113                             ; DW_OP_breg1
+	.byte	0                               ; 0
+	.byte	34                              ; DW_OP_plus
+	.byte	28                              ; DW_OP_minus
+	.byte	17                              ; DW_OP_consts
+	.byte	4                               ; 4
+	.byte	27                              ; DW_OP_div
+	.byte	17                              ; DW_OP_consts
+	.byte	1                               ; 1
+	.byte	116                             ; DW_OP_breg4
+	.byte	0                               ; 0
+	.byte	34                              ; DW_OP_plus
+	.byte	34                              ; DW_OP_plus
+	.byte	159                             ; DW_OP_stack_value
+.set Lset214, Ltmp182-Lfunc_begin0
+	.quad	Lset214
+.set Lset215, Ltmp192-Lfunc_begin0
+	.quad	Lset215
+	.short	3                               ; Loc expr size
+	.byte	116                             ; DW_OP_breg4
+	.byte	1                               ; 1
+	.byte	159                             ; DW_OP_stack_value
+.set Lset216, Ltmp193-Lfunc_begin0
+	.quad	Lset216
+.set Lset217, Ltmp195-Lfunc_begin0
+	.quad	Lset217
+	.short	3                               ; Loc expr size
+	.byte	122                             ; DW_OP_breg10
+	.byte	1                               ; 1
+	.byte	159                             ; DW_OP_stack_value
+	.quad	0
+	.quad	0
+Ldebug_loc29:
+.set Lset218, Ltmp136-Lfunc_begin0
+	.quad	Lset218
+.set Lset219, Ltmp137-Lfunc_begin0
+	.quad	Lset219
+	.short	2                               ; Loc expr size
+	.byte	48                              ; DW_OP_lit0
+	.byte	159                             ; DW_OP_stack_value
+.set Lset220, Ltmp147-Lfunc_begin0
+	.quad	Lset220
+.set Lset221, Ltmp148-Lfunc_begin0
+	.quad	Lset221
+	.short	2                               ; Loc expr size
+	.byte	48                              ; DW_OP_lit0
+	.byte	159                             ; DW_OP_stack_value
+.set Lset222, Ltmp148-Lfunc_begin0
+	.quad	Lset222
+.set Lset223, Ltmp159-Lfunc_begin0
+	.quad	Lset223
+	.short	1                               ; Loc expr size
+	.byte	88                              ; DW_OP_reg8
+	.quad	0
+	.quad	0
+Ldebug_loc30:
+.set Lset224, Ltmp151-Lfunc_begin0
+	.quad	Lset224
+.set Lset225, Ltmp153-Lfunc_begin0
+	.quad	Lset225
+	.short	2                               ; Loc expr size
+	.byte	48                              ; DW_OP_lit0
+	.byte	159                             ; DW_OP_stack_value
+.set Lset226, Ltmp153-Lfunc_begin0
+	.quad	Lset226
+.set Lset227, Ltmp159-Lfunc_begin0
+	.quad	Lset227
+	.short	1                               ; Loc expr size
+	.byte	91                              ; DW_OP_reg11
+	.quad	0
+	.quad	0
+Ldebug_loc31:
+.set Lset228, Ltmp175-Lfunc_begin0
+	.quad	Lset228
+.set Lset229, Ltmp177-Lfunc_begin0
+	.quad	Lset229
+	.short	2                               ; Loc expr size
+	.byte	48                              ; DW_OP_lit0
+	.byte	159                             ; DW_OP_stack_value
+.set Lset230, Ltmp177-Lfunc_begin0
+	.quad	Lset230
+.set Lset231, Ltmp182-Lfunc_begin0
+	.quad	Lset231
+	.short	1                               ; Loc expr size
+	.byte	89                              ; DW_OP_reg9
+	.quad	0
+	.quad	0
+	.section	__DWARF,__debug_abbrev,regular,debug
+Lsection_abbrev:
+	.byte	1                               ; Abbreviation Code
+	.byte	17                              ; DW_TAG_compile_unit
+	.byte	1                               ; DW_CHILDREN_yes
+	.byte	37                              ; DW_AT_producer
+	.byte	14                              ; DW_FORM_strp
+	.byte	19                              ; DW_AT_language
+	.byte	5                               ; DW_FORM_data2
+	.byte	3                               ; DW_AT_name
+	.byte	14                              ; DW_FORM_strp
+	.ascii	"\202|"                         ; DW_AT_LLVM_sysroot
+	.byte	14                              ; DW_FORM_strp
+	.byte	16                              ; DW_AT_stmt_list
+	.byte	23                              ; DW_FORM_sec_offset
+	.byte	27                              ; DW_AT_comp_dir
+	.byte	14                              ; DW_FORM_strp
+	.ascii	"\341\177"                      ; DW_AT_APPLE_optimized
+	.byte	25                              ; DW_FORM_flag_present
+	.byte	17                              ; DW_AT_low_pc
+	.byte	1                               ; DW_FORM_addr
+	.byte	18                              ; DW_AT_high_pc
+	.byte	6                               ; DW_FORM_data4
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	2                               ; Abbreviation Code
+	.byte	22                              ; DW_TAG_typedef
+	.byte	0                               ; DW_CHILDREN_no
+	.byte	73                              ; DW_AT_type
+	.byte	19                              ; DW_FORM_ref4
+	.byte	3                               ; DW_AT_name
+	.byte	14                              ; DW_FORM_strp
+	.byte	58                              ; DW_AT_decl_file
+	.byte	11                              ; DW_FORM_data1
+	.byte	59                              ; DW_AT_decl_line
+	.byte	11                              ; DW_FORM_data1
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	3                               ; Abbreviation Code
+	.byte	36                              ; DW_TAG_base_type
+	.byte	0                               ; DW_CHILDREN_no
+	.byte	3                               ; DW_AT_name
+	.byte	14                              ; DW_FORM_strp
+	.byte	62                              ; DW_AT_encoding
+	.byte	11                              ; DW_FORM_data1
+	.byte	11                              ; DW_AT_byte_size
+	.byte	11                              ; DW_FORM_data1
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	4                               ; Abbreviation Code
+	.byte	46                              ; DW_TAG_subprogram
+	.byte	1                               ; DW_CHILDREN_yes
+	.byte	17                              ; DW_AT_low_pc
+	.byte	1                               ; DW_FORM_addr
+	.byte	18                              ; DW_AT_high_pc
+	.byte	6                               ; DW_FORM_data4
+	.byte	64                              ; DW_AT_frame_base
+	.byte	24                              ; DW_FORM_exprloc
+	.byte	122                             ; DW_AT_call_all_calls
+	.byte	25                              ; DW_FORM_flag_present
+	.byte	3                               ; DW_AT_name
+	.byte	14                              ; DW_FORM_strp
+	.byte	58                              ; DW_AT_decl_file
+	.byte	11                              ; DW_FORM_data1
+	.byte	59                              ; DW_AT_decl_line
+	.byte	11                              ; DW_FORM_data1
+	.byte	39                              ; DW_AT_prototyped
+	.byte	25                              ; DW_FORM_flag_present
+	.byte	63                              ; DW_AT_external
+	.byte	25                              ; DW_FORM_flag_present
+	.ascii	"\341\177"                      ; DW_AT_APPLE_optimized
+	.byte	25                              ; DW_FORM_flag_present
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	5                               ; Abbreviation Code
+	.byte	5                               ; DW_TAG_formal_parameter
+	.byte	0                               ; DW_CHILDREN_no
+	.byte	2                               ; DW_AT_location
+	.byte	23                              ; DW_FORM_sec_offset
+	.byte	3                               ; DW_AT_name
+	.byte	14                              ; DW_FORM_strp
+	.byte	58                              ; DW_AT_decl_file
+	.byte	11                              ; DW_FORM_data1
+	.byte	59                              ; DW_AT_decl_line
+	.byte	11                              ; DW_FORM_data1
+	.byte	73                              ; DW_AT_type
+	.byte	19                              ; DW_FORM_ref4
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	6                               ; Abbreviation Code
+	.byte	52                              ; DW_TAG_variable
+	.byte	0                               ; DW_CHILDREN_no
+	.byte	2                               ; DW_AT_location
+	.byte	24                              ; DW_FORM_exprloc
+	.byte	3                               ; DW_AT_name
+	.byte	14                              ; DW_FORM_strp
+	.byte	58                              ; DW_AT_decl_file
+	.byte	11                              ; DW_FORM_data1
+	.byte	59                              ; DW_AT_decl_line
+	.byte	11                              ; DW_FORM_data1
+	.byte	73                              ; DW_AT_type
+	.byte	19                              ; DW_FORM_ref4
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	7                               ; Abbreviation Code
+	.byte	52                              ; DW_TAG_variable
+	.byte	0                               ; DW_CHILDREN_no
+	.byte	2                               ; DW_AT_location
+	.byte	23                              ; DW_FORM_sec_offset
+	.byte	3                               ; DW_AT_name
+	.byte	14                              ; DW_FORM_strp
+	.byte	58                              ; DW_AT_decl_file
+	.byte	11                              ; DW_FORM_data1
+	.byte	59                              ; DW_AT_decl_line
+	.byte	11                              ; DW_FORM_data1
+	.byte	73                              ; DW_AT_type
+	.byte	19                              ; DW_FORM_ref4
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	8                               ; Abbreviation Code
+	.byte	52                              ; DW_TAG_variable
+	.byte	0                               ; DW_CHILDREN_no
+	.byte	3                               ; DW_AT_name
+	.byte	14                              ; DW_FORM_strp
+	.byte	58                              ; DW_AT_decl_file
+	.byte	11                              ; DW_FORM_data1
+	.byte	59                              ; DW_AT_decl_line
+	.byte	11                              ; DW_FORM_data1
+	.byte	73                              ; DW_AT_type
+	.byte	19                              ; DW_FORM_ref4
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	9                               ; Abbreviation Code
+	.byte	11                              ; DW_TAG_lexical_block
+	.byte	1                               ; DW_CHILDREN_yes
+	.byte	85                              ; DW_AT_ranges
+	.byte	23                              ; DW_FORM_sec_offset
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	10                              ; Abbreviation Code
+	.byte	11                              ; DW_TAG_lexical_block
+	.byte	1                               ; DW_CHILDREN_yes
+	.byte	17                              ; DW_AT_low_pc
+	.byte	1                               ; DW_FORM_addr
+	.byte	18                              ; DW_AT_high_pc
+	.byte	6                               ; DW_FORM_data4
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	11                              ; Abbreviation Code
+	.byte	72                              ; DW_TAG_call_site
+	.byte	1                               ; DW_CHILDREN_yes
+	.byte	127                             ; DW_AT_call_origin
+	.byte	19                              ; DW_FORM_ref4
+	.byte	125                             ; DW_AT_call_return_pc
+	.byte	1                               ; DW_FORM_addr
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	12                              ; Abbreviation Code
+	.byte	73                              ; DW_TAG_call_site_parameter
+	.byte	0                               ; DW_CHILDREN_no
+	.byte	2                               ; DW_AT_location
+	.byte	24                              ; DW_FORM_exprloc
+	.byte	126                             ; DW_AT_call_value
+	.byte	24                              ; DW_FORM_exprloc
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	13                              ; Abbreviation Code
+	.byte	46                              ; DW_TAG_subprogram
+	.byte	1                               ; DW_CHILDREN_yes
+	.byte	3                               ; DW_AT_name
+	.byte	14                              ; DW_FORM_strp
+	.byte	58                              ; DW_AT_decl_file
+	.byte	11                              ; DW_FORM_data1
+	.byte	59                              ; DW_AT_decl_line
+	.byte	11                              ; DW_FORM_data1
+	.byte	39                              ; DW_AT_prototyped
+	.byte	25                              ; DW_FORM_flag_present
+	.byte	60                              ; DW_AT_declaration
+	.byte	25                              ; DW_FORM_flag_present
+	.byte	63                              ; DW_AT_external
+	.byte	25                              ; DW_FORM_flag_present
+	.ascii	"\341\177"                      ; DW_AT_APPLE_optimized
+	.byte	25                              ; DW_FORM_flag_present
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	14                              ; Abbreviation Code
+	.byte	5                               ; DW_TAG_formal_parameter
+	.byte	0                               ; DW_CHILDREN_no
+	.byte	73                              ; DW_AT_type
+	.byte	19                              ; DW_FORM_ref4
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	15                              ; Abbreviation Code
+	.byte	46                              ; DW_TAG_subprogram
+	.byte	1                               ; DW_CHILDREN_yes
+	.byte	17                              ; DW_AT_low_pc
+	.byte	1                               ; DW_FORM_addr
+	.byte	18                              ; DW_AT_high_pc
+	.byte	6                               ; DW_FORM_data4
+	.ascii	"\347\177"                      ; DW_AT_APPLE_omit_frame_ptr
+	.byte	25                              ; DW_FORM_flag_present
+	.byte	64                              ; DW_AT_frame_base
+	.byte	24                              ; DW_FORM_exprloc
+	.byte	122                             ; DW_AT_call_all_calls
+	.byte	25                              ; DW_FORM_flag_present
+	.byte	3                               ; DW_AT_name
+	.byte	14                              ; DW_FORM_strp
+	.byte	58                              ; DW_AT_decl_file
+	.byte	11                              ; DW_FORM_data1
+	.byte	59                              ; DW_AT_decl_line
+	.byte	11                              ; DW_FORM_data1
+	.byte	39                              ; DW_AT_prototyped
+	.byte	25                              ; DW_FORM_flag_present
+	.byte	63                              ; DW_AT_external
+	.byte	25                              ; DW_FORM_flag_present
+	.ascii	"\341\177"                      ; DW_AT_APPLE_optimized
+	.byte	25                              ; DW_FORM_flag_present
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	16                              ; Abbreviation Code
+	.byte	5                               ; DW_TAG_formal_parameter
+	.byte	0                               ; DW_CHILDREN_no
+	.byte	2                               ; DW_AT_location
+	.byte	24                              ; DW_FORM_exprloc
+	.byte	3                               ; DW_AT_name
+	.byte	14                              ; DW_FORM_strp
+	.byte	58                              ; DW_AT_decl_file
+	.byte	11                              ; DW_FORM_data1
+	.byte	59                              ; DW_AT_decl_line
+	.byte	11                              ; DW_FORM_data1
+	.byte	73                              ; DW_AT_type
+	.byte	19                              ; DW_FORM_ref4
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	17                              ; Abbreviation Code
+	.byte	1                               ; DW_TAG_array_type
+	.byte	1                               ; DW_CHILDREN_yes
+	.byte	73                              ; DW_AT_type
+	.byte	19                              ; DW_FORM_ref4
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	18                              ; Abbreviation Code
+	.byte	33                              ; DW_TAG_subrange_type
+	.byte	0                               ; DW_CHILDREN_no
+	.byte	73                              ; DW_AT_type
+	.byte	19                              ; DW_FORM_ref4
+	.byte	55                              ; DW_AT_count
+	.byte	5                               ; DW_FORM_data2
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	19                              ; Abbreviation Code
+	.byte	36                              ; DW_TAG_base_type
+	.byte	0                               ; DW_CHILDREN_no
+	.byte	3                               ; DW_AT_name
+	.byte	14                              ; DW_FORM_strp
+	.byte	11                              ; DW_AT_byte_size
+	.byte	11                              ; DW_FORM_data1
+	.byte	62                              ; DW_AT_encoding
+	.byte	11                              ; DW_FORM_data1
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	20                              ; Abbreviation Code
+	.byte	15                              ; DW_TAG_pointer_type
+	.byte	0                               ; DW_CHILDREN_no
+	.byte	73                              ; DW_AT_type
+	.byte	19                              ; DW_FORM_ref4
+	.byte	0                               ; EOM(1)
+	.byte	0                               ; EOM(2)
+	.byte	0                               ; EOM(3)
+	.section	__DWARF,__debug_info,regular,debug
+Lsection_info:
+Lcu_begin0:
+.set Lset232, Ldebug_info_end0-Ldebug_info_start0 ; Length of Unit
+	.long	Lset232
+Ldebug_info_start0:
+	.short	4                               ; DWARF version number
+.set Lset233, Lsection_abbrev-Lsection_abbrev ; Offset Into Abbrev. Section
+	.long	Lset233
+	.byte	8                               ; Address Size (in bytes)
+	.byte	1                               ; Abbrev [1] 0xb:0x396 DW_TAG_compile_unit
+	.long	0                               ; DW_AT_producer
+	.short	12                              ; DW_AT_language
+	.long	48                              ; DW_AT_name
+	.long	58                              ; DW_AT_LLVM_sysroot
+.set Lset234, Lline_table_start0-Lsection_line ; DW_AT_stmt_list
+	.long	Lset234
+	.long	60                              ; DW_AT_comp_dir
+                                        ; DW_AT_APPLE_optimized
+	.quad	Lfunc_begin0                    ; DW_AT_low_pc
+.set Lset235, Lfunc_end2-Lfunc_begin0   ; DW_AT_high_pc
+	.long	Lset235
+	.byte	2                               ; Abbrev [2] 0x2e:0xb DW_TAG_typedef
+	.long	57                              ; DW_AT_type
+	.long	98                              ; DW_AT_name
+	.byte	1                               ; DW_AT_decl_file
+	.byte	42                              ; DW_AT_decl_line
+	.byte	3                               ; Abbrev [3] 0x39:0x7 DW_TAG_base_type
+	.long	103                             ; DW_AT_name
+	.byte	8                               ; DW_AT_encoding
+	.byte	1                               ; DW_AT_byte_size
+	.byte	4                               ; Abbrev [4] 0x40:0x1d2 DW_TAG_subprogram
+	.quad	Lfunc_begin0                    ; DW_AT_low_pc
+.set Lset236, Lfunc_end0-Lfunc_begin0   ; DW_AT_high_pc
+	.long	Lset236
+	.byte	1                               ; DW_AT_frame_base
+	.byte	109
+                                        ; DW_AT_call_all_calls
+	.long	117                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	63                              ; DW_AT_decl_line
+                                        ; DW_AT_prototyped
+                                        ; DW_AT_external
+                                        ; DW_AT_APPLE_optimized
+	.byte	5                               ; Abbrev [5] 0x55:0xf DW_TAG_formal_parameter
+.set Lset237, Ldebug_loc0-Lsection_debug_loc ; DW_AT_location
+	.long	Lset237
+	.long	253                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	63                              ; DW_AT_decl_line
+	.long	907                             ; DW_AT_type
+	.byte	5                               ; Abbrev [5] 0x64:0xf DW_TAG_formal_parameter
+.set Lset238, Ldebug_loc1-Lsection_debug_loc ; DW_AT_location
+	.long	Lset238
+	.long	263                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	64                              ; DW_AT_decl_line
+	.long	923                             ; DW_AT_type
+	.byte	5                               ; Abbrev [5] 0x73:0xf DW_TAG_formal_parameter
+.set Lset239, Ldebug_loc2-Lsection_debug_loc ; DW_AT_location
+	.long	Lset239
+	.long	268                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	65                              ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	5                               ; Abbrev [5] 0x82:0xf DW_TAG_formal_parameter
+.set Lset240, Ldebug_loc3-Lsection_debug_loc ; DW_AT_location
+	.long	Lset240
+	.long	278                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	66                              ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	6                               ; Abbrev [6] 0x91:0xf DW_TAG_variable
+	.byte	3                               ; DW_AT_location
+	.byte	145
+	.ascii	"\220w"
+	.long	208                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	75                              ; DW_AT_decl_line
+	.long	863                             ; DW_AT_type
+	.byte	6                               ; Abbrev [6] 0xa0:0xf DW_TAG_variable
+	.byte	3                               ; DW_AT_location
+	.byte	143
+	.ascii	"\300\020"
+	.long	239                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	76                              ; DW_AT_decl_line
+	.long	894                             ; DW_AT_type
+	.byte	6                               ; Abbrev [6] 0xaf:0xe DW_TAG_variable
+	.byte	2                               ; DW_AT_location
+	.byte	143
+	.byte	48
+	.long	246                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	77                              ; DW_AT_decl_line
+	.long	894                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0xbd:0xf DW_TAG_variable
+.set Lset241, Ldebug_loc4-Lsection_debug_loc ; DW_AT_location
+	.long	Lset241
+	.long	285                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	72                              ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0xcc:0xf DW_TAG_variable
+.set Lset242, Ldebug_loc5-Lsection_debug_loc ; DW_AT_location
+	.long	Lset242
+	.long	287                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	72                              ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0xdb:0xf DW_TAG_variable
+.set Lset243, Ldebug_loc6-Lsection_debug_loc ; DW_AT_location
+	.long	Lset243
+	.long	294                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	72                              ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0xea:0xf DW_TAG_variable
+.set Lset244, Ldebug_loc16-Lsection_debug_loc ; DW_AT_location
+	.long	Lset244
+	.long	310                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	72                              ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0xf9:0xf DW_TAG_variable
+.set Lset245, Ldebug_loc18-Lsection_debug_loc ; DW_AT_location
+	.long	Lset245
+	.long	313                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	73                              ; DW_AT_decl_line
+	.long	46                              ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x108:0xf DW_TAG_variable
+.set Lset246, Ldebug_loc19-Lsection_debug_loc ; DW_AT_location
+	.long	Lset246
+	.long	321                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	72                              ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x117:0xf DW_TAG_variable
+.set Lset247, Ldebug_loc20-Lsection_debug_loc ; DW_AT_location
+	.long	Lset247
+	.long	323                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	72                              ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	8                               ; Abbrev [8] 0x126:0xb DW_TAG_variable
+	.long	325                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	72                              ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	9                               ; Abbrev [9] 0x131:0x24 DW_TAG_lexical_block
+.set Lset248, Ldebug_ranges0-Ldebug_range ; DW_AT_ranges
+	.long	Lset248
+	.byte	7                               ; Abbrev [7] 0x136:0xf DW_TAG_variable
+.set Lset249, Ldebug_loc7-Lsection_debug_loc ; DW_AT_location
+	.long	Lset249
+	.long	300                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	95                              ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x145:0xf DW_TAG_variable
+.set Lset250, Ldebug_loc8-Lsection_debug_loc ; DW_AT_location
+	.long	Lset250
+	.long	303                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	95                              ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	0                               ; End Of Children Mark
+	.byte	9                               ; Abbrev [9] 0x155:0x24 DW_TAG_lexical_block
+.set Lset251, Ldebug_ranges1-Ldebug_range ; DW_AT_ranges
+	.long	Lset251
+	.byte	7                               ; Abbrev [7] 0x15a:0xf DW_TAG_variable
+.set Lset252, Ldebug_loc9-Lsection_debug_loc ; DW_AT_location
+	.long	Lset252
+	.long	300                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	109                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x169:0xf DW_TAG_variable
+.set Lset253, Ldebug_loc10-Lsection_debug_loc ; DW_AT_location
+	.long	Lset253
+	.long	303                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	109                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	0                               ; End Of Children Mark
+	.byte	9                               ; Abbrev [9] 0x179:0x33 DW_TAG_lexical_block
+.set Lset254, Ldebug_ranges2-Ldebug_range ; DW_AT_ranges
+	.long	Lset254
+	.byte	7                               ; Abbrev [7] 0x17e:0xf DW_TAG_variable
+.set Lset255, Ldebug_loc11-Lsection_debug_loc ; DW_AT_location
+	.long	Lset255
+	.long	307                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	101                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x18d:0xf DW_TAG_variable
+.set Lset256, Ldebug_loc12-Lsection_debug_loc ; DW_AT_location
+	.long	Lset256
+	.long	303                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	101                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x19c:0xf DW_TAG_variable
+.set Lset257, Ldebug_loc13-Lsection_debug_loc ; DW_AT_location
+	.long	Lset257
+	.long	300                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	101                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	0                               ; End Of Children Mark
+	.byte	10                              ; Abbrev [10] 0x1ac:0x3b DW_TAG_lexical_block
+	.quad	Ltmp64                          ; DW_AT_low_pc
+.set Lset258, Ltmp79-Ltmp64             ; DW_AT_high_pc
+	.long	Lset258
+	.byte	7                               ; Abbrev [7] 0x1b9:0xf DW_TAG_variable
+.set Lset259, Ldebug_loc14-Lsection_debug_loc ; DW_AT_location
+	.long	Lset259
+	.long	307                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	102                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x1c8:0xf DW_TAG_variable
+.set Lset260, Ldebug_loc15-Lsection_debug_loc ; DW_AT_location
+	.long	Lset260
+	.long	300                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	102                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x1d7:0xf DW_TAG_variable
+.set Lset261, Ldebug_loc17-Lsection_debug_loc ; DW_AT_location
+	.long	Lset261
+	.long	303                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	102                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	0                               ; End Of Children Mark
+	.byte	11                              ; Abbrev [11] 0x1e7:0x15 DW_TAG_call_site
+	.long	530                             ; DW_AT_call_origin
+	.quad	Ltmp37                          ; DW_AT_call_return_pc
+	.byte	12                              ; Abbrev [12] 0x1f4:0x7 DW_TAG_call_site_parameter
+	.byte	1                               ; DW_AT_location
+	.byte	80
+	.byte	3                               ; DW_AT_call_value
+	.byte	16
+	.ascii	"\321\017"
+	.byte	0                               ; End Of Children Mark
+	.byte	11                              ; Abbrev [11] 0x1fc:0x15 DW_TAG_call_site
+	.long	530                             ; DW_AT_call_origin
+	.quad	Ltmp90                          ; DW_AT_call_return_pc
+	.byte	12                              ; Abbrev [12] 0x209:0x7 DW_TAG_call_site_parameter
+	.byte	1                               ; DW_AT_location
+	.byte	80
+	.byte	3                               ; DW_AT_call_value
+	.byte	16
+	.ascii	"\322\017"
+	.byte	0                               ; End Of Children Mark
+	.byte	0                               ; End Of Children Mark
+	.byte	13                              ; Abbrev [13] 0x212:0xd DW_TAG_subprogram
+	.long	139                             ; DW_AT_name
+	.byte	1                               ; DW_AT_decl_file
+	.byte	58                              ; DW_AT_decl_line
+                                        ; DW_AT_prototyped
+                                        ; DW_AT_declaration
+                                        ; DW_AT_external
+                                        ; DW_AT_APPLE_optimized
+	.byte	14                              ; Abbrev [14] 0x219:0x5 DW_TAG_formal_parameter
+	.long	543                             ; DW_AT_type
+	.byte	0                               ; End Of Children Mark
+	.byte	3                               ; Abbrev [3] 0x21f:0x7 DW_TAG_base_type
+	.long	161                             ; DW_AT_name
+	.byte	5                               ; DW_AT_encoding
+	.byte	4                               ; DW_AT_byte_size
+	.byte	15                              ; Abbrev [15] 0x226:0x86 DW_TAG_subprogram
+	.quad	Lfunc_begin1                    ; DW_AT_low_pc
+.set Lset262, Lfunc_end1-Lfunc_begin1   ; DW_AT_high_pc
+	.long	Lset262
+                                        ; DW_AT_APPLE_omit_frame_ptr
+	.byte	1                               ; DW_AT_frame_base
+	.byte	111
+                                        ; DW_AT_call_all_calls
+	.long	165                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	152                             ; DW_AT_decl_line
+                                        ; DW_AT_prototyped
+                                        ; DW_AT_external
+                                        ; DW_AT_APPLE_optimized
+	.byte	16                              ; Abbrev [16] 0x23b:0xd DW_TAG_formal_parameter
+	.byte	1                               ; DW_AT_location
+	.byte	80
+	.long	328                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	152                             ; DW_AT_decl_line
+	.long	923                             ; DW_AT_type
+	.byte	16                              ; Abbrev [16] 0x248:0xd DW_TAG_formal_parameter
+	.byte	1                               ; DW_AT_location
+	.byte	81
+	.long	333                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	153                             ; DW_AT_decl_line
+	.long	907                             ; DW_AT_type
+	.byte	5                               ; Abbrev [5] 0x255:0xf DW_TAG_formal_parameter
+.set Lset263, Ldebug_loc21-Lsection_debug_loc ; DW_AT_location
+	.long	Lset263
+	.long	340                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	154                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	16                              ; Abbrev [16] 0x264:0xd DW_TAG_formal_parameter
+	.byte	1                               ; DW_AT_location
+	.byte	83
+	.long	278                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	155                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	16                              ; Abbrev [16] 0x271:0xd DW_TAG_formal_parameter
+	.byte	1                               ; DW_AT_location
+	.byte	84
+	.long	268                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	156                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x27e:0xf DW_TAG_variable
+.set Lset264, Ldebug_loc22-Lsection_debug_loc ; DW_AT_location
+	.long	Lset264
+	.long	347                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	158                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x28d:0xf DW_TAG_variable
+.set Lset265, Ldebug_loc23-Lsection_debug_loc ; DW_AT_location
+	.long	Lset265
+	.long	349                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	158                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x29c:0xf DW_TAG_variable
+.set Lset266, Ldebug_loc24-Lsection_debug_loc ; DW_AT_location
+	.long	Lset266
+	.long	285                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	158                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	0                               ; End Of Children Mark
+	.byte	15                              ; Abbrev [15] 0x2ac:0xb3 DW_TAG_subprogram
+	.quad	Lfunc_begin2                    ; DW_AT_low_pc
+.set Lset267, Lfunc_end2-Lfunc_begin2   ; DW_AT_high_pc
+	.long	Lset267
+                                        ; DW_AT_APPLE_omit_frame_ptr
+	.byte	1                               ; DW_AT_frame_base
+	.byte	111
+                                        ; DW_AT_call_all_calls
+	.long	183                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	170                             ; DW_AT_decl_line
+                                        ; DW_AT_prototyped
+                                        ; DW_AT_external
+                                        ; DW_AT_APPLE_optimized
+	.byte	16                              ; Abbrev [16] 0x2c1:0xd DW_TAG_formal_parameter
+	.byte	1                               ; DW_AT_location
+	.byte	80
+	.long	353                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	170                             ; DW_AT_decl_line
+	.long	923                             ; DW_AT_type
+	.byte	16                              ; Abbrev [16] 0x2ce:0xd DW_TAG_formal_parameter
+	.byte	1                               ; DW_AT_location
+	.byte	81
+	.long	359                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	171                             ; DW_AT_decl_line
+	.long	923                             ; DW_AT_type
+	.byte	5                               ; Abbrev [5] 0x2db:0xf DW_TAG_formal_parameter
+.set Lset268, Ldebug_loc25-Lsection_debug_loc ; DW_AT_location
+	.long	Lset268
+	.long	364                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	172                             ; DW_AT_decl_line
+	.long	923                             ; DW_AT_type
+	.byte	5                               ; Abbrev [5] 0x2ea:0xf DW_TAG_formal_parameter
+.set Lset269, Ldebug_loc26-Lsection_debug_loc ; DW_AT_location
+	.long	Lset269
+	.long	333                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	173                             ; DW_AT_decl_line
+	.long	907                             ; DW_AT_type
+	.byte	16                              ; Abbrev [16] 0x2f9:0xd DW_TAG_formal_parameter
+	.byte	1                               ; DW_AT_location
+	.byte	84
+	.long	340                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	174                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	16                              ; Abbrev [16] 0x306:0xd DW_TAG_formal_parameter
+	.byte	1                               ; DW_AT_location
+	.byte	85
+	.long	278                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	175                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	5                               ; Abbrev [5] 0x313:0xf DW_TAG_formal_parameter
+.set Lset270, Ldebug_loc27-Lsection_debug_loc ; DW_AT_location
+	.long	Lset270
+	.long	268                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	176                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x322:0xf DW_TAG_variable
+.set Lset271, Ldebug_loc28-Lsection_debug_loc ; DW_AT_location
+	.long	Lset271
+	.long	285                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	178                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x331:0xf DW_TAG_variable
+.set Lset272, Ldebug_loc29-Lsection_debug_loc ; DW_AT_location
+	.long	Lset272
+	.long	369                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	178                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x340:0xf DW_TAG_variable
+.set Lset273, Ldebug_loc30-Lsection_debug_loc ; DW_AT_location
+	.long	Lset273
+	.long	321                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	178                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	7                               ; Abbrev [7] 0x34f:0xf DW_TAG_variable
+.set Lset274, Ldebug_loc31-Lsection_debug_loc ; DW_AT_location
+	.long	Lset274
+	.long	349                             ; DW_AT_name
+	.byte	2                               ; DW_AT_decl_file
+	.byte	178                             ; DW_AT_decl_line
+	.long	876                             ; DW_AT_type
+	.byte	0                               ; End Of Children Mark
+	.byte	17                              ; Abbrev [17] 0x35f:0xd DW_TAG_array_type
+	.long	876                             ; DW_AT_type
+	.byte	18                              ; Abbrev [18] 0x364:0x7 DW_TAG_subrange_type
+	.long	887                             ; DW_AT_type
+	.short	260                             ; DW_AT_count
+	.byte	0                               ; End Of Children Mark
+	.byte	2                               ; Abbrev [2] 0x36c:0xb DW_TAG_typedef
+	.long	543                             ; DW_AT_type
+	.long	213                             ; DW_AT_name
+	.byte	1                               ; DW_AT_decl_file
+	.byte	44                              ; DW_AT_decl_line
+	.byte	19                              ; Abbrev [19] 0x377:0x7 DW_TAG_base_type
+	.long	219                             ; DW_AT_name
+	.byte	8                               ; DW_AT_byte_size
+	.byte	7                               ; DW_AT_encoding
+	.byte	17                              ; Abbrev [17] 0x37e:0xd DW_TAG_array_type
+	.long	876                             ; DW_AT_type
+	.byte	18                              ; Abbrev [18] 0x383:0x7 DW_TAG_subrange_type
+	.long	887                             ; DW_AT_type
+	.short	516                             ; DW_AT_count
+	.byte	0                               ; End Of Children Mark
+	.byte	20                              ; Abbrev [20] 0x38b:0x5 DW_TAG_pointer_type
+	.long	912                             ; DW_AT_type
+	.byte	2                               ; Abbrev [2] 0x390:0xb DW_TAG_typedef
+	.long	57                              ; DW_AT_type
+	.long	257                             ; DW_AT_name
+	.byte	1                               ; DW_AT_decl_file
+	.byte	43                              ; DW_AT_decl_line
+	.byte	20                              ; Abbrev [20] 0x39b:0x5 DW_TAG_pointer_type
+	.long	876                             ; DW_AT_type
+	.byte	0                               ; End Of Children Mark
+Ldebug_info_end0:
+	.section	__DWARF,__debug_ranges,regular,debug
+Ldebug_range:
+Ldebug_ranges0:
+.set Lset275, Ltmp25-Lfunc_begin0
+	.quad	Lset275
+.set Lset276, Ltmp26-Lfunc_begin0
+	.quad	Lset276
+.set Lset277, Ltmp31-Lfunc_begin0
+	.quad	Lset277
+.set Lset278, Ltmp35-Lfunc_begin0
+	.quad	Lset278
+	.quad	0
+	.quad	0
+Ldebug_ranges1:
+.set Lset279, Ltmp40-Lfunc_begin0
+	.quad	Lset279
+.set Lset280, Ltmp41-Lfunc_begin0
+	.quad	Lset280
+.set Lset281, Ltmp83-Lfunc_begin0
+	.quad	Lset281
+.set Lset282, Ltmp88-Lfunc_begin0
+	.quad	Lset282
+	.quad	0
+	.quad	0
+Ldebug_ranges2:
+.set Lset283, Ltmp45-Lfunc_begin0
+	.quad	Lset283
+.set Lset284, Ltmp58-Lfunc_begin0
+	.quad	Lset284
+.set Lset285, Ltmp60-Lfunc_begin0
+	.quad	Lset285
+.set Lset286, Ltmp61-Lfunc_begin0
+	.quad	Lset286
+	.quad	0
+	.quad	0
+	.section	__DWARF,__debug_str,regular,debug
+Linfo_string:
+	.asciz	"Apple clang version 15.0.0 (clang-1500.1.0.2.5)" ; string offset=0
+	.asciz	"huffman.c"                     ; string offset=48
+	.asciz	"/"                             ; string offset=58
+	.asciz	"/Users/mac/rustmap-clone/c-code/bzip2" ; string offset=60
+	.asciz	"Bool"                          ; string offset=98
+	.asciz	"unsigned char"                 ; string offset=103
+	.asciz	"BZ2_hbMakeCodeLengths"         ; string offset=117
+	.asciz	"BZ2_bz__AssertH__fail"         ; string offset=139
+	.asciz	"int"                           ; string offset=161
+	.asciz	"BZ2_hbAssignCodes"             ; string offset=165
+	.asciz	"BZ2_hbCreateDecodeTables"      ; string offset=183
+	.asciz	"heap"                          ; string offset=208
+	.asciz	"Int32"                         ; string offset=213
+	.asciz	"__ARRAY_SIZE_TYPE__"           ; string offset=219
+	.asciz	"weight"                        ; string offset=239
+	.asciz	"parent"                        ; string offset=246
+	.asciz	"len"                           ; string offset=253
+	.asciz	"UChar"                         ; string offset=257
+	.asciz	"freq"                          ; string offset=263
+	.asciz	"alphaSize"                     ; string offset=268
+	.asciz	"maxLen"                        ; string offset=278
+	.asciz	"i"                             ; string offset=285
+	.asciz	"nNodes"                        ; string offset=287
+	.asciz	"nHeap"                         ; string offset=294
+	.asciz	"zz"                            ; string offset=300
+	.asciz	"tmp"                           ; string offset=303
+	.asciz	"yy"                            ; string offset=307
+	.asciz	"n2"                            ; string offset=310
+	.asciz	"tooLong"                       ; string offset=313
+	.asciz	"j"                             ; string offset=321
+	.asciz	"k"                             ; string offset=323
+	.asciz	"n1"                            ; string offset=325
+	.asciz	"code"                          ; string offset=328
+	.asciz	"length"                        ; string offset=333
+	.asciz	"minLen"                        ; string offset=340
+	.asciz	"n"                             ; string offset=347
+	.asciz	"vec"                           ; string offset=349
+	.asciz	"limit"                         ; string offset=353
+	.asciz	"base"                          ; string offset=359
+	.asciz	"perm"                          ; string offset=364
+	.asciz	"pp"                            ; string offset=369
+	.section	__DWARF,__apple_names,regular,debug
+Lnames_begin:
+	.long	1212240712                      ; Header Magic
+	.short	1                               ; Header Version
+	.short	0                               ; Header Hash Function
+	.long	3                               ; Header Bucket Count
+	.long	3                               ; Header Hash Count
+	.long	12                              ; Header Data Length
+	.long	0                               ; HeaderData Die Offset Base
+	.long	1                               ; HeaderData Atom Count
+	.short	1                               ; DW_ATOM_die_offset
+	.short	6                               ; DW_FORM_data4
+	.long	0                               ; Bucket 0
+	.long	1                               ; Bucket 1
+	.long	-1                              ; Bucket 2
+	.long	-461608273                      ; Hash in Bucket 0
+	.long	1628869519                      ; Hash in Bucket 1
+	.long	2100737866                      ; Hash in Bucket 1
+.set Lset287, LNames2-Lnames_begin      ; Offset in Bucket 0
+	.long	Lset287
+.set Lset288, LNames1-Lnames_begin      ; Offset in Bucket 1
+	.long	Lset288
+.set Lset289, LNames0-Lnames_begin      ; Offset in Bucket 1
+	.long	Lset289
+LNames2:
+	.long	183                             ; BZ2_hbCreateDecodeTables
+	.long	1                               ; Num DIEs
+	.long	684
+	.long	0
+LNames1:
+	.long	165                             ; BZ2_hbAssignCodes
+	.long	1                               ; Num DIEs
+	.long	550
+	.long	0
+LNames0:
+	.long	117                             ; BZ2_hbMakeCodeLengths
+	.long	1                               ; Num DIEs
+	.long	64
+	.long	0
+	.section	__DWARF,__apple_objc,regular,debug
+Lobjc_begin:
+	.long	1212240712                      ; Header Magic
+	.short	1                               ; Header Version
+	.short	0                               ; Header Hash Function
+	.long	1                               ; Header Bucket Count
+	.long	0                               ; Header Hash Count
+	.long	12                              ; Header Data Length
+	.long	0                               ; HeaderData Die Offset Base
+	.long	1                               ; HeaderData Atom Count
+	.short	1                               ; DW_ATOM_die_offset
+	.short	6                               ; DW_FORM_data4
+	.long	-1                              ; Bucket 0
+	.section	__DWARF,__apple_namespac,regular,debug
+Lnamespac_begin:
+	.long	1212240712                      ; Header Magic
+	.short	1                               ; Header Version
+	.short	0                               ; Header Hash Function
+	.long	1                               ; Header Bucket Count
+	.long	0                               ; Header Hash Count
+	.long	12                              ; Header Data Length
+	.long	0                               ; HeaderData Die Offset Base
+	.long	1                               ; HeaderData Atom Count
+	.short	1                               ; DW_ATOM_die_offset
+	.short	6                               ; DW_FORM_data4
+	.long	-1                              ; Bucket 0
+	.section	__DWARF,__apple_types,regular,debug
+Ltypes_begin:
+	.long	1212240712                      ; Header Magic
+	.short	1                               ; Header Version
+	.short	0                               ; Header Hash Function
+	.long	6                               ; Header Bucket Count
+	.long	6                               ; Header Hash Count
+	.long	20                              ; Header Data Length
+	.long	0                               ; HeaderData Die Offset Base
+	.long	3                               ; HeaderData Atom Count
+	.short	1                               ; DW_ATOM_die_offset
+	.short	6                               ; DW_FORM_data4
+	.short	3                               ; DW_ATOM_die_tag
+	.short	5                               ; DW_FORM_data2
+	.short	4                               ; DW_ATOM_type_flags
+	.short	11                              ; DW_FORM_data1
+	.long	-1                              ; Bucket 0
+	.long	0                               ; Bucket 1
+	.long	1                               ; Bucket 2
+	.long	-1                              ; Bucket 3
+	.long	-1                              ; Bucket 4
+	.long	4                               ; Bucket 5
+	.long	224805589                       ; Hash in Bucket 1
+	.long	193495088                       ; Hash in Bucket 2
+	.long	237479864                       ; Hash in Bucket 2
+	.long	-104093792                      ; Hash in Bucket 2
+	.long	2088970097                      ; Hash in Bucket 5
+	.long	-594775205                      ; Hash in Bucket 5
+.set Lset290, Ltypes0-Ltypes_begin      ; Offset in Bucket 1
+	.long	Lset290
+.set Lset291, Ltypes5-Ltypes_begin      ; Offset in Bucket 2
+	.long	Lset291
+.set Lset292, Ltypes1-Ltypes_begin      ; Offset in Bucket 2
+	.long	Lset292
+.set Lset293, Ltypes3-Ltypes_begin      ; Offset in Bucket 2
+	.long	Lset293
+.set Lset294, Ltypes4-Ltypes_begin      ; Offset in Bucket 5
+	.long	Lset294
+.set Lset295, Ltypes2-Ltypes_begin      ; Offset in Bucket 5
+	.long	Lset295
+Ltypes0:
+	.long	213                             ; Int32
+	.long	1                               ; Num DIEs
+	.long	876
+	.short	22
 	.byte	0
 	.long	0
-.LLRL12:
-	.byte	0x4
-	.uleb128 .LBB2-.Ltext0
-	.uleb128 .LBE2-.Ltext0
-	.byte	0x4
-	.uleb128 .LBB3-.Ltext0
-	.uleb128 .LBE3-.Ltext0
-	.byte	0x4
-	.uleb128 .LBB4-.Ltext0
-	.uleb128 .LBE4-.Ltext0
-	.byte	0x4
-	.uleb128 .LBB5-.Ltext0
-	.uleb128 .LBE5-.Ltext0
-	.byte	0x4
-	.uleb128 .LBB6-.Ltext0
-	.uleb128 .LBE6-.Ltext0
-	.byte	0x4
-	.uleb128 .LBB7-.Ltext0
-	.uleb128 .LBE7-.Ltext0
+Ltypes5:
+	.long	161                             ; int
+	.long	1                               ; Num DIEs
+	.long	543
+	.short	36
 	.byte	0
-.LLRL15:
-	.byte	0x4
-	.uleb128 .LBB8-.Ltext0
-	.uleb128 .LBE8-.Ltext0
-	.byte	0x4
-	.uleb128 .LBB16-.Ltext0
-	.uleb128 .LBE16-.Ltext0
+	.long	0
+Ltypes1:
+	.long	257                             ; UChar
+	.long	1                               ; Num DIEs
+	.long	912
+	.short	22
 	.byte	0
-.LLRL19:
-	.byte	0x4
-	.uleb128 .LBB9-.Ltext0
-	.uleb128 .LBE9-.Ltext0
-	.byte	0x4
-	.uleb128 .LBB10-.Ltext0
-	.uleb128 .LBE10-.Ltext0
-	.byte	0x4
-	.uleb128 .LBB17-.Ltext0
-	.uleb128 .LBE17-.Ltext0
+	.long	0
+Ltypes3:
+	.long	103                             ; unsigned char
+	.long	1                               ; Num DIEs
+	.long	57
+	.short	36
 	.byte	0
-.LLRL23:
-	.byte	0x4
-	.uleb128 .LBB11-.Ltext0
-	.uleb128 .LBE11-.Ltext0
-	.byte	0x4
-	.uleb128 .LBB12-.Ltext0
-	.uleb128 .LBE12-.Ltext0
-	.byte	0x4
-	.uleb128 .LBB13-.Ltext0
-	.uleb128 .LBE13-.Ltext0
-	.byte	0x4
-	.uleb128 .LBB14-.Ltext0
-	.uleb128 .LBE14-.Ltext0
-	.byte	0x4
-	.uleb128 .LBB15-.Ltext0
-	.uleb128 .LBE15-.Ltext0
+	.long	0
+Ltypes4:
+	.long	98                              ; Bool
+	.long	1                               ; Num DIEs
+	.long	46
+	.short	22
 	.byte	0
-.Ldebug_ranges3:
-	.section	.debug_line,"",@progbits
-.Ldebug_line0:
-	.section	.debug_str,"MS",@progbits,1
-.LASF33:
-	.string	"GNU C17 11.4.0 -mtune=generic -march=x86-64 -g -O2 -fasynchronous-unwind-tables -fstack-protector-strong -fstack-clash-protection -fcf-protection"
-.LASF19:
-	.string	"minLen"
-.LASF31:
-	.string	"weight"
-.LASF21:
-	.string	"BZ2_hbCreateDecodeTables"
-.LASF24:
-	.string	"maxLen"
-.LASF17:
-	.string	"perm"
-.LASF25:
-	.string	"BZ2_hbMakeCodeLengths"
-.LASF5:
-	.string	"unsigned char"
-.LASF12:
-	.string	"Bool"
-.LASF16:
-	.string	"base"
-.LASF32:
-	.string	"parent"
-.LASF6:
-	.string	"short unsigned int"
-.LASF27:
-	.string	"nNodes"
-.LASF28:
-	.string	"nHeap"
-.LASF35:
-	.string	"__stack_chk_fail"
-.LASF2:
-	.string	"long unsigned int"
-.LASF22:
-	.string	"BZ2_hbAssignCodes"
-.LASF9:
-	.string	"short int"
-.LASF23:
-	.string	"code"
-.LASF20:
-	.string	"alphaSize"
-.LASF14:
-	.string	"Int32"
-.LASF7:
-	.string	"unsigned int"
-.LASF11:
-	.string	"long long unsigned int"
-.LASF30:
-	.string	"heap"
-.LASF34:
-	.string	"BZ2_bz__AssertH__fail"
-.LASF15:
-	.string	"limit"
-.LASF13:
-	.string	"UChar"
-.LASF4:
-	.string	"long long int"
-.LASF10:
-	.string	"char"
-.LASF26:
-	.string	"freq"
-.LASF3:
-	.string	"long int"
-.LASF8:
-	.string	"signed char"
-.LASF18:
-	.string	"length"
-.LASF29:
-	.string	"tooLong"
-	.section	.debug_line_str,"MS",@progbits,1
-.LASF0:
-	.string	"huffman.c"
-.LASF1:
-	.string	"/root/rustmap/bzip2-real-test"
-	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
-	.section	.note.GNU-stack,"",@progbits
-	.section	.note.gnu.property,"a"
-	.align 8
-	.long	1f - 0f
-	.long	4f - 1f
-	.long	5
-0:
-	.string	"GNU"
-1:
-	.align 8
-	.long	0xc0000002
-	.long	3f - 2f
-2:
-	.long	0x3
-3:
-	.align 8
-4:
+	.long	0
+Ltypes2:
+	.long	219                             ; __ARRAY_SIZE_TYPE__
+	.long	1                               ; Num DIEs
+	.long	887
+	.short	36
+	.byte	0
+	.long	0
+.subsections_via_symbols
+	.section	__DWARF,__debug_line,regular,debug
+Lsection_line:
+Lline_table_start0:

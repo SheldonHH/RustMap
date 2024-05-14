@@ -1,9 +1,9 @@
 CC = gcc
 CFLAGS = -Wall -Wextra
-SOURCES = dp1.c dp2.c dp3.c dp4.c main.c
+SOURCES = dp_user_bank_account.c dp1.c dp2.c dp3.c dp4.c main.c
 OBJECTS = $(SOURCES:.c=.o)
 PREPROCESSED = $(SOURCES:.c=.i)
-TARGET = project
+TARGET = scc_recursive_study_proj
 
 all: $(TARGET)
 

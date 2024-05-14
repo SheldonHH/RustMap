@@ -1,0 +1,606 @@
+digraph G {
+rankdir="LR";
+    main [label="IntNative main (IntNative argc, Char *argv[])
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:4562"]
+    main -> fprintf
+    main -> exit
+    main -> strlen
+    main -> fopen
+    main -> bsOpenReadStream
+    main -> bsGetBit
+    main -> tooManyBlocks
+    main -> bsClose
+    main -> bsPutBit
+    main -> bsPutUChar
+    main -> bsPutUInt32
+    main -> strrchr
+    main -> endsInBz2
+    main -> bsOpenWriteStream
+    main -> configError
+    main -> signal
+    main -> mySIGSEGVorSIGBUScatcher
+    main -> copyFileName
+    main -> addFlagsFromEnvVar
+    main -> snocString
+    main -> strcmp
+    main -> strstr
+    main -> license
+    main -> usage
+    main -> redundant
+    main -> strncmp
+    main -> mySignalCatcher
+    main -> compress
+    main -> uncompress
+    main -> setExit
+    main -> testf
+    main -> free
+    fprintf [label="fprintf()"]
+    exit [label="exit()"]
+    strlen [label="strlen()"]
+    fopen [label="fopen()"]
+    bsOpenReadStream [label="BitStream *bsOpenReadStream (FILE *stream)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2recover.i:1587"]
+    bsOpenReadStream -> malloc
+    bsOpenReadStream -> mallocFail
+    malloc [label="malloc()"]
+    mallocFail [label="void mallocFail (Int32 n)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2recover.i:1544"]
+    mallocFail -> fprintf
+    mallocFail -> exit
+    bsGetBit [label="Int32 bsGetBit (BitStream *bs)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2recover.i:1632"]
+    bsGetBit -> getc
+    bsGetBit -> readError
+    getc [label="getc()"]
+    readError [label="void readError (void)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2recover.i:1518"]
+    readError -> fprintf
+    readError -> perror
+    readError -> exit
+    perror [label="void perror (const char *)
+/Users/mac/rustmap-clone/c-code/bzip2/blocksort.i:1258"]
+    tooManyBlocks [label="void tooManyBlocks (Int32 max_handled_blocks)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2recover.i:1556"]
+    tooManyBlocks -> fprintf
+    tooManyBlocks -> exit
+    bsClose [label="void bsClose (BitStream *bs)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2recover.i:1651"]
+    bsClose -> putc
+    bsClose -> writeError
+    bsClose -> fflush
+    bsClose -> fclose
+    bsClose -> readError
+    bsClose -> free
+    putc [label="putc()"]
+    writeError [label="void writeError (void)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2recover.i:1531"]
+    writeError -> fprintf
+    writeError -> perror
+    writeError -> exit
+    fflush [label="fflush()"]
+    fclose [label="fclose()"]
+    free [label="free()"]
+    bsPutBit [label="void bsPutBit (BitStream *bs, Int32 bit)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2recover.i:1613"]
+    bsPutBit -> putc
+    bsPutBit -> writeError
+    bsPutUChar [label="void bsPutUChar (BitStream *bs, UChar c)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2recover.i:1675"]
+    bsPutUChar -> bsPutBit
+    bsPutUInt32 [label="void bsPutUInt32 (BitStream *bs, UInt32 c)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2recover.i:1684"]
+    bsPutUInt32 -> bsPutBit
+    strrchr [label="strrchr()"]
+    endsInBz2 [label="Bool endsInBz2 (Char *name)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2recover.i:1694"]
+    endsInBz2 -> strlen
+    bsOpenWriteStream [label="BitStream *bsOpenWriteStream (FILE *stream)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2recover.i:1600"]
+    bsOpenWriteStream -> malloc
+    bsOpenWriteStream -> mallocFail
+    configError [label="void configError (void)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3745"]
+    configError -> fprintf
+    configError -> setExit
+    configError -> exit
+    setExit [label="void setExit (Int32 v)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3504"]
+    signal [label="signal()"]
+    mySIGSEGVorSIGBUScatcher [label="void mySIGSEGVorSIGBUScatcher (IntNative n)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3669"]
+    mySIGSEGVorSIGBUScatcher -> write
+    mySIGSEGVorSIGBUScatcher -> strlen
+    mySIGSEGVorSIGBUScatcher -> setExit
+    write [label="write()"]
+    copyFileName [label="void copyFileName (Char *to, Char *from)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3768"]
+    copyFileName -> strlen
+    copyFileName -> fprintf
+    copyFileName -> setExit
+    copyFileName -> exit
+    addFlagsFromEnvVar [label="void addFlagsFromEnvVar (Cell **argList, Char *varName)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:4533"]
+    addFlagsFromEnvVar -> getenv
+    addFlagsFromEnvVar -> isspace
+    addFlagsFromEnvVar -> snocString
+    getenv [label="getenv()"]
+    isspace [label="inline int isspace (int _c)
+/Users/mac/rustmap-clone/c-code/bzip2/blocksort.i:1572"]
+    snocString [label="Cell *snocString (Cell *root, Char *name)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:4515"]
+    snocString -> mkCell
+    snocString -> myMalloc
+    snocString -> strlen
+    snocString -> snocString
+    mkCell [label="Cell *mkCell (void)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:4502"]
+    mkCell -> myMalloc
+    myMalloc [label="void *myMalloc (Int32 n)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:4490"]
+    myMalloc -> malloc
+    myMalloc -> outOfMemory
+    outOfMemory [label="void outOfMemory (void)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3733"]
+    outOfMemory -> fprintf
+    outOfMemory -> showFileNames
+    outOfMemory -> cleanUpAndFail
+    showFileNames [label="void showFileNames (void)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3527"]
+    showFileNames -> fprintf
+    cleanUpAndFail [label="void cleanUpAndFail (Int32 ec)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3540"]
+    cleanUpAndFail -> stat
+    cleanUpAndFail -> fprintf
+    cleanUpAndFail -> fclose
+    cleanUpAndFail -> remove
+    cleanUpAndFail -> setExit
+    cleanUpAndFail -> exit
+    stat [label="int stat (const char *, struct stat *)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3003"]
+    remove [label="remove()"]
+    strcmp [label="strcmp()"]
+    strstr [label="strstr()"]
+    license [label="void license (void)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:4404"]
+    license -> fprintf
+    license -> BZ2_bzlibVersion
+    BZ2_bzlibVersion [label="const char *BZ2_bzlibVersion (void)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:3385"]
+    usage [label="void usage (Char *fullProgName)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:4429"]
+    usage -> fprintf
+    usage -> BZ2_bzlibVersion
+    redundant [label="void redundant (Char *flag)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:4473"]
+    redundant -> fprintf
+    strncmp [label="strncmp()"]
+    mySignalCatcher [label="void mySignalCatcher (IntNative n)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3658"]
+    mySignalCatcher -> fprintf
+    mySignalCatcher -> cleanUpAndFail
+    compress [label="void compress (Char *name)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3936"]
+    compress -> panic
+    compress -> copyFileName
+    compress -> containsDubiousChars
+    compress -> fprintf
+    compress -> setExit
+    compress -> fileExists
+    compress -> strerror
+    compress -> hasSuffix
+    compress -> stat
+    compress -> notAStandardFile
+    compress -> remove
+    compress -> countHardLinks
+    compress -> saveInputFileMetaInfo
+    compress -> isatty
+    compress -> fileno
+    compress -> fopen
+    compress -> fclose
+    compress -> fopen_output_safely
+    compress -> pad
+    compress -> fflush
+    compress -> compressStream
+    compress -> applySavedTimeInfoToOutputFile
+    compress -> ioError
+    panic [label="void panic (const Char *s)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3599"]
+    panic -> fprintf
+    panic -> showFileNames
+    panic -> cleanUpAndFail
+    containsDubiousChars [label="Bool containsDubiousChars (Char *name)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3894"]
+    fileExists [label="Bool fileExists (Char *name)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3789"]
+    fileExists -> fopen
+    fileExists -> fclose
+    strerror [label="char *strerror (int __errnum)
+/Users/mac/rustmap-clone/c-code/bzip2/blocksort.i:1661"]
+    hasSuffix [label="Bool hasSuffix (Char *s, const Char *suffix)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3913"]
+    hasSuffix -> strlen
+    hasSuffix -> strcmp
+    notAStandardFile [label="Bool notAStandardFile (Char *name)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3818"]
+    notAStandardFile -> lstat
+    lstat [label="lstat()"]
+    countHardLinks [label="Int32 countHardLinks (Char *name)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3835"]
+    countHardLinks -> lstat
+    saveInputFileMetaInfo [label="void saveInputFileMetaInfo (Char *srcName)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3849"]
+    saveInputFileMetaInfo -> stat
+    saveInputFileMetaInfo -> ioError
+    ioError [label="void ioError (void)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3644"]
+    ioError -> fprintf
+    ioError -> perror
+    ioError -> showFileNames
+    ioError -> cleanUpAndFail
+    isatty [label="isatty()"]
+    fileno [label="fileno()"]
+    fopen_output_safely [label="FILE *fopen_output_safely (Char *name, const char *mode)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3797"]
+    fopen_output_safely -> open
+    fopen_output_safely -> fdopen
+    fopen_output_safely -> close
+    open [label="int open (const char *, int, ...)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:2473"]
+    fdopen [label="FILE *fdopen (int, const char *)
+/Users/mac/rustmap-clone/c-code/bzip2/blocksort.i:1301"]
+    close [label="int close (int)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:2667"]
+    pad [label="void pad (Char *s)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3757"]
+    pad -> strlen
+    pad -> fprintf
+    compressStream [label="void compressStream (FILE *stream, FILE *zStream)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3182"]
+    compressStream -> ferror
+    compressStream -> BZ2_bzWriteOpen
+    compressStream -> fprintf
+    compressStream -> myfeof
+    compressStream -> fread
+    compressStream -> BZ2_bzWrite
+    compressStream -> BZ2_bzWriteClose64
+    compressStream -> fflush
+    compressStream -> fileno
+    compressStream -> applySavedFileAttrToOutputFile
+    compressStream -> fclose
+    compressStream -> uInt64_from_UInt32s
+    compressStream -> uInt64_to_double
+    compressStream -> uInt64_toAscii
+    compressStream -> configError
+    compressStream -> outOfMemory
+    compressStream -> ioError
+    compressStream -> panic
+    ferror [label="ferror()"]
+    BZ2_bzWriteOpen [label="BZFILE *BZ2_bzWriteOpen (int *bzerror, FILE *f, int blockSize100k, int verbosity, int workFactor)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2960"]
+    BZ2_bzWriteOpen -> ferror
+    BZ2_bzWriteOpen -> malloc
+    BZ2_bzWriteOpen -> BZ2_bzCompressInit
+    BZ2_bzWriteOpen -> free
+    BZ2_bzCompressInit [label="int BZ2_bzCompressInit (bz_stream *strm, int blockSize100k, int verbosity, int workFactor)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2236"]
+    BZ2_bzCompressInit -> bz_config_ok
+    BZ2_bzCompressInit -> default_bzalloc
+    BZ2_bzCompressInit -> default_bzfree
+    BZ2_bzCompressInit -> init_RL
+    BZ2_bzCompressInit -> prepare_new_block
+    bz_config_ok [label="int bz_config_ok (void)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2179"]
+    default_bzalloc [label="void *default_bzalloc (void *opaque, Int32 items, Int32 size)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2190"]
+    default_bzalloc -> malloc
+    default_bzfree [label="void default_bzfree (void *opaque, void *addr)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2197"]
+    default_bzfree -> free
+    init_RL [label="void init_RL (EState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2219"]
+    prepare_new_block [label="void prepare_new_block (EState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2205"]
+    myfeof [label="Bool myfeof (FILE *f)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3171"]
+    myfeof -> fgetc
+    myfeof -> ungetc
+    fgetc [label="fgetc()"]
+    ungetc [label="ungetc()"]
+    fread [label="fread()"]
+    BZ2_bzWrite [label="void BZ2_bzWrite (int *bzerror, BZFILE *b, void *buf, int len)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:3008"]
+    BZ2_bzWrite -> ferror
+    BZ2_bzWrite -> BZ2_bzCompress
+    BZ2_bzWrite -> fwrite
+    BZ2_bzCompress [label="int BZ2_bzCompress (bz_stream *strm, int action)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2464"]
+    BZ2_bzCompress -> handle_compress
+    BZ2_bzCompress -> isempty_RL
+    handle_compress [label="Bool handle_compress (bz_stream *strm)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2418"]
+    handle_compress -> copy_output_until_stop
+    handle_compress -> isempty_RL
+    handle_compress -> prepare_new_block
+    handle_compress -> copy_input_until_stop
+    handle_compress -> flush_RL
+    handle_compress -> BZ2_compressBlock
+    copy_output_until_stop [label="Bool copy_output_until_stop (EState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2391"]
+    isempty_RL [label="Bool isempty_RL (EState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2227"]
+    copy_input_until_stop [label="Bool copy_input_until_stop (EState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2346"]
+    copy_input_until_stop -> add_pair_to_block
+    add_pair_to_block [label="void add_pair_to_block (EState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2304"]
+    flush_RL [label="void flush_RL (EState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2340"]
+    flush_RL -> add_pair_to_block
+    flush_RL -> init_RL
+    BZ2_compressBlock [label="void BZ2_compressBlock (EState *s, Bool is_last_block)
+/Users/mac/rustmap-clone/c-code/bzip2/compress.i:2650"]
+    BZ2_compressBlock -> fprintf
+    BZ2_compressBlock -> BZ2_blockSort
+    BZ2_compressBlock -> BZ2_bsInitWrite
+    BZ2_compressBlock -> bsPutUChar
+    BZ2_compressBlock -> bsPutUInt32
+    BZ2_compressBlock -> bsW
+    BZ2_compressBlock -> generateMTFValues
+    BZ2_compressBlock -> sendMTFValues
+    BZ2_compressBlock -> bsFinishWrite
+    BZ2_blockSort [label="void BZ2_blockSort (EState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/blocksort.i:2867"]
+    BZ2_blockSort -> fallbackSort
+    BZ2_blockSort -> mainSort
+    BZ2_blockSort -> fprintf
+    BZ2_blockSort -> BZ2_bz__AssertH__fail
+    fallbackSort [label="void fallbackSort (UInt32 *fmap, UInt32 *eclass, UInt32 *bhtab, Int32 nblock, Int32 verb)
+/Users/mac/rustmap-clone/c-code/bzip2/blocksort.i:2248"]
+    fallbackSort -> fprintf
+    fallbackSort -> fallbackQSort3
+    fallbackSort -> BZ2_bz__AssertH__fail
+    fallbackQSort3 [label="void fallbackQSort3 (UInt32 *fmap, UInt32 *eclass, Int32 loSt, Int32 hiSt)
+/Users/mac/rustmap-clone/c-code/bzip2/blocksort.i:2167"]
+    fallbackQSort3 -> BZ2_bz__AssertH__fail
+    fallbackQSort3 -> fallbackSimpleSort
+    BZ2_bz__AssertH__fail [label="void BZ2_bz__AssertH__fail (int errcode)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2129"]
+    BZ2_bz__AssertH__fail -> fprintf
+    BZ2_bz__AssertH__fail -> BZ2_bzlibVersion
+    BZ2_bz__AssertH__fail -> exit
+    fallbackSimpleSort [label="__inline__ void fallbackSimpleSort (UInt32 *fmap, UInt32 *eclass, Int32 lo, Int32 hi)
+/Users/mac/rustmap-clone/c-code/bzip2/blocksort.i:2138"]
+    mainSort [label="void mainSort (UInt32 *ptr, UChar *block, UInt16 *quadrant, UInt32 *ftab, Int32 nblock, Int32 verb, Int32 *budget)
+/Users/mac/rustmap-clone/c-code/bzip2/blocksort.i:2671"]
+    mainSort -> fprintf
+    mainSort -> mainQSort3
+    mainSort -> BZ2_bz__AssertH__fail
+    mainQSort3 [label="void mainQSort3 (UInt32 *ptr, UChar *block, UInt16 *quadrant, Int32 nblock, Int32 loSt, Int32 hiSt, Int32 dSt, Int32 *budget)
+/Users/mac/rustmap-clone/c-code/bzip2/blocksort.i:2573"]
+    mainQSort3 -> BZ2_bz__AssertH__fail
+    mainQSort3 -> mainSimpleSort
+    mainQSort3 -> mmed3
+    mainSimpleSort [label="void mainSimpleSort (UInt32 *ptr, UChar *block, UInt16 *quadrant, Int32 nblock, Int32 lo, Int32 hi, Int32 d, Int32 *budget)
+/Users/mac/rustmap-clone/c-code/bzip2/blocksort.i:2489"]
+    mainSimpleSort -> mainGtU
+    mainGtU [label="__inline__ Bool mainGtU (UInt32 i1, UInt32 i2, UChar *block, UInt16 *quadrant, UInt32 nblock, Int32 *budget)
+/Users/mac/rustmap-clone/c-code/bzip2/blocksort.i:2360"]
+    mmed3 [label="__inline__ UChar mmed3 (UChar a, UChar b, UChar c)
+/Users/mac/rustmap-clone/c-code/bzip2/blocksort.i:2562"]
+    BZ2_bsInitWrite [label="void BZ2_bsInitWrite (EState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/compress.i:2136"]
+    bsPutUChar [label="void bsPutUChar (EState *s, UChar c)
+/Users/mac/rustmap-clone/c-code/bzip2/compress.i:2177"]
+    bsPutUChar -> bsW
+    bsW [label="__inline__ void bsW (EState *s, Int32 n, UInt32 v)
+/Users/mac/rustmap-clone/c-code/bzip2/compress.i:2156"]
+    bsPutUInt32 [label="void bsPutUInt32 (EState *s, UInt32 u)
+/Users/mac/rustmap-clone/c-code/bzip2/compress.i:2166"]
+    bsPutUInt32 -> bsW
+    generateMTFValues [label="void generateMTFValues (EState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/compress.i:2203"]
+    generateMTFValues -> makeMaps_e
+    makeMaps_e [label="void makeMaps_e (EState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/compress.i:2189"]
+    sendMTFValues [label="void sendMTFValues (EState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/compress.i:2299"]
+    sendMTFValues -> fprintf
+    sendMTFValues -> BZ2_bz__AssertH__fail
+    sendMTFValues -> BZ2_hbMakeCodeLengths
+    sendMTFValues -> BZ2_hbAssignCodes
+    sendMTFValues -> bsW
+    BZ2_hbMakeCodeLengths [label="void BZ2_hbMakeCodeLengths (UChar *len, Int32 *freq, Int32 alphaSize, Int32 maxLen)
+/Users/mac/rustmap-clone/c-code/bzip2/huffman.i:2129"]
+    BZ2_hbMakeCodeLengths -> BZ2_bz__AssertH__fail
+    BZ2_hbAssignCodes [label="void BZ2_hbAssignCodes (Int32 *code, UChar *length, Int32 minLen, Int32 maxLen, Int32 alphaSize)
+/Users/mac/rustmap-clone/c-code/bzip2/huffman.i:2200"]
+    bsFinishWrite [label="void bsFinishWrite (EState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/compress.i:2145"]
+    fwrite [label="fwrite()"]
+    BZ2_bzWriteClose64 [label="void BZ2_bzWriteClose64 (int *bzerror, BZFILE *b, int abandon, unsigned int *nbytes_in_lo32, unsigned int *nbytes_in_hi32, unsigned int *nbytes_out_lo32, unsigned int *nbytes_out_hi32)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:3065"]
+    BZ2_bzWriteClose64 -> ferror
+    BZ2_bzWriteClose64 -> BZ2_bzCompress
+    BZ2_bzWriteClose64 -> fwrite
+    BZ2_bzWriteClose64 -> fflush
+    BZ2_bzWriteClose64 -> BZ2_bzCompressEnd
+    BZ2_bzWriteClose64 -> free
+    BZ2_bzCompressEnd [label="int BZ2_bzCompressEnd (bz_stream *strm)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2525"]
+    applySavedFileAttrToOutputFile [label="void applySavedFileAttrToOutputFile (IntNative fd)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3876"]
+    applySavedFileAttrToOutputFile -> fchmod
+    applySavedFileAttrToOutputFile -> ioError
+    applySavedFileAttrToOutputFile -> fchown
+    fchmod [label="fchmod()"]
+    fchown [label="fchown()"]
+    uInt64_from_UInt32s [label="void uInt64_from_UInt32s (UInt64 *n, UInt32 lo32, UInt32 hi32)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3091"]
+    uInt64_to_double [label="double uInt64_to_double (UInt64 *n)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3105"]
+    uInt64_toAscii [label="void uInt64_toAscii (char *outbuf, UInt64 *n)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3148"]
+    uInt64_toAscii -> uInt64_qrm10
+    uInt64_toAscii -> uInt64_isZero
+    uInt64_qrm10 [label="Int32 uInt64_qrm10 (UInt64 *n)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3130"]
+    uInt64_isZero [label="Bool uInt64_isZero (UInt64 *n)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3119"]
+    applySavedTimeInfoToOutputFile [label="void applySavedTimeInfoToOutputFile (Char *dstName)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3861"]
+    applySavedTimeInfoToOutputFile -> utime
+    applySavedTimeInfoToOutputFile -> ioError
+    utime [label="utime()"]
+    uncompress [label="void uncompress (Char *name)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:4117"]
+    uncompress -> panic
+    uncompress -> copyFileName
+    uncompress -> mapSuffix
+    uncompress -> containsDubiousChars
+    uncompress -> fprintf
+    uncompress -> setExit
+    uncompress -> fileExists
+    uncompress -> strerror
+    uncompress -> stat
+    uncompress -> notAStandardFile
+    uncompress -> remove
+    uncompress -> countHardLinks
+    uncompress -> saveInputFileMetaInfo
+    uncompress -> isatty
+    uncompress -> fileno
+    uncompress -> fopen
+    uncompress -> fclose
+    uncompress -> fopen_output_safely
+    uncompress -> pad
+    uncompress -> fflush
+    uncompress -> uncompressStream
+    uncompress -> applySavedTimeInfoToOutputFile
+    uncompress -> ioError
+    mapSuffix [label="Bool mapSuffix (Char *name, const Char *oldSuffix, const Char *newSuffix)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3923"]
+    mapSuffix -> hasSuffix
+    mapSuffix -> strlen
+    uncompressStream [label="Bool uncompressStream (FILE *zStream, FILE *stream)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3286"]
+    uncompressStream -> ferror
+    uncompressStream -> BZ2_bzReadOpen
+    uncompressStream -> BZ2_bzRead
+    uncompressStream -> fwrite
+    uncompressStream -> BZ2_bzReadGetUnused
+    uncompressStream -> panic
+    uncompressStream -> BZ2_bzReadClose
+    uncompressStream -> myfeof
+    uncompressStream -> fileno
+    uncompressStream -> applySavedFileAttrToOutputFile
+    uncompressStream -> fclose
+    uncompressStream -> fflush
+    uncompressStream -> fprintf
+    uncompressStream -> rewind
+    uncompressStream -> fread
+    uncompressStream -> configError
+    uncompressStream -> ioError
+    uncompressStream -> crcError
+    uncompressStream -> outOfMemory
+    uncompressStream -> compressedStreamEOF
+    BZ2_bzReadOpen [label="BZFILE *BZ2_bzReadOpen (int *bzerror, FILE *f, int verbosity, int small, void *unused, int nUnused)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:3131"]
+    BZ2_bzReadOpen -> ferror
+    BZ2_bzReadOpen -> malloc
+    BZ2_bzReadOpen -> BZ2_bzDecompressInit
+    BZ2_bzReadOpen -> free
+    BZ2_bzDecompressInit [label="int BZ2_bzDecompressInit (bz_stream *strm, int verbosity, int small)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2549"]
+    BZ2_bzDecompressInit -> bz_config_ok
+    BZ2_bzDecompressInit -> default_bzalloc
+    BZ2_bzDecompressInit -> default_bzfree
+    BZ2_bzRead [label="int BZ2_bzRead (int *bzerror, BZFILE *b, void *buf, int len)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:3205"]
+    BZ2_bzRead -> ferror
+    BZ2_bzRead -> myfeof
+    BZ2_bzRead -> fread
+    BZ2_bzRead -> BZ2_bzDecompress
+    myfeof [label="Bool myfeof (FILE *f)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2950"]
+    myfeof -> fgetc
+    myfeof -> ungetc
+    BZ2_bzDecompress [label="int BZ2_bzDecompress (bz_stream *strm)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2865"]
+    BZ2_bzDecompress -> unRLE_obuf_to_output_SMALL
+    BZ2_bzDecompress -> unRLE_obuf_to_output_FAST
+    BZ2_bzDecompress -> fprintf
+    BZ2_bzDecompress -> BZ2_decompress
+    BZ2_bzDecompress -> BZ2_bz__AssertH__fail
+    unRLE_obuf_to_output_SMALL [label="Bool unRLE_obuf_to_output_SMALL (DState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2763"]
+    unRLE_obuf_to_output_SMALL -> BZ2_indexIntoF
+    BZ2_indexIntoF [label="__inline__ Int32 BZ2_indexIntoF (Int32 indx, Int32 *cftab)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2744"]
+    unRLE_obuf_to_output_FAST [label="Bool unRLE_obuf_to_output_FAST (DState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2593"]
+    BZ2_decompress [label="Int32 BZ2_decompress (DState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/decompress.i:2143"]
+    BZ2_decompress -> fprintf
+    BZ2_decompress -> makeMaps_d
+    BZ2_decompress -> BZ2_hbCreateDecodeTables
+    BZ2_decompress -> BZ2_indexIntoF
+    BZ2_decompress -> BZ2_bz__AssertH__fail
+    makeMaps_d [label="void makeMaps_d (DState *s)
+/Users/mac/rustmap-clone/c-code/bzip2/decompress.i:2133"]
+    BZ2_hbCreateDecodeTables [label="void BZ2_hbCreateDecodeTables (Int32 *limit, Int32 *base, Int32 *perm, UChar *length, Int32 minLen, Int32 maxLen, Int32 alphaSize)
+/Users/mac/rustmap-clone/c-code/bzip2/huffman.i:2218"]
+    BZ2_bzReadGetUnused [label="void BZ2_bzReadGetUnused (int *bzerror, BZFILE *b, void **unused, int *nUnused)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:3265"]
+    BZ2_bzReadClose [label="void BZ2_bzReadClose (int *bzerror, BZFILE *b)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:3187"]
+    BZ2_bzReadClose -> BZ2_bzDecompressEnd
+    BZ2_bzReadClose -> free
+    BZ2_bzDecompressEnd [label="int BZ2_bzDecompressEnd (bz_stream *strm)
+/Users/mac/rustmap-clone/c-code/bzip2/bzlib.i:2919"]
+    rewind [label="rewind()"]
+    crcError [label="void crcError (void)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3614"]
+    crcError -> fprintf
+    crcError -> showFileNames
+    crcError -> cadvise
+    crcError -> cleanUpAndFail
+    cadvise [label="void cadvise (void)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3512"]
+    cadvise -> fprintf
+    compressedStreamEOF [label="void compressedStreamEOF (void)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3627"]
+    compressedStreamEOF -> fprintf
+    compressedStreamEOF -> perror
+    compressedStreamEOF -> showFileNames
+    compressedStreamEOF -> cadvise
+    compressedStreamEOF -> cleanUpAndFail
+    testf [label="void testf (Char *name)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:4315"]
+    testf -> panic
+    testf -> copyFileName
+    testf -> containsDubiousChars
+    testf -> fprintf
+    testf -> setExit
+    testf -> fileExists
+    testf -> strerror
+    testf -> stat
+    testf -> isatty
+    testf -> fileno
+    testf -> fopen
+    testf -> pad
+    testf -> fflush
+    testf -> testStream
+    testStream [label="Bool testStream (FILE *zStream)
+/Users/mac/rustmap-clone/c-code/bzip2/bzip2.i:3407"]
+    testStream -> ferror
+    testStream -> BZ2_bzReadOpen
+    testStream -> BZ2_bzRead
+    testStream -> BZ2_bzReadGetUnused
+    testStream -> panic
+    testStream -> BZ2_bzReadClose
+    testStream -> myfeof
+    testStream -> fclose
+    testStream -> fprintf
+    testStream -> configError
+    testStream -> ioError
+    testStream -> outOfMemory
+}

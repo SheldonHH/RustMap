@@ -22,7 +22,7 @@ LDFLAGS=
 
 BIGFILES=-D_FILE_OFFSET_BITS=64
 # CFLAGS=-Wall -Winline -O2 -g $(BIGFILES)
-CFLAGS=-Wall --save-temps -Winline -O2 -g $(BIGFILES)
+CFLAGS=-Wall --save-temps -Winline -O2 -g $(BIGFILES) --save-temps
 
 # Where you want it installed when you do 'make install'
 PREFIX=/usr/local

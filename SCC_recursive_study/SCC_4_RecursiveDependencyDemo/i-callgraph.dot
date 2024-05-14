@@ -1,0 +1,33 @@
+digraph G {
+rankdir="LR";
+    main [label="int main ()
+/Users/mac/rustmap-clone/SCC_recursive_study/SCC_4_RecursiveDependencyDemo/main.i:450"]
+    main -> funcX
+    main -> printf
+    main -> funcB
+    main -> funcC
+    funcX [label="void funcX (User *user)
+/Users/mac/rustmap-clone/SCC_recursive_study/SCC_4_RecursiveDependencyDemo/dp_user_bank_account.i:446"]
+    funcX -> printf
+    printf [label="printf()"]
+    funcB [label="void funcB (int n)
+/Users/mac/rustmap-clone/SCC_recursive_study/SCC_4_RecursiveDependencyDemo/dp1.i:432"]
+    funcB -> printf
+    funcB -> funcA
+    funcA [label="void funcA (int n)
+/Users/mac/rustmap-clone/SCC_recursive_study/SCC_4_RecursiveDependencyDemo/dp2.i:429"]
+    funcA -> printf
+    funcA -> happy
+    funcA -> funcB
+    happy [label="int happy (int n)
+/Users/mac/rustmap-clone/SCC_recursive_study/SCC_4_RecursiveDependencyDemo/dp3.i:438"]
+    happy -> printf
+    funcC [label="int funcC (int n)
+/Users/mac/rustmap-clone/SCC_recursive_study/SCC_4_RecursiveDependencyDemo/dp4.i:429"]
+    funcC -> printf
+    funcC -> funcD
+    funcD [label="int funcD (int n)
+/Users/mac/rustmap-clone/SCC_recursive_study/SCC_4_RecursiveDependencyDemo/dp3.i:429"]
+    funcD -> printf
+    funcD -> funcC
+}

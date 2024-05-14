@@ -1,11 +1,12 @@
 CC = gcc
 CFLAGS = -Wall -Wextra
-SOURCES = dp_user_bank_account.c dp1.c dp2.c dp3.c dp4.c main.c
+SOURCES = dpx.c dp1.c dp2.c dp3.c dp4.c main.c
 OBJECTS = $(SOURCES:.c=.o)
 PREPROCESSED = $(SOURCES:.c=.i)
 TARGET = scc_recursive_study_proj
 
-all: $(TARGET)
+# Include preprocess in the default build process
+all: preprocess $(TARGET)
 
 $(TARGET): $(OBJECTS)
 	$(CC) $(CFLAGS) -o $@ $^
@@ -18,9 +19,7 @@ preprocess: $(PREPROCESSED)
 		awk '!/^#[ \t]*[0-9]+[ \t]+"/' "$$file" > "$$file.tmp" && mv "$$file.tmp" "$$file"; \
 	done
 
-
 clean:
 	rm -f $(OBJECTS) $(TARGET) $(PREPROCESSED)
 
 .PHONY: all preprocess clean
-

@@ -26,12 +26,12 @@
 <g id="edge1" class="edge">
 <title>main&#45;&gt;printf</title>
 <path fill="none" stroke="black" d="M92.82,-200.67C107.93,-207.55 125.63,-214.64 142.42,-218.99 297.17,-259.14 341.81,-245.03 501.57,-238.99 583.9,-235.88 609.24,-253.84 686.41,-224.99 704.1,-218.38 721.17,-206.07 734.31,-194.86"/>
-<polygon fill="none" stroke="black" points="736.45,-197.64 741.6,-188.38 731.8,-192.41 736.45,-197.64"/>
+<polygon fill="black" stroke="black" points="736.45,-197.64 741.6,-188.38 731.8,-192.41 736.45,-197.64"/>
 </g>
 <!-- funcB -->
 <g id="node3" class="node">
 <title>funcB</title>
-<ellipse fill="yellow" stroke="black" cx="223.21" cy="-180.99" rx="80.79" ry="28.99"/>
+<ellipse fill="none" stroke="black" cx="223.21" cy="-180.99" rx="80.79" ry="28.99"/>
 <text text-anchor="middle" x="223.21" y="-184.19" font-family="Times,serif" font-size="14.00">void funcB (int n)</text>
 <text text-anchor="middle" x="223.21" y="-167.69" font-family="Times,serif" font-size="14.00">dp1.i:629</text>
 </g>
@@ -44,7 +44,7 @@
 <!-- funcC -->
 <g id="node4" class="node">
 <title>funcC</title>
-<ellipse fill="red" stroke="black" cx="420.78" cy="-57.99" rx="73.89" ry="28.99"/>
+<ellipse fill="none" stroke="black" cx="420.78" cy="-57.99" rx="73.89" ry="28.99"/>
 <text text-anchor="middle" x="420.78" y="-61.19" font-family="Times,serif" font-size="14.00">int funcC (int n)</text>
 <text text-anchor="middle" x="420.78" y="-44.69" font-family="Times,serif" font-size="14.00">dp4.i:627</text>
 </g>
@@ -63,7 +63,7 @@
 <!-- funcA -->
 <g id="node5" class="node">
 <title>funcA</title>
-<ellipse fill="yellow" stroke="black" cx="420.78" cy="-180.99" rx="80.79" ry="28.99"/>
+<ellipse fill="none" stroke="black" cx="420.78" cy="-180.99" rx="80.79" ry="28.99"/>
 <text text-anchor="middle" x="420.78" y="-184.19" font-family="Times,serif" font-size="14.00">void funcA (int n)</text>
 <text text-anchor="middle" x="420.78" y="-167.69" font-family="Times,serif" font-size="14.00">dp2.i:627</text>
 </g>
@@ -82,7 +82,7 @@
 <!-- funcD -->
 <g id="node7" class="node">
 <title>funcD</title>
-<ellipse fill="red" stroke="black" cx="611.99" cy="-28.99" rx="74.42" ry="28.99"/>
+<ellipse fill="none" stroke="black" cx="611.99" cy="-28.99" rx="74.42" ry="28.99"/>
 <text text-anchor="middle" x="611.99" y="-32.19" font-family="Times,serif" font-size="14.00">int funcD (int n)</text>
 <text text-anchor="middle" x="611.99" y="-15.69" font-family="Times,serif" font-size="14.00">dp3.i:627</text>
 </g>

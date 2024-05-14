@@ -15,7 +15,7 @@ int main() {
     acc.balance = 100.50;
     acc.owner = &user;   // Set acc's owner pointer to point to user
     // Call function to output results
-    printUserInfo(&user);
+    funcX(&user);
 
 
 

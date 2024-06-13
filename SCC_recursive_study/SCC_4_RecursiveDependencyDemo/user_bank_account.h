@@ -15,6 +15,6 @@ typedef struct BankAccount {
 } BankAccount;
 
 // Function prototype
-void funcComplexStruct(User* user);
+void funcX(User* user);
 
 #endif // USER_BANK_ACCOUNT_H

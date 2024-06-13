@@ -37,6 +37,20 @@ dnl Checks for library functions.
 AC_TYPE_GETGROUPS
 AC_CHECK_FUNCS(strchr memcpy getopt_long getcwd getwd sysconf getgroups eaccess)
 
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_PROG_INSTALL
+AC_LANG_C
+AC_MINIX
+dnl Check if the compiler supports coverage flags
+AX_CHECK_COMPILE_FLAG([-fprofile-arcs -ftest-coverage], [
+  CFLAGS="$CFLAGS -fprofile-arcs -ftest-coverage"
+  LDFLAGS="$LDFLAGS -lgcov --coverage"
+], [])
+
+
+
 if test "$ac_cv_lib_static_libiberty_a_xmalloc" = no \
      -o "$which_cv_iberty" = no ; then
   AC_DEFINE([NEED_XMALLOC], 1, [Define if you need xmalloc().])

@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - bzip2-1.0.8/huffman.c</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory bzip2-1.0.8">bzip2-1.0.8</a> - huffman.c<span style="font-size: 80%;"> (source / <a href="huffman.c.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">93.3&nbsp;%</td>
+            <td class="headerCovTableEntry">75</td>
+            <td class="headerCovTableEntry">70</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2024-06-14 00:08:21</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">3</td>
+          </tr>
+                  <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>              : </span>
+<span id="L2"><span class="lineNum">       2</span>              : /*-------------------------------------------------------------*/</span>
+<span id="L3"><span class="lineNum">       3</span>              : /*--- Huffman coding low-level stuff                        ---*/</span>
+<span id="L4"><span class="lineNum">       4</span>              : /*---                                             huffman.c ---*/</span>
+<span id="L5"><span class="lineNum">       5</span>              : /*-------------------------------------------------------------*/</span>
+<span id="L6"><span class="lineNum">       6</span>              : </span>
+<span id="L7"><span class="lineNum">       7</span>              : /* ------------------------------------------------------------------</span>
+<span id="L8"><span class="lineNum">       8</span>              :    This file is part of bzip2/libbzip2, a program and library for</span>
+<span id="L9"><span class="lineNum">       9</span>              :    lossless, block-sorting data compression.</span>
+<span id="L10"><span class="lineNum">      10</span>              : </span>
+<span id="L11"><span class="lineNum">      11</span>              :    bzip2/libbzip2 version 1.0.8 of 13 July 2019</span>
+<span id="L12"><span class="lineNum">      12</span>              :    Copyright (C) 1996-2019 Julian Seward &lt;jseward@acm.org&gt;</span>
+<span id="L13"><span class="lineNum">      13</span>              : </span>
+<span id="L14"><span class="lineNum">      14</span>              :    Please read the WARNING, DISCLAIMER and PATENTS sections in the </span>
+<span id="L15"><span class="lineNum">      15</span>              :    README file.</span>
+<span id="L16"><span class="lineNum">      16</span>              : </span>
+<span id="L17"><span class="lineNum">      17</span>              :    This program is released under the terms of the license contained</span>
+<span id="L18"><span class="lineNum">      18</span>              :    in the file LICENSE.</span>
+<span id="L19"><span class="lineNum">      19</span>              :    ------------------------------------------------------------------ */</span>
+<span id="L20"><span class="lineNum">      20</span>              : </span>
+<span id="L21"><span class="lineNum">      21</span>              : </span>
+<span id="L22"><span class="lineNum">      22</span>              : #include &quot;bzlib_private.h&quot;</span>
+<span id="L23"><span class="lineNum">      23</span>              : </span>
+<span id="L24"><span class="lineNum">      24</span>              : /*---------------------------------------------------*/</span>
+<span id="L25"><span class="lineNum">      25</span>              : #define WEIGHTOF(zz0)  ((zz0) &amp; 0xffffff00)</span>
+<span id="L26"><span class="lineNum">      26</span>              : #define DEPTHOF(zz1)   ((zz1) &amp; 0x000000ff)</span>
+<span id="L27"><span class="lineNum">      27</span>              : #define MYMAX(zz2,zz3) ((zz2) &gt; (zz3) ? (zz2) : (zz3))</span>
+<span id="L28"><span class="lineNum">      28</span>              : </span>
+<span id="L29"><span class="lineNum">      29</span>              : #define ADDWEIGHTS(zw1,zw2)                           \</span>
+<span id="L30"><span class="lineNum">      30</span>              :    (WEIGHTOF(zw1)+WEIGHTOF(zw2)) |                    \</span>
+<span id="L31"><span class="lineNum">      31</span>              :    (1 + MYMAX(DEPTHOF(zw1),DEPTHOF(zw2)))</span>
+<span id="L32"><span class="lineNum">      32</span>              : </span>
+<span id="L33"><span class="lineNum">      33</span>              : #define UPHEAP(z)                                     \</span>
+<span id="L34"><span class="lineNum">      34</span>              : {                                                     \</span>
+<span id="L35"><span class="lineNum">      35</span>              :    Int32 zz, tmp;                                     \</span>
+<span id="L36"><span class="lineNum">      36</span>              :    zz = z; tmp = heap[zz];                            \</span>
+<span id="L37"><span class="lineNum">      37</span>              :    while (weight[tmp] &lt; weight[heap[zz &gt;&gt; 1]]) {      \</span>
+<span id="L38"><span class="lineNum">      38</span>              :       heap[zz] = heap[zz &gt;&gt; 1];                       \</span>
+<span id="L39"><span class="lineNum">      39</span>              :       zz &gt;&gt;= 1;                                       \</span>
+<span id="L40"><span class="lineNum">      40</span>              :    }                                                  \</span>
+<span id="L41"><span class="lineNum">      41</span>              :    heap[zz] = tmp;                                    \</span>
+<span id="L42"><span class="lineNum">      42</span>              : }</span>
+<span id="L43"><span class="lineNum">      43</span>              : </span>
+<span id="L44"><span class="lineNum">      44</span>              : #define DOWNHEAP(z)                                   \</span>
+<span id="L45"><span class="lineNum">      45</span>              : {                                                     \</span>
+<span id="L46"><span class="lineNum">      46</span>              :    Int32 zz, yy, tmp;                                 \</span>
+<span id="L47"><span class="lineNum">      47</span>              :    zz = z; tmp = heap[zz];                            \</span>
+<span id="L48"><span class="lineNum">      48</span>              :    while (True) {                                     \</span>
+<span id="L49"><span class="lineNum">      49</span>              :       yy = zz &lt;&lt; 1;                                   \</span>
+<span id="L50"><span class="lineNum">      50</span>              :       if (yy &gt; nHeap) break;                          \</span>
+<span id="L51"><span class="lineNum">      51</span>              :       if (yy &lt; nHeap &amp;&amp;                               \</span>
+<span id="L52"><span class="lineNum">      52</span>              :           weight[heap[yy+1]] &lt; weight[heap[yy]])      \</span>
+<span id="L53"><span class="lineNum">      53</span>              :          yy++;                                        \</span>
+<span id="L54"><span class="lineNum">      54</span>              :       if (weight[tmp] &lt; weight[heap[yy]]) break;      \</span>
+<span id="L55"><span class="lineNum">      55</span>              :       heap[zz] = heap[yy];                            \</span>
+<span id="L56"><span class="lineNum">      56</span>              :       zz = yy;                                        \</span>
+<span id="L57"><span class="lineNum">      57</span>              :    }                                                  \</span>
+<span id="L58"><span class="lineNum">      58</span>              :    heap[zz] = tmp;                                    \</span>
+<span id="L59"><span class="lineNum">      59</span>              : }</span>
+<span id="L60"><span class="lineNum">      60</span>              : </span>
+<span id="L61"><span class="lineNum">      61</span>              : </span>
+<span id="L62"><span class="lineNum">      62</span>              : /*---------------------------------------------------*/</span>
+<span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC tlaBgGNC">        1032 : void BZ2_hbMakeCodeLengths ( UChar *len, </span></span>
+<span id="L64"><span class="lineNum">      64</span>              :                              Int32 *freq,</span>
+<span id="L65"><span class="lineNum">      65</span>              :                              Int32 alphaSize,</span>
+<span id="L66"><span class="lineNum">      66</span>              :                              Int32 maxLen )</span>
+<span id="L67"><span class="lineNum">      67</span>              : {</span>
+<span id="L68"><span class="lineNum">      68</span>              :    /*--</span>
+<span id="L69"><span class="lineNum">      69</span>              :       Nodes and heap entries run from 1.  Entry 0</span>
+<span id="L70"><span class="lineNum">      70</span>              :       for both the heap and nodes is a sentinel.</span>
+<span id="L71"><span class="lineNum">      71</span>              :    --*/</span>
+<span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">        1032 :    Int32 nNodes, nHeap, n1, n2, i, j, k;</span></span>
+<span id="L73"><span class="lineNum">      73</span> <span class="tlaGNC">        1032 :    Bool  tooLong;</span></span>
+<span id="L74"><span class="lineNum">      74</span>              : </span>
+<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">        1032 :    Int32 heap   [ BZ_MAX_ALPHA_SIZE + 2 ];</span></span>
+<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">        1032 :    Int32 weight [ BZ_MAX_ALPHA_SIZE * 2 ];</span></span>
+<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">        1032 :    Int32 parent [ BZ_MAX_ALPHA_SIZE * 2 ]; </span></span>
+<span id="L78"><span class="lineNum">      78</span>              : </span>
+<span id="L79"><span class="lineNum">      79</span> <span class="tlaGNC">      231864 :    for (i = 0; i &lt; alphaSize; i++)</span></span>
+<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">      230832 :       weight[i+1] = (freq[i] == 0 ? 1 : freq[i]) &lt;&lt; 8;</span></span>
+<span id="L81"><span class="lineNum">      81</span>              : </span>
+<span id="L82"><span class="lineNum">      82</span> <span class="tlaGNC">        1032 :    while (True) {</span></span>
+<span id="L83"><span class="lineNum">      83</span>              : </span>
+<span id="L84"><span class="lineNum">      84</span> <span class="tlaGNC">        1032 :       nNodes = alphaSize;</span></span>
+<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">        1032 :       nHeap = 0;</span></span>
+<span id="L86"><span class="lineNum">      86</span>              : </span>
+<span id="L87"><span class="lineNum">      87</span> <span class="tlaGNC">        1032 :       heap[0] = 0;</span></span>
+<span id="L88"><span class="lineNum">      88</span> <span class="tlaGNC">        1032 :       weight[0] = 0;</span></span>
+<span id="L89"><span class="lineNum">      89</span> <span class="tlaGNC">        1032 :       parent[0] = -2;</span></span>
+<span id="L90"><span class="lineNum">      90</span>              : </span>
+<span id="L91"><span class="lineNum">      91</span> <span class="tlaGNC">      231864 :       for (i = 1; i &lt;= alphaSize; i++) {</span></span>
+<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">      230832 :          parent[i] = -1;</span></span>
+<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">      230832 :          nHeap++;</span></span>
+<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">      230832 :          heap[nHeap] = i;</span></span>
+<span id="L95"><span class="lineNum">      95</span> <span class="tlaGNC">      597087 :          UPHEAP(nHeap);</span></span>
+<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">      230832 :       }</span></span>
+<span id="L97"><span class="lineNum">      97</span>              : </span>
+<span id="L98"><span class="lineNum">      98</span> <span class="tlaGNC">        1032 :       AssertH( nHeap &lt; (BZ_MAX_ALPHA_SIZE+2), 2001 );</span></span>
+<span id="L99"><span class="lineNum">      99</span>              :    </span>
+<span id="L100"><span class="lineNum">     100</span> <span class="tlaGNC">      230832 :       while (nHeap &gt; 1) {</span></span>
+<span id="L101"><span class="lineNum">     101</span> <span class="tlaGNC">     1458257 :          n1 = heap[1]; heap[1] = heap[nHeap]; nHeap--; DOWNHEAP(1);</span></span>
+<span id="L102"><span class="lineNum">     102</span> <span class="tlaGNC">     1439473 :          n2 = heap[1]; heap[1] = heap[nHeap]; nHeap--; DOWNHEAP(1);</span></span>
+<span id="L103"><span class="lineNum">     103</span> <span class="tlaGNC">      229800 :          nNodes++;</span></span>
+<span id="L104"><span class="lineNum">     104</span> <span class="tlaGNC">      229800 :          parent[n1] = parent[n2] = nNodes;</span></span>
+<span id="L105"><span class="lineNum">     105</span> <span class="tlaGNC">      229800 :          weight[nNodes] = ADDWEIGHTS(weight[n1], weight[n2]);</span></span>
+<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">      229800 :          parent[nNodes] = -1;</span></span>
+<span id="L107"><span class="lineNum">     107</span> <span class="tlaGNC">      229800 :          nHeap++;</span></span>
+<span id="L108"><span class="lineNum">     108</span> <span class="tlaGNC">      229800 :          heap[nHeap] = nNodes;</span></span>
+<span id="L109"><span class="lineNum">     109</span> <span class="tlaGNC">      256971 :          UPHEAP(nHeap);</span></span>
+<span id="L110"><span class="lineNum">     110</span>              :       }</span>
+<span id="L111"><span class="lineNum">     111</span>              : </span>
+<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">        1032 :       AssertH( nNodes &lt; (BZ_MAX_ALPHA_SIZE * 2), 2002 );</span></span>
+<span id="L113"><span class="lineNum">     113</span>              : </span>
+<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">        1032 :       tooLong = False;</span></span>
+<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">      231864 :       for (i = 1; i &lt;= alphaSize; i++) {</span></span>
+<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">      230832 :          j = 0;</span></span>
+<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">      230832 :          k = i;</span></span>
+<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">     2686209 :          while (parent[k] &gt;= 0) { k = parent[k]; j++; }</span></span>
+<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">      230832 :          len[i-1] = j;</span></span>
+<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">      230832 :          if (j &gt; maxLen) tooLong = True;</span></span>
+<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">      230832 :       }</span></span>
+<span id="L122"><span class="lineNum">     122</span>              :       </span>
+<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">        1032 :       if (! tooLong) break;</span></span>
+<span id="L124"><span class="lineNum">     124</span>              : </span>
+<span id="L125"><span class="lineNum">     125</span>              :       /* 17 Oct 04: keep-going condition for the following loop used</span>
+<span id="L126"><span class="lineNum">     126</span>              :          to be 'i &lt; alphaSize', which missed the last element,</span>
+<span id="L127"><span class="lineNum">     127</span>              :          theoretically leading to the possibility of the compressor</span>
+<span id="L128"><span class="lineNum">     128</span>              :          looping.  However, this count-scaling step is only needed if</span>
+<span id="L129"><span class="lineNum">     129</span>              :          one of the generated Huffman code words is longer than</span>
+<span id="L130"><span class="lineNum">     130</span>              :          maxLen, which up to and including version 1.0.2 was 20 bits,</span>
+<span id="L131"><span class="lineNum">     131</span>              :          which is extremely unlikely.  In version 1.0.3 maxLen was</span>
+<span id="L132"><span class="lineNum">     132</span>              :          changed to 17 bits, which has minimal effect on compression</span>
+<span id="L133"><span class="lineNum">     133</span>              :          ratio, but does mean this scaling step is used from time to</span>
+<span id="L134"><span class="lineNum">     134</span>              :          time, enough to verify that it works.</span>
+<span id="L135"><span class="lineNum">     135</span>              : </span>
+<span id="L136"><span class="lineNum">     136</span>              :          This means that bzip2-1.0.3 and later will only produce</span>
+<span id="L137"><span class="lineNum">     137</span>              :          Huffman codes with a maximum length of 17 bits.  However, in</span>
+<span id="L138"><span class="lineNum">     138</span>              :          order to preserve backwards compatibility with bitstreams</span>
+<span id="L139"><span class="lineNum">     139</span>              :          produced by versions pre-1.0.3, the decompressor must still</span>
+<span id="L140"><span class="lineNum">     140</span>              :          handle lengths of up to 20. */</span>
+<span id="L141"><span class="lineNum">     141</span>              : </span>
+<span id="L142"><span class="lineNum">     142</span> <span class="tlaUNC tlaBgUNC">           0 :       for (i = 1; i &lt;= alphaSize; i++) {</span></span>
+<span id="L143"><span class="lineNum">     143</span> <span class="tlaUNC">           0 :          j = weight[i] &gt;&gt; 8;</span></span>
+<span id="L144"><span class="lineNum">     144</span> <span class="tlaUNC">           0 :          j = 1 + (j / 2);</span></span>
+<span id="L145"><span class="lineNum">     145</span> <span class="tlaUNC">           0 :          weight[i] = j &lt;&lt; 8;</span></span>
+<span id="L146"><span class="lineNum">     146</span> <span class="tlaUNC">           0 :       }</span></span>
+<span id="L147"><span class="lineNum">     147</span>              :    }</span>
+<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC tlaBgGNC">        1032 : }</span></span>
+<span id="L149"><span class="lineNum">     149</span>              : </span>
+<span id="L150"><span class="lineNum">     150</span>              : </span>
+<span id="L151"><span class="lineNum">     151</span>              : /*---------------------------------------------------*/</span>
+<span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">         258 : void BZ2_hbAssignCodes ( Int32 *code,</span></span>
+<span id="L153"><span class="lineNum">     153</span>              :                          UChar *length,</span>
+<span id="L154"><span class="lineNum">     154</span>              :                          Int32 minLen,</span>
+<span id="L155"><span class="lineNum">     155</span>              :                          Int32 maxLen,</span>
+<span id="L156"><span class="lineNum">     156</span>              :                          Int32 alphaSize )</span>
+<span id="L157"><span class="lineNum">     157</span>              : {</span>
+<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">         258 :    Int32 n, vec, i;</span></span>
+<span id="L159"><span class="lineNum">     159</span>              : </span>
+<span id="L160"><span class="lineNum">     160</span> <span class="tlaGNC">         258 :    vec = 0;</span></span>
+<span id="L161"><span class="lineNum">     161</span> <span class="tlaGNC">        2849 :    for (n = minLen; n &lt;= maxLen; n++) {</span></span>
+<span id="L162"><span class="lineNum">     162</span> <span class="tlaGNC">      624545 :       for (i = 0; i &lt; alphaSize; i++)</span></span>
+<span id="L163"><span class="lineNum">     163</span> <span class="tlaGNC">      621954 :          if (length[i] == n) { code[i] = vec; vec++; };</span></span>
+<span id="L164"><span class="lineNum">     164</span> <span class="tlaGNC">        2591 :       vec &lt;&lt;= 1;</span></span>
+<span id="L165"><span class="lineNum">     165</span> <span class="tlaGNC">        2591 :    }</span></span>
+<span id="L166"><span class="lineNum">     166</span> <span class="tlaGNC">         258 : }</span></span>
+<span id="L167"><span class="lineNum">     167</span>              : </span>
+<span id="L168"><span class="lineNum">     168</span>              : </span>
+<span id="L169"><span class="lineNum">     169</span>              : /*---------------------------------------------------*/</span>
+<span id="L170"><span class="lineNum">     170</span> <span class="tlaGNC">         105 : void BZ2_hbCreateDecodeTables ( Int32 *limit,</span></span>
+<span id="L171"><span class="lineNum">     171</span>              :                                 Int32 *base,</span>
+<span id="L172"><span class="lineNum">     172</span>              :                                 Int32 *perm,</span>
+<span id="L173"><span class="lineNum">     173</span>              :                                 UChar *length,</span>
+<span id="L174"><span class="lineNum">     174</span>              :                                 Int32 minLen,</span>
+<span id="L175"><span class="lineNum">     175</span>              :                                 Int32 maxLen,</span>
+<span id="L176"><span class="lineNum">     176</span>              :                                 Int32 alphaSize )</span>
+<span id="L177"><span class="lineNum">     177</span>              : {</span>
+<span id="L178"><span class="lineNum">     178</span> <span class="tlaGNC">         105 :    Int32 pp, i, j, vec;</span></span>
+<span id="L179"><span class="lineNum">     179</span>              : </span>
+<span id="L180"><span class="lineNum">     180</span> <span class="tlaGNC">         105 :    pp = 0;</span></span>
+<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">        1155 :    for (i = minLen; i &lt;= maxLen; i++)</span></span>
+<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">      252565 :       for (j = 0; j &lt; alphaSize; j++)</span></span>
+<span id="L183"><span class="lineNum">     183</span> <span class="tlaGNC">      252565 :          if (length[j] == i) { perm[pp] = j; pp++; };</span></span>
+<span id="L184"><span class="lineNum">     184</span>              : </span>
+<span id="L185"><span class="lineNum">     185</span> <span class="tlaGNC">        2520 :    for (i = 0; i &lt; BZ_MAX_CODE_LEN; i++) base[i] = 0;</span></span>
+<span id="L186"><span class="lineNum">     186</span> <span class="tlaGNC">       23505 :    for (i = 0; i &lt; alphaSize; i++) base[length[i]+1]++;</span></span>
+<span id="L187"><span class="lineNum">     187</span>              : </span>
+<span id="L188"><span class="lineNum">     188</span> <span class="tlaGNC">        2415 :    for (i = 1; i &lt; BZ_MAX_CODE_LEN; i++) base[i] += base[i-1];</span></span>
+<span id="L189"><span class="lineNum">     189</span>              : </span>
+<span id="L190"><span class="lineNum">     190</span> <span class="tlaGNC">        2520 :    for (i = 0; i &lt; BZ_MAX_CODE_LEN; i++) limit[i] = 0;</span></span>
+<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">         105 :    vec = 0;</span></span>
+<span id="L192"><span class="lineNum">     192</span>              : </span>
+<span id="L193"><span class="lineNum">     193</span> <span class="tlaGNC">        1155 :    for (i = minLen; i &lt;= maxLen; i++) {</span></span>
+<span id="L194"><span class="lineNum">     194</span> <span class="tlaGNC">        1050 :       vec += (base[i+1] - base[i]);</span></span>
+<span id="L195"><span class="lineNum">     195</span> <span class="tlaGNC">        1050 :       limit[i] = vec-1;</span></span>
+<span id="L196"><span class="lineNum">     196</span> <span class="tlaGNC">        1050 :       vec &lt;&lt;= 1;</span></span>
+<span id="L197"><span class="lineNum">     197</span> <span class="tlaGNC">        1050 :    }</span></span>
+<span id="L198"><span class="lineNum">     198</span> <span class="tlaGNC">        1050 :    for (i = minLen + 1; i &lt;= maxLen; i++)</span></span>
+<span id="L199"><span class="lineNum">     199</span> <span class="tlaGNC">         945 :       base[i] = ((limit[i-1] + 1) &lt;&lt; 1) - base[i];</span></span>
+<span id="L200"><span class="lineNum">     200</span> <span class="tlaGNC">         105 : }</span></span>
+<span id="L201"><span class="lineNum">     201</span>              : </span>
+<span id="L202"><span class="lineNum">     202</span>              : </span>
+<span id="L203"><span class="lineNum">     203</span>              : /*-------------------------------------------------------------*/</span>
+<span id="L204"><span class="lineNum">     204</span>              : /*--- end                                         huffman.c ---*/</span>
+<span id="L205"><span class="lineNum">     205</span>              : /*-------------------------------------------------------------*/</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.1-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

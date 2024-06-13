@@ -1,3 +1,4 @@
+- [ Figure and Table Generation](#1-introduction)
 - [1. Introduction](#1-introduction)
   - [1.1. Replicable Artifact](#11-replicable-artifact)
   - [Feasibility Study](#feasibility-study)
@@ -30,6 +31,58 @@
   - [4.2. Pointer Aliasing Examples in Section 6, 7, 8](#42-pointer-aliasing-examples-in-section-6-7-8)
   - [4.3. Why we need Strongly Connected Component Recursive dependency?](#43-why-we-need-strongly-connected-component-recursive-dependency)
 - [5. Extra Test on idiomatic](#5-extra-test-on-idiomatic)
+
+
+# Figure and Table Generation
+## Coverage Test
+
+### Table 1 Combined Coverage Test Generation
+
+```bash
+# This script iterates through all subdirectories in the current directory, compiles and runs the first C file found in each subdirectory, collects code coverage data, and finally generates an HTML coverage report.
+bash /Users/mac/rustmap-clone/c-code/rosseta-125/gcc-rosseta-code.sh
+```
+View the result in `/Users/mac/rustmap-clone/c-code/rosseta-125/coverage_report/index.html` for Table 1 Rosetta Code
+
+
+
+
+### Table 2 Generate Combined Coverage Test for bzip2 Compress and Decompress to use total tests to divide
+we have added `coverage` flags in `Makefile` under `c-code/bzip2-1.0.8
+
+1. Generate C coverage test for Original Test Suite for bzip2
+```bash
+cd /Users/mac/rustmap-clone/c-code/bzip2-1.0.8
+# this command generate 
+make 
+```
+View the result in `/Users/mac/rustmap-clone/c-code/bzip2-1.0.8/out/bzip2-1.0.8/index.html` for Table 1 bzip2
+
+
+
+2. Generate C Coverage Test custom Test Suite for bzip2 Rust Compress and Decompress Function 
+```bash
+make clean
+make
+./bzip2 -k testcases/compress_test.txt
+lcov --capture --directory . --output-file compress_coverage.info
+genhtml compress_coverage.info --output-directory compress_out
+rm -f *.gcda *.gcno coverage.info
+```
+
+3. Generate C Coverage Test custom Test Suite for bzip2 Rust for Decompress Function 
+```bash
+make clean
+make
+./bzip2 -k testcases/compress_test.txt
+lcov --capture --directory . --output-file compress_coverage.info
+genhtml compress_coverage.info --output-directory compress_out
+rm -f *.gcda *.gcno coverage.info
+```
+
+3. Divide 
+
+
 
 
 # 1. Introduction

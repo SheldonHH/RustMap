@@ -2021,7 +2021,9 @@ pub unsafe extern "C" fn BZ2_bzWriteClose64(mut bzerror: *mut std::os::raw::c_in
     free(bzf as *mut std::os::raw::c_void);
 }
 /*---------------------------------------------------*/
-#[no_mangle]
+#[no_mangle] // ffi unsafe
+// FILE
+// rust File lib -> C library
 pub unsafe extern "C" fn BZ2_bzReadOpen(mut bzerror: *mut std::os::raw::c_int,
                                         mut f: *mut FILE,
                                         mut verbosity: std::os::raw::c_int,

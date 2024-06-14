@@ -36,7 +36,7 @@
 # Figure and Table Generation
 ## Coverage Test
 
-### Table 1 Combined Coverage Test Generation
+## Table 1 Combined Coverage Test Generation
 
 ```bash
 # This script iterates through all subdirectories in the current directory, compiles and runs the first C file found in each subdirectory, collects code coverage data, and finally generates an HTML coverage report.
@@ -46,11 +46,10 @@ View the result in `/Users/mac/rustmap-clone/c-code/rosseta-125/coverage_report/
 
 
 
-
-### Table 2 Generate Combined Coverage Test for bzip2 Compress and Decompress to use total tests to divide
+## Table 2 Generate Combined Coverage Test for bzip2 Compress and Decompress to use total tests to divide
 we have added `coverage` flags in `Makefile` under `c-code/bzip2-1.0.8
 
-1. Generate C coverage test for Original Test Suite for bzip2
+### 1. Generate C coverage test for Original Test Suite for bzip2
 ```bash
 cd /Users/mac/rustmap-clone/c-code/bzip2-1.0.8
 # this command generate 
@@ -60,28 +59,37 @@ View the result in `/Users/mac/rustmap-clone/c-code/bzip2-1.0.8/out/bzip2-1.0.8/
 
 
 
-2. Generate C Coverage Test custom Test Suite for bzip2 Rust Compress and Decompress Function 
+### 2. Generate C Coverage Test custom Test Suite for bzip2 Rust Compress and Decompress Function 
 ```bash
-make clean
-make
+make cleancoverage
 ./bzip2 -k testcases/compress_test.txt
 lcov --capture --directory . --output-file compress_coverage.info
 genhtml compress_coverage.info --output-directory compress_out
-rm -f *.gcda *.gcno coverage.info
 ```
+View the Result in `bzip2-1.0.8/compress_out/bzip2-1.0.8/index.html`
 
-3. Generate C Coverage Test custom Test Suite for bzip2 Rust for Decompress Function 
+### 3. Generate C Coverage Test custom Test Suite for bzip2 Rust for Decompress Function 
 ```bash
-make clean
-make
-./bzip2 -k testcases/compress_test.txt
-lcov --capture --directory . --output-file compress_coverage.info
-genhtml compress_coverage.info --output-directory compress_out
-rm -f *.gcda *.gcno coverage.info
+make cleancoverage
+./bzip2 -k -d testcases/decompress_test.txt.bz2
+lcov --capture --directory . --output-file decompress_coverage.info
+genhtml decompress_coverage.info --output-directory decompress_out
+```
+View the Result in `bzip2-1.0.8/decompress_out/bzip2-1.0.8/index.html`
+
+
+#### 4. combined the result
+Once you combine the result  
+```bash
+
 ```
 
-3. Divide 
 
+
+## Cognitive Complex Test
+```bash
+cd /Users/mac/rustmap-clone/cognitive-complex-test/ 
+```
 
 
 
@@ -101,7 +109,7 @@ dockrustmap-unsafety-evaluation.tar.gz
 
 ## 1.2. version introduction
 - [bzip2-1.0.8](https://gitlab.com/bzip2/bzip2/-/tree/bzip2-1.0.8?ref_type=tags )
-- [which-2.21](http://ftp.gnu.org/gnu/which/which-2.21.tar.gz)
+<!-- - [which-2.21](http://ftp.gnu.org/gnu/which/which-2.21.tar.gz) -->
 - [rosetta code](https://rosettacode.org/)
 
 

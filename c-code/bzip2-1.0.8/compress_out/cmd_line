@@ -1,0 +1,1 @@
+genhtml compress_coverage.info --output-directory compress_out

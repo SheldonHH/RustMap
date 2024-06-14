@@ -116,9 +116,10 @@ clean:
 	rm -f *.o libbz2.a bzip2 bzip2recover \
 	sample1.rb2 sample2.rb2 sample3.rb2 \
 	sample1.tst sample2.tst sample3.tst \
-	coverage.info
-	rm -rf out
-	rm -f *.gcda *.gcno coverage.info
+	rm -f *.gcda *.gcno *.info
+
+cleancoverage:
+	rm -f *.gcda *.gcno *.info
 
 blocksort.o: blocksort.c
 	@cat words0

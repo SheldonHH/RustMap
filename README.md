@@ -14,8 +14,7 @@
   - [2.2. Step 1: add save preprocessed file \*.i during `make`](#22-step-1-add-save-preprocessed-file-i-during-make)
     - [2.2.1. Step 1.1 remove directives from \*.i](#221-step-11-remove-directives-from-i)
     - [2.2.2. Step 1.2 rename `bzip2recover.i` to `bzip2recover.i.bk`](#222-step-12-rename-bzip2recoveri-to-bzip2recoveribk)
-  - [2.3. Step 2: Generating C Tags: Command for Recursive Ctags with Custom Fields and Language Mapping](#23-step-2-generating-c-tags-command-for-recursive-ctags-with-custom-fields-and-language-mapping)
-  - [2.4. Step 3: Use cflow](#24-step-3-use-cflow)
+  - [2.4. Step 3: Generate Function Call Graph by using cflow](#24-step-3-generate-function-call-graph-by-using-cflow)
     - [2.4.1. Step 4: Generate RustMap Scaffolding](#241-step-4-generate-rustmap-scaffolding)
 - [3. Functional Test (Project-Scale to Single-File-Scale)](#3-functional-test-project-scale-to-single-file-scale)
   - [3.1. Project-Scale Executable Test on bzip2: How to test bzip2 compression function?](#31-project-scale-executable-test-on-bzip2-how-to-test-bzip2-compression-function)
@@ -138,14 +137,9 @@ for file in *.i; do awk '!/^#[ \t]*[0-9]+[ \t]+"/' "$file" > "${file}.tmp" && mv
 Since we only focus on bzip2 executable binary, we need to exclude the bzip2recover.i
 ( Caveat: if the binary has more than one executable, we should exclude the unnecessary one )
 
-## 2.3. Step 2: Generating C Tags: Command for Recursive Ctags with Custom Fields and Language Mapping
-   
-```bash
-ctags -R --fields=+l --c-kinds=+v+f --languages=C --langmap=C:.i -o ctagop.txt 
-```
 
    
-## 2.4. Step 3: Use cflow
+## 2.4. Step 3: Generate Function Call Graph by using cflow
 
 When using the cflow tool for a C project, it's generally recommended to have only one main function in the project. cflow is designed to analyze function call relationships in C programs and generates a call graph. If there are multiple main functions, cflow might face difficulties, as the main function typically serves as the entry point of a program. For projects with multiple main functions, like those containing independent sub-projects, you might need to run cflow separately for each part or adjust the project structure for effective analysis. In summary, having a single main function is the best practice for using cflow, unless you have specific needs and strategies to handle multiple instances.  
 

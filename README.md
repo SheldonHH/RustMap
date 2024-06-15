@@ -1,10 +1,15 @@
-- [ Figure and Table Generation](#1-introduction)
+- [Introducation](#introducation)
+  - [Coverage Test](#coverage-test)
+  - [Table 1 Combined Coverage Test Generation](#table-1-combined-coverage-test-generation)
+  - [Table 2 Generate Combined Coverage Test for bzip2 Compress and Decompress to use total tests to divide](#table-2-generate-combined-coverage-test-for-bzip2-compress-and-decompress-to-use-total-tests-to-divide)
+    - [1. Generate C coverage test for Original Test Suite for bzip2](#1-generate-c-coverage-test-for-original-test-suite-for-bzip2)
+    - [2. Generate C Coverage Test custom Test Suite for bzip2 Rust Compress and Decompress Function ](#2-generate-c-coverage-test-custom-test-suite-for-bzip2-rust-compress-and-decompress-function)
+    - [3. Generate C Coverage Test custom Test Suite for bzip2 Rust for Decompress Function ](#3-generate-c-coverage-test-custom-test-suite-for-bzip2-rust-for-decompress-function)
+      - [4. combined the result](#4-combined-the-result)
+  - [Cognitive Complex Test](#cognitive-complex-test)
 - [1. Introduction](#1-introduction)
-  - [1.1. Replicable Artifact](#11-replicable-artifact)
-  - [Feasibility Study](#feasibility-study)
-  - [Unsatety Evaluation](#unsatety-evaluation)
   - [1.2. version introduction](#12-version-introduction)
-- [2.  Scaffolding Boilerplate Generation  RQ2](#2--scaffolding-boilerplate-generation--rq2)
+- [2.  Scaffolding Boilerplate Generation](#2--scaffolding-boilerplate-generation)
   - [2.1. Step 0: Prepare](#21-step-0-prepare)
   - [2.2. Step 1: add save preprocessed file \*.i during `make`](#22-step-1-add-save-preprocessed-file-i-during-make)
     - [2.2.1. Step 1.1 remove directives from \*.i](#221-step-11-remove-directives-from-i)
@@ -18,14 +23,9 @@
     - [3.1.2. test cases generations bzip2](#312-test-cases-generations-bzip2)
     - [3.1.3. Functional Test compress small-files](#313-functional-test-compress-small-files)
     - [3.1.4. uncompress `.bz2`](#314-uncompress-bz2)
-  - [3.2. which](#32-which)
-    - [3.2.1. which\_rs\_gpt executable binary generation](#321-which_rs_gpt-executable-binary-generation)
     - [3.2.2. Functional Test](#322-functional-test)
-  - [3.3. Rosseta Executable Test](#33-rosseta-executable-test)
-  - [3.4. 2.9 Function Consistency Verification](#34-29-function-consistency-verification)
-- [4. Unsafety Analysis for bzip2-rustmap-gpt, which-rustmap-gpt and rossta-rustmap-gpt RQ2](#4-unsafety-analysis-for-bzip2-rustmap-gpt-which-rustmap-gpt-and-rossta-rustmap-gpt-rq2)
-    - [4.0.1. Figure 22 which GNU unsafety categorization](#401-figure-22-which-gnu-unsafety-categorization)
-    - [4.0.2. Figure 23 which GNU unsafety categorization](#402-figure-23-which-gnu-unsafety-categorization)
+  - [3.3. Rosseta Executable Test in Docker](#33-rosseta-executable-test-in-docker)
+- [4. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt RQ2](#4-unsafety-analysis-for-bzip2-rustmap-gpt-and-rossta-rustmap-gpt-rq2)
     - [4.0.3. Figure 25 Bzip2 unsafety categorization](#403-figure-25-bzip2-unsafety-categorization)
   - [4.1. Unit Test Examples](#41-unit-test-examples)
   - [4.2. Pointer Aliasing Examples in Section 6, 7, 8](#42-pointer-aliasing-examples-in-section-6-7-8)
@@ -33,7 +33,11 @@
 - [5. Extra Test on idiomatic](#5-extra-test-on-idiomatic)
 
 
-# Figure and Table Generation
+# Introducation
+The purpose of this artifact is to reproduce the experimental results we achieved in the paper "RustMap: Towards Project-Scale C to Rust Migration via LLM."
+
+We will demonstrate how to perform the Coverage Test, Complexity Test, Functionality Test of bzip2 and 125 Rosetta code, and the Unsafety Test.
+
 ## Coverage Test
 
 ## Table 1 Combined Coverage Test Generation
@@ -79,7 +83,8 @@ View the Result in `bzip2-1.0.8/decompress_out/bzip2-1.0.8/index.html`
 
 
 #### 4. combined the result
-Once you combine the result  
+Once you combine the result, you will get the result like below:
+  
 ```bash
 
 ```
@@ -95,26 +100,16 @@ cd /Users/mac/rustmap-clone/cognitive-complex-test/
 
 # 1. Introduction
 There are three parts in the 
-## 1.1. Replicable Artifact 
-I have provided for both and unsafety analysis for Figure 21, 22, 23, 24 in [zenodo](https://10.5281/zenodo.10421039)
-
-
-## Feasibility Study
-dockrustmap-unsafety-evaluation.tar.gz
-
-
-## Unsatety Evaluation
 
 
 
 ## 1.2. version introduction
 - [bzip2-1.0.8](https://gitlab.com/bzip2/bzip2/-/tree/bzip2-1.0.8?ref_type=tags )
-<!-- - [which-2.21](http://ftp.gnu.org/gnu/which/which-2.21.tar.gz) -->
 - [rosetta code](https://rosettacode.org/)
 
 
 
-#  2.  Scaffolding Boilerplate Generation  RQ2
+#  2.  Scaffolding Boilerplate Generation
 
 ## 2.1. Step 0: Prepare
 copy c-code/bzip2 to scaffolding
@@ -221,16 +216,7 @@ bzip2 -d rec00001random_5000_chars.txt.bz2
 
 
 
-## 3.2. which  
 
-### 3.2.1. which_rs_gpt executable binary generation
-```bash
-cd /root/rustmap/feasibility_study/which_rs_gpt
-cargo build --release
-
-
-
-```
 
 
 ### 3.2.2. Functional Test
@@ -238,31 +224,23 @@ cargo build --release
 
 
 
-## 3.3. Rosseta Executable Test
+## 3.3. Rosseta Executable Test in Docker
 Original rosseta code is located in `/root/rustmap/c-code/rosseta-125`
 As stated in the paper it has 
 
 
 
-## 3.4. 2.9 Function Consistency Verification
-```
-```
 
+# 4. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt RQ2
 
-
-# 4. Unsafety Analysis for bzip2-rustmap-gpt, which-rustmap-gpt and rossta-rustmap-gpt RQ2
-
-
-for Figure 22 Rosseta Code, Figure 23 GNU which and Figure 25 Bzip2 unsafety categorization
 - for C2Rust: we use [C2Rust](https://github.com/immunant/c2rust)
 - for CRUSTS : we use [In Rust We Trust – A Transpiler from Unsafe C to Safer Rust](https://ieeexplore.ieee.org/document/9793767) from [CRustS - Transpiling Unsafe C code to Safer Rust](https://github.com/yijunyu/crusts)
 - for Laertes: we use [aliasing-limit-23](10.5281/zenodo.7714175) from *[Aliasing Limits on Translating C to Safe Rust](https://dl.acm.org/doi/abs/10.1145/3586046)* 
-- for rustmap: we use GPT-4 to generate result, which located in feasibility folder to generate the result
-- for unsafe-counter: We will use [unsafe-counter](10.5281/zenodo.5442253) from [Translating C to safer Rust](https://dl.acm.org/doi/abs/10.1145/3485498)
+- for unsafe-counter: We will use [unsafe-counter](https://zenodo.org/records/10433166) from [Translating C to safer Rust](https://dl.acm.org/doi/abs/10.1145/3485498)
 
 
 
- In order to execute the instructions below, we recommend to the unsafe-counter docker image use [zenodo doi](10.5281/zenodo.10421039)  
+ In order to execute the instructions below, we recommend to the unsafe-counter docker image use [zenodo doi](https://zenodo.org/records/10433166)  
 
 
 the core step is below:
@@ -271,13 +249,13 @@ the core step is below:
 ```
 
 
-After running the below commands, we mainly focus on two rows, each generate the data requires in figure 22, 23, and 25
+After running the below commands, we mainly focus on two rows, each generate the data requires in Unsafe Test
 ```bash
 Benchmark,Statistic,ReadFromUnion,MutGlobalAccess,InlineAsm,ExternCall,RawPtrDeref,UnsafeCast,Alloc
 (unknown),Occurrences, ........,........,........,........,........,........
 ```
+See Table in ![](./paper_pic/Unsafety-Code.jpg)
 
- ###  4.0.1. Figure 22 which GNU unsafety categorization
 ```bash
 # rosseta-c2rust
 # rosseta-crust
@@ -317,20 +295,6 @@ done
 
 ```
 
-
-###  4.0.2. Figure 23 which GNU unsafety categorization
-```bash
-# which-c2rust
-cargo run --release --bin unsafe-counter -- ../laertes/test-inputs/bzip2-c2rust/rust/c2rust-lib.rs 
-
-# which-crusts
-cargo run --release --bin unsafe-counter -- ../laertes/test-inputs/bzip2-crust/rust/lib.rs 
-
-# which-laertes
-cargo run --release --bin unsafe-counter -- ../laertes/test-inputs/bzip2-laertes/rust/c2rust-lib.rs 
-
-# manual categorization for which-rustmap
-```
 
 
 ###  4.0.3. Figure 25 Bzip2 unsafety categorization

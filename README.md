@@ -15,22 +15,24 @@
     - [2.2.2. Step 1.2 rename `bzip2recover.i` to `bzip2recover.i.bk`](#222-step-12-rename-bzip2recoveri-to-bzip2recoveribk)
   - [2.3. Step 3: Generate Function Call Graph by using cflow](#23-step-3-generate-function-call-graph-by-using-cflow)
     - [2.3.1. Step 4: Generate RustMap Scaffolding](#231-step-4-generate-rustmap-scaffolding)
-- [Prompt Used to G](#prompt-used-to-g)
-  - [Prompt for directly applying LLM to translate](#prompt-for-directly-applying-llm-to-translate)
-- [3. Cogntive Complexity Test](#3-cogntive-complexity-test)
-    - [bzip2 Complexity Test](#bzip2-complexity-test)
-    - [Drawing Violin Graph for both bzip2 and rosseta code](#drawing-violin-graph-for-both-bzip2-and-rosseta-code)
-    - [How to Execute:](#how-to-execute)
-- [3. Functional Test (Project-Scale to Single-File-Scale)](#3-functional-test-project-scale-to-single-file-scale)
-    - [3.1.1. bzip2 executable binary generation](#311-bzip2-executable-binary-generation)
-    - [3.1.2. test cases generations bzip2](#312-test-cases-generations-bzip2)
-    - [3.1.3. Functional Test compress small-files](#313-functional-test-compress-small-files)
-    - [3.1.4. uncompress `.bz2`](#314-uncompress-bz2)
-  - [3.2. Rosseta Executable Test in Docker](#32-rosseta-executable-test-in-docker)
-- [4. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt](#4-unsafety-analysis-for-bzip2-rustmap-gpt-and-rossta-rustmap-gpt)
-    - [4.0.1. Bzip2 unsafety categorization](#401-bzip2-unsafety-categorization)
-  - [4.1. Unit Test Examples](#41-unit-test-examples)
-  - [4.2. Pointer Aliasing Examples](#42-pointer-aliasing-examples)
+- [3. Prompt Used to G](#3-prompt-used-to-g)
+  - [3.1. Prompt for directly applying LLM to translate](#31-prompt-for-directly-applying-llm-to-translate)
+  - [3.2. Prompt to resolve functionality error. This prompt will](#32-prompt-to-resolve-functionality-error-this-prompt-will)
+- [4. Functional Test of bzip2](#4-functional-test-of-bzip2)
+    - [4.0.1. bzip2 executable binary generation](#401-bzip2-executable-binary-generation)
+    - [4.0.2. test cases generations bzip2](#402-test-cases-generations-bzip2)
+    - [4.0.3. Functional Test compress small-files](#403-functional-test-compress-small-files)
+    - [4.0.4. Verification of RustMap bzip2 uncompress `.bz2`](#404-verification-of-rustmap-bzip2-uncompress-bz2)
+- [5. Cogntive Complexity Test](#5-cogntive-complexity-test)
+    - [5.0.1. bzip2 Complexity Test](#501-bzip2-complexity-test)
+    - [5.0.2. Roseta Code Complexity Test](#502-roseta-code-complexity-test)
+    - [5.0.3. Drawing Violin Graph for both bzip2 and rosseta code](#503-drawing-violin-graph-for-both-bzip2-and-rosseta-code)
+    - [5.0.4. How to Execute:](#504-how-to-execute)
+  - [5.1. Rosseta Executable Test in Docker](#51-rosseta-executable-test-in-docker)
+- [6. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt](#6-unsafety-analysis-for-bzip2-rustmap-gpt-and-rossta-rustmap-gpt)
+    - [6.0.1. Bzip2 unsafety categorization](#601-bzip2-unsafety-categorization)
+  - [6.1. Unit Test Examples](#61-unit-test-examples)
+  - [6.2. Pointer Aliasing Examples](#62-pointer-aliasing-examples)
 
 
 # 1. Introducation
@@ -150,8 +152,8 @@ python3 extract.py /root/rustmap/bzip2-real-test
 ```
 
 
-# Prompt Used to G
-## Prompt for directly applying LLM to translate
+# 3. Prompt Used to G
+## 3.1. Prompt for directly applying LLM to translate
 ```bash
 
 If the C code references other vital functions or structures, ask mefirst and wait for my provided input.(ASK ME first)Convert the given code to idiomatic Rust, keeping its function. Useminimal unsafe traits. Don't translate unknown variables or functions, and avoid assumptions.(ASK ME frst)
@@ -170,10 +172,87 @@ If the C code references other vital functions or structures, ask mefirst and wa
 
 I must reiterate: if you encounter unfamiliar variables or functionsduring translation, you must ask me and wait for my provided inputbefore translating.(ASK ME FIRST)
 
-```
-# 3. Cogntive Complexity Test
 
-### bzip2 Complexity Test
+```
+
+## 3.2. Prompt to resolve functionality error. This prompt will
+be integrated into the prompt in Figure 5 by replacing (...Here is C
+Code to be translated...)
+```bash
+// C code fragment with its before- and after-states:
+{
+    (before-state of C)
+    (...Here is the C code fragment that have
+        caused errors in the translated Rust...)
+    (after-state of C)
+}
+
+// Rust code generation:
+{
+    (before-state in Rust)
+    /** please generate Rust code fragment here to have
+        consistent states as the C code above
+      */
+}
+```
+
+
+# 4. Functional Test of bzip2
+
+### 4.0.1. bzip2 executable binary generation
+```bash
+cd /root/rustmap/feasibility_study/bzip2_rs_gpt
+cargo build --release
+```
+It will generate executable binary in `/root/rustmap/feasibility_study/bzip2_rs_gpt/target/release/bzip2_rs_gpt` this path
+
+
+### 4.0.2. test cases generations bzip2
+```bash
+cd /root/rustmap/feasibility_study/bzip2_tests
+python3 random-test-case-generation.py
+```
+This step will generate five small-scale text files: `random_1_chars.txt`, `random_10_chars.txt`, `random_100_chars.txt`, `random_1000_chars.txt`, `random_5000_chars.txt`
+Then we will use bzip2-rust binary to test the results.
+
+
+### 4.0.3. Functional Test compress small-files
+```bash
+cd /root/rustmap/feasibility_study/bzip2_tests-finished-example
+
+# compress test cases and record its processing time
+{ echo "Running random_1_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_1_chars.txt; echo; echo "Running random_10_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_10_chars.txt; echo; echo "Running random_100_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_100_chars.txt; echo; echo "Running random_1000_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_1000_chars.txt; echo; echo "Running random_5000_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_5000_chars.txt; echo; } 2>&1 | tee
+
+mv *.bz2 compress_output_bz2_files/
+```
+
+you may will the generation time in here: /root/rustmap/feasibility_study/bzip2_tests/timings.txt
+
+
+### 4.0.4. Verification of RustMap bzip2 uncompress `.bz2`
+```bash
+cd /root/rustmap/feasibility_study/bzip2_tests/compress_output_bz2_files
+bzip2recover random_1_chars.txt.bz2
+bzip2 -d rec00001random_1_chars.txt.bz2
+
+bzip2recover random_10_chars.txt.bz2
+bzip2 -d rec00001random_10_chars.txt.bz2
+
+bzip2recover random_100_chars.txt.bz2
+bzip2 -d rec00001random_100_chars.txt.bz2
+
+bzip2recover random_1000_chars.txt.bz2
+bzip2 -d rec00001random_1000_chars.txt.bz2
+
+bzip2recover random_5000_chars.txt.bz2
+bzip2 -d rec00001random_5000_chars.txt.bz2
+```
+
+
+
+# 5. Cogntive Complexity Test
+
+### 5.0.1. bzip2 Complexity Test
 ```bash
 # Generate Cognitivie Complexity comparative study result for Rustmap and C2Rust for each folder
 cargo run -- /root/rustmap/cognitive-complex-test/src/comparision/bzip2
@@ -189,22 +268,50 @@ cargo run -- /root/rustmap/cognitive-complex-test/src/comparision/decompress
 cargo run -- /root/rustmap/cognitive-complex-test/src/comparision/huffman
 
 ```
-View the initial result in /Users/mac/rustmap-clone/cognitive-complex-test/result/bzip2-complexity-init-result.csv
+View the initial result in `/root/rustmap/cognitive-complex-test/result/bzip2-complexity-init-result.csv`
 
 
 We merge the result as image below
 ![](cognitive-complex-test/result/bzip2-merged-result.pdf)
 
 
-We can see the final result
+
+View Final Result after merge
 ![](cognitive-complex-test/result/bzip2-Complexity-Final-Result.pdf)
 
-### Drawing Violin Graph for both bzip2 and rosseta code
+
+### 5.0.2. Roseta Code Complexity Test
+In `cognitive-complex-test/src`
+
+1. Generate RustMap Roseta Code Complexity Result
+```bash
+# Rename `main-roseta-gpt` and replace it as `main.rs`
+cargo run -- /root/rustmap/executable_binaries_test/rossta_code_gpt
+
+```
+
+2. Generate C2Rust Roseta Code Complexity Result
+```bash
+#  Rename `main-roseta-c2rust` and replace it as `main.rs`
+cargo run --  /root/rustmap/unsafety-analysis-for-rust/test-inputs/rossta-c2rust-readability
+```
+
+
+View the initial result in `/root/rustmap/cognitive-complex-test/result/roseta-complexity-init-result.csv`
+
+
+View Final Result after merge
+![](paper_pic/Roseta-Code-Complexity.pdf)  
+
+
+
+
+### 5.0.3. Drawing Violin Graph for both bzip2 and rosseta code
 This `.ipynb` file reads two CSV files containing complexity score data for RustMap and C2Rust, generates violin plots for these data, and performs statistical comparisons using the Wilcoxon test and Cliff's Delta test.
 
 The first `Book1.csv` contains complexity scores for bzip2 RustMap and C2Rust. The second `Book2.csv` contains complexity scores for Rosetta Code RustMap and C2Rust.
 
-### How to Execute:
+### 5.0.4. How to Execute:
 
 1. Ensure that Jupyter Notebook is installed. If not, install it using the following command:
 
@@ -228,56 +335,6 @@ jupyter notebook
 
 5. Run each code cell one by one (click on each cell and press Shift+Enter) to ensure all code executes correctly and generates the violin plots and statistical comparison results.
 
-# 3. Functional Test (Project-Scale to Single-File-Scale)
-
-### 3.1.1. bzip2 executable binary generation
-```bash
-cd /root/rustmap/feasibility_study/bzip2_rs_gpt
-cargo build --release
-```
-It will generate executable binary in `/root/rustmap/feasibility_study/bzip2_rs_gpt/target/release/bzip2_rs_gpt` this path
-
-
-### 3.1.2. test cases generations bzip2
-```bash
-cd /root/rustmap/feasibility_study/bzip2_tests
-python3 random-test-case-generation.py
-```
-This step will generate five small-scale text files: `random_1_chars.txt`, `random_10_chars.txt`, `random_100_chars.txt`, `random_1000_chars.txt`, `random_5000_chars.txt`
-Then we will use bzip2-rust binary to test the results.
-
-
-### 3.1.3. Functional Test compress small-files
-```bash
-cd /root/rustmap/feasibility_study/bzip2_tests-finished-example
-
-# compress test cases and record its processing time
-{ echo "Running random_1_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_1_chars.txt; echo; echo "Running random_10_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_10_chars.txt; echo; echo "Running random_100_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_100_chars.txt; echo; echo "Running random_1000_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_1000_chars.txt; echo; echo "Running random_5000_chars.txt"; time /root/rustmap/feasibility_study/bzip2_rs_gpt/target/debug/bzip2_rs_gpt random_5000_chars.txt; echo; } 2>&1 | tee
-
-mv *.bz2 compress_output_bz2_files/
-```
-
-you may will the generation time in here: /root/rustmap/feasibility_study/bzip2_tests/timings.txt
-
-
-### 3.1.4. uncompress `.bz2`
-```bash
-cd /root/rustmap/feasibility_study/bzip2_tests/compress_output_bz2_files
-bzip2recover random_1_chars.txt.bz2
-bzip2 -d rec00001random_1_chars.txt.bz2
-
-bzip2recover random_10_chars.txt.bz2
-bzip2 -d rec00001random_10_chars.txt.bz2
-
-bzip2recover random_100_chars.txt.bz2
-bzip2 -d rec00001random_100_chars.txt.bz2
-
-bzip2recover random_1000_chars.txt.bz2
-bzip2 -d rec00001random_1000_chars.txt.bz2
-
-bzip2recover random_5000_chars.txt.bz2
-bzip2 -d rec00001random_5000_chars.txt.bz2
-```
 
 
 
@@ -285,13 +342,14 @@ bzip2 -d rec00001random_5000_chars.txt.bz2
 
 
 
-## 3.2. Rosseta Executable Test in Docker
+
+## 5.1. Rosseta Executable Test in Docker
 Original rosseta code is located in `/root/rustmap/c-code/rosseta-125`
 
 
 
 
-# 4. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt
+# 6. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt
 
 - for C2Rust: we use [C2Rust](https://github.com/immunant/c2rust)
 - for CRUSTS : we use [In Rust We Trust – A Transpiler from Unsafe C to Safer Rust](https://ieeexplore.ieee.org/document/9793767) from [CRustS - Transpiling Unsafe C code to Safer Rust](https://github.com/yijunyu/crusts)
@@ -357,7 +415,7 @@ done
 
 
 
-###  4.0.1. Bzip2 unsafety categorization
+###  6.0.1. Bzip2 unsafety categorization
 ```bash
 
 # bzip2-c2rust
@@ -373,14 +431,14 @@ cargo run --release --bin unsafe-counter -- ../laertes/test-inputs/bzip2-laertes
 ```
 
 
-## 4.1. Unit Test Examples
+## 6.1. Unit Test Examples
 
 We use intercept the input and output for C program, 
 In the case of bzip2, the length of pointer array can be decided based on 
 
 
 
-## 4.2. Pointer Aliasing Examples
+## 6.2. Pointer Aliasing Examples
 See the code under `/root/rustmap/pointer_aliasing` to illustrate 
 
 

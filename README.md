@@ -15,17 +15,19 @@
     - [2.2.2. Step 1.2 rename `bzip2recover.i` to `bzip2recover.i.bk`](#222-step-12-rename-bzip2recoveri-to-bzip2recoveribk)
   - [2.3. Step 3: Generate Function Call Graph by using cflow](#23-step-3-generate-function-call-graph-by-using-cflow)
     - [2.3.1. Step 4: Generate RustMap Scaffolding](#231-step-4-generate-rustmap-scaffolding)
+- [Prompt Used to G](#prompt-used-to-g)
+  - [Prompt for directly applying LLM to translate](#prompt-for-directly-applying-llm-to-translate)
 - [3. Cogntive Complexity Test](#3-cogntive-complexity-test)
-    - [Drawing Violin Graph](#drawing-violin-graph)
+    - [bzip2 Complexity Test](#bzip2-complexity-test)
+    - [Drawing Violin Graph for both bzip2 and rosseta code](#drawing-violin-graph-for-both-bzip2-and-rosseta-code)
     - [How to Execute:](#how-to-execute)
 - [3. Functional Test (Project-Scale to Single-File-Scale)](#3-functional-test-project-scale-to-single-file-scale)
-  - [3.1. Project-Scale Executable Test on bzip2: How to test bzip2 compression function?](#31-project-scale-executable-test-on-bzip2-how-to-test-bzip2-compression-function)
     - [3.1.1. bzip2 executable binary generation](#311-bzip2-executable-binary-generation)
     - [3.1.2. test cases generations bzip2](#312-test-cases-generations-bzip2)
     - [3.1.3. Functional Test compress small-files](#313-functional-test-compress-small-files)
     - [3.1.4. uncompress `.bz2`](#314-uncompress-bz2)
   - [3.2. Rosseta Executable Test in Docker](#32-rosseta-executable-test-in-docker)
-- [4. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt RQ2](#4-unsafety-analysis-for-bzip2-rustmap-gpt-and-rossta-rustmap-gpt-rq2)
+- [4. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt](#4-unsafety-analysis-for-bzip2-rustmap-gpt-and-rossta-rustmap-gpt)
     - [4.0.1. Bzip2 unsafety categorization](#401-bzip2-unsafety-categorization)
   - [4.1. Unit Test Examples](#41-unit-test-examples)
   - [4.2. Pointer Aliasing Examples](#42-pointer-aliasing-examples)
@@ -147,10 +149,57 @@ python3 cflow_generation.py /root/rustmap/bzip2-real-test
 python3 extract.py /root/rustmap/bzip2-real-test
 ```
 
+
+# Prompt Used to G
+## Prompt for directly applying LLM to translate
+```bash
+
+If the C code references other vital functions or structures, ask mefirst and wait for my provided input.(ASK ME first)Convert the given code to idiomatic Rust, keeping its function. Useminimal unsafe traits. Don't translate unknown variables or functions, and avoid assumptions.(ASK ME frst)
+
+(1) If a variable inside the function is modified, add the mut specifier.
+(2) Distinguish between mutable and immutable references by stor-ing intermediate values.
+(3) If necessary, add lifetime annotations.
+(4) Add clear comments for all numeric types and pay attention to type conversions, especially between usize and others.
+(5) Be cautious of potential out-of-bound errors in the C code.
+(6)Use the Rust standard library as much as possible.
+(7)When performing arithmetic operations, be mindful of potentialoverflow or underflow.
+
+
+(...Here is C Code to be translated...)
+
+
+I must reiterate: if you encounter unfamiliar variables or functionsduring translation, you must ask me and wait for my provided inputbefore translating.(ASK ME FIRST)
+
+```
 # 3. Cogntive Complexity Test
 
+### bzip2 Complexity Test
+```bash
+# Generate Cognitivie Complexity comparative study result for Rustmap and C2Rust for each folder
+cargo run -- /root/rustmap/cognitive-complex-test/src/comparision/bzip2
 
-### Drawing Violin Graph
+cargo run -- /root/rustmap/cognitive-complex-test/src/comparision/blocksort
+
+cargo run -- /root/rustmap/cognitive-complex-test/src/comparision/bzlib
+
+cargo run -- /root/rustmap/cognitive-complex-test/src/comparision/compress
+
+cargo run -- /root/rustmap/cognitive-complex-test/src/comparision/decompress
+
+cargo run -- /root/rustmap/cognitive-complex-test/src/comparision/huffman
+
+```
+View the initial result in /Users/mac/rustmap-clone/cognitive-complex-test/result/bzip2-complexity-init-result.csv
+
+
+We merge the result as image below
+![](cognitive-complex-test/result/bzip2-merged-result.pdf)
+
+
+We can see the final result
+![](cognitive-complex-test/result/bzip2-Complexity-Final-Result.pdf)
+
+### Drawing Violin Graph for both bzip2 and rosseta code
 This `.ipynb` file reads two CSV files containing complexity score data for RustMap and C2Rust, generates violin plots for these data, and performs statistical comparisons using the Wilcoxon test and Cliff's Delta test.
 
 The first `Book1.csv` contains complexity scores for bzip2 RustMap and C2Rust. The second `Book2.csv` contains complexity scores for Rosetta Code RustMap and C2Rust.
@@ -166,15 +215,20 @@ pip install notebook
 
 2. Open a terminal or command prompt and navigate to the directory containing the violin_plot.ipynb file. For example:
 
-
-
 ```bash
 /Users/mac/rustmap/violin_plot.ipynb
 ```
-This .ipynb file reads two CSV files containing complexity score data for RustMap and C2Rust, generates violin plots for these data, and performs statistical comparisons using the Wilcoxon test and Cliff's Delta test
+
+3. Start Jupyter Notebook
+```bash
+jupyter notebook
+```
+
+4. The Jupyter Notebook interface will automatically open in your browser. Find and click on the `violin_plot.ipynb` file.
+
+5. Run each code cell one by one (click on each cell and press Shift+Enter) to ensure all code executes correctly and generates the violin plots and statistical comparison results.
 
 # 3. Functional Test (Project-Scale to Single-File-Scale)
-## 3.1. Project-Scale Executable Test on bzip2: How to test bzip2 compression function?
 
 ### 3.1.1. bzip2 executable binary generation
 ```bash
@@ -237,7 +291,7 @@ Original rosseta code is located in `/root/rustmap/c-code/rosseta-125`
 
 
 
-# 4. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt RQ2
+# 4. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt
 
 - for C2Rust: we use [C2Rust](https://github.com/immunant/c2rust)
 - for CRUSTS : we use [In Rust We Trust – A Transpiler from Unsafe C to Safer Rust](https://ieeexplore.ieee.org/document/9793767) from [CRustS - Transpiling Unsafe C code to Safer Rust](https://github.com/yijunyu/crusts)

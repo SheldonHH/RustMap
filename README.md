@@ -31,8 +31,7 @@
   - [5.1. Rosseta Executable Test in Docker](#51-rosseta-executable-test-in-docker)
 - [6. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt](#6-unsafety-analysis-for-bzip2-rustmap-gpt-and-rossta-rustmap-gpt)
     - [6.0.1. Bzip2 unsafety categorization](#601-bzip2-unsafety-categorization)
-  - [6.1. Unit Test Examples](#61-unit-test-examples)
-  - [6.2. Pointer Aliasing Examples](#62-pointer-aliasing-examples)
+  - [6.1. Pointer Aliasing Examples](#61-pointer-aliasing-examples)
 
 
 # 1. Introducation
@@ -431,14 +430,10 @@ cargo run --release --bin unsafe-counter -- ../laertes/test-inputs/bzip2-laertes
 ```
 
 
-## 6.1. Unit Test Examples
-
-We use intercept the input and output for C program, 
-In the case of bzip2, the length of pointer array can be decided based on 
 
 
 
-## 6.2. Pointer Aliasing Examples
+## 6.1. Pointer Aliasing Examples
 See the code under `/root/rustmap/pointer_aliasing` to illustrate 
 
 

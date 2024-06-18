@@ -6,7 +6,7 @@
     - [2.2.1. Remove directives from \*.i](#221-remove-directives-from-i)
     - [2.2.2.  Rename `bzip2recover.i` to `bzip2recover.i.bk`](#222--rename-bzip2recoveri-to-bzip2recoveribk)
   - [2.3.  Dynamically applied Runtime Function Call Graph](#23--dynamically-applied-runtime-function-call-graph)
-  - [2.4. Generate Function Static Call Graph by](#24-generate-function-static-call-graph-by)
+  - [2.4. Generate Function Static Call Graph by Clow](#24-generate-function-static-call-graph-by-clow)
     - [2.4.1. Use Static cflow](#241-use-static-cflow)
     - [2.4.2. Step 4: Generate RustMap Scaffolding](#242-step-4-generate-rustmap-scaffolding)
 - [3. Prompts](#3-prompts)
@@ -91,7 +91,12 @@ Since we only focus on bzip2 executable binary, we need to exclude the bzip2reco
 
    
 ## 2.3.  Dynamically applied Runtime Function Call Graph
-As we write in paper, we try to run original C program and observe the calling relationship
+As we write in paper, we try to run original C program and observe the calling relationship.
+
+
+Add the -pg option to CFLAGS and LDFLAGS: This is used to enable Gprof profiling during compilation and linking.
+We have added `-pg` flag to Makefile in `./bzip2-1.0.8/Makefile` this will help to generate 
+
 1. in Makefile add -pg, this is used to enable Gprof profiling during compilation and linking.
 ```bash
 CFLAGS=-Wall -Winline -O2 -g $(BIGFILES) -pg
@@ -122,9 +127,7 @@ gprof2dot -f prof gprof.out | dot -Tpng -o dynamic_call_graph.png
 
 ```
 
-## 2.4. Generate Function Static Call Graph by 
-Add the -pg option to CFLAGS and LDFLAGS: This is used to enable Gprof profiling during compilation and linking.
-We have added `-pg` flag to Makefile in `./bzip2-1.0.8/Makefile` this will help to generate 
+## 2.4. Generate Function Static Call Graph by Clow
 
 
 ### 2.4.1. Use Static cflow

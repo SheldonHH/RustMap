@@ -18,27 +18,29 @@
     - [4.1.1. bzip2 executable binary generation](#411-bzip2-executable-binary-generation)
     - [4.1.2. test cases generations bzip2](#412-test-cases-generations-bzip2)
     - [4.1.3. Functional Test compress small-files](#413-functional-test-compress-small-files)
-    - [4.1.4. Verification of RustMap bzip2 uncompress `.bz2`](#414-verification-of-rustmap-bzip2-uncompress-bz2)
-- [Functional Test of Rosetta Code](#functional-test-of-rosetta-code)
-- [5. Count of Macros Definition and Usage](#5-count-of-macros-definition-and-usage)
-- [6. Coverage Test](#6-coverage-test)
-  - [6.1. Table 1.1 Generate Combined Coverage Test for bzip2 Compress and Decompress to use total tests to divide](#61-table-11-generate-combined-coverage-test-for-bzip2-compress-and-decompress-to-use-total-tests-to-divide)
-    - [6.1.1. Generate C coverage test for Original Test Suite for bzip2](#611-generate-c-coverage-test-for-original-test-suite-for-bzip2)
-    - [6.1.2. Generate C Coverage Test custom Test Suite for bzip2 Rust Compress and Decompress Function ](#612-generate-c-coverage-test-custom-test-suite-for-bzip2-rust-compress-and-decompress-function)
-    - [6.1.3. Generate C Coverage Test custom Test Suite for bzip2 Rust for Decompress Function ](#613-generate-c-coverage-test-custom-test-suite-for-bzip2-rust-for-decompress-function)
-    - [6.1.4. combined bzip2 result](#614-combined-bzip2-result)
-  - [6.2. Table 1.2 Roseta Coverage Test Generation](#62-table-12-roseta-coverage-test-generation)
-- [7. Cogntive Complexity Test](#7-cogntive-complexity-test)
-  - [7.1. bzip2 Complexity Test](#71-bzip2-complexity-test)
-  - [7.2. Roseta Code Complexity Test](#72-roseta-code-complexity-test)
-    - [7.2.1. Drawing Violin Graph for both bzip2 and rosseta code](#721-drawing-violin-graph-for-both-bzip2-and-rosseta-code)
-      - [7.2.1.1. How to Execute:](#7211-how-to-execute)
-- [8. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt](#8-unsafety-analysis-for-bzip2-rustmap-gpt-and-rossta-rustmap-gpt)
-    - [8.0.1. Bzip2 unsafety categorization](#801-bzip2-unsafety-categorization)
-- [9. Code Rewrite Pattern Samples](#9-code-rewrite-pattern-samples)
-  - [9.1. Global Variable Lazy Static](#91-global-variable-lazy-static)
-  - [9.2. Pointer Aliasing Examples](#92-pointer-aliasing-examples)
-  - [9.3.](#93)
+    - [4.1.4. Verification of RustMap bzip2 compress by uncompressing `.bz2`](#414-verification-of-rustmap-bzip2-compress-by-uncompressing-bz2)
+- [5. Functional Test of Rosetta Code](#5-functional-test-of-rosetta-code)
+  - [5.1. Batch Execution of Rosetta Code](#51-batch-execution-of-rosetta-code)
+  - [5.2. Verification of RustMap](#52-verification-of-rustmap)
+- [6. Count of Macros Definition and Usage](#6-count-of-macros-definition-and-usage)
+- [7. Coverage Test](#7-coverage-test)
+  - [7.1. Table 1.1 Generate Combined Coverage Test for bzip2 Compress and Decompress to use total tests to divide](#71-table-11-generate-combined-coverage-test-for-bzip2-compress-and-decompress-to-use-total-tests-to-divide)
+    - [7.1.1. Generate C coverage test for Original Test Suite for bzip2](#711-generate-c-coverage-test-for-original-test-suite-for-bzip2)
+    - [7.1.2. Generate C Coverage Test custom Test Suite for bzip2 Rust Compress and Decompress Function ](#712-generate-c-coverage-test-custom-test-suite-for-bzip2-rust-compress-and-decompress-function)
+    - [7.1.3. Generate C Coverage Test custom Test Suite for bzip2 Rust for Decompress Function ](#713-generate-c-coverage-test-custom-test-suite-for-bzip2-rust-for-decompress-function)
+    - [7.1.4. combined bzip2 result](#714-combined-bzip2-result)
+  - [7.2. Table 1.2 Roseta Coverage Test Generation](#72-table-12-roseta-coverage-test-generation)
+- [8. Cogntive Complexity Test](#8-cogntive-complexity-test)
+  - [8.1. bzip2 Complexity Test](#81-bzip2-complexity-test)
+  - [8.2. Roseta Code Complexity Test](#82-roseta-code-complexity-test)
+    - [8.2.1. Drawing Violin Graph for both bzip2 and rosseta code](#821-drawing-violin-graph-for-both-bzip2-and-rosseta-code)
+      - [8.2.1.1. How to Execute:](#8211-how-to-execute)
+- [9. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt](#9-unsafety-analysis-for-bzip2-rustmap-gpt-and-rossta-rustmap-gpt)
+    - [9.0.1. Bzip2 unsafety categorization](#901-bzip2-unsafety-categorization)
+- [10. Code Rewrite Pattern Samples](#10-code-rewrite-pattern-samples)
+  - [10.1. Global Variable Lazy Static](#101-global-variable-lazy-static)
+  - [10.2. Pointer Aliasing Examples](#102-pointer-aliasing-examples)
+  - [10.3. Lazy Static](#103-lazy-static)
 
 
 # 1. Introducation
@@ -225,7 +227,7 @@ mv *.bz2 compress_output_bz2_files/
 you may will the generation time in here: /root/rustmap/feasibility_study/bzip2_tests/timings.txt
 
 
-### 4.1.4. Verification of RustMap bzip2 uncompress `.bz2`
+### 4.1.4. Verification of RustMap bzip2 compress by uncompressing `.bz2`
 ```bash
 cd /root/rustmap/feasibility_study/bzip2_tests/compress_output_bz2_files
 bzip2recover random_1_chars.txt.bz2
@@ -254,10 +256,22 @@ diff random_5000_chars.txt rec00001random_5000_chars.txt > diff_random_5000_char
 # If the resultant diff is zero we did
 ```
 
-# Functional Test of Rosetta Code
+
+# 5. Functional Test of Rosetta Code
+## 5.1. Batch Execution of Rosetta Code
+Since there are attached testcases in original Roseta Code, we will directly execute the translated Roseta Code and Compare the result with original C Roseta Code
+```bash
+bash ./c-code/rosseta-125/rosseta-125.sh > original_roseta_result.log
+bash ./executable_binaries_test/rossta_code_gpt/125-rossta-code-gpt/125-rosseta-rs.sh > rustmap_roseta_result.log
+```
+
+## 5.2. Verification of RustMap 
+```bash
+diff rustmap_roseta_result.log 
+```
 
 
-# 5. Count of Macros Definition and Usage
+# 6. Count of Macros Definition and Usage
 ![](paper_pic/Macros-Counts.jpg)
 
 We count the number of macros declaration and usage based on  
@@ -267,18 +281,18 @@ We count the number of macros declaration and usage based on
 
 
 
-# 6. Coverage Test
+# 7. Coverage Test
 We try to show the process to generate the Coverage Test Statistics in this section
 ![](./paper_pic/Coverage-Test-Result-bzip2-Rosetta.jpg)
 
 > The following operational instructions can be executed in the Docker image rustmap-feasibility-study.tar.gz available on Zenodo. The operational code is present in both this repository and the Zenodo Docker image.
 
-## 6.1. Table 1.1 Generate Combined Coverage Test for bzip2 Compress and Decompress to use total tests to divide
+## 7.1. Table 1.1 Generate Combined Coverage Test for bzip2 Compress and Decompress to use total tests to divide
 we have added `coverage` flags in `Makefile` under `c-code/bzip2-1.0.8
 
 ![](paper_pic/Table-coverage-bzip2.jpg)
 
-### 6.1.1. Generate C coverage test for Original Test Suite for bzip2
+### 7.1.1. Generate C coverage test for Original Test Suite for bzip2
 ```bash
 cd /root/rustmap/c-code/bzip2-1.0.8
 # this command generate 
@@ -288,7 +302,7 @@ View the result in `/root/rustmap/c-code/bzip2-1.0.8/out/bzip2-1.0.8/index.html`
 
 
 
-### 6.1.2. Generate C Coverage Test custom Test Suite for bzip2 Rust Compress and Decompress Function 
+### 7.1.2. Generate C Coverage Test custom Test Suite for bzip2 Rust Compress and Decompress Function 
 ```bash
 make cleancoverage
 ./bzip2 -k testcases/compress_test.txt
@@ -297,7 +311,7 @@ genhtml compress_coverage.info --output-directory compress_out
 ```
 View the Result in `bzip2-1.0.8/compress_out/bzip2-1.0.8/index.html`
 
-### 6.1.3. Generate C Coverage Test custom Test Suite for bzip2 Rust for Decompress Function 
+### 7.1.3. Generate C Coverage Test custom Test Suite for bzip2 Rust for Decompress Function 
 ```bash
 make cleancoverage
 ./bzip2 -k -d testcases/decompress_test.txt.bz2
@@ -307,12 +321,12 @@ genhtml decompress_coverage.info --output-directory decompress_out
 View the Result in `bzip2-1.0.8/decompress_out/bzip2-1.0.8/index.html`
 
 
-### 6.1.4. combined bzip2 result
+### 7.1.4. combined bzip2 result
 Once you combine the result, you use Original Test Suite to divide  
  combined get the result like below:
 View the Combined  Result in `bzip2-1.0.8/compress_out/bzip2-1.0.8/index.html`
 
-## 6.2. Table 1.2 Roseta Coverage Test Generation
+## 7.2. Table 1.2 Roseta Coverage Test Generation
 ```bash
 # This script iterates through all subdirectories in the current directory, compiles and runs the first C file found in each subdirectory, collects code coverage data, and finally generates an HTML coverage report.
 bash /root/rustmap/c-code/rosseta-125/gcc-rosseta-code.sh
@@ -320,12 +334,12 @@ bash /root/rustmap/c-code/rosseta-125/gcc-rosseta-code.sh
 View the result in `/root/rustmap/c-code/rosseta-125/coverage_report/index.html` for Table 1 Rosetta Code
 ![](paper_pic/Table-Coverage-Rosetta.jpg)
 
-# 7. Cogntive Complexity Test
+# 8. Cogntive Complexity Test
 
 > The following operational instructions can be executed in the Docker image rustmap-feasibility-study.tar.gz available on Zenodo. The operational code is present in both this repository and the Zenodo Docker image.
 
 
-## 7.1. bzip2 Complexity Test
+## 8.1. bzip2 Complexity Test
 ```bash
 # Generate Cognitivie Complexity comparative study result for Rustmap and C2Rust for each folder
 cargo run -- /root/rustmap/cognitive-complex-test/src/comparision/bzip2
@@ -339,7 +353,6 @@ cargo run -- /root/rustmap/cognitive-complex-test/src/comparision/compress
 cargo run -- /root/rustmap/cognitive-complex-test/src/comparision/decompress
 
 cargo run -- /root/rustmap/cognitive-complex-test/src/comparision/huffman
-
 ```
 View the initial result in `/root/rustmap/cognitive-complex-test/result/bzip2-complexity-init-result.csv`
 
@@ -353,7 +366,7 @@ View Final Result after merge
 ![](cognitive-complex-test/result/bzip2-Complexity-Final-Result.pdf)
 
 
-## 7.2. Roseta Code Complexity Test
+## 8.2. Roseta Code Complexity Test
 In `cognitive-complex-test/src`
 
 1. Generate RustMap Roseta Code Complexity Result
@@ -379,13 +392,13 @@ View Final Result after merge
 
 
 
-### 7.2.1. Drawing Violin Graph for both bzip2 and rosseta code
+### 8.2.1. Drawing Violin Graph for both bzip2 and rosseta code
 ![](./paper_pic/violin-diagram.jpg)
 This `.ipynb` file reads two CSV files containing complexity score data for RustMap and C2Rust, generates violin plots for these data, and performs statistical comparisons using the Wilcoxon test and Cliff's Delta test.
 
 The first `Book1.csv` contains complexity scores for bzip2 RustMap and C2Rust. The second `Book2.csv` contains complexity scores for Rosetta Code RustMap and C2Rust.
 
-#### 7.2.1.1. How to Execute:
+#### 8.2.1.1. How to Execute:
 
 1. Ensure that Jupyter Notebook is installed. If not, install it using the following command:
 
@@ -415,10 +428,7 @@ jupyter notebook
 
 
 
-
-
-
-# 8. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt
+# 9. Unsafety Analysis for bzip2-rustmap-gpt and rossta-rustmap-gpt
 
 The below operation is based on docker image *rustmap-unsafety-evaluation.tar.gz* in Zenodo.
 The Code is of operation is both on README.md and Zenodo docker image.
@@ -451,7 +461,7 @@ View the shell script in `/root/rustmap/unsafety-analysis-for-rust/test-inputs/r
 
 
 
-###  8.0.1. Bzip2 unsafety categorization
+###  9.0.1. Bzip2 unsafety categorization
 ```bash
 
 # bzip2-c2rust
@@ -468,15 +478,15 @@ cargo run --release --bin unsafe-counter -- ../laertes/test-inputs/bzip2-laertes
 
 
 
-# 9. Code Rewrite Pattern Samples
+# 10. Code Rewrite Pattern Samples
 
-## 9.1. Global Variable Lazy Static
+## 10.1. Global Variable Lazy Static
 We have demonstrated the origianl C code and its Rust rewrite in the directory `code_patterns/global_variables_lazy_static`
 
-## 9.2. Pointer Aliasing Examples
+## 10.2. Pointer Aliasing Examples
 See the code under `/root/rustmap/code_patterns/pointer_aliasing` to illustrate 
 
 
-## 9.3. 
+## 10.3. Lazy Static
 
 

@@ -1,0 +1,12 @@
+error[E0384]: cannot assign to immutable argument `b`
+  --> chinese_remainder_theorem.rs:13:9
+   |
+1  | fn mul_inv(a: i32, b: i32) -> i32 {
+   |                    - help: consider making this binding mutable: `mut b`
+...
+13 |         b = a % b;
+   |         ^^^^^^^^^ cannot assign to immutable argument
+
+error: aborting due to previous error; 2 warnings emitted
+
+For more information about this error, try `rustc --explain E0384`.

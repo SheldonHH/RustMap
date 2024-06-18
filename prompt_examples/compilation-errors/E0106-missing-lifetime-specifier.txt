@@ -1,0 +1,10 @@
+error[E0106]: missing lifetime specifier
+  --> last_letter_first_letter.rs:27:47
+   |
+27 | fn find_longest_chain(items: &[&str]) -> (Vec<&str>, usize, usize) {
+   |                              -------          ^ expected named lifetime parameter
+   |
+   = help: this function's return type contains a borrowed value, but the signature does not say which one of `items`'s 2 lifetimes it is borrowed from
+help: consider introducing a named lifetime parameter
+   |
+27 | fn find_longest_chain<'a>(items: &'a [&'a str]) -> (Vec<&'a str>, usize, usize) {

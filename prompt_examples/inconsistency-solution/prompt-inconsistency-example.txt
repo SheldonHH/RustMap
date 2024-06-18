@@ -1,0 +1,25 @@
+
+
+```bash
+// C code fragment with its before- and after-states:
+{
+    (before-state of C)
+    (...Here is the C code fragment that have
+        caused errors in the translated Rust...)
+    (after-state of C)
+}
+
+// Rust code generation:
+{
+   fn main() {
+    let mut i: usize = 0;
+    let mut j: usize = 0;
+    let mut wr: usize = 0;
+    let ll_i: u8 = 1;
+
+    /* Please Generate Rust Code */
+}
+    /** please generate Rust code fragment here to have
+        consistent states as the C code above
+      */
+}

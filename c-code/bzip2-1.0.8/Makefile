@@ -21,8 +21,8 @@ RANLIB=ranlib
 LDFLAGS=
 
 BIGFILES=-D_FILE_OFFSET_BITS=64
-CFLAGS=-Wall -Winline -O2 -g $(BIGFILES) --coverage
-LDFLAGS+= --coverage
+CFLAGS=-Wall -Winline -O2 -g $(BIGFILES) --coverage -pg
+LDFLAGS+= --coverage  -pg
 
 # Where you want it installed when you do 'make install'
 PREFIX=/usr/local

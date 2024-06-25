@@ -39,7 +39,12 @@
     - [8.0.1. Bzip2 unsafety categorization](#801-bzip2-unsafety-categorization)
 - [9. Code Rewrite Pattern Samples](#9-code-rewrite-pattern-samples)
   - [9.1. Global Variable Lazy Static](#91-global-variable-lazy-static)
-  - [9.2. Pointer Aliasing Examples](#92-pointer-aliasing-examples)
+  - [9.2. Pointer Aliasing without Endiness Concern](#92-pointer-aliasing-without-endiness-concern)
+  - [9.3. Pointer Aliasing with Endiness Concern](#93-pointer-aliasing-with-endiness-concern)
+    - [9.3.1. C Code Implementation:](#931-c-code-implementation)
+    - [9.3.2. Rust Code Implementation:](#932-rust-code-implementation)
+    - [9.3.3. Summary of Differences:](#933-summary-of-differences)
+    - [9.3.4. Summary of Differences:](#934-summary-of-differences)
   - [9.4. Illustrate Necessity to rewrite Complex Macro and how to rewrite C `switch-case` to Rust `while match`](#94-illustrate-necessity-to-rewrite-complex-macro-and-how-to-rewrite-c-switch-case-to-rust-while-match)
 
 
@@ -328,6 +333,8 @@ Once you combine the result, you use Original Test Suite to divide
  combined get the result like below:
 View the Combined  Result in `bzip2-1.0.8/compress_out/bzip2-1.0.8/index.html`
 
+
+
 ## 6.2. Table 1.2 Rosetta Coverage Test Generation
 ```bash
 # This script iterates through all subdirectories in the current directory, compiles and runs the first C file found in each subdirectory, collects code coverage data, and finally generates an HTML coverage report.
@@ -485,8 +492,99 @@ cargo run --release --bin unsafe-counter -- ../laertes/test-inputs/bzip2-laertes
 ## 9.1. Global Variable Lazy Static
 We have demonstrated the origianl C code and its Rust rewrite in the directory `code_patterns/global_variables_lazy_static`
 
-## 9.2. Pointer Aliasing Examples
-See the code under `/root/rustmap/code_patterns/pointer_aliasing` to illustrate 
+## 9.2. Pointer Aliasing without Endiness Concern 
+See the code under `/root/rustmap-clone/code_patterns/pointer_aliasing/raw_pointer_rewrite` to illustrate both pointer aliasing without endiness concern and with endiness concern
+
+
+## 9.3. Pointer Aliasing with Endiness Concern 
+See the code under `/root/rustmap-clone/code_patterns/pointer_aliasing/endianness_concern` to illustrate both pointer aliasing without endiness concern and with endiness concern
+The Rust code above addresses the endianness concern in the C code. Here is a detailed explanation of how the C and Rust codes implement this functionality:
+
+To view the code in details in the folder `/root/rustmap-clone/code_patterns/pointer_aliasing/endianness_concern`
+
+### 9.3.1. C Code Implementation:
+
+In the C code, data is manipulated directly using memory pointers. The specific steps are as follows:
+
+1. **Define Structures and Types**:
+    ```c
+    typedef unsigned char UChar;
+    typedef unsigned int UInt32;
+    typedef int Int32;
+
+    typedef struct {
+        UChar* zbits;
+        UInt32* arr2;
+        Int32 nblock;
+    } EState;
+    ```
+
+2. **Set Pointer**:
+    ```c
+    s.zbits = (UChar*) (&((UChar*)s.arr2)[s.nblock]);
+    ```
+    This line performs the following operations:
+    - Casts `s.arr2` to a `UChar` type pointer.
+    - Offsets this pointer by `s.nblock` and gets the address.
+    - Assigns this address to `s.zbits`, making `s.zbits` point to the `nblock`th byte of `s.arr2`.
+
+### 9.3.2. Rust Code Implementation:
+
+The Rust code implements the same logic as the C code but in a safer manner by handling memory and endianness explicitly:
+
+1. **Define Structure and Function**:
+    ```rust
+    pub struct EState { 
+        pub zbits: Vec<u8>,
+        pub arr2: Vec<u32>,
+        pub nblock: i32,
+    }
+
+    fn get_zbits(estate: &mut EState) {
+        let nblock = estate.nblock as usize;
+        let offset = nblock / 4;
+        let remaining_bytes = estate.arr2.len() * 4 - nblock;
+        estate.zbits.clear();
+        estate.zbits.reserve(remaining_bytes);
+
+        for &num in &estate.arr2[offset..] {
+            let bytes = if cfg!(target_endian = "little") {
+                num.to_le_bytes()
+            } else {
+                num.to_be_bytes()
+            };
+
+            let start_index = if estate.zbits.is_empty() { nblock % 4 } else { 0 };
+            estate.zbits.extend_from_slice(&bytes[start_index..]);
+        }
+    }
+    ```
+
+2. **Handle Endianness and Update Array**:
+    ```rust
+    fn update_block_from_zbits(estate: &mut EState) {
+        /* ... */
+    }
+    ```
+
+### 9.3.3. Summary of Differences:
+
+- **C Code**: Directly manipulates memory pointers and offsets, a low-level approach prone to errors but often used in hardware control or high-performance needs.
+- **Rust Code**: Uses safe methods to handle memory and endianness, ensuring correct operation across different endianness systems and avoiding memory safety issues.
+
+The comparison highlights that Rust code is more robust in handling memory safety and cross-platform compatibility.
+
+### 9.3.4. Summary of Differences:
+
+- **C Code**: Directly manipulates memory pointers and offsets, a low-level approach prone to errors but often used in hardware control or high-performance needs.
+- **Rust Code**: Uses safe methods to handle memory and endianness, ensuring correct operation across different endianness systems and avoiding memory safety issues.
+
+The comparison highlights that Rust code is more robust in handling memory safety and cross-platform compatibility.
+
+
+
+
+
 
 
 

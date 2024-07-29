@@ -1,3 +1,29 @@
+# Key Code and Dataset Catalogue 
+## Code
+- [C code for bzip2](c-code/after-processed-c-code)
+- [C code for rosseta](c-code/rosseta-125)
+- [RustMap Generated bzip2 for compress](executable_binaries_test/bzip2_rs_gpt)
+- [RustMap Generated bzip2 for decompress](executable_binaries_test/bzip2-decompress)
+- [RustMap Generated rosseta code](executable_binaries_test/rosetta_code_gpt)
+## Dataset
+- [bzip2 coverage test](key_datasets/merged_coverage_test_bzip2.csv)
+- [rosseta coverage test](key_datasets/merged_coverage_test_bzip2.csv)
+- [bzip2 complexity consolidated data](key_datasets/bzip2_complexity.csv)
+- [rosseta complexity individual data](key_datasets/rosseta-readability-stats.csv)
+- [rosseta complexity consolidated data data](key_datasets/rosseta-consolidated-stats.csv)
+
+
+## prompt templates
+- [Prompt to Generate Rust from C](prompt_examples/prompt_for_LLM_to_generate_code.txt)
+- [Prompt to Solve Inconsistency Error](/Users/mac/ase-rebuttal/rustmap/prompt_examples/prompt_to_solve_inconsistency_error.txt)
+
+
+# Detailed README.md
+- [Key Code and Dataset Catalogue](#key-code-and-dataset-catalogue)
+  - [Code](#code)
+  - [Dataset](#dataset)
+  - [prompt templates](#prompt-templates)
+- [Detailed README.md](#detailed-readmemd)
 - [1. Introducation](#1-introducation)
   - [1.1. version introduction](#11-version-introduction)
 - [2.  Scaffolding Boilerplate Generation (example of bzip2)](#2--scaffolding-boilerplate-generation-example-of-bzip2)
